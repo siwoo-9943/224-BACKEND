@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+main{
+  background-color: white;
+  width: 1060px;
+  height: 1400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.join-main{
+  width: 95%;
+}
+
+#join h5{
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+/*필수입력사항 위치조정*/
+.join-p{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.mem-line{
+  background-color: black;
+  height: 1px;
+  width: 100%;
+}
+
+/* 전체 입력창 박스 */
+.join-info-box{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.join-info-cate{
+  width: 120px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+}
+
+/*이메일*/
+.join-info{
+  display: flex;
+  gap: 20px;
+}
+/* 이메일 입력창 */
+#e-mail{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+}
+/* 중복확인 버튼 */
+.e-mailok{
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/*비밀번호 입력*/
+
+#join-pw{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/*비밀번호 한 번 더 확인*/
+#join-pw-one{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/*이름 입력*/
+#join-name{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/*닉네임 입력*/
+#join-n-name{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/*휴대폰번호 입력*/
+#join-number{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/* 성별 입력*/
+.join-gender{
+  display: flex;
+  width: 500px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+#gender{
+  display: flex;
+  width: 50px;
+  height: 27px;
+}
+
+/*생일*/
+#join-birth{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mem-line2{
+  background-color: black;
+  height: 1px;
+  width: 100%;
+}
+
+/*이용약관*/
+#mem-term{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  float: left;
+}
+
+.mem-term-head{
+  margin-block: -27px 7px;
+}
+
+.mem-term-checkbox-label input[type="checkbox"]{
+  width: 18px;
+  height: 18px;
+  margin: 3px 5px;
+}
+
+.mem-term-allbox{
+  width: 750px;
+}
+
+
+
+.mem-term-info{
+  display: flex;
+}
+
+.mem-term-ok{
+  width: 15%;
+}
+
+.mem-term-allagree{
+  margin: 10px;
+}
+.mem-term-checkbox-label{
+  display: flex
+}
+
+.mem-term-head-all{
+  margin-top: -15px;
+  font-size: 13px;
+}
+
+.mem-term-box {
+  overflow: auto;
+  max-height: 75px;
+  margin: 10px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
+  /* width: 600px; */
+}
+
+/*스크롤바 */
+.mem-term-box::-webkit-scrollbar {
+  width: 20px;
+}
+
+.mem-term-box::-webkit-scrollbar-thumb {
+  border: 6px solid white;
+  height: 40px;
+  background: #2BCF81;
+  border-radius: 10px;
+}
+
+.mem-term-box::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.mem-essential{
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.mem-optional{
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.mem-term-btn-next-box{
+  width: 480px;
+  height: 50px;
+  margin: 10px auto;
+}
+
+
+.mem-term-btn-next{
+  cursor: pointer;
+  background-color: #2BCF81;
+  border-radius: 10px;
+  border: 1px solid gray;
+  width: 400px;
+  height: 50px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+}
+
+.mem-term_btn-next:disabled{
+  background-color: gray;
+  cursor: default;
+  background: #2BCF81;
+}
+
+/*유효성*/
+/* .join-e-mail-ch{
+  margin-left: 150px;
+  display: none;
+} */
+
+/* .join-pw-ch{
+  margin-left: 150px;
+  display: none;
+} */
+
+/* .join-pw-ch-ok{
+  margin-left: 150px;
+  display: none;
+} */
+
+
