@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/* 헤더 */
+body {
+  margin: 0;
+}
+
+.header-section {
+  background-color: white;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-fixed {
+  width: 1080px;
+  background-color: white;
+  height: 90px;
+  position: fixed;
+  z-index: 1000;
+}
+
+.header-section ul {
+  height: 0px;
+  display: flex;
+  list-style-type: none;
+}
+
+/* 로고 */
+#header-img-0 img {
+  width: 90px;
+}
+
+#header-img-0 {
+  /* margin-left: 250px; */
+  transform: translate(0, 5px);
+}
+
+#header-img-1 img {
+  width: 70px;
+}
+
+#header-img-1 {
+  /* margin-left: 200px; */
+  transform: translate(100px, -65px);
+}
+
+/* 헤더 검색창 */
+.header-search img{
+  width: 20px;
+  transform: translate(10px, 10px);
+  position: relative;
+  z-index: 10;
+}
+
+#header-search-frame {
+  width: 400px;
+  height: 40px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  transform: translate(80px, 10px);
+  position: relative;
+  z-index: 10;
+}
+
+#search {
+  width: 360px;
+  height: 40px;
+  background-color: rgb(240, 240, 240);
+  border: none;
+  border-radius: 10px;
+  transform: translate(40px, -25px);
+  position: relative;
+  z-index: 1;
+}
+
+/* 날씨쨍쨍 */
+#header-weather img {
+  width: 80px;
+  height: 30px;
+  transform: translate(100px, 10px);
+}
+
+/* 로그인 및 회원가입 버튼 */
+.main-login-btn a {
+  text-decoration: none;
+}
+
+#header-login-mypage-btn{
+  background-color: #2BCF81;
+  width: 120px;
+  height: 35px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  transform: translate(110px, 0px);
+  padding: 1px;
+  margin: 10px;
+}
+
+#header-login-join-btn {
+  background-color: #2BCF81;
+  width: 120px;
+  height: 35px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  transform: translate(110px, 0px);
+  padding: 1px;
+  margin: 10px;
+}
+
+#header-login-join-btn h5 {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+#header-login-mypage-btn h5 {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+
+/* 드롭다운 메뉴 */
+.main-dropdown {
+  background-color: white;
+  z-index: 500;
+}
+
+#dropdown-container {
+  display: flex;
+  width: 1060px;
+  height: 52px;
+  /* border: 1px solid blue; */
+  margin: 0 auto;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+}
+
+.dropdown-menu {
+  cursor:pointer;
+  color: black;
+}
+
+.dropdown img {
+  width: 40px;
+  margin-left: 30px;
+  margin-right: 5px;
+}
+
+.dropdown-menu-txt {
+  font-size: 18px;
+  margin-top: 8px;
+  margin-right: 60px;  
+  text-decoration: none;
+}
+
+.dropdown-menu-txt a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: white;
+  transform: translate(0px, 50px);
+}
+
+.dropdown-content ul{
+  /* border: 1px solid blue; */
+  width: 200px;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+.dropdown-content ul li{
+  padding: 12px 16px;
+}
+
+.dropdown-menu-txt:hover {
+  /* color: #2BCF81; */
+  cursor: pointer;
+} 
+
+.dropdown-line {
+  width: 130px;
+  height: 2px;
+  background-color: #2BCF81;
+  display: block;
+  margin-left: 7px;
+}
+
+.dropdown-content ul li a{
+  color: gray;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content ul li a:hover{
+  color: #2BCF81;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+  align-items: center;
+  z-index: 500;
+} 
