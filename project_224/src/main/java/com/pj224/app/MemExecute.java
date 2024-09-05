@@ -7,10 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public interface MemExecute {
-<<<<<<< HEAD
     public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException;
 }
-=======
-	 public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException;
-}
->>>>>>> main
+
