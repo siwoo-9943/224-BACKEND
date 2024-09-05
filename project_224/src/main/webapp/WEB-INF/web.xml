@@ -92,12 +92,5 @@
       <servlet-name>Subway</servlet-name>
       <url-pattern>*.sw</url-pattern>
    </servlet-mapping>
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
->>>>>>> 7f95da33b817e5702d23a3b69c5d3e04ce20d3ed
-=======
->>>>>>> 950a9c2ab0df3cd482ed05268ecff8e1debe834a
->>>>>>> main
 </web-app>
