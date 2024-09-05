@@ -13,14 +13,6 @@
 	</settings>
 
 	<typeAliases>
-<<<<<<< HEAD
-
-
-		<typeAlias type="com.pj224.app.dto.HotplaceDTO"	alias="HotplaceDTO" />
-
-		<typeAlias type="com.pj224.app.dto.CommunityDTO" alias="CommunityDTO" />
-
-=======
 		<typeAlias type="com.pj224.app.dto.ConvenienceDTO" alias="ConvenienceDTO" />
 		<typeAlias type="com.pj224.app.dto.HotplaceDTO" alias="HotplaceDTO" />
 		<typeAlias type="com.pj224.app.dto.MemberDTO" alias="MemberDTO" />
@@ -28,7 +20,6 @@
 		<typeAlias type="com.pj224.app.dto.SubwayDTO" alias="SubwayDTO" />
 		<typeAlias type="com.pj224.app.dto.NoticeDTO" alias="NoticeDTO" />
 		<typeAlias type="com.pj224.app.dto.CommunityDTO" alias="CommunityDTO"/>
->>>>>>> main
 	</typeAliases>
 
 	<environments default="oracle">
@@ -53,11 +44,6 @@
 		<mapper resource="com/mybatis/mapper/SubwayMapper.xml" />
 		<mapper resource="com/mybatis/mapper/NoticeMapper.xml" />
 		<mapper resource="com/mybatis/mapper/CommunityMapper.xml" />
-
-		<mapper resource="com/mybatis/mapper/HotplaceMapper.xml" />
-
-
-
 	</mappers>
 
 </configuration>
