@@ -56,7 +56,34 @@
 							</div>
 						</div>
 					</div>
-					
+					<ul id="communityList">
+						<c:forEach var="community" items="${communityList}">
+							<li>
+								<!-- 분류 -->
+								<div class="baseList-space">
+									<span class="baseList-sector">${community.boardCate}</span>
+								</div>
+								<!-- 제목 -->
+								<div class="baseList-space">
+									<a href="community-detail.jsp?boardNumber=${community.boardNumber}">
+										${community.boardTitle}
+									</a>
+								</div>
+								<!-- 글쓴이 -->
+								<div class="baseList-space">
+									<span class="baseList-sector">${community.memberNumber}</span>
+								</div>
+								<!-- 등록일 -->
+								<div class="baseList-space">
+									<span class="baseList-sector">${community.boardRegistDate}</span>
+								</div>
+								<!-- 추천 수 -->
+								<div class="baseList-space">
+									<span class="baseList-sector">${community.recommendCount}</span>
+								</div>
+							</li>
+						</c:forEach>
+					</ul>
 					
 					<div class="info-bg2">
 						<div class="bottom-list">

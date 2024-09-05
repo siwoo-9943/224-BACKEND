@@ -57,10 +57,6 @@ public class CommunityFrontController extends HttpServlet {
 			System.out.println("프컨들어옴");
 			request.getRequestDispatcher("/app/community/comu-main.jsp").forward(request, response);
 			break;
-		case "/community/comu-mainOk.cm":
-			System.out.println("여긴들어옴?");
-			new CommunityListOkController().execute(request, response);
-			break;
 		}
 	}
 }
