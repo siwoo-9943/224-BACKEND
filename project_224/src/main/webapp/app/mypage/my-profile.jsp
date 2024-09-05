@@ -34,33 +34,33 @@
         <div class="my-profile-center">
         <div class="my-profile-category">
           <div class="my-profile-menu">아이디</div>
-          <div class="my-profile-value">abc@gmail.com</div>
+          <div class="my-profile-value"></div>
         </div>
         <div class="my-profile-category">
           <div class="my-profile-menu">이름</div>
-          <div class="my-profile-value">김철수</div>
+          <div class="my-profile-value"></div>
         </div>
         <div class="my-profile-category">
           <div class="my-profile-menu">닉네임</div>
-          <div class="my-profile-value">금쪽이</div>
+          <div class="my-profile-value"></div>
         </div>
         <div class="my-profile-category">
           <div class="my-profile-menu">휴대폰</div>
-          <div class="my-profile-value">010-0000-0000</div>
+          <div class="my-profile-value"></div>
         </div>
         <div class="my-profile-category">
           <div class="my-profile-menu">성별</div>
-          <div class="my-profile-value">여자
+          <div class="my-profile-value">
           </div>
         </div>
         <div class="my-profile-category">
           <div class="my-profile-menu">생년월일</div>
-          <div class="my-profile-value">1999년 7월 5일</div>
+          <div class="my-profile-value"></div>
         </div>
       </div>
 
       <!-- 개인정보수정 이동 버튼 -->
-       <a href="../mypage/my-passcheck.html"><button class="my-button">개인정보수정</button></a>
+       <a href="../mypage/my-passcheck.jsp"><button class="my-button">개인정보수정</button></a>
     </div>
     </div>
 
