@@ -76,7 +76,7 @@
 					<li class="main-login-btn">
 						<!-- 로그인 및 회원가입 버튼 -->
 						<div id="header-login-join-btn">
-							<a href="${pageContext.request.contextPath}/member/mem-login.mn">
+							<a href="${pageContext.request.contextPath}/member/login.me">
 							<h5>로그인 및 회원가입</h5>
 							</a>
 						</div>
