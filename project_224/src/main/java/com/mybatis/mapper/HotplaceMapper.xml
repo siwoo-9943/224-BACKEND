@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hotplace">
+	<select id="showInfo" parameterType="String"
+		resultType="HotplaceDTO">
+		SELECT hp.HOTPLACE_NUMBER, hp.HOTPLACE_STATION, hp.HOTPLACE_TITLE,
+		hp.HOTPLACE_HOURS, hp.HOTPLACE_ADDRESS, hp.HOTPLACE_LINK,
+		hp.HOTPLACE_REST_NUMBER, hp.HOTPLACE_ATTRACTION_NUMBER,
+		hr.HOTPLACE_REST_CUISINE, hr.HOTPLACE_REST_MENU,
+		ha.HOTPLACE_ATTRACTION_CONTENT
+		FROM TBL_HOTPLACE hp
+		LEFT JOIN TBL_HOTPLACE_REST hr ON hp.HOTPLACE_REST_NUMBER =
+		hr.HOTPLACE_REST_NUMBER
+		LEFT JOIN TBL_HOTPLACE_ATTRACTION ha ON hp.HOTPLACE_ATTRACTION_NUMBER =
+		ha.HOTPLACE_ATTRACTION_NUMBER
+		WHERE hp.HOTPLACE_STATION = #{hotplaceStation}
+	</select>
+
+</mapper>

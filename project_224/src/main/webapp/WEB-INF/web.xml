@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns="https://jakarta.ee/xml/ns/jakartaee"
    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
@@ -54,10 +53,10 @@
       <url-pattern>*.cv</url-pattern>
    </servlet-mapping>
 
-   <servlet>
-      <servlet-name>Hotplace</servlet-name>
-      <servlet-class>com.pj224.app.hotplace</servlet-class>
-   </servlet>
+	<servlet>
+		<servlet-name>Hotplace</servlet-name>
+		<servlet-class>com.pj224.app.hotplace.HotplaceFrontController</servlet-class>
+	</servlet>
 
    <servlet-mapping>
       <servlet-name>Hotplace</servlet-name>
@@ -93,4 +92,5 @@
       <servlet-name>Subway</servlet-name>
       <url-pattern>*.sw</url-pattern>
    </servlet-mapping>
+
 </web-app>
