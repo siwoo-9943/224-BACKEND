@@ -81,10 +81,10 @@
       <url-pattern>*.my</url-pattern>
    </servlet-mapping>
 
-   <servlet>
-      <servlet-name>Notice</servlet-name>
-      <servlet-class>com.pj224.app.notice</servlet-class>
-   </servlet>
+	<servlet>
+		<servlet-name>Notice</servlet-name>
+		<servlet-class>com.pj224.app.notice.NoticeFrontController</servlet-class>
+	</servlet>
 
    <servlet-mapping>
       <servlet-name>Notice</servlet-name>
