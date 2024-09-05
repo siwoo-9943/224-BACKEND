@@ -53,17 +53,10 @@
       <url-pattern>*.cv</url-pattern>
    </servlet-mapping>
 
-<<<<<<< HEAD
 	<servlet>
 		<servlet-name>Hotplace</servlet-name>
 		<servlet-class>com.pj224.app.hotplace.HotplaceFrontController</servlet-class>
 	</servlet>
-=======
-   <servlet>
-      <servlet-name>Hotplace</servlet-name>
-      <servlet-class>com.pj224.app.hotplace</servlet-class>
-   </servlet>
->>>>>>> main
 
    <servlet-mapping>
       <servlet-name>Hotplace</servlet-name>
@@ -95,17 +88,9 @@
       <servlet-class>com.pj224.app.subway</servlet-class>
    </servlet>
 
-<<<<<<< HEAD
-	<servlet-mapping>
-		<servlet-name>Subway</servlet-name>
-		<url-pattern>*.sw</url-pattern>
-	</servlet-mapping>
-=======
    <servlet-mapping>
       <servlet-name>Subway</servlet-name>
       <url-pattern>*.sw</url-pattern>
    </servlet-mapping>
 
->>>>>>> 7f95da33b817e5702d23a3b69c5d3e04ce20d3ed
->>>>>>> main
 </web-app>

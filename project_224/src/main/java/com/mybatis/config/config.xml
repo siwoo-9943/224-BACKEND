@@ -13,19 +13,12 @@
 	</settings>
 
 	<typeAliases>
-	
-	
-<<<<<<< HEAD
-	<typeAlias type="com.pj224.app.dto.HotplaceDTO" alias="HotplaceDTO"/>
-	
-	
-	
-=======
-	
-	
-	
-		<typeAlias type="com.pj224.app.dto.CommunityDTO" alias="CommunityDTO"/>
->>>>>>> main
+
+
+		<typeAlias type="com.pj224.app.dto.HotplaceDTO"	alias="HotplaceDTO" />
+
+		<typeAlias type="com.pj224.app.dto.CommunityDTO" alias="CommunityDTO" />
+
 	</typeAliases>
 
 	<environments default="oracle">
@@ -43,13 +36,12 @@
 	</environments>
 
 	<mappers>
-<<<<<<< HEAD
-	
-	
-		<mapper resource="com/mybatis/mapper/HotplaceMapper.xml"/>
-=======
 		<mapper resource="com/mybatis/mapper/CommunityMapper.xml" />
->>>>>>> main
+
+		<mapper resource="com/mybatis/mapper/HotplaceMapper.xml" />
+
+
+
 	</mappers>
 
 </configuration>
