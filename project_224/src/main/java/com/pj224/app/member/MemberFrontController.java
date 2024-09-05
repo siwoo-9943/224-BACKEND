@@ -45,9 +45,9 @@ public class MemberFrontController extends HttpServlet {
 		System.out.println("서블릿실행");
 		
 		//루트경로 출력
-		System.out.println(request.getContextPath());
+		System.out.println(request.getContextPath() + " path");
 		
-		System.out.println(request.getRequestURI());
+		System.out.println(request.getRequestURI() + " URI");
 		
 		
 		//전체 URL 중 루트경로(contextPath)제외한 부분을 target에 저장
@@ -59,10 +59,18 @@ public class MemberFrontController extends HttpServlet {
 	    switch(target) {
 	    case "/member/join.me":
 	    	System.out.println("join");
+	    	request.getRequestDispatcher("/app/member/mem-join.jsp").forward(request, response);
 	    	break;
-	    case "/member/joinOk.me":
+	    case "/app/member/joinOk.me":
 	    	System.out.println("joinOk");
-	    	new JoinOkController().execute(request, response);
+//	    	new JoinOkController().MemExecute(request, response);
+	    	response.sendRedirect(request.getContextPath() + "/main.jsp");
+	    	break;
+	    case "/member/login.me":
+	    	System.out.println("login");
+
+	    case "/member/loginOK.me":
+	    	System.out.println("loginOk.me");
 	    	break;
 	    }
 	}
