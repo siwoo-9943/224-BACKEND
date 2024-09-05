@@ -64,18 +64,11 @@
       <url-pattern>*.hp</url-pattern>
    </servlet-mapping>
 
-<<<<<<< HEAD
 	<servlet>
 		<servlet-name>Mypage</servlet-name>
 		<servlet-class>com.pj224.app.mypage.MypageFrontController</servlet-class>
 	</servlet>
-=======
-   <servlet>
-      <servlet-name>Mypage</servlet-name>
-      <servlet-class>com.pj224.app.mypage</servlet-class>
-   </servlet>
->>>>>>> main
-
+ 
    <servlet-mapping>
       <servlet-name>Mypage</servlet-name>
       <url-pattern>*.my</url-pattern>

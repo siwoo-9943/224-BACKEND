@@ -9,9 +9,9 @@ $(document).ready(function() {
       }
       
       $.ajax({
-         url : "/member/checkIdOk.me",
+         url : "/mypage/MypageOk.me",
          type : "get",
-         data: {"memberId" : memberId},
+         data: {"memberNumber" : memberNumber},
          success : function(result){
             $('#checkIdResult').text(result);
          },
