@@ -11,6 +11,14 @@
 	href="${pageContext.request.contextPath}/assets/css/community/comu-write.css" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css"
+	rel="stylesheet">
+
 </head>
 <body>
 	<main>
@@ -24,23 +32,27 @@
 							</div>
 							<div class="desc">2호선 이용에 대한 정보 공유 및 각종 이야기를 나누는 공간입니다.</div>
 						</div>
-						
-						
-						
-						
-					
-		<!-- 뒤로가기 모달창 -->
-		<div id="comu-backModal" class="comu-modal">
-			<div class="comu-modal-content">
-				<span class="comu-close" onclick="closeBackModal()">&times;</span>
-				<h2>정말로 뒤로가시겠습니까?</h2>
-				<p>뒤로가기 버튼을 클릭하면 작성한 내용은 저장되지 않습니다</p>
-				<button class="confirm-btn" onclick="confirmBack()">뒤로가기</button>
-				<button class="comu-cancel-btn" onclick="closeBackModal()">취소</button>
-			</div>
-		</div>
+
+
+
+
+
+						<!-- 뒤로가기 모달창 -->
+						<div id="comu-backModal" class="comu-modal">
+							<div class="comu-modal-content">
+								<span class="comu-close" onclick="closeBackModal()">&times;</span>
+								<h2>정말로 뒤로가시겠습니까?</h2>
+								<p>뒤로가기 버튼을 클릭하면 작성한 내용은 저장되지 않습니다</p>
+								<button class="confirm-btn" onclick="confirmBack()">뒤로가기</button>
+								<button class="comu-cancel-btn" onclick="closeBackModal()">취소</button>
+							</div>
+						</div>
 	</main>
 </body>
 <script
 	src="${pageContext.request.contextPath}/assets/js/modal/comu-modal.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </html>
