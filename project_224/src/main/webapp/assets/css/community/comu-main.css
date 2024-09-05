@@ -148,57 +148,56 @@ ul {
   justify-content: center;
 }
 
-#command-bg3 .info-bg, #revolution-main-table.pic-bg {
-  position: relative;
-}
-
-.info-bg2 .bottom-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.info-bg2 .bottom-list .prev {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.info-bg2 .bottom-list a {
-  color: #505050;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  width: 30px;
-  font-size: 12px;
-  height: 30px;
-  margin-top: 10px;
-  margin-right: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.info-bg2 .bottom-list a.on {
-  font-weight: bold;
-  color: #ff7864;
-  background: #fff6f4;
-}
-
-.info-bg2 .bottom-list .prev {
-  content: "";
-  background: url('../../images/prev.png') no-repeat center;
-  display: inline-block;
-  background-size: contain;
-  width: 6px;
-  height: 10px;
+ #command-bg3 .info-bg, #revolution-main-table.pic-bg {
+    position: relative;
+  }
   
-}
-
-.info-bg2 .bottom-list .next {
-  content: "";
-  background: url('../../images/next.png') no-repeat center;
-  display: inline-block;
-  background-size: contain;
-  width: 6px;
-  height: 10px;
-}
+  .info-bg2 .bottom-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .info-bg2 .bottom-list .prev {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .info-bg2 .bottom-list a {
+    color: #505050;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 30px;
+    font-size: 12px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .info-bg2 .bottom-list a.on {
+    font-weight: bold;
+    color: #ff7864;
+    background: #fff6f4;
+  }
+  
+  .info-bg2 .bottom-list .prev {
+    content: "";
+    background: url('../../images/prev.png') no-repeat center;
+    display: inline-block;
+    background-size: 6px 10px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .info-bg2 .bottom-list .next {
+    content: "";
+    background: url('../../images/next.png') no-repeat center;
+    display: inline-block;
+    background-size: 6px 10px;
+    width: 30px;
+    height: 30px;
+  }
