@@ -4,7 +4,6 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커뮤톡톡 - 글 작성</title>
 
@@ -12,21 +11,106 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/community/comu-write.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 3.6rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.comu-board-wrap {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comu-board-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.comu-board-write .comu-title {
+  margin-bottom: 20px;
+}
+
+.comu-board-write input[type='text'] {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.comu-board-write .cont {
+  margin-bottom: 20px;
+}
+
+.comu-board-write textarea {
+  width: 100%;
+  height: 200px;
+  padding: 15px;
+  font-size: 1.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.comu-button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.comu-action-button {
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2bcf81;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+</style>   
 <body>
-  <div class="notice-board-wrap">
-    <div class="notice-board-title">
-      <h1>공지사항 게시판</h1>
+<%@ include file="../../header.jsp"%>
+  <div class="comu-board-wrap">
+    <div class="comu-board-title">
+      <h1>커뮤니티 글작성</h1>
     </div>
     <form method="get">
-      <div class="notice-board-write-wrap">
-        <div class="notice-board-write">
-          <div class="notice-title">
-            <input id="notice-board-title" name="notbTitle" type="text" placeholder="제목을 입력해 주세요" />
+      <div class="comu-board-write-wrap">
+        <div class="comu-board-write">
+          <div class="comu-title">
+            <input id="comu-board-title" name="comuTitle" type="text" placeholder="제목을 입력해 주세요" />
           </div>
-          <div class="notice-cont">
+          <div class="comu-cont">
 		    <!-- <div id="summernote"></div> -->
 		    <form method="post">
 		        <textarea id="summernote" name="editordata"></textarea>
@@ -35,11 +119,11 @@
           </div>
         </div>
       </div>
-      <div class="notice-button-container">
-        <button class="notice-action-button" type="button" onclick="location.href='../notice/notice-admain.jsp'">
+      <div class="comu-button-container">
+        <button class="comu-action-button" type="button" onclick="location.href='../community/comu-main.jsp'">
           이전
         </button>
-        <button class="notice-action-button" type="button" onclick="location.href='../notice/notice-addetail.jsp'">
+        <button class="comu-action-button" type="button" onclick="location.href='../community/comu-detail.jsp'">
           등록
         </button>
       </div>
@@ -56,12 +140,11 @@
         </div>
     </div>
 </body>
-<%@ include file="../../footer.jsp"%>
-<!-- External JS -->
+
+
 <script src="${pageContext.request.contextPath}/assets/js/modal/comu-modal.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
 <%@ include file="../../footer.jsp"%>
 
 
