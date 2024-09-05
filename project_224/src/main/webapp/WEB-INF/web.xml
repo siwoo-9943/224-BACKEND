@@ -15,7 +15,7 @@
 
    <servlet>
       <servlet-name>Main</servlet-name>
-      <servlet-class>com.pj224.app.main</servlet-class>
+      <servlet-class>com.pj224.app.main.MainFrontController</servlet-class>
    </servlet>
 
    <servlet-mapping>
