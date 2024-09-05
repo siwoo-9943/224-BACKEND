@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/notice/notice-admodify.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/notice-modal.css" />
 </head>
-
+<%@ include file="../../header.jsp"%>
 <body>
   <div class="notice-modi-board-wrap">
     <div class="notice-modi-board-title">
@@ -48,7 +48,8 @@
     </form>
   </div>
 </body>
-<script src="${pageContext.request.contextPath}/assets/js/modal/notice-modal.js"></script>
+<%@ include file="../../footer.jsp"%>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
