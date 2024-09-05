@@ -65,9 +65,7 @@
 								</div>
 								<!-- 제목 -->
 								<div class="baseList-space">
-									<a href="community-detail.jsp?boardNumber=${community.boardNumber}">
 										${community.boardTitle}
-									</a>
 								</div>
 								<!-- 글쓴이 -->
 								<div class="baseList-space">
@@ -84,7 +82,6 @@
 							</li>
 						</c:forEach>
 					</ul>
-					
 					<div class="info-bg2">
 						<div class="bottom-list">
 							<a class="prev" onfocus="blur()"

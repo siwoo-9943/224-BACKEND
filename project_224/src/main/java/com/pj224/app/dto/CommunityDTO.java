@@ -17,6 +17,8 @@ public class CommunityDTO {
 	private String boardRegistDate;
 	private String boardUpdateDate;
 	private int memberNumber;
+	private int recommendCount;
+	private int commentCount;
 
 	public int getBoardNumber() {
 		return boardNumber;
@@ -74,11 +76,28 @@ public class CommunityDTO {
 		this.memberNumber = memberNumber;
 	}
 
+	public int getRecommendCount() {
+		return recommendCount;
+	}
+
+	public void setRecommendCount(int recommendCount) {
+		this.recommendCount = recommendCount;
+	}
+
+	public int getCommentCount() {
+		return commentCount;
+	}
+
+	public void setCommentCount(int commentCount) {
+		this.commentCount = commentCount;
+	}
+
 	@Override
 	public String toString() {
-		return "BoardDTO [boardNumber=" + boardNumber + ", boardCate=" + boardCate + ", boardTitle=" + boardTitle
+		return "CommunityDTO [boardNumber=" + boardNumber + ", boardCate=" + boardCate + ", boardTitle=" + boardTitle
 				+ ", boardContent=" + boardContent + ", boardRegistDate=" + boardRegistDate + ", boardUpdateDate="
-				+ boardUpdateDate + ", memberNumber=" + memberNumber + "]";
+				+ boardUpdateDate + ", memberNumber=" + memberNumber + ", recommendCount=" + recommendCount
+				+ ", commentCount=" + commentCount + "]";
 	}
 
 }

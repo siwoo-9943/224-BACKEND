@@ -27,6 +27,7 @@ public class CommunityListOkController implements Execute {
         request.setAttribute("communityList", communityList);
         		
 		
+        
 	}
 
    
