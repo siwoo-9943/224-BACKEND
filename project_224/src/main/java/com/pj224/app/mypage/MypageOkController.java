@@ -24,9 +24,6 @@ public class MypageOkController {
 		mypageDTO.setMemberEmail(request.getParameter("memberEmail"));
 		mypageDTO.setMemberPw(request.getParameter("memberPw"));
 		mypageDTO.setMemberName(request.getParameter("memberName"));
-	      // valueOf()는 문자열을 Integer로 바꿔준다
-	      // parseInt()와 차이는 문자열이 숫자가 아닐경우 numberFormatException을 발생시키지만
-	      // valueOf()는 null을 반환한다(즉, 예외발생안함)
 		mypageDTO.setMemberNickName(request.getParameter("memberNickName"));
 		mypageDTO.setMemberPhone(request.getParameter("memberPhone"));
 		mypageDTO.setMemberPhoneInput(request.getParameter("memberPhoneInput"));
