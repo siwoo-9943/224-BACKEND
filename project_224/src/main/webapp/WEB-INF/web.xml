@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>project_224</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-  </welcome-file-list>
-=======
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="https://jakarta.ee/xml/ns/jakartaee"
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
@@ -78,7 +66,7 @@
 
 	<servlet>
 		<servlet-name>Mypage</servlet-name>
-		<servlet-class>com.pj224.app.mypage</servlet-class>
+		<servlet-class>com.pj224.app.mypage.MypageFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -106,5 +94,4 @@
 		<url-pattern>*.sw</url-pattern>
 	</servlet-mapping>
 
->>>>>>> 7f95da33b817e5702d23a3b69c5d3e04ce20d3ed
 </web-app>
