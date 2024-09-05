@@ -14,6 +14,11 @@
 
 	<typeAliases>
 	
+	
+	
+	
+		<typeAlias type="com.pj224.app.dto.NoticeDTO" alias="NoticeDTO" />
+	
 	</typeAliases>
 
 	<environments default="oracle">
@@ -32,6 +37,7 @@
 
 	<mappers>
 	
+		<mapper resource="com/mybatis/mapper/NoticeMapper.xml" />
 	</mappers>
 
 </configuration>

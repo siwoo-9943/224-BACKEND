@@ -76,7 +76,7 @@
 
 	<servlet>
 		<servlet-name>Notice</servlet-name>
-		<servlet-class>com.pj224.app.notice</servlet-class>
+		<servlet-class>com.pj224.app.notice.NoticeFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
