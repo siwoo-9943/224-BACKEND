@@ -24,28 +24,33 @@
 					<!-- <a class="main-header-logo" href="../../html/main/main.html"> -->
 					<!-- 메인 로고 -->
 					<div id="header-img-0">
-						<a href="../../html/main/main.html"><img
-							src="${pageContext.request.contextPath}/assets/images/logo-224-1.png"
-							alt="로고">
+						<a href="${pageContext.request.contextPath}/main.mn">
+						<img src="${pageContext.request.contextPath}/assets/images/logo-224-1.png" alt="로고">
+						</a>
 					</div>
+
 					<div id="header-img-1">
-						<img
-							src="${pageContext.request.contextPath}/assets/images/logo-224-0.png"
-							alt="로고"></a>
-					</div> </a>
+						<a href="${pageContext.request.contextPath}/main.mn">
+						<img src="${pageContext.request.contextPath}/assets/images/logo-224-0.png" alt="로고">
+						</a>
+					</div>
 				</li>
 				<li>
 					<!-- 메인 검색창 -->
 
 					<div class="header-search">
 						<div id="header-search-frame">
+							<form action="/main-search.jsp" method="get">
 							<div>
+								<a href="${pageContext.request.contextPath}/main-search.mn">
 								<img
 									src="${pageContext.request.contextPath}/assets/images/main-search.png">
+								</a>
 							</div>
-							<div>
+							<label>
 								<input id="search" type="text" placeholder="검색하세요">
-							</div>
+							</label>
+							</form>
 						</div>
 					</div>
 				</li>
@@ -60,7 +65,9 @@
 					<li class="main-login-btn">
 						<!-- 마이페이지 -->
 						<div id="header-login-mypage-btn">
+							<a href="${pageContext.request.contextPath }/mypage/mypage.my">
 							<h5>마이페이지</h5>
+							</a>
 						</div>
 					</li>
 				</c:if>
@@ -69,7 +76,9 @@
 					<li class="main-login-btn">
 						<!-- 로그인 및 회원가입 버튼 -->
 						<div id="header-login-join-btn">
+							<a href="${pageContext.request.contextPath}/member/mem-login.mn">
 							<h5>로그인 및 회원가입</h5>
+							</a>
 						</div>
 					</li>
 				</c:if>
@@ -78,7 +87,9 @@
 					<li class="main-login-btn">
 						<!-- 로그인일때 로그아웃 버튼 -->
 						<div id="header-login-logout-btn">
+							<a href="${pageContext.request.contextPath}/member/main/logout.mn">
 							<h5>로그아웃</h5>
+							</a>
 						</div>
 					</li>
 				</c:if>
@@ -103,8 +114,11 @@
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="../../html/subway/subway-route.html">2호선 노선도</a></li>
-						<li><a href="../../html/subway/subway-schedule.html">2호선
+						<li><a
+							href="${pageContext.request.contextPath}/subway/subway-route.jsp">2호선
+								노선도</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/subway/subway-schedule.jsp">2호선
 								배차시간표</a></li>
 					</ul>
 				</div>
@@ -116,20 +130,20 @@
 						src="${pageContext.request.contextPath}/assets/images/hotplace-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="../../html/hotplace/hotplace.html">핫플콕콕</a>
+					<a href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-hot">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="../../html/hotplace/hotplace.html">핫플콕콕</a></li>
-						<li><a href="../../html/hotplace/hotplace-gangnam.html">강남역</a></li>
-						<li><a href="../hotplace/hotplace-jamsil.html">잠실역</a></li>
-						<li><a href="../hotplace/hotplace-seongsu.html">성수역</a></li>
-						<li><a href="../hotplace/hotplace-moonrae.html">문래역</a></li>
-						<li><a href="../hotplace/hotplace-hongdae.html">홍대입구역</a></li>
-						<li><a href="../hotplace/hotplace-euljiro.html">을지로입구역</a></li>
+						<li><a href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a></li>
+						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp">강남역</a></li>
+						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">잠실역</a></li>
+						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp">성수역</a></li>
+						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp">문래역</a></li>
+						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp">홍대입구역</a></li>
+						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp">을지로입구역</a></li>
 					</ul>
 				</div>
 			</div>
@@ -163,11 +177,11 @@
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-comu">
-						<li>	
-							<div class="dropdown-line"></div>
-						</li>	
 						<li>
-						<a href="${pageContext.request.contextPath}/community/comu-main.cm">커뮤톡톡</a>
+							<div class="dropdown-line"></div>
+						</li>
+						<li><a
+							href="${pageContext.request.contextPath}/community/comu-main.cm">커뮤톡톡</a>
 						</li>
 					</ul>
 				</div>
