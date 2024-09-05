@@ -14,7 +14,7 @@ import com.pj224.app.dto.MemberDTO;
 public class JoinOkController implements Execute {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
+	public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
 		
 		//인코딩 설정확인
 		request.setCharacterEncoding("UTF-8");
@@ -60,6 +60,7 @@ public class JoinOkController implements Execute {
 		//결과처리
 		result.setRedirect(true);
 		result.setPath(request.getContextPath() + "/member/lgoin.jsp"); //회원가입 성공 후 이동할 페이지 설정
+		return result;
 		
 	}
 
