@@ -1,5 +1,6 @@
 @charset "UTF-8";
-.loction {
+
+.location {
     width: 100%;
     max-width: 1200px;
     margin: 20px auto 0 auto;
@@ -11,11 +12,11 @@
     background-size: 21px auto;
 }
 
-.loction span.ar {
+.location span.ar {
     padding: 0 15px 0 20px;
 }
 
-.loction span {
+.location span {
     font-weight: 700;
     font-size: 18px;
     color: #555;
@@ -122,17 +123,16 @@ a {
     content: "";
     background: url('../../images/prev.png') no-repeat center;
     display: inline-block;
-    background-size: contain;
-    width: 6px;
-    height: 10px;
-    
+    background-size: 6px 10px;
+    width: 30px;
+    height: 30px;
   }
   
   .info-bg2 .bottom-list .next {
     content: "";
     background: url('../../images/next.png') no-repeat center;
     display: inline-block;
-    background-size: contain;
-    width: 6px;
-    height: 10px;
+    background-size: 6px 10px;
+    width: 30px;
+    height: 30px;
   }
