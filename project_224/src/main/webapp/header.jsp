@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +8,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>224</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/header.css" />
-<script defer src="../../js/main/header.js"></script>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/header.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script defer src="${pageContext.request.contextPath}/js/main/header.js"></script>
 </head>
 
 <body>
@@ -23,10 +25,13 @@
 					<!-- 메인 로고 -->
 					<div id="header-img-0">
 						<a href="../../html/main/main.html"><img
-							src="../../images/logo-224-1.png" alt="로고">
+							src="${pageContext.request.contextPath}/assets/images/logo-224-1.png"
+							alt="로고">
 					</div>
 					<div id="header-img-1">
-						<img src="../../images/logo-224-0.png" alt="로고"></a>
+						<img
+							src="${pageContext.request.contextPath}/assets/images/logo-224-0.png"
+							alt="로고"></a>
 					</div> </a>
 				</li>
 				<li>
@@ -35,7 +40,8 @@
 					<div class="header-search">
 						<div id="header-search-frame">
 							<div>
-								<img src="../../images/main-search.png">
+								<img
+									src="${pageContext.request.contextPath}/assets/images/main-search.png">
 							</div>
 							<div>
 								<input id="search" type="text" placeholder="검색하세요">
@@ -45,21 +51,38 @@
 				</li>
 				<li>
 					<div id="header-weather">
-						<a href="#"><img src="../../images/weather.jpg"></a>
+						<a href="#"><img
+							src="${pageContext.request.contextPath}/assets/images/weather.jpg"></a>
 					</div>
 				</li>
-				<li class="main-login-btn">
-					<!-- 마이페이지 -->
-					<div id="header-login-mypage-btn">
-						<h5>마이페이지</h5>
-					</div> </a>
-				</li>
-				<li class="main-login-btn">
-					<!-- 로그인 및 회원가입 버튼 -->
-					<div id="header-login-join-btn">
-						<h5>로그인 및 회원가입</h5>
-					</div> </a>
-				</li>
+
+				<c:if test="${ not empty sessionScope.member}">
+					<li class="main-login-btn">
+						<!-- 마이페이지 -->
+						<div id="header-login-mypage-btn">
+							<h5>마이페이지</h5>
+						</div>
+					</li>
+				</c:if>
+
+				<c:if test="${empty sessionScope.member }">
+					<li class="main-login-btn">
+						<!-- 로그인 및 회원가입 버튼 -->
+						<div id="header-login-join-btn">
+							<h5>로그인 및 회원가입</h5>
+						</div>
+					</li>
+				</c:if>
+
+				<c:if test="${ not empty sessionScope.member}">
+					<li class="main-login-btn">
+						<!-- 로그인일때 로그아웃 버튼 -->
+						<div id="header-login-logout-btn">
+							<h5>로그아웃</h5>
+						</div>
+					</li>
+				</c:if>
+
 			</ul>
 		</div>
 	</section>
@@ -69,7 +92,8 @@
 			<div class="dropdown">
 				<!-- 2호선폭폭 -->
 				<div class="dropdown-menu">
-					<img src="../../images/line-icon.png">
+					<img
+						src="${pageContext.request.contextPath}/assets/images/line-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
 					<a href="../../html/subway/subway-route.html">2호선폭폭</a>
@@ -88,7 +112,8 @@
 			<!-- 핫플콕콕 -->
 			<div class="dropdown">
 				<div class="dropdown-menu">
-					<img src="../../images/hotplace-icon.png">
+					<img
+						src="${pageContext.request.contextPath}/assets/images/hotplace-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
 					<a href="../../html/hotplace/hotplace.html">핫플콕콕</a>
@@ -111,7 +136,8 @@
 			<!-- 편의공공 -->
 			<div class="dropdown">
 				<div class="dropdown-menu">
-					<img src="../../images/convenience-icon.png">
+					<img
+						src="${pageContext.request.contextPath}/assets/images/convenience-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
 					<a href="../../html/convenience/conv-main.html">편의공공</a>
@@ -129,7 +155,8 @@
 			<!-- 커뮤톡톡 -->
 			<div class="dropdown">
 				<div class="dropdown-menu">
-					<img src="../../images/community-icon.png">
+					<img
+						src="${pageContext.request.contextPath}/assets/images/community-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
 					<a href="../../html/community/comu-main-guest.html">커뮤톡톡</a>
@@ -146,7 +173,8 @@
 			<!-- 공지쏙쏙 -->
 			<div class="dropdown">
 				<div class="dropdown-menu">
-					<img src="../../images/notice-icon.png">
+					<img
+						src="${pageContext.request.contextPath}/assets/images/notice-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
 					<a href="../../html/notice/notice-admain.html">공지쏙쏙</a>
