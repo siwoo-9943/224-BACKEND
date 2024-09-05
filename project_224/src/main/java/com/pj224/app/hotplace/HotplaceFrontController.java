@@ -92,6 +92,7 @@ public class HotplaceFrontController extends HttpServlet {
             request.getRequestDispatcher("/app/hotplace/hotplace-seongsu.jsp").forward(request, response);
             break;
 
+
 		}
 
 	}
