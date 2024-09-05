@@ -22,15 +22,12 @@ public class CommunityListOkController implements Execute {
 		
         CommunityDAO communityDAO = new CommunityDAO();
         
-        
         List<CommunityDTO> communityList = communityDAO.selectAll();
         
         request.setAttribute("communityList", communityList);
-        ;
+        		
+		
         
-     
-		
-		
 	}
 
    
