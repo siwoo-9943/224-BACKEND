@@ -7,10 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pj224.app.Result;
+
 /**
  * Servlet implementation class MemberFrontController
  */
-@WebServlet("/MemberFrontController")
 public class MemberFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +28,7 @@ public class MemberFrontController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doProcess(request, response);
 	}
 
 	/**
@@ -35,7 +36,29 @@ public class MemberFrontController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		doProcess(request, response);
+	}
+	
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//루트경로 출력
+		System.out.println(request.getContextPath());
+		
+		//전체 URL 중 루트경로(contextPath)제외한 부분을 target에 저장
+	    String target = request.getRequestURI().substring(request.getContextPath().length());
+	    System.out.println(target);
+	    
+	    Result result = null;
+	    
+	    switch(target) {
+	    case "/member/join.me":
+	    	System.out.println("join");
+	    	break;
+	    case "/member/joinOk.me":
+	    	System.out.println("joinOk");
+	    	new JoinOkController().execute(request, response);
+	    	break;
+	    }
 	}
 
 }

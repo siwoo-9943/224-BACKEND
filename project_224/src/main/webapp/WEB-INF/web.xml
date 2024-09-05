@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
   <display-name>project_224</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -9,102 +8,70 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
+    <welcome-file>main.jsp</welcome-file>
   </welcome-file-list>
-=======
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="https://jakarta.ee/xml/ns/jakartaee"
-	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
-	id="WebApp_ID" version="5.0">
-	<display-name>project_224</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>main.jsp</welcome-file>
-	</welcome-file-list>
-
-	<servlet>
-		<servlet-name>Main</servlet-name>
-		<servlet-class>com.pj224.app.main</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Main</servlet-name>
-		<url-pattern>*.mn</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Member</servlet-name>
-		<servlet-class>com.pj224.app.member</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Member</servlet-name>
-		<url-pattern>*.me</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Community</servlet-name>
-		<servlet-class>com.pj224.app.community</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Community</servlet-name>
-		<url-pattern>*.cm</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Convenience</servlet-name>
-		<servlet-class>com.pj224.app.convenience</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Convenience</servlet-name>
-		<url-pattern>*.cv</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Hotplace</servlet-name>
-		<servlet-class>com.pj224.app.hotplace</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Hotplace</servlet-name>
-		<url-pattern>*.hp</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Mypage</servlet-name>
-		<servlet-class>com.pj224.app.mypage</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Mypage</servlet-name>
-		<url-pattern>*.my</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Notice</servlet-name>
-		<servlet-class>com.pj224.app.notice</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Notice</servlet-name>
-		<url-pattern>*.no</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Subway</servlet-name>
-		<servlet-class>com.pj224.app.subway</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Subway</servlet-name>
-		<url-pattern>*.sw</url-pattern>
-	</servlet-mapping>
-
->>>>>>> main
+  <servlet>
+    <servlet-name>Main</servlet-name>
+    <servlet-class>com.pj224.app.main</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Main</servlet-name>
+    <url-pattern>*.mn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Member</servlet-name>
+    <servlet-class>com.pj224.app.member.MemberFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Member</servlet-name>
+    <url-pattern>*.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Community</servlet-name>
+    <servlet-class>com.pj224.app.community</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Community</servlet-name>
+    <url-pattern>*.cm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Convenience</servlet-name>
+    <servlet-class>com.pj224.app.convenience</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Convenience</servlet-name>
+    <url-pattern>*.cv</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Hotplace</servlet-name>
+    <servlet-class>com.pj224.app.hotplace</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hotplace</servlet-name>
+    <url-pattern>*.hp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Mypage</servlet-name>
+    <servlet-class>com.pj224.app.mypage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mypage</servlet-name>
+    <url-pattern>*.my</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Notice</servlet-name>
+    <servlet-class>com.pj224.app.notice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Notice</servlet-name>
+    <url-pattern>*.no</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Subway</servlet-name>
+    <servlet-class>com.pj224.app.subway</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Subway</servlet-name>
+    <url-pattern>*.sw</url-pattern>
+  </servlet-mapping>
 </web-app>
