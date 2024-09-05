@@ -23,7 +23,7 @@
       </div>
     </section>
     <section>
-      <form action="" method="">
+      <form action="${pageContext.request.contextPath}/member/joinOk.me" method="post">
         <!-- 이메일 -->
         <div class="join-info-box">
           <div class="join-info">

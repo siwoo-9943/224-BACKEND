@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validateInput(passwordInput, passwordBorder, passwordErrorMessage, '비밀번호를 입력해주세요');
   });
 
-  document.querySelector('form').addEventListener('submit', function (event) {
+  document.querySelector('.loginCheck').addEventListener('submit', function (event) {
     let valid = true;
 
     if (usernameInput.value.trim() === '') {
