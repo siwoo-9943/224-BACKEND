@@ -41,6 +41,9 @@ public class MemberFrontController extends HttpServlet {
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//서블릿 실행
+		System.out.println("서블릿실행");
+		
 		//루트경로 출력
 		System.out.println(request.getContextPath());
 		
