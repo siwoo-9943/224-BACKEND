@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/notice/notice-admain.css">
 </head>
 
-
+<%@ include file="../../header.jsp"%>
 <body>
   <!-- 페이지의 메인 부분 -->
   <div class="wrapper">
@@ -155,6 +155,6 @@
     </div>
 
 </body>
-
+<%@ include file="../../footer.jsp"%>
 
 </html>
