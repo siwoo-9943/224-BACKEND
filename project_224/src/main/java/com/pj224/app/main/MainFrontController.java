@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pj224.app.Result;
+
 /**
  * Servlet implementation class MainFrontController
  */
@@ -54,9 +56,35 @@ public class MainFrontController extends HttpServlet {
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		System.out.println(target);
 
-//		Result result = null; // Result 클래스 객체
+		Result result = null; // Result 클래스 객체
 		
+		switch (target) {
+		case "/main.mn":
+			System.out.println("main페이지이동");
+			request.getRequestDispatcher("main.jsp").forward(request, response);
+			break;
+		case "/main-search.mn":
+			System.out.println("검색페이지이동");
+			request.getRequestDispatcher("main-search.jsp").forward(request, response);
+			break;
+//		case "/member/mem-login.me":
+		case "/member/mem-login.mn":
+			System.out.println("로그인");
+//			request.getRequestDispatcher("/app/member/mem-login.jsp").forward(request, response);
+			result = new MainLoginController().MemExecute(request, response);
+//			request.getRequestDispatcher("/app/member/mem-login.jsp").forward(request, response);
+			break;
+		case "/member/main/logout.mn":
+			System.out.println("로그아웃");
+			result = new MainLogoutController().MemExecute(request, response);
+//			request.getRequestDispatcher("main.jsp").forward(request, response);
+			break;
 
+		default:
+			break;
+		}
+
+		
 		
 		
 		
