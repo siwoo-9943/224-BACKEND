@@ -14,6 +14,11 @@
 
 	<typeAliases>
 	
+	
+	<typeAlias type="com.pj224.app.dto.HotplaceDTO" alias="HotplaceDTO"/>
+	
+	
+	
 	</typeAliases>
 
 	<environments default="oracle">
@@ -32,6 +37,8 @@
 
 	<mappers>
 	
+	
+		<mapper resource="com/mybatis/mapper/HotplaceMapper.xml"/>
 	</mappers>
 
 </configuration>

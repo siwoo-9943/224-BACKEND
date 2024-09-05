@@ -12,7 +12,7 @@ h4 {
     padding: 25px 0px 25px 0px;
 }
 
-.loction {
+.location {
     width: 100%;
     max-width: 1200px;
     margin: 20px auto 0 auto;
@@ -24,11 +24,11 @@ h4 {
     background-size: 21px auto;
 }
 
-.loction span.ar {
+.location span.ar {
     padding: 0 15px 0 20px;
 }
 
-.loction span {
+.location span {
     font-weight: 700;
     font-size: 18px;
     color: #555;
