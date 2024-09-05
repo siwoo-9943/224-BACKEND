@@ -33,9 +33,7 @@
             <li><a href="../../html/member/mem-id-find.html">아이디 찾기</a></li>
             <li><a href="../../html/member/mem-pw-find.html">비밀번호 찾기</a></li>
           </ul>
-          <form action="${pageContext.request.contextPath}/member/join.me" method="get">
-          <button class="login-join">회원가입</button>
-          </form>
+          <a href="http://localhost:9999/member/join.me"><button type="button" class="login-join">회원가입</button></a>
         </div>
       </form>
     </div>

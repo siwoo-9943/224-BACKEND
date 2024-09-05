@@ -10,8 +10,8 @@ $(document).ready(function() {
 
   // 확인버튼 클릭시 메인페이지로 이동(회원탈퇴완료)
   window.goToPage = function() {
-    // console.log("goToPage 함수 호출됨"); 진짜 멋있게 처리한 부분
-    window.location.href = "../main/main.html";
+    console.log("goToPage 함수 호출됨");
+    window.location.href = "joinOk.me";
   };
 
   // 회원 탈퇴 모달 닫기(페이지 이동 없음)

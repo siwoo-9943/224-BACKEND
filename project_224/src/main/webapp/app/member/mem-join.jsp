@@ -66,6 +66,11 @@
             <input type="text" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
             <button type="button" class="e-mailok"> 인증번호 받기</button>
           </div>
+          <!-- 휴대폰 인증 -->
+          <div class="join-info">
+            <div class="join-info-cate">인증번호＊</div>
+            <input type="text" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
+          </div>
           <!-- 성별 -->
           <div class="join-info">
             <div class="join-info-cate">성별＊</div>
@@ -488,7 +493,7 @@
           </div>
           <!-- 회원가입 버튼 -->
           <div class="mem-term-btn-next-box">
-            <button type="button" id="mem-btn-next" class="mem-term-btn-next">회원가입</button>
+            <button type="submit" id="mem-btn-next" class="mem-term-btn-next">회원가입</button>
           </div>
           <!-- 회원가입 완료 모달 -->
           <div id="mem-Modal" class="mem-modal">
@@ -508,5 +513,6 @@
     </section>
   </main>
 <script src="${pageContext.request.contextPath}/assets/js/member/mem-join.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/modal/mem-modals.js"></script>
 </body>
 </html>
