@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/notice/notice-addetail.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/notice-modal.css" />
 </head>
-
+<%@ include file="../../header.jsp"%>
 <body>
   <!-- 페이지의 메인 부분 -->
   <div class="notice-addetail-all">
@@ -66,7 +66,7 @@
     </div>
   </div>
 </body>
-
+<%@ include file="../../footer.jsp"%>
 <script src="../../assets/js/modal/notice-modal.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
