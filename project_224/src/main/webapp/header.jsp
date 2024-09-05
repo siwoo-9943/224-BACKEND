@@ -159,14 +159,16 @@
 						src="${pageContext.request.contextPath}/assets/images/community-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="../../html/community/comu-main-guest.html">커뮤톡톡</a>
+					<a href="${pageContext.request.contextPath}/community/comu-main.cm">커뮤톡톡</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-comu">
-						<li>
+						<li>	
 							<div class="dropdown-line"></div>
+						</li>	
+						<li>
+						<a href="${pageContext.request.contextPath}/community/comu-main.cm">커뮤톡톡</a>
 						</li>
-						<li><a href="../../html/community/comu-main-guest.html">커뮤톡톡</a></li>
 					</ul>
 				</div>
 			</div>
