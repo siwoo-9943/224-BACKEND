@@ -56,43 +56,7 @@ public class MainFrontController extends HttpServlet {
 
 //		Result result = null; // Result 클래스 객체
 		
-		switch (target) {
-<<<<<<< HEAD
-		case "" :
-=======
-		case "/member/" :
-			
-			break;
-		case "/member//" :
-			
-			break;
-		case "/member//m/" :
-			
-			break;
-		case "/member///" :
-			
-			break;
-		case "/member////" :
-			
-			break;
-		case "/member//m//" :
-			
-			break;
-		case "/member/////" :
-			
->>>>>>> main
-			break;
-			
-		
 
-		default:
-			break;
-<<<<<<< HEAD
-=======
-			
-			
->>>>>>> main
-		}
 		
 		
 		
