@@ -44,6 +44,9 @@ public class MemberFrontController extends HttpServlet {
 		//루트경로 출력
 		System.out.println(request.getContextPath());
 		
+		System.out.println(request.getRequestURI());
+		
+		
 		//전체 URL 중 루트경로(contextPath)제외한 부분을 target에 저장
 	    String target = request.getRequestURI().substring(request.getContextPath().length());
 	    System.out.println(target);
