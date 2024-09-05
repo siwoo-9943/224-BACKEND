@@ -16,10 +16,9 @@ public class CommunityDAO {
 	}
 
 	public List<CommunityDTO> selectAll() {
-		
 	    return sqlSession.selectList("community.selectAll");
-	    
 	}
+	
 	
 	
 
