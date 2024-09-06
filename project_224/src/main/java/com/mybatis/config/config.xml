@@ -20,6 +20,7 @@
 		<typeAlias type="com.pj224.app.dto.SubwayDTO" alias="SubwayDTO" />
 		<typeAlias type="com.pj224.app.dto.NoticeDTO" alias="NoticeDTO" />
 		<typeAlias type="com.pj224.app.dto.CommunityDTO" alias="CommunityDTO"/>
+		<typeAlias type="com.pj224.app.dto.LikeDTO" alias="LikeDTO"/>
 	</typeAliases>
 
 	<environments default="oracle">
@@ -37,7 +38,6 @@
 	</environments>
 
 	<mappers>
-		<mapper resource="com/mybatis/mapper/ConvenienceMapper.xml" />
 		<mapper resource="com/mybatis/mapper/HotplaceMapper.xml" />
 		<mapper resource="com/mybatis/mapper/MemberMapper.xml" />
 		<mapper resource="com/mybatis/mapper/MypageMapper.xml" />
