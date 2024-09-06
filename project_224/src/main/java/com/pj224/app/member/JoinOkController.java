@@ -45,6 +45,8 @@ public class JoinOkController implements MemExecute {
 		}
 		
 		System.out.println(birthParam);
+		System.out.println("ㅇㅇ");
+		
 		
 		
 
