@@ -6,49 +6,51 @@
 <head>
 <meta charset="UTF-8">
 <title>커뮤톡톡 - 게시판</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/community/comu-main.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/community/comu-main.css" />
 </head>
 <style>
 #communityList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 #communityList li {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+	background-color: #ffffff;
 }
 
 .baseList-item:nth-child(odd) {
-    background-color: #f9f9f9;
+	background-color: #f9f9f9;
 }
 
 .baseList-space {
-    flex: 1;
-    text-align: center;
-    padding: 0px;
-    margin: 0;
-    margin-right: 100px;
-    margin-bottom: 10px;
+	flex: 1;
+	text-align: center;
+	padding: 0px;
+	margin: 0;
+	margin-right: 100px;
+	margin-bottom: 10px;
 }
-.baseList-sector-title{
-    margin-left: 20px;
-    font-weight: bold;
+
+.baseList-sector-title {
+	margin-left: 20px;
+	font-weight: bold;
 }
-.baseList-sector-content{
-	 font-weight: bold;
+
+.baseList-sector-content {
+	font-weight: bold;
 }
 
 .baseList-sector {
-    font-weight: bold;
-    display: block;
-    margin: 5px 0;
+	font-weight: bold;
+	display: block;
+	margin: 5px 0;
 }
-
 </style>
 <body>
 	<jsp:include page="/header.jsp" />
@@ -63,9 +65,9 @@
 						</div>
 						<div class="desc">2호선 이용에 대한 정보 공유 및 각종 이야기를 나누는 공간입니다.</div>
 					</div>
-					
-					
-					
+
+
+
 					<div class="navcontainer">
 						<ul id="navlist">
 							<li><a id="current" href="" onfocus="blur()">전체</a></li>
@@ -111,7 +113,10 @@
 								<div class="baseList-space baseList-title">${community.boardTitle}</div>
 								<!-- 내용 -->
 								<div class="baseList-space">
-									<span class="baseList-sector-content">${community.boardContent}</span>
+									<a href="${pageContext.request.contextPath}/community/comu-detail.cm"> 
+									<span
+										class="baseList-sector-content">${community.boardContent}</span>
+									</a>
 								</div> <!-- 글쓴이 -->
 								<div class="baseList-space">
 									<span class="baseList-sector">${community.memberNumber}</span>
@@ -125,7 +130,7 @@
 							</li>
 						</c:forEach>
 					</ul>
-		
+
 					<div class="bottom-search">
 						<form method="get" name="search" action="/zboard/zboard.php">
 							<select name="search-type" id="search-type">

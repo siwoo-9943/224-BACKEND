@@ -19,7 +19,9 @@ public class CommunityDAO {
 	    return sqlSession.selectList("community.selectAll");
 	}
 	
-	
+	public void insert(CommunityDTO communityDTO) {
+		sqlSession.insert("community.insert", communityDTO);
+	}
 	
 
 }

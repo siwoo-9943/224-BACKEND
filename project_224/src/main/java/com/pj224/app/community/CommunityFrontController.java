@@ -60,7 +60,12 @@ public class CommunityFrontController extends HttpServlet {
 			break;
 		case "/community/comu-write.cm":
 			System.out.println("글작성들어옴?");
+			new CommunityWriteOkController().execute(request, response);
 			request.getRequestDispatcher("/app/community/comu-write.jsp").forward(request, response);
+			break;
+		case "/community/comu-detail.cm":
+			System.out.println("디테일 들어왔니?");
+			request.getRequestDispatcher("/app/community/comu-detail.jsp").forward(request, response);
 			break;
 		}
 	}
