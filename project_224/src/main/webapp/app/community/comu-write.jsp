@@ -141,7 +141,7 @@ a {
 		<div class="comu-board-title">
 			<h1>커뮤니티 글작성</h1>
 		</div>
-		<form id="communityForm">
+		<form id="communityForm" action="${pageContext.request.contextPath}/community/comu-writeOk.cm" method="post">
 			<div class="comu-board-write-wrap">
 				<div class="comu-board-write">
 					<div class="comu-title">
