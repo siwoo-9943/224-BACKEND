@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pj224.app.Result;
+import com.pj224.app.dto.MainDTO;
 
 /**
  * Servlet implementation class MainFrontController
@@ -65,8 +66,10 @@ public class MainFrontController extends HttpServlet {
 			break;
 		case "/main-search.mn":
 			System.out.println("검색페이지이동");
-			request.getRequestDispatcher("main-search.jsp").forward(request, response);
 			result = new MainSearchController().MemExecute(request, response);
+			System.out.println("검색어");
+		    request.getRequestDispatcher("main-search.jsp").forward(request, response);
+		    System.out.println("페이지이동");
 			break;
 		case "/member/mem-login.me":
 			System.out.println("로그인");

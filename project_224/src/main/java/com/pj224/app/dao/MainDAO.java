@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
-import com.pj224.app.dto.CommunityDTO;
+import com.pj224.app.dto.MainDTO;
 import com.pj224.app.dto.MemberDTO;
 
 public class MainDAO {
@@ -28,10 +28,16 @@ public class MainDAO {
 	}
 
 	// 검색-커뮤니티
-	public List<String> SearchInputResult(String search) {
-		String inputSearch = search;
-		System.out.println(inputSearch);
-		return sqlSession.selectList("mainsearch.selectcm");
+//	public List<String> SearchInputResult(String search) {
+//		String inputSearch = search;
+//		System.out.println(inputSearch);
+//		return sqlSession.selectList("mainsearch.selectcm");
+//	}
+	
+	public List<MainDTO> searchInput(String inputsearch) {
+	    MainDTO mainDTO = new MainDTO();
+	    mainDTO.setSearchInput(inputsearch);
+	    return sqlSession.selectList("main.selectcm", mainDTO);
 	}
 
 

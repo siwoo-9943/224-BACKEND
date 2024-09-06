@@ -4,7 +4,7 @@
 	<!-- 쿠키/세션 -->
 
 	<!-- 검색-커뮤니티 -->
-	<select id="selectcm" parameterType="string" resultType="">
+	<select id="selectcm" resultType="MainDTO">
 		SELECT
 		Tb.BOARD_TITLE ,
 		COUNT(DISTINCT TC.COMMENT_NUMBER) AS COMMENT_COUNT,
