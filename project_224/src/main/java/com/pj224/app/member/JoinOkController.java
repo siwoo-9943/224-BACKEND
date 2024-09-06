@@ -2,6 +2,8 @@ package com.pj224.app.member;
 
 import java.io.IOException;
 import java.rmi.ServerException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,8 +34,19 @@ public class JoinOkController implements MemExecute {
 		memberDTO.setMemberPhone(request.getParameter("memberPhone"));
 		memberDTO.setMemberPhoneInput(request.getParameter("memberPhoneInput"));
 		memberDTO.setMemberGender(request.getParameter("memberGender"));
-		memberDTO.setMemberBirth(request.getParameter("memberBirth"));
+//		memberDTO.setMemberBirth(request.getParameter("memberBirth"));
 		memberDTO.setMemberTerms(request.getParameter("memberTerms"));
+		
+		String birthParam = request.getParameter("memberBirth");
+		SimpleDateFormat form1 = new SimpleDateFormat("YYYY-MM-DD");
+		Date birthDate = form1.parse(birthParam);
+		if(birthParam != null && !birthParam.isEmpty()) {
+			memberDTO.setMemberBirth(birthDate);
+		}
+		
+		System.out.println(birthParam);
+		
+		
 
 		// 디버깅용 로그 출력
 		System.out.println("디버깅용 로그 MemberDTO : " + memberDTO);

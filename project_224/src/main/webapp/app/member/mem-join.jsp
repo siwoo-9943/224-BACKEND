@@ -86,7 +86,7 @@
           <!-- 생년월일 -->
           <div class="join-info">
             <div class="join-info-cate">생년월일</div>
-            <input type="text" name="memberBirth" id="join-birth" placeholder="&nbsp;&nbsp;   YY  /  MM  / DD">
+            <input type="date" name="memberBirth" id="join-birth" placeholder="&nbsp;&nbsp; YYYY-MM-DD 형식으로 입력하세요">
           </div>
           <br>
 
@@ -471,7 +471,7 @@
               </div>
               <div class="mem-term_div">
                 <label class="mem-term-checkbox-label">
-                  <input type="checkbox" id="mem-check-o1" name="memberTerms">
+                  <input type="checkbox" id="mem-check-o1" name="memberTerms" value="C">
                   <span class="mem-term-checkbox-icon"></span>
                   <span class="mem-term_head"><span class="optional">[선택]</span>이벤트・혜택 정보 수신</span>
                 </label>
@@ -500,7 +500,6 @@
       </form>
     </section>
   </main>
-
+<script src="${pageContext.request.contextPath}/assets/js/member/mem-join.js"></script>
 </body>
 </html>
-<script src="${pageContext.request.contextPath}/assets/js/member/mem-join.js"><//script>

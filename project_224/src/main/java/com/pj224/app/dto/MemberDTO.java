@@ -1,5 +1,7 @@
 package com.pj224.app.dto;
 
+import java.util.Date;
+
 public class MemberDTO {
 //			   MEMBER_NUMBER NUMBER PRIMARY KEY,
 //			   MEMBER_EMAIL VARCHAR2(1000) NOT NULL CONSTRAINT UK_EMAIL UNIQUE,
@@ -20,10 +22,9 @@ public class MemberDTO {
 	private String memberPhone;
 	private String memberPhoneInput;
 	private String memberGender;
-	private String memberBirth;
+	private Date memberBirth;
 	private String memberTerms;
 
-	
 	// getter setter
 	public int getMemberNumber() {
 		return memberNumber;
@@ -89,11 +90,11 @@ public class MemberDTO {
 		this.memberGender = memberGender;
 	}
 
-	public String getMemberBirth() {
+	public Date getMemberBirth() {
 		return memberBirth;
 	}
 
-	public void setMemberBirth(String memberBirth) {
+	public void setMemberBirth(Date memberBirth) {
 		this.memberBirth = memberBirth;
 	}
 
@@ -104,6 +105,8 @@ public class MemberDTO {
 	public void setMemberTerms(String memberTerms) {
 		this.memberTerms = memberTerms;
 	}
+	
+
 
 	// 오버라이드
 	@Override
@@ -114,5 +117,7 @@ public class MemberDTO {
 				+ memberGender + ", memberBirth = " + memberBirth + ", memberTerms = " + memberTerms + "]";
 
 	}
+
+	
 
 }

@@ -3,6 +3,6 @@
 <mapper namespace="member">
 	<insert id="join" parameterType="MemberDTO">
 		INSERT INTO TBL_MEMBER(MEMBER_NUMBER, MEMBER_EMAIL, MEMBER_PW, MEMBER_NAME, MEMBER_NICKNAME, MEMBER_PHONE, MEMBER_PHONE_INPUT, MEMBER_GENDER, MEMBER_BIRTH, MEMBER_TERMS)
-		VALUES(seq_member.nextVal, #{memberEmail}, #{memberPw}, #{memberName}, #{memberNickname}, #{memberPhone}, #{memberPhoneInput}, #{memberGender}, #{memberBirth}, #{memberTerms})
+		VALUES(seq_member.nextVal, #{memberEmail}, #{memberPw}, #{memberName}, #{memberNickname}, #{memberPhone}, #{memberPhoneInput}, #{memberGender}, TO_DATE(#{memberBirth},  'YYYY-MM-DD'), #{memberTerms})
 	</insert>
 </mapper>
