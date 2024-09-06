@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+   
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +38,7 @@
         <ul class="notice-admain-ul-all">
          <c:forEach var="notice" items="${noticeshowlist}">
 			<li>
-            	<a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
+            	<a href="${pageContext.request.contextPath}/notice/notice-addetail.no">
               		<div class="notice-admain-ul-main">
 	                	<div class="notice-admain-ul-cate">${notice.noticeCate}</div>
 	                	<div class="notice-admain-ul-title">${notice.noticeTitle}</div>

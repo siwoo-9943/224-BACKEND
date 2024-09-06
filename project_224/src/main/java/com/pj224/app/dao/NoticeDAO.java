@@ -15,20 +15,16 @@ public class NoticeDAO {
 
     public List<NoticeDTO> showList() {
         List<NoticeDTO> list = null;
-        try {
+        try (SqlSession sqlSession = MyBatisConfig.getSqlSessionFactory().openSession()) {
             list = sqlSession.selectList("notice.showList");
-        } finally {
-            sqlSession.close();
         }
         return list;
     }
-    
-    public List<NoticeDTO> showDetail() {
-        List<NoticeDTO> detail = null;
-        try {
-        	detail = sqlSession.selectList("notice.showDetail");
-        } finally {
-            sqlSession.close();
+
+    public NoticeDTO showDetail() {
+        NoticeDTO detail = null;
+        try (SqlSession sqlSession = MyBatisConfig.getSqlSessionFactory().openSession()) {
+            detail = sqlSession.selectOne("notice.showDetail");
         }
         return detail;
     }
