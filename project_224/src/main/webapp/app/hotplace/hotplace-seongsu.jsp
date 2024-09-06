@@ -37,7 +37,7 @@
                         <div class="hotplace-content-name" style="margin-bottom: 10px;">
                             <h1 style="display: inline; margin: 0;">
                                 ${hotplace.hotplaceTitle}</h1>
-                            <img src="${pageContext.request.contextPath}/assets/images/picked.png" style="width: 30px;">
+                            <img src="${pageContext.request.contextPath}/assets/images/pick.png" style="width: 30px;">
                         </div>
                         <div class="img-wrapper">
                             <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 100%; overflow: hidden; border: 1px solid black;">
