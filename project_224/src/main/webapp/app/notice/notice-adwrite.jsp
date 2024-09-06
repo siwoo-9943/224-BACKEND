@@ -31,7 +31,7 @@
 		    <!-- <div id="summernote"></div> -->
 		    <form method="post">
 		        <textarea id="summernote" name="editordata"></textarea>
-		        <p id="letter-length" style="display: inline;"></p>/100
+		        <p id="letter-length" style="display: inline;"></p>/1000
 		    </form>
           </div>
         </div>
