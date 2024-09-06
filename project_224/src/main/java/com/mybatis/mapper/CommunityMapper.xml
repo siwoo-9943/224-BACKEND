@@ -26,5 +26,15 @@
 	</select>
 
 	
+	<insert id="insert" parameterType="CommunityDTO">
+		insert into tbl_board
+		(board_number, board_cate, board_title, board_content, board_regist_date, 
+		board_update_date, member_number)
+		VALUES (seq_board.nextVal, #{boardCate}, #{boardTitle}, #{boardContent}, 
+		#{boardRegistDate}, #{boardUpdateDate}, #{memberNumber})
+		
+	</insert>
 
+
+	
 </mapper>
