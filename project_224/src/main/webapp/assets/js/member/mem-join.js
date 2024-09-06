@@ -101,9 +101,8 @@ $(document).ready(function() {
       e.preventDefault(); // 폼 제출 막기
       alert("필수 항목을 확인하고 체크해주세요.");
     } else {
-      e.preventDefault(); // 폼 제출 막기
-      openModal(); // 모달 열기
-      // window.location.href = "../../html/mem-join.html"; // 페이지 이동 (원하는 동작에 맞게 조정)
+     // openModal(); // 모달 열기
+      window.location.href = "${pageContext.request.contextPath}/member/joinOk.me"; // 페이지 이동 (원하는 동작에 맞게 조정)
     }
   });
 });

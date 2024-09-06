@@ -29,13 +29,14 @@ public class MypageOkController {
 		mypageDTO.setMemberPhoneInput(request.getParameter("memberPhoneInput"));
 		mypageDTO.setMemberGender(request.getParameter("memberGender"));
 		mypageDTO.setMemberBirth(request.getParameter("memberBirth"));
-		mypageDTO.setMemberTerms(request.getParameter("memberTerms"));
+//		mypageDTO.setMemberTerms(request.getParameter("memberTerms"));
 		
 		
 		mypageDAO.profile(mypageDTO);
 		
-		//회원가입 성공 후 로그인 페이지로 리다이렉트
-//		response.sendRedirect(request.getContextPath()+"/member/login.me");
+
+		response.sendRedirect(request.getContextPath()+"/mypage/my-passcheck.my");
+		
 		
 		
 	}

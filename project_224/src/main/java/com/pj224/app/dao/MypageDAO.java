@@ -16,13 +16,10 @@ public class MypageDAO {
 	   public void profile(MypageDTO mypageDTO) {
 	      sqlSession.insert("mypage.my-profile", mypageDTO);
 	   }
-	   //여기서 email 중복 확인이 필요한지
-	   public boolean checkEmail(String memberEmail) {
-	      return (Integer) sqlSession.selectOne("member.checkEmail", memberEmail) <= 0;
-
-	   }
-
-
-
+	   
+	   //memberNumber를 기준으로 사용자 정보 조회하고 반환
+	   public MypageDTO getProfile(int memberNumber) {
+	        return sqlSession.selectOne("mypage.get-profile", memberNumber);
+	    }
 
 }
