@@ -12,6 +12,7 @@
 	href="${pageContext.request.contextPath}/assets/css/header.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script defer src="${pageContext.request.contextPath}/js/main/header.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -24,14 +25,16 @@
 					<!-- <a class="main-header-logo" href="../../html/main/main.html"> -->
 					<!-- 메인 로고 -->
 					<div id="header-img-0">
-						<a href="${pageContext.request.contextPath}/main.mn">
-						<img src="${pageContext.request.contextPath}/assets/images/logo-224-1.png" alt="로고">
+						<a href="${pageContext.request.contextPath}/main.mn"> <img
+							src="${pageContext.request.contextPath}/assets/images/logo-224-1.png"
+							alt="로고">
 						</a>
 					</div>
 
 					<div id="header-img-1">
-						<a href="${pageContext.request.contextPath}/main.mn">
-						<img src="${pageContext.request.contextPath}/assets/images/logo-224-0.png" alt="로고">
+						<a href="${pageContext.request.contextPath}/main.mn"> <img
+							src="${pageContext.request.contextPath}/assets/images/logo-224-0.png"
+							alt="로고">
 						</a>
 					</div>
 				</li>
@@ -41,15 +44,15 @@
 					<div class="header-search">
 						<div id="header-search-frame">
 							<form action="/main-search.jsp" method="get">
-							<div>
-								<a href="${pageContext.request.contextPath}/main-search.mn">
-								<img
-									src="${pageContext.request.contextPath}/assets/images/main-search.png">
-								</a>
-							</div>
-							<label>
-								<input id="search" type="text" placeholder="검색하세요">
-							</label>
+								<div>
+									<button type="button" id="searchBtn"
+										href="${pageContext.request.contextPath}/main-search.mn">
+										<img src="${pageContext.request.contextPath}/assets/images/main-search.png">
+									</button>
+								</div>
+								<label> <input id="search" type="text"
+									placeholder="검색하세요">
+								</label>
 							</form>
 						</div>
 					</div>
@@ -66,7 +69,7 @@
 						<!-- 마이페이지 -->
 						<div id="header-login-mypage-btn">
 							<a href="${pageContext.request.contextPath }/mypage/mypage.my">
-							<h5>마이페이지</h5>
+								<h5>마이페이지</h5>
 							</a>
 						</div>
 					</li>
@@ -77,7 +80,7 @@
 						<!-- 로그인 및 회원가입 버튼 -->
 						<div id="header-login-join-btn">
 							<a href="${pageContext.request.contextPath}/member/login.me">
-							<h5>로그인 및 회원가입</h5>
+								<h5>로그인 및 회원가입</h5>
 							</a>
 						</div>
 					</li>
@@ -87,8 +90,9 @@
 					<li class="main-login-btn">
 						<!-- 로그인일때 로그아웃 버튼 -->
 						<div id="header-login-logout-btn">
-							<a href="${pageContext.request.contextPath}/member/main/logout.mn">
-							<h5>로그아웃</h5>
+							<a
+								href="${pageContext.request.contextPath}/member/main/logout.mn">
+								<h5>로그아웃</h5>
 							</a>
 						</div>
 					</li>
@@ -107,7 +111,7 @@
 						src="${pageContext.request.contextPath}/assets/images/line-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="../../html/subway/subway-route.html">2호선폭폭</a>
+					<a href="${pageContext.request.contextPath}/subway/subway-route.sw">2호선폭폭</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-subway">
@@ -115,10 +119,10 @@
 							<div class="dropdown-line"></div>
 						</li>
 						<li><a
-							href="${pageContext.request.contextPath}/subway/subway-route.jsp">2호선
+							href="${pageContext.request.contextPath}/subway/subway-route.sw">2호선
 								노선도</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/subway/subway-schedule.jsp">2호선
+							href="${pageContext.request.contextPath}/subway/subway-schedule.sw">2호선
 								배차시간표</a></li>
 					</ul>
 				</div>
@@ -130,20 +134,28 @@
 						src="${pageContext.request.contextPath}/assets/images/hotplace-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a>
+					<a
+						href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-hot">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a></li>
-						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp">강남역</a></li>
-						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">잠실역</a></li>
-						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp">성수역</a></li>
-						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp">문래역</a></li>
-						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp">홍대입구역</a></li>
-						<li><a href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp">을지로입구역</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp">강남역</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">잠실역</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp">성수역</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp">문래역</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp">홍대입구역</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp">을지로입구역</a></li>
 					</ul>
 				</div>
 			</div>
@@ -154,15 +166,15 @@
 						src="${pageContext.request.contextPath}/assets/images/convenience-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="../../html/convenience/conv-main.html">편의공공</a>
+					<a href="${pageContext.request.contextPath}/app/convenience/conv-main.jsp">편의공공</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-conv">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="../../html/convenience/conv-main.html">편의공공</a></li>
-						<li><a href="../../html/convenience/conv-storage.html">물품보관함</a></li>
+						<li><a href="${pageContext.request.contextPath}/app/convenience/conv-main.jsp">편의공공</a></li>
+						<li><a href="${pageContext.request.contextPath}/app/convenience/conv-storage.jsp">물품보관함</a></li>
 					</ul>
 				</div>
 			</div>
@@ -193,19 +205,19 @@
 						src="${pageContext.request.contextPath}/assets/images/notice-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="../../html/notice/notice-admain.html">공지쏙쏙</a>
+					<a href="${pageContext.request.contextPath}/app/notice/notice-admain.jsp">공지쏙쏙</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-notice">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="../../html/notice/notice-admain.html">공지쏙쏙</a></li>
+						<li><a href="${pageContext.request.contextPath}/app/notice/notice-admain.jsp">공지쏙쏙</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
 </header>
-
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </html>
