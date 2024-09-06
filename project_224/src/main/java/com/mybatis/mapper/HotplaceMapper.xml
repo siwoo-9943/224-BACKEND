@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="hotplace">
 	<select id="showInfo" parameterType="String"
-		resultType="hotplacedto">
+		resultType="HotplaceDTO">
 		select hp.hotplace_number, hp.hotplace_station,
 		hp.hotplace_title,
 		hp.hotplace_hours, hp.hotplace_address,
