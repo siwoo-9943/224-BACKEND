@@ -140,7 +140,7 @@ a {
 		<div class="comu-board-title">
 			<h1>커뮤니티 글작성</h1>
 		</div>
-		<form method="get">
+		<form id="communityForm">
 			<div class="comu-board-write-wrap">
 				<div class="comu-board-write">
 					<div class="comu-title">
@@ -159,12 +159,9 @@ a {
 						</select>
 					</div>
 					<div class="comu-cont">
-						<!-- <div id="summernote"></div> -->
-						<form method="post">
-							<textarea id="summernote" name="editordata"></textarea>
-							<p id="letter-length" style="display: inline;"></p>
-							/100
-						</form>
+						<textarea id="summernote" name="editordata"></textarea>
+						<p id="letter-length" style="display: inline;"></p>
+						/100
 					</div>
 				</div>
 			</div>
@@ -194,6 +191,8 @@ a {
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/community/comu-write.js"></script>
 <%@ include file="../../footer.jsp"%>
 
 

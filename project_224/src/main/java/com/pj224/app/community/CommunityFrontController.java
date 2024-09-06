@@ -1,15 +1,13 @@
 package com.pj224.app.community;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.pj224.app.dao.CommunityDAO;
-import com.pj224.app.dto.CommunityDTO;
+import com.pj224.app.Result;
 
 /**
  * Servlet implementation class CommunityFrontController
@@ -47,26 +45,44 @@ public class CommunityFrontController extends HttpServlet {
 	}
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	        throws ServletException, IOException {
+		
+		
+		
+		System.out.println(request.getContextPath());
+		
+		System.out.println(request.getRequestURI());
 
-		String target = request.getRequestURI().substring(request.getContextPath().length());
-		System.out.println(target);
+	    String target = request.getRequestURI().substring(request.getContextPath().length());
+	    System.out.println(target);
 
-		switch (target) {
-		case "/community/comu-main.cm":
-			System.out.println("프컨들어옴");
-			new CommunityListOkController().execute(request, response);
-			request.getRequestDispatcher("/app/community/comu-main.jsp").forward(request, response);
-			break;
-		case "/community/comu-write.cm":
-			System.out.println("글작성들어옴?");
-			new CommunityWriteOkController().execute(request, response);
-			request.getRequestDispatcher("/app/community/comu-write.jsp").forward(request, response);
-			break;
-		case "/community/comu-detail.cm":
-			System.out.println("디테일 들어왔니?");
-			request.getRequestDispatcher("/app/community/comu-detail.jsp").forward(request, response);
-			break;
-		}
+	    Result result = null;
+	    boolean isForwarded = false;
+
+	    switch (target) {
+	        case "/community/comu-main.cm":
+	            System.out.println("프컨들어옴");
+	            new CommunityListOkController().execute(request, response);
+	            request.getRequestDispatcher("/app/community/comu-main.jsp").forward(request, response);
+	            isForwarded = true;
+	            break;
+	        case "/community/comu-write.cm":
+	            System.out.println("글작성들어옴?");
+	            result = new CommunityWriteOkController().MemExecute(request, response);
+	            break;
+	        case "/community/comu-detail.cm":
+	            System.out.println("디테일 들어왔니?");
+	            request.getRequestDispatcher("/app/community/comu-detail.jsp").forward(request, response);
+	            isForwarded = true;
+	            break;
+	    }
+
+	    if (!isForwarded && result != null) {
+	        if (result.isRedirect()) {
+	            response.sendRedirect(result.getPath());
+	        } else {
+	            request.getRequestDispatcher(result.getPath()).forward(request, response);
+	        }
+	    }
 	}
 }
