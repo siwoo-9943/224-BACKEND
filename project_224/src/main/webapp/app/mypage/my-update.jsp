@@ -20,10 +20,14 @@
         <div class="my-category">
           <div class="my-category-menu">메뉴</div>
           <div class="my-line"></div>
-          <a href="../mypage/my-passcheck.html"><div class="my-category-menu">개인정보수정</div></a>
-          <a href="../mypage/my-comunity.html"><div class="my-category-menu">내가 작성한 글</div></a>
-          <a href="../mypage/my-pick.html"><div class="my-category-menu">찜목록</div></a>
-          <a href="../mypage/my-quit.html"><div class="my-category-menu">회원탈퇴</div></a>
+          <a href="${pageContext.request.contextPath}/app/mypage/my-passcheck.jsp">
+          <div class="my-category-menu">개인정보수정</div></a>
+          <a href="${pageContext.request.contextPath}/app/mypage/my-comunity.jsp">
+          <div class="my-category-menu">내가 작성한 글</div></a>
+          <a href="${pageContext.request.contextPath}/app/mypage/my-pick.jsp">
+          <div class="my-category-menu">찜목록</div></a>
+          <a href="${pageContext.request.contextPath}/app/mypage/my-quit.jsp">
+          <div class="my-category-menu">회원탈퇴</div></a>
         </div>
       </div>
 
@@ -95,7 +99,7 @@
               </div>
             </div>
 
-          <a href="../mypage/my-profile.html"><button type="submit" class="my-update-button">개인정보수정</button></a>
+          <a href="${pageContext.request.contextPath}/app/mypage/my-profile.jsp"><button type="button" class="my-update-button">개인정보수정</button></a>
 
         </div>
       </form>
