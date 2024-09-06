@@ -40,7 +40,7 @@
               		<div class="notice-admain-ul-main">
 	                	<div class="notice-admain-ul-cate">${notice.noticeCate}</div>
 	                	<div class="notice-admain-ul-title">${notice.noticeTitle}</div>
-	                	<div class="notice-admain-ul-author">관리자</div>
+	                	<div class="notice-admain-ul-author">${notice.memberNumber}</div>
 	                	<div class="notice-admain-ul-date">${notice.noticeRegistDate}</div>
               		</div>
             	</a>

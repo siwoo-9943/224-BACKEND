@@ -22,6 +22,16 @@ public class NoticeDAO {
         }
         return list;
     }
+    
+    public List<NoticeDTO> showDetail() {
+        List<NoticeDTO> detail = null;
+        try {
+        	detail = sqlSession.selectList("notice.showDetail");
+        } finally {
+            sqlSession.close();
+        }
+        return detail;
+    }
 
     public void write(NoticeDTO noticeDTO) {
         sqlSession.insert("notice.write", noticeDTO);

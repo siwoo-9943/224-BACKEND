@@ -21,22 +21,29 @@
     <div class="notice-addetail-main">
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">제목</div>
-        <div class="notice-addetail-ttxt">공지사항 제목</div>
+        <div class="notice-addetail-ttxt">${notice.noticeTitle}</div>
       </div>
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">작성자</div>
-        <div class="notice-addetail-ttxt">관리자</div>
+        <div class="notice-addetail-ttxt">${notice.memberNumber}</div>
       </div>
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">작성일</div>
-        <div class="notice-addetail-ttxt">2024-08-26</div>
+        <div class="notice-addetail-ttxt">${notice.noticeRegistDate}</div>
       </div>
       <div class="notice-addetail-maincont">
-        <div>
-          <pre>
-                <p style="font-family: Noto Sans, malgun gothic, AppleGothic, dotum, sans-serif;">공지사항 내용</p>
-            </pre>
-        </div>
+         <c:forEach var="notice" items="${noticeshowlist}">
+			<li>
+            	<a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
+              		<div class="notice-addetail-maincont">
+	                	<div class="notice-admain-ul-cate">${notice.noticeCate}</div>
+	                	<div class="notice-admain-ul-title">${notice.noticeTitle}</div>
+	                	<div class="notice-admain-ul-author">${notice.memberNumber}</div>
+	                	<div class="notice-admain-ul-date">${notice.noticeRegistDate}</div>
+              		</div>
+            	</a>
+			</li>
+         </c:forEach>
       </div>
       <div class="notice-addetail-btuall">
         <button onclick="location.href='notice-admain.jsp'" class="notice-addetail-btu" type="button">
@@ -69,5 +76,7 @@
 <%@ include file="../../footer.jsp"%>
 <script src="../../assets/js/modal/notice-modal.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 </html>
