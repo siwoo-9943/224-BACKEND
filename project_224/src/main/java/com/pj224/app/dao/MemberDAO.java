@@ -14,6 +14,7 @@ public class MemberDAO {
 	
 	public void join(MemberDTO memberDTO) {
 		sqlSession.insert("member.join", memberDTO);
+		System.out.println("값확인" + memberDTO);
 	}
 	
 	public boolean checkId(String memberEmail) {
