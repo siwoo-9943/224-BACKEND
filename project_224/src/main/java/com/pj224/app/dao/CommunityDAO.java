@@ -16,11 +16,14 @@ public class CommunityDAO {
 	}
 
 	public List<CommunityDTO> selectAll() {
+		System.out.println("여기로는 넘어감?");
 	    return sqlSession.selectList("community.selectAll");
 	}
 	
 	public void insert(CommunityDTO communityDTO) {
+		System.out.println("db에 값이 넘어갔느냐?");
 		sqlSession.insert("community.insert", communityDTO);
+		
 	}
 	
 

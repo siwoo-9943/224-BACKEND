@@ -22,10 +22,11 @@ public class CommunityWriteOkController implements MemExecute {
         CommunityDTO communityDTO = new CommunityDTO();
         Result result = new Result();
 
-        try {
+        
             String boardCate = request.getParameter("boardCate");
+            System.out.println("카테 값 들어옴? " + boardCate);
             if (boardCate == null || boardCate.trim().isEmpty()) {
-                throw new IllegalArgumentException("Board category cannot be null or empty");
+                throw new IllegalArgumentException("카테 값이 없다");
             }
             communityDTO.setBoardCate(boardCate);
             
@@ -38,25 +39,22 @@ public class CommunityWriteOkController implements MemExecute {
             if (memberNumberStr != null && !memberNumberStr.isEmpty()) {
                 communityDTO.setMemberNumber(Integer.valueOf(memberNumberStr));
             } else {
-                throw new IllegalArgumentException("Member number cannot be null or empty");
+                throw new IllegalArgumentException("멤버넘버낫널");
             }
-
+            
+            request.setAttribute("boardCate", boardCate);
+            
+            request.setAttribute("communityDTO", communityDTO);
+           
+            
             // 데이터베이스에 저장
             communityDAO.insert(communityDTO);
 
             // 결과 설정
             result.setRedirect(true);
-            result.setPath(request.getContextPath() + "/community/comu-detail.jsp");
+            result.setPath(request.getContextPath() + "/community/comu-write.cm");
 
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error in input data: " + e.getMessage());
-            result.setRedirect(true);
-            result.setPath(request.getContextPath() + "/error.jsp");
-        } catch (Exception e) {
-            System.out.println("Unexpected error: " + e.getMessage());
-            result.setRedirect(true);
-            result.setPath(request.getContextPath() + "/error.jsp");
-        }
+            
 
         return result;
     }

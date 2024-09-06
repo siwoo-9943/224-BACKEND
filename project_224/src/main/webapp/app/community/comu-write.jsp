@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -193,6 +194,9 @@ a {
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/assets/js/community/comu-write.js"></script>
+<script>
+    var contextPath = '${pageContext.request.contextPath}';
+</script>
 <%@ include file="../../footer.jsp"%>
 
 
