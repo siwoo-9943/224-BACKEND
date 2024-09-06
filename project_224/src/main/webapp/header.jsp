@@ -205,14 +205,14 @@
 						src="${pageContext.request.contextPath}/assets/images/notice-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="${pageContext.request.contextPath}/app/notice/notice-admain.jsp">공지쏙쏙</a>
+					<a href="${pageContext.request.contextPath}/notice/notice-admain.no">공지쏙쏙</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-notice">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="${pageContext.request.contextPath}/app/notice/notice-admain.jsp">공지쏙쏙</a></li>
+						<li><a href="${pageContext.request.contextPath}/notice/notice-admain.no">공지쏙쏙</a></li>
 					</ul>
 				</div>
 			</div>

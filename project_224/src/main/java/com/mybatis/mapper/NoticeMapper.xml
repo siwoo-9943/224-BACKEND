@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notice">
-	<insert id="write" parameterType="NoticeDTO">
-		INSERT INTO TBL_NOTICE (NOTICE_NUMBER, NOTICE_CATE, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_REGIST_DATE, MEMBER_NUMBER)
-		VALUES(SEQ_NOTICE.NEXTVAL, #{noticeCate}, #{noticeTitle}, #{noticeContent}, #{noticeRegistDate}, #{memberNumber})
-	</insert>
-
-	<select id="checkId" parameterType="string" resultType="int">
-		select
-		count(member_number)
-		from tbl_member
-		where member_id = #{memberId}
+	<select id="showList" parameterType="NoticeDTO"
+		resultType="NoticeDTO">
+		SELECT
+		N.NOTICE_CATE,
+		N.NOTICE_TITLE,
+		N.MEMBER_NUMBER,
+		N.NOTICE_REGIST_DATE
+		FROM
+		TBL_NOTICE N
+		JOIN
+		TBL_MEMBER M
+		ON
+		N.MEMBER_NUMBER
+		= M.MEMBER_NUMBER
+		ORDER BY
+		N.NOTICE_REGIST_DATE DESC
 	</select>
 
-	<!-- 쿠키/세션 -->
-	<select id="login" parameterType="memberDTO"
-		resultType="memberDTO">
-		SELECT member_number, member_id, member_password,
-		member_name, member_age, member_gender
-		FROM tbl_member
-		WHERE member_id =
-		#{memberId} AND member_password = #{memberPassword}
+	<select id="showDetail" parameterType="NoticeDTO"
+		resultType="NoticeDTO">
+		SELECT
+		N.NOTICE_NUMBER,
+		N.NOTICE_CATE,
+		N.NOTICE_TITLE,
+		M.MEMBER_NUMBER,
+		N.NOTICE_REGIST_DATE,
+		N.NOTICE_UPDATE_DATE,
+		N.NOTICE_CONTENT
+		FROM
+		TBL_NOTICE N
+		JOIN
+		TBL_MEMBER M
+		ON
+		N.MEMBER_NUMBER =
+		M.MEMBER_NUMBER
+		WHERE
+		N.NOTICE_NUMBER = 6
+		ORDER BY
+		N.NOTICE_REGIST_DATE DESC
 	</select>
+
 </mapper>

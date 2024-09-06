@@ -7,34 +7,83 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pj224.app.Result;
+import com.pj224.app.community.CommunityListOkController;
+import com.pj224.app.main.MainLoginController;
+import com.pj224.app.main.MainLogoutController;
+
 /**
  * Servlet implementation class NoticeFrontController
  */
 public class NoticeFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public NoticeFrontController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	public NoticeFrontController() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		doProcess(request, response);
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doProcess(request, response);
+
+	}
+
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String target = request.getRequestURI().substring(request.getContextPath().length());
+		Result result = null;
+		System.out.println(target);
+
+		switch (target) {
+		case "/notice/notice-admain.no":
+			System.out.println("글목록");
+			result = new NoticeListController().MemExecute(request, response);
+			request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
+			break;
+		case "/notice/notice-addetail.no":
+			System.out.println("글상세");
+			result = new NoticeDetailController().MemExecute(request, response);
+			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
+			break;
+		case "/notice/notice-adwrite.no":
+			System.out.println("글작성");
+			new NoticeWriteController().execute(request, response);
+//			result = new MainLoginController().MemExecute(request, response);
+			break;
+		case "/notice/notice-admodify.no":
+			System.out.println("글수정");
+			new NoticeModifyController().execute(request, response);
+//			result = new MainLoginController().MemExecute(request, response);
+			break;
+		}
+		
+	      // Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
+	      if (result != null) {
+	         if (result.isRedirect()) {
+	            response.sendRedirect(result.getPath()); // 리다이렉트 처리
+	         } else {
+	            request.getRequestDispatcher(result.getPath()).forward(request, response); // 포워드 처리
+	         }
+	      }
+
+
+	}
 }
