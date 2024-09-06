@@ -22,7 +22,7 @@ public class MemberDTO {
 	private String memberPhone;
 	private String memberPhoneInput;
 	private String memberGender;
-	private Date memberBirth;
+	private String memberBirth;
 	private String memberTerms;
 
 	// getter setter
@@ -90,11 +90,11 @@ public class MemberDTO {
 		this.memberGender = memberGender;
 	}
 
-	public Date getMemberBirth() {
+	public String getMemberBirth() {
 		return memberBirth;
 	}
 
-	public void setMemberBirth(Date memberBirth) {
+	public void setMemberBirth(String memberBirth) {
 		this.memberBirth = memberBirth;
 	}
 
@@ -105,6 +105,8 @@ public class MemberDTO {
 	public void setMemberTerms(String memberTerms) {
 		this.memberTerms = memberTerms;
 	}
+
+	
 	
 
 
@@ -118,6 +120,7 @@ public class MemberDTO {
 
 	}
 
+	
 	
 
 }

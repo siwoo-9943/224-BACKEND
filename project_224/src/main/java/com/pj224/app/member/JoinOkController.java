@@ -26,7 +26,7 @@ public class JoinOkController implements MemExecute {
 		MemberDAO memberDAO = new MemberDAO();
 		Result result = new Result();
 
-		// 폼데이터 받아오기
+		// 폼데이터 받아오기/
 		memberDTO.setMemberEmail(request.getParameter("memberEmail"));
 		memberDTO.setMemberPw(request.getParameter("memberPw"));
 		memberDTO.setMemberName(request.getParameter("memberName"));
@@ -34,19 +34,8 @@ public class JoinOkController implements MemExecute {
 		memberDTO.setMemberPhone(request.getParameter("memberPhone"));
 		memberDTO.setMemberPhoneInput(request.getParameter("memberPhoneInput"));
 		memberDTO.setMemberGender(request.getParameter("memberGender"));
-//		memberDTO.setMemberBirth(request.getParameter("memberBirth"));
+		memberDTO.setMemberBirth(request.getParameter("memberBirth"));
 		memberDTO.setMemberTerms(request.getParameter("memberTerms"));
-		
-		String birthParam = request.getParameter("memberBirth");
-		SimpleDateFormat form1 = new SimpleDateFormat("YYYY-MM-DD");
-//		Date birthDate = form1.parse(birthParam);
-		if(birthParam != null && !birthParam.isEmpty()) {
-			memberDTO.setMemberBirth(birthDate);
-		}
-		
-		System.out.println(birthParam);
-		System.out.println("ㅇㅇ");
-		
 		
 		
 
@@ -60,7 +49,7 @@ public class JoinOkController implements MemExecute {
 		// 결과처리
 		result.setRedirect(true);
 //회원가입 성공 후 이동할 페이지 설정
-	    response.sendRedirect(request.getContextPath() + "/main.jsp");
+	    
 		return result;
 	}
 

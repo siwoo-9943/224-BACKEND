@@ -9,11 +9,12 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	
 	public MemberDAO() {
-		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(false);
+		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
 	public void join(MemberDTO memberDTO) {
 		sqlSession.insert("member.join", memberDTO);
+		System.out.println("값확인" + memberDTO);
 	}
 	
 	public boolean checkId(String memberEmail) {

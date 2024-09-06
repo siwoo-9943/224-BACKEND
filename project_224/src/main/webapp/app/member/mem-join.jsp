@@ -483,23 +483,14 @@
             </div>
           </div>
           <!-- 회원가입 버튼 -->
-          <div class="mem-term-btn-next-box">
-            <button type="submit" id="mem-btn-next" class="mem-term-btn-next">회원가입</button>
-          </div>
-          <!-- 회원가입 완료 모달 -->
-          <div id="mem-Modal" class="mem-modal">
-            <div class="mem-modal-content">
-              <span class="mem-close" onclick="closeDeleteModal()">&times;</span>
-              <h2>회원가입이 완료되었습니다</h2>
-              <p>확인 버튼을 클릭하면 메인페이지로 돌아갑니다.</p>
-              <button type="button" onclick="goToPage()">확인</button>
-              <button type="button" class="mem-cancel-btn" onclick="closeDeleteModal()">취소</button>
-            </div>
-          </div>
         </div>
+          <div class="mem-term-btn-next-box">
+            <button id="mem-btn-next" class="mem-term-btn-next" type="submit">회원가입</button>
+          </div>
       </form>
     </section>
   </main>
 <script src="${pageContext.request.contextPath}/assets/js/member/mem-join.js"></script>
 </body>
 </html>
+
