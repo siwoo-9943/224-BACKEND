@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mainsearch">
-   <!-- 쿠키/세션 -->
+	<!-- 쿠키/세션 -->
 
+	<!-- 검색-커뮤니티 -->
+	<select id="selectcm" parameterType="string" resultType="">
+		SELECT
+		Tb.BOARD_TITLE ,
+		COUNT(DISTINCT TC.COMMENT_NUMBER) AS COMMENT_COUNT,
+		TB.BOARD_CONTENT,
+		TB.BOARD_CATE,
+		TB.BOARD_REGIST_DATE,
+		COUNT(DISTINCT TR.MEMBER_NUMBER) AS RECOMMEND_COUNT
+		FROM
+		TBL_BOARD TB
+		LEFT JOIN
+		TBL_MEMBER TM ON TB.member_number = TM.member_number
+		LEFT JOIN
+		TBL_COMMENT TC ON TB.board_number = TC.board_number
+		LEFT JOIN
+		TBL_RECOMMEND TR ON tb.board_number = tr.board_number
+		WHERE (Tb.BOARD_TITLE LIKE CONCAT('%', #{inputSearch}, '%') OR tb.BOARD_CONTENT LIKE CONCAT('%', #{inputSearch}, '%')) AND
+		tb.BOARD_NUMBER BETWEEN 1 and 5
+		GROUP BY
+		TB.BOARD_NUMBER,
+		TB.BOARD_CATE,
+		TB.BOARD_TITLE,
+		TB.BOARD_CONTENT,
+		TB.BOARD_REGIST_DATE,
+		TM.MEMBER_NUMBER
+		ORDER BY
+		recommend_count DESC;
+	</select>
 </mapper>

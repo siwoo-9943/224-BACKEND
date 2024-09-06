@@ -66,8 +66,8 @@ public class MainFrontController extends HttpServlet {
 		case "/main-search.mn":
 			System.out.println("검색페이지이동");
 			request.getRequestDispatcher("main-search.jsp").forward(request, response);
+			result = new MainSearchController().MemExecute(request, response);
 			break;
-//		case "/member/mem-login.me":
 		case "/member/mem-login.me":
 			System.out.println("로그인");
 //			request.getRequestDispatcher("/app/member/mem-login.jsp").forward(request, response);
