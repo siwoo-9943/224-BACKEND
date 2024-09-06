@@ -61,9 +61,9 @@ public class MemberFrontController extends HttpServlet {
 	    	System.out.println("join");
 	    	request.getRequestDispatcher("/app/member/mem-join.jsp").forward(request, response);
 	    	break;
-	    case "/app/member/joinOk.me":
+	    case "/member/joinOk.me":
 	    	System.out.println("joinOk");
-//	    	new JoinOkController().MemExecute(request, response);
+	    	new JoinOkController().MemExecute(request, response);
 	    	response.sendRedirect(request.getContextPath() + "/main.jsp");
 	    	break;
 	    case "/member/login.me":
