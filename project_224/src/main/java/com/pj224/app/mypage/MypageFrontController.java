@@ -57,11 +57,15 @@ public class MypageFrontController extends HttpServlet {
 	      Result result = null; // Result 클래스 객체
 	      
 	      switch(target) {
-	      case"/mypage/mypage.my":
+	      case"/mypage/profile.my" :
 	    	  System.out.println("profile");
-	    	  request.getRequestDispatcher("/app/member/my-profile.jsp").forward(request, response);
+	    	  request.getRequestDispatcher("/app/mypage/my-profile.jsp").forward(request, response);
+	    	  break;
+	      case"/mypage/passcheck.my":
+	    	  System.out.println("profile");
+	    	  request.getRequestDispatcher("/app/mypage/my-passcheck.jsp").forward(request, response);
 	          break;
-	      case"/mypage/mypageOk.my" :
+	      case"/mypage/passcheckOk.my" :
 	    	  System.out.println("profile 성공");
 	    	  break;
 	      

@@ -3,9 +3,10 @@
 <mapper namespace="member">
    <select id="my-profile" parameterType="MypageDTO">
       select into tbl_member(member_number, member_email, member_pw, member_name, member_nickname, member_phone, member_phone_input, member_gender, member_birth, member_terms)
-      values(member_seq.nextVal, #{memberNumber}, #{memberEmail}, #{memberPw}, #{memberName}, #{memberNickname}, #{memberPhone}, #{memberPhoneInput}, #{memberGender}, #{memberBirth}, #{memberTerms})
+      values(seq_member.nextVal, #{memberNumber}, #{memberEmail}, #{memberPw}, #{memberName}, #{memberNickname}, #{memberPhone}, #{memberPhoneInput}, #{memberGender}, #{memberBirth}, #{memberTerms})
    </select>
    
+   <!-- 데이터베이스에서 데이터를 조회하는 데 사용 -->
    <select id="get-profile" parameterType="int" resultType="MypageDTO">
       SELECT * FROM tbl_member
       WHERE member_number = #{memberNumber}
