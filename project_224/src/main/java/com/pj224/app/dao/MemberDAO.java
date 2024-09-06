@@ -9,7 +9,7 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	
 	public MemberDAO() {
-		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
+		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(false);
 	}
 	
 	public void join(MemberDTO memberDTO) {
