@@ -68,7 +68,7 @@ public class MainFrontController extends HttpServlet {
 			request.getRequestDispatcher("main-search.jsp").forward(request, response);
 			break;
 //		case "/member/mem-login.me":
-		case "/member/mem-login.mn":
+		case "/member/mem-login.me":
 			System.out.println("로그인");
 //			request.getRequestDispatcher("/app/member/mem-login.jsp").forward(request, response);
 			result = new MainLoginController().MemExecute(request, response);
@@ -78,6 +78,9 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("로그아웃");
 			result = new MainLogoutController().MemExecute(request, response);
 //			request.getRequestDispatcher("main.jsp").forward(request, response);
+			break;
+		case "":
+			System.out.println("?");
 			break;
 
 		default:
