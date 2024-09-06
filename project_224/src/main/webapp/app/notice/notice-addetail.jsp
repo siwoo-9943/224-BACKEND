@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,21 +23,21 @@
     <div class="notice-addetail-main">
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">제목</div>
-        <div class="notice-addetail-ttxt">공지사항 제목</div>
+        <div class="notice-addetail-ttxt">${noticeshowdetail.noticeTitle}</div>
       </div>
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">작성자</div>
-        <div class="notice-addetail-ttxt">관리자</div>
+        <div class="notice-addetail-ttxt">${noticeshowdetail.memberNumber}</div>
       </div>
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">작성일</div>
-        <div class="notice-addetail-ttxt">2024-08-26</div>
+        <div class="notice-addetail-ttxt">${noticeshowdetail.noticeRegistDate}</div>
       </div>
       <div class="notice-addetail-maincont">
         <div>
           <pre>
-                <p style="font-family: Noto Sans, malgun gothic, AppleGothic, dotum, sans-serif;">공지사항 내용</p>
-            </pre>
+                <p style="font-family: Noto Sans, malgun gothic, AppleGothic, dotum, sans-serif;">${noticeshowdetail.noticeContent}</p>
+          </pre>
         </div>
       </div>
       <div class="notice-addetail-btuall">
@@ -69,5 +71,7 @@
 <%@ include file="../../footer.jsp"%>
 <script src="../../assets/js/modal/notice-modal.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 </html>
