@@ -10,8 +10,10 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/notice/notice-admain.css">
 </head>
 
+
 <%@ include file="../../header.jsp"%>
 <body>
+ <body>
   <!-- 페이지의 메인 부분 -->
   <div class="wrapper">
     <div class="notice-admain-all">
@@ -32,106 +34,19 @@
         </div>
         <!-- 게시글 목록 -->
         <ul class="notice-admain-ul-all">
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
-              <div class="notice-admain-ul-main">
-                <div class="notice-admain-ul-cate">[안내]</div>
-                <div class="notice-admain-ul-title">224의 프로젝트가 시작되었습니다</div>
-                <div class="notice-admain-ul-author">관리자</div>
-                <div class="notice-admain-ul-date">2023-08-26</div>
-              </div>
-            </a>
-          </li>
+         <c:forEach var="notice" items="${noticeshowlist}">
+			<li>
+            	<a href="${pageContext.request.contextPath}/app/notice/notice-addetail.jsp">
+              		<div class="notice-admain-ul-main">
+	                	<div class="notice-admain-ul-cate">${notice.noticeCate}</div>
+	                	<div class="notice-admain-ul-title">${notice.noticeTitle}</div>
+	                	<div class="notice-admain-ul-author">관리자</div>
+	                	<div class="notice-admain-ul-date">${notice.noticeRegistDate}</div>
+              		</div>
+            	</a>
+			</li>
+         </c:forEach>
+
           <!-- 추가 게시글 항목 -->
         </ul>
         <!-- 페이지 앞/뒤로 넘기기 버튼 -->
@@ -155,6 +70,7 @@
     </div>
 
 </body>
-<%@ include file="../../footer.jsp"%>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </html>
