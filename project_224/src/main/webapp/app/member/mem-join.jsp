@@ -28,7 +28,7 @@
         <div class="join-info-box">
           <div class="join-info">
             <div class="join-info-cate">이메일＊</div>
-            <input type="text" id="e-mail" placeholder="&nbsp;&nbsp; 예 : 224@gmail.com"> <!--이메일 입력창-->
+            <input type="text" id="e-mail" name="memberEmail" placeholder="&nbsp;&nbsp; 예 : 224@gmail.com"> <!--이메일 입력창-->
             <button type="button" class="e-mailok"> 중복확인</button><!--중복확인-->
           </div>
           <div class="join-e-mail-ch"></div> <!--이메일 js -->
@@ -36,7 +36,7 @@
           <!--비밀번호-->
           <div class="join-info">
             <div class="join-info-cate">비밀번호＊</div>
-            <input type="password" id="join-pw" placeholder="&nbsp;&nbsp; 영문자 8글자 이상 15글자 이하, 특수문자 필수"><!--비밀번호 입력창-->
+            <input type="password" name="memberPw" id="join-pw" placeholder="&nbsp;&nbsp; 영문자 8글자 이상 15글자 이하, 특수문자 필수"><!--비밀번호 입력창-->
           </div>
           <div class="join-pw-ch"></div><!--비밀번호 js-->
           <br>
@@ -50,43 +50,43 @@
           <!-- 이름 -->
           <div class="join-info">
             <div class="join-info-cate">이름＊</div>
-            <input type="text" id="join-name" placeholder="&nbsp;&nbsp; 이름을 입력해 주세요">
+            <input type="text" name="memberName" id="join-name" placeholder="&nbsp;&nbsp; 이름을 입력해 주세요">
           </div>
           <br>
           <!-- 닉네임 -->
           <div class="join-info">
             <div class="join-info-cate">닉네임＊</div>
-            <input type="text" id="join-n-name" placeholder="&nbsp;&nbsp; 닉네임을 입력해 주세요">
+            <input type="text" name="memberNickname" id="join-n-name" placeholder="&nbsp;&nbsp; 닉네임을 입력해 주세요">
             <button type="button" class="e-mailok"> 중복확인</button>
           </div>
           <br>
           <!-- 휴대폰 -->
           <div class="join-info">
             <div class="join-info-cate">휴대폰＊</div>
-            <input type="text" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
+            <input type="text" name="memberPhone" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
             <button type="button" class="e-mailok"> 인증번호 받기</button>
           </div>
           <!-- 휴대폰 인증 -->
           <div class="join-info">
             <div class="join-info-cate">인증번호＊</div>
-            <input type="text" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
+            <input type="text" name="memberPhoneInput" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
           </div>
           <!-- 성별 -->
           <div class="join-info">
             <div class="join-info-cate">성별＊</div>
             <div class="join-gender">
-              <input type="radio" id="gender" name="gender" class="gender-manbox gender">
+              <input type="radio" id="gender" name="memberGender" value="M" class="gender-manbox gender">
               <label for="gender-man">남자</label>
-              <input type="radio" id="gender" name="gender" class="gender-womanbox">
+              <input type="radio" id="gender" name="memberGender" value="F" class="gender-womanbox">
               <label for="gender-woman">여자</label>
-              <input type="radio" id="gender" name="gender" class="gender-nonebox" checked>
+              <input type="radio" id="gender" name="memberGender" value="N" class="gender-nonebox" checked>
               <label for="gender-none">선택안함</label>
             </div>
           </div>
           <!-- 생년월일 -->
           <div class="join-info">
             <div class="join-info-cate">생년월일</div>
-            <input type="text" id="join-birth" placeholder="&nbsp;&nbsp;   YY  /  MM  / DD">
+            <input type="date" name="memberBirth" id="join-birth" placeholder="&nbsp;&nbsp; YYYY-MM-DD 형식으로 입력하세요">
           </div>
           <br>
 
@@ -101,7 +101,7 @@
               <br>
               <div class="mem-term-allagree">
                 <label class="mem-term-checkbox-label">
-                  <input type="checkbox" id="mem-check-all" name="check">
+                  <input type="checkbox" id="mem-check-all">
                   <span class="mem-term-checkbox-icon"></span>
                   <span class="mem-term-head-all"><span class="mem-essential"></span>
                     <h3>전체 동의합니다</h3>
@@ -111,7 +111,7 @@
               </div>
               <div>
                 <label class="mem-term-checkbox-label">
-                  <input type="checkbox" id="mem-check-e1" name="check">
+                  <input type="checkbox" id="mem-check-e1">
                   <span class="mem-term-checkbox-icon1"></span>
                   <span class="mem-term_head"><span class="mem-essential">[필수]</span>이용 약관</span>
                 </label>
@@ -321,7 +321,7 @@
               </div>
               <div class="mem-term_div">
                 <label class="mem-term-checkbox-label">
-                  <input type="checkbox" id="mem-check-e2" name="check">
+                  <input type="checkbox" id="mem-check-e2">
                   <span class="mem-term-checkbox-icon1"></span>
                   <span class="mem-term_head"><span class="mem-essential">[필수]</span>개인정보 수집 및 이용</span>
                 </label>
@@ -471,48 +471,26 @@
               </div>
               <div class="mem-term_div">
                 <label class="mem-term-checkbox-label">
-                  <input type="checkbox" id="mem-check-o1" name="check">
+                  <input type="checkbox" id="mem-check-o1" name="memberTerms" value="C">
                   <span class="mem-term-checkbox-icon"></span>
                   <span class="mem-term_head"><span class="optional">[선택]</span>이벤트・혜택 정보 수신</span>
                 </label>
-                <!-- <div class="mem-term-box" style="border: 0px; margin: 0px 0px 0px 10px;">
-                이벤트・혜택 정보 수신
-              </div> -->
-              </div>
-              <div class="mem-term_div">
-                <label class="mem-term-checkbox-label">
-                  <input type="checkbox" id="mem-check-o2" name="check">
-                  <span class="mem-term-checkbox-icon"></span>
-                  <span class="mem-term_head"><span class="optional">[선택]</span>무료배송,할인쿠폰 등 혜택/정보 수신 동의</span>
-                </label>
                 <div class="mem-term-box" style="border: 0px; margin: 0px 0px 0px 10px;">
-                  무료배송,할인쿠폰 등 혜택/정보 수신 동의
+                   이벤트・혜택 정보 수신 동의
                 </div>
               </div>
+ 
             </div>
           </div>
           <!-- 회원가입 버튼 -->
+        </div>
           <div class="mem-term-btn-next-box">
-            <button type="submit" id="mem-btn-next" class="mem-term-btn-next">회원가입</button>
+            <button id="mem-btn-next" class="mem-term-btn-next" type="submit">회원가입</button>
           </div>
-          <!-- 회원가입 완료 모달 -->
-          <div id="mem-Modal" class="mem-modal">
-            <div class="mem-modal-content">
-              <span class="mem-close" onclick="closeDeleteModal()">&times;</span>
-              <h2>회원가입이 완료되었습니다</h2>
-              <p>확인 버튼을 클릭하면 메인페이지로 돌아갑니다.</p>
-              <button type="button" onclick="goToPage()">확인</button>
-              <button type="button" class="mem-cancel-btn" onclick="closeDeleteModal()">취소</button>
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-        </div>
       </form>
     </section>
   </main>
 <script src="${pageContext.request.contextPath}/assets/js/member/mem-join.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/modal/mem-modals.js"></script>
 </body>
 </html>
+
