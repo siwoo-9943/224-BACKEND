@@ -26,50 +26,50 @@
 						<div class="main-station-frame">
 							<h2>강남역</h2>
 						</div> <a
-						href="../../html/hotplace/hotplace-gangnam.html">
+						href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp">
 							<div id="main-station-hot">핫플</div>
-					</a> <a href="../../html/convenience/conv-storage-gangnam.html">
+					</a> <a href="${pageContext.request.contextPath}/convenience/conv-storage-gangnam.cv">
 							<div id="main-station-con">편의</div>
 					</a></li>
 					<li id="main-slider-two"><img
 						src="${pageContext.request.contextPath}/assets/images/2.png">
 						<div class="main-station-frame">
 							<h2>잠실역</h2>
-						</div> <a href="../../html/hotplace/hotplace-jamsil.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
 							<div id="main-station-hot">핫플</div>
-					</a> <a href="../../html/convenience/conv-storage-jamsil.html">
+					</a> <a href="${pageContext.request.contextPath}/convenience/conv-storage-jamsil.cv">
 							<div id="main-station-con">편의</div>
 					</a></li>
 					<li id="main-slider-three"><img src="${pageContext.request.contextPath}/assets/images/3.png">
 						<div class="main-station-frame">
 							<h2>홍대입구역</h2>
-						</div> <a href="../../html/hotplace/hotplace-hongdae.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp">
 							<div id="main-station-hot">핫플</div>
-					</a> <a href="../../html/convenience/conv-storage-hongdae.html">
+					</a> <a href="${pageContext.request.contextPath}/convenience/conv-storage-hongdae.cv">
 							<div id="main-station-con">편의</div>
 					</a></li>
 					<li id="main-slider-four"><img src="${pageContext.request.contextPath}/assets/images/4.png">
 						<div class="main-station-frame">
 							<h2>성수역</h2>
-						</div> <a href="../../html/hotplace/hotplace-seongsu.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp">
 							<div id="main-station-hot">핫플</div>
-					</a> <a href="../../html/convenience/conv-storage-seongsu.html">
+					</a> <a href="${pageContext.request.contextPath}/convenience/conv-storage-seongsu.cv">
 							<div id="main-station-con">편의</div>
 					</a></li>
 					<li id="main-slider-five"><img src="${pageContext.request.contextPath}/assets/images/5.png">
 						<div class="main-station-frame">
 							<h2>문래역</h2>
-						</div> <a href="../../html/hotplace/hotplace-moonrae.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp">
 							<div id="main-station-hot">핫플</div>
-					</a> <a href="../../html/convenience/conv-storage-moonrae.html">
+					</a> <a href="${pageContext.request.contextPath}/convenience/conv-storage-moonrae.cv">
 							<div id="main-station-con">편의</div>
 					</a></li>
 					<li id="main-slider-six"><img src="${pageContext.request.contextPath}/assets/images/6.png">
 						<div class="main-station-frame">
 							<h2>을지로입구역</h2>
-						</div> <a href="../../html/hotplace/hotplace-euljiro.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp">
 							<div id="main-station-hot">핫플</div>
-					</a> <a href="../../html/convenience/conv-storage-euljiro.html">
+					</a> <a href="${pageContext.request.contextPath}/convenience/conv-storage-euljiro.cv">
 							<div id="main-station-con">편의</div>
 					</a></li>
 				</ul>
@@ -109,7 +109,7 @@
 						<div id="main-hot-list-img"
 							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
 							<img id="main-picked" src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a href="../../html/hotplace/hotplace-jamsil.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
 							<div class="main-hot-list-txt">
 								<span id="main-hot-title">asd1</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
 								</span>
@@ -120,7 +120,7 @@
 						<div id="main-hot-list-img"
 							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
 							<img id="main-picked" src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a href="../../html/hotplace/hotplace-jamsil.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
 							<div class="main-hot-list-txt">
 								<span id="main-hot-title">asd2</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
 								</span>
@@ -131,7 +131,7 @@
 						<div id="main-hot-list-img"
 							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-2.jpg);">
 							<img id="main-picked" src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a href="../../html/hotplace/hotplace-jamsil.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
 							<div class="main-hot-list-txt">
 								<span id="main-hot-title">asd3</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
 								</span>
@@ -142,7 +142,7 @@
 						<div id="main-hot-list-img"
 							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-3.jpg);">
 							<img id="main-picked" src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a href="../../html/hotplace/hotplace-jamsil.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
 							<div class="main-hot-list-txt">
 								<span id="main-hot-title">asd4</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
 								</span>
@@ -153,7 +153,7 @@
 						<div id="main-hot-list-img"
 							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
 							<img id="main-picked" src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a href="../../html/hotplace/hotplace-jamsil.html">
+						</div> <a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
 							<div class="main-hot-list-txt">
 								<span id="main-hot-title">asd5</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
 								</span>
