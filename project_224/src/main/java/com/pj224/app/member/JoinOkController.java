@@ -39,7 +39,7 @@ public class JoinOkController implements MemExecute {
 		
 		String birthParam = request.getParameter("memberBirth");
 		SimpleDateFormat form1 = new SimpleDateFormat("YYYY-MM-DD");
-		Date birthDate = form1.parse(birthParam);
+//		Date birthDate = form1.parse(birthParam);
 		if(birthParam != null && !birthParam.isEmpty()) {
 			memberDTO.setMemberBirth(birthDate);
 		}
