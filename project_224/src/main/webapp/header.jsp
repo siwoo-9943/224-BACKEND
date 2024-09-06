@@ -12,7 +12,7 @@
 	href="${pageContext.request.contextPath}/assets/css/header.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script defer src="${pageContext.request.contextPath}/js/main/header.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -43,14 +43,14 @@
 
 					<div class="header-search">
 						<div id="header-search-frame">
-							<form action="/main-search.jsp" method="get">
+							<form action="${pageContext.request.contextPath}/main-search.mn" method="get">
 								<div>
 									<button type="button" id="searchBtn"
 										href="${pageContext.request.contextPath}/main-search.mn">
 										<img src="${pageContext.request.contextPath}/assets/images/main-search.png">
 									</button>
 								</div>
-								<label> <input id="search" type="text"
+								<label> <input id="search" name="search" type="text"
 									placeholder="검색하세요">
 								</label>
 							</form>
