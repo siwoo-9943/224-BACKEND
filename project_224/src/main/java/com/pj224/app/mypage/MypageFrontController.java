@@ -54,10 +54,10 @@ public class MypageFrontController extends HttpServlet {
 	      String target = request.getRequestURI().substring(request.getContextPath().length());
 	      System.out.println(target);
 
-	      Result result = null; // Result 클래스 객체
+//	      Result result = null; // Result 클래스 객체
 	      
 	      switch(target) {
-	      case"/mypage/profile.my" :
+	      case"/mypage/my-profile.my" :
 	    	  System.out.println("profile");
 	    	  request.getRequestDispatcher("/app/mypage/my-profile.jsp").forward(request, response);
 	    	  break;

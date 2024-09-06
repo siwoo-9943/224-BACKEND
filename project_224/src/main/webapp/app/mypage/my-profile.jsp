@@ -11,7 +11,7 @@
 <body>
 	<main>
 		<!-- 목록 -->
-		<form action="" method="post">
+		<!-- <form action="" method="post"> -->
 			<div class="my-profileBox">
 				<div class="my-leftbox">
 					<div class="my-hello">
