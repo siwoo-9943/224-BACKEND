@@ -95,3 +95,14 @@ function prevItem() {
 
 // 초기 항목을 보여줍니다.
 showItems(crtPage);
+
+
+//input창 enter키로 실행
+const searchInput = document.querySelector("#search");
+
+searchInput.addEventListener("keydown",function(event){
+	if(event.KeyCode === 13){
+		event.preventDefault();
+		document.querySelector("#searchBtn").click();
+	}
+})
