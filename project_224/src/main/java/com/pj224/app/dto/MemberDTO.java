@@ -105,8 +105,6 @@ public class MemberDTO {
 	public void setMemberTerms(String memberTerms) {
 		this.memberTerms = memberTerms;
 	}
-
-	
 	
 
 
