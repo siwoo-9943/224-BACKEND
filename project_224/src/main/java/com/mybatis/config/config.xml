@@ -48,11 +48,7 @@
 		<mapper resource="com/mybatis/mapper/CommunityMapper.xml" />
 		<mapper resource="com/mybatis/mapper/MainMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/ConvenienceMapper.xml" />
-<<<<<<< HEAD
         <mapper resource="com/mybatis/mapper/MainMapper.xml" />
-=======
-		<mapper resource="com/mybatis/mapper/MainMapper.xml" />
->>>>>>> main
 	</mappers>
 
 </configuration>
