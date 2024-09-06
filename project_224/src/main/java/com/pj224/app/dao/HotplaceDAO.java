@@ -19,11 +19,17 @@ public class HotplaceDAO {
     public List<HotplaceDTO> showInfo(String station) {
         return sqlSession.selectList("hotplace.showInfo", station);
     }
-
-    // 핫플레이스를 "pick"하는 메소드 추가
-    public void pickHotplace(int hotplaceNumber, int memberNumber) {
-        // 좋아요를 DB에 저장하는 SQL 호출
-        sqlSession.insert("hotplace.pickHotplace", new LikeDTO(hotplaceNumber, memberNumber));
-        sqlSession.commit();
+    
+    public List<LikeDTO> checkLike(int memberNumber, int hotplaceNumber){
+    	LikeDTO likeDTO = new LikeDTO(memberNumber, hotplaceNumber);
+    	return sqlSession.selectList("hotplace.checkLike", likeDTO);
+    }
+    
+    public void pickHotplace(LikeDTO likeDTO) {
+        sqlSession.insert("hotplace.pickHotplace", likeDTO);
+    }
+    
+    public void unpickHotplace(LikeDTO likeDTO) {
+    	sqlSession.delete("hotplace.unpickHotplace", likeDTO);
     }
 }

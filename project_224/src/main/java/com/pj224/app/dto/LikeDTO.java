@@ -9,7 +9,11 @@ public class LikeDTO {
         this.memberNumber = memberNumber;
     }
 
-    // getter와 setter 추가
+    public LikeDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	// getter와 setter 추가
     public int getHotplaceNumber() {
         return hotplaceNumber;
     }

@@ -2,29 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="hotplace">
 	<select id="showInfo" parameterType="String"
-		resultType="HotplaceDTO">
-		SELECT hp.HOTPLACE_NUMBER, hp.HOTPLACE_STATION,
-		hp.HOTPLACE_TITLE,
-		hp.HOTPLACE_HOURS, hp.HOTPLACE_ADDRESS,
-		hp.HOTPLACE_LINK,
-		hp.HOTPLACE_REST_NUMBER,
-		hp.HOTPLACE_ATTRACTION_NUMBER,
-		hr.HOTPLACE_REST_CUISINE,
-		hr.HOTPLACE_REST_MENU,
-		ha.HOTPLACE_ATTRACTION_CONTENT
-		FROM TBL_HOTPLACE
+		resultType="hotplacedto">
+		select hp.hotplace_number, hp.hotplace_station,
+		hp.hotplace_title,
+		hp.hotplace_hours, hp.hotplace_address,
+		hp.hotplace_link,
+		hp.hotplace_rest_number,
+		hp.hotplace_attraction_number,
+		hr.hotplace_rest_cuisine,
+		hr.hotplace_rest_menu,
+		ha.hotplace_attraction_content
+		from tbl_hotplace
 		hp
-		LEFT JOIN TBL_HOTPLACE_REST hr ON hp.HOTPLACE_REST_NUMBER =
-		hr.HOTPLACE_REST_NUMBER
-		LEFT JOIN TBL_HOTPLACE_ATTRACTION ha ON
-		hp.HOTPLACE_ATTRACTION_NUMBER =
-		ha.HOTPLACE_ATTRACTION_NUMBER
-		WHERE
-		hp.HOTPLACE_STATION = #{hotplaceStation}
+		left join tbl_hotplace_rest hr on hp.hotplace_rest_number =
+		hr.hotplace_rest_number
+		left join tbl_hotplace_attraction ha on
+		hp.hotplace_attraction_number =
+		ha.hotplace_attraction_number
+		where
+		hp.hotplace_station = #{station}
 	</select>
-	<insert id="pickHotplace">
+	<select id="checkLike" parameterType="LikeDTO"
+		resultType="LikeDTO">
+		select l.member_number, l.hotplace_number
+		from tbl_like l
+		join tbl_hotplace h on h.hotplace_number = l.hotplace_number
+		join tbl_member m on l.member_number = m.member_number
+		where l.member_number = #{memberNumber}
+	</select>
+	<insert id="pickHotplace" parameterType="LikeDTO">
 		INSERT INTO TBL_LIKE (HOTPLACE_NUMBER, MEMBER_NUMBER)
 		VALUES (#{hotplaceNumber}, #{memberNumber})
 	</insert>
-
+	<delete id="unpickHotplace" parameterType="LikeDTO">
+		DELETE FROM TBL_LIKE
+		WHERE HOTPLACE_NUMBER = #{hotplaceNumber} AND MEMBER_NUMBER =
+		#{memberNumber}
+	</delete>
 </mapper>
