@@ -12,16 +12,18 @@ public class MemberDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+	//회원가입
 	public void join(MemberDTO memberDTO) {
 		sqlSession.insert("member.join", memberDTO);
 		System.out.println("값확인" + memberDTO);
 	}
 	
+	//회원가입 시 중복값 확인
 	public boolean checkId(String memberEmail) {
 		return (Integer)sqlSession.selectOne("member.checkId", memberEmail) <= 0;
 	}
 	
-	//쿠키 세션
+	//쿠키 세션(로그인시 사용)
 	public MemberDTO login(String memberEmail, String  memberPw) {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setMemberEmail(memberEmail);
