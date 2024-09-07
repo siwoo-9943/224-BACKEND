@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ page import="java.util.List"%>
+<%@ page import="com.pj224.app.dto.MainDTO"%>
+<%
+List<MainDTO> results = (List<MainDTO>) request.getAttribute("searchResults");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +15,6 @@
 <link rel="stylesheet"
 	href="${pageContextpath.request.contextPath }/assets/css/main-search.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
 <%@ include file="header.jsp"%>
 <body>
@@ -23,24 +26,30 @@
 					<div class="content">
 						<c:if test="${not empty searchResults}">
 							<c:forEach var="item" items="${searchResults}">
-								<span class="title"> <a href="#">${item.boardTitle} </a>
+							<div>
+								<span class="title">
+								<a href="#">${item.boardTitle} </a>
 									<font class="comment-cnt">${item.commentCount} </font>
 								</span>
 								<p>
 									<a href="#">${item.boardContent} &nbsp;</a>
 								</p>
-								<p class="desc">${item.boardRegistDate}
-									<span>${item.boardCate } </span> | <span id="">${item.boardRegistDate}
-									</span> | <span class="like">추천 ${item.recommendCount} </span>
+								<p class="desc">
+									<span>${item.boardCate } </span> | 
+									<span id="">${item.boardRegistDate}	</span> |
+									<span class="like">추천 ${item.recommendCount} </span>
 								</p>
+								</div>
 							</c:forEach>
+							<a href="${pageContext.request.contextPath}/app/hotplace/hotplatch.hp" class="more-button">커뮤 더보기!</a>
 						</c:if>
 					</div>
-					<!-- 더보기 버튼 -->
-					<a href="#" class="more-button">핫플 더보기!</a>
 					<c:if test="${empty searchResults}">
 						<p>검색 결과가 없습니다.</p>
 					</c:if>
+					<!-- 더보기 버튼 -->
+					<p class="top_title">핫플콕콕</p>
+					<a href="#" class="more-button">핫플 더보기!</a>
 
 
 
@@ -110,5 +119,5 @@
 	</div>
 </body>
 <%@ include file="footer.jsp"%>
-
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </html>

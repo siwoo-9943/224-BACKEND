@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import com.mybatis.config.MyBatisConfig;
 import com.pj224.app.dto.MainDTO;
 import com.pj224.app.dto.MemberDTO;
-import com.pj224.app.dto.NoticeDTO;
 
 public class MainDAO {
 	private SqlSession sqlSession;
@@ -34,26 +33,34 @@ public class MainDAO {
 //		System.out.println(inputSearch);
 //		return sqlSession.selectList("mainsearch.selectcm");
 //	}
-	
-	public List<MainDTO> searchList() {
-        List<MainDTO> list = null;
-        try (SqlSession sqlSession = MyBatisConfig.getSqlSessionFactory().openSession()) {
-            list = sqlSession.selectList("mainsearch.selectcm");
-        }
-        return list;
-    }
-
-	
 	public List<MainDTO> searchInput(String inputsearch) {
-	    MainDTO mainDTO = new MainDTO();
-	    mainDTO.setSearchInput(inputsearch);
-	    return sqlSession.selectList("main.selectcm", mainDTO);
-	}
-	
-	public void select(MemberDTO memberDTO) {
-//		sqlSession.select("mainsearch", memberDTO);
-		sqlSession.selectList("mainsearch.selectcm", memberDTO);
+	    System.out.println("검색어 DTO 입력: " + inputsearch);
+	    MainDTO mainDTO = new MainDTO(inputsearch);
+	    System.out.println(mainDTO);
+	    List<MainDTO> results = sqlSession.selectList("searchmain.selectcm", mainDTO);
+	    System.out.println("검색 결과: " + results);
+	    System.out.println(mainDTO);
+	    return results;
 	}
 
+	public List<MainDTO> searchPosts(String searchInput) {
+		System.out.println("searchPosts");
+		return sqlSession.selectList("mainsearch.selectcm", searchInput);
+	}
+
+	public List<MainDTO> searchInfo(String inputsearch) {
+		System.out.println("searchInfo");
+		System.out.println("DAO 검색어 : " + inputsearch);
+		return sqlSession.selectList("mainsearch.selectcm", inputsearch);
+	}
+
+	public List<MainDTO> searchList() {
+		System.out.println("검색결과");
+		List<MainDTO> list = null;
+		System.out.println(list);
+		list = sqlSession.selectList("mainsearch.selectcm");
+
+		return list;
+	}
 
 }
