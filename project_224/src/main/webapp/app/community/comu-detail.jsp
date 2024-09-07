@@ -42,7 +42,7 @@ href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
             <span>차멀미가 좀 있어서 고속버스 타고 멀리갈때 항상 걱정인데..</span><br>
             <span>참고하면 좋을 것 같네요!</span>
           </div>
-
+                                                  
           <div class="recommendArea">
             <div id="recommend">
               <span class="up-numb"><span id="vote-list-btn-txt">6</span>
