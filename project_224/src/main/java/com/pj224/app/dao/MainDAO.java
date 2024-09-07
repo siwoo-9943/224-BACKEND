@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.mybatis.config.MyBatisConfig;
 import com.pj224.app.dto.MainDTO;
 import com.pj224.app.dto.MemberDTO;
+import com.pj224.app.dto.NoticeDTO;
 
 public class MainDAO {
 	private SqlSession sqlSession;
@@ -34,10 +35,24 @@ public class MainDAO {
 //		return sqlSession.selectList("mainsearch.selectcm");
 //	}
 	
+	public List<MainDTO> searchList() {
+        List<MainDTO> list = null;
+        try (SqlSession sqlSession = MyBatisConfig.getSqlSessionFactory().openSession()) {
+            list = sqlSession.selectList("mainsearch.selectcm");
+        }
+        return list;
+    }
+
+	
 	public List<MainDTO> searchInput(String inputsearch) {
 	    MainDTO mainDTO = new MainDTO();
 	    mainDTO.setSearchInput(inputsearch);
 	    return sqlSession.selectList("main.selectcm", mainDTO);
+	}
+	
+	public void select(MemberDTO memberDTO) {
+//		sqlSession.select("mainsearch", memberDTO);
+		sqlSession.selectList("mainsearch.selectcm", memberDTO);
 	}
 
 

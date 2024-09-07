@@ -74,9 +74,9 @@ public class MainDTO {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + "commentCount : " + commentCount + 
-				"boardContent : " + boardContent + "boardCate : " + boardCate + "boardRegistDate : " + boardRegistDate +
-				"recommendCount" + recommendCount;
+		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount + 
+				" boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : " + boardRegistDate +
+				" recommendCount : " + recommendCount;
 	}
 
 }
