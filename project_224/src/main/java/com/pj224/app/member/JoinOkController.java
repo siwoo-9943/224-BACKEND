@@ -48,7 +48,10 @@ public class JoinOkController implements MemExecute {
 
 		// 결과처리
 		result.setRedirect(true);
-//회원가입 성공 후 이동할 페이지 설정
+		//회원가입완료 후 메인페이지로 이동 왜 안될까
+//		response.sendRedirect(request.getContextPath() + "/main.jsp");
+		
+		
 	    
 		return result;
 	}

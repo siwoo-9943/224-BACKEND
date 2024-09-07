@@ -471,7 +471,7 @@
               </div>
               <div class="mem-term_div">
                 <label class="mem-term-checkbox-label">
-                  <input type="checkbox" id="mem-check-o1" name="memberTerms" value="C">
+                  <input type="checkbox" id="mem-check-o1" name="memberTerms" value="Y">
                   <span class="mem-term-checkbox-icon"></span>
                   <span class="mem-term_head"><span class="optional">[선택]</span>이벤트・혜택 정보 수신</span>
                 </label>
