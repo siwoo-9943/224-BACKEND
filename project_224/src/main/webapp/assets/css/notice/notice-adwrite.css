@@ -85,3 +85,23 @@ p {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+.notice-category {
+	margin: 20px 0; /* 위아래 여백 */
+	display: flex; /* 레이블과 선택박스를 가로로 배치 */
+	align-items: center; /* 수직 정렬 */
+}
+
+.notice-category label {
+	margin-right: 10px; /* 레이블과 선택박스 사이의 간격 */
+	font-weight: bold; /* 레이블 두껍게 */
+	font-size: 16px; /* 레이블 크기 */
+}
+
+.notice-category select {
+	padding: 10px; /* 선택박스 안의 여백 */
+	border: 1px solid #ccc; /* 테두리 색상 */
+	border-radius: 5px; /* 둥근 테두리 */
+	font-size: 16px; /* 글자 크기 */
+	background-color: #f9f9f9; /* 배경 색상 */
+	transition: border-color 0.3s; /* 테두리 색상 전환 효과 */
+}

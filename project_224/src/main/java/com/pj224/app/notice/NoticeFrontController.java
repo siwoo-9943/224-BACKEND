@@ -65,10 +65,6 @@ public class NoticeFrontController extends HttpServlet {
 			result = new NoticeDetailController().MemExecute(request, response);
 			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
 			break;
-//		case "/notice/write.no":
-//			System.out.println("write");
-//			response.sendRedirect(request.getContextPath() + "/app/notice/notice-adwrite.jsp");
-//			break;
 		case "/notice/write.no":
 			System.out.println("write");
 			request.getRequestDispatcher("/app/notice/notice-adwrite.jsp").forward(request, response);
@@ -77,10 +73,6 @@ public class NoticeFrontController extends HttpServlet {
 			System.out.println("writeOk");
 			result = new NoticeWriteOkController().MemExecute(request, response);
 			break;
-//		case "/notice/writeOk.no":
-//			System.out.println("writeOk");
-//			result = new NoticeWriteOkController().MemExecute(request, response);
-//			break;
 //		case "/notice/notice-admodify.no":
 //			System.out.println("글수정");
 //			new NoticeModifyController().MemExecute(request, response);
