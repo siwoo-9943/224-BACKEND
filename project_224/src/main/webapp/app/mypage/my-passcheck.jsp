@@ -15,7 +15,7 @@
 			<div class="my-leftbox">
 				<div class="my-hello">
 					<div class="my-wellcome">반가워요!</div>
-					<div class="my-nickname">"금쪽이"님</div>
+					<div class="my-nickname">""님</div>
 				</div>
 				<div class="my-category">
 					<div class="my-category-menu">메뉴</div>
