@@ -8,9 +8,20 @@ public class MainDTO {
 	private String boardRegistDate;
 	private int recommendCount;
 	private String searchInput;
-
+	
+	private String memberNickname;
+	 
+	
 	public MainDTO() {
 		super();
+	}
+
+	public String getMemberNickname() {
+		return memberNickname;
+	}
+
+	public void setMemberNickname(String memberNickname) {
+		this.memberNickname = memberNickname;
 	}
 	
 	public MainDTO(String searchInput) {
@@ -81,7 +92,7 @@ public class MainDTO {
 		// TODO Auto-generated method stub
 		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount + 
 				" boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : " + boardRegistDate +
-				" recommendCount : " + recommendCount;
+				" recommendCount : " + recommendCount + " memberNickname : " + memberNickname;
 		
 	}
 
