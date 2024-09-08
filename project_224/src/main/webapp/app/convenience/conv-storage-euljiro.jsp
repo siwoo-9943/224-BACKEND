@@ -11,7 +11,7 @@
   <div style="position: relative; height: 350px;">
     <div style="position: absolute; left: 0px; bottom: 0px; right: 0px; z-index: 10;">
       <div style="width: 100%; max-width: 1200px; margin: 0 auto 30px;"><span
-          style="font-size: 58px; color: #fff; font-weight: 700;">을지로입구역</span></div>
+          style="font-size: 58px; col	or: #fff; font-weight: 700;">을지로입구역</span></div>
     </div>
     <div style="background-image: url(${pageContext.request.contextPath}/assets/images/hotplace.png); width: 100%; height: 100%;"></div>
   </div>

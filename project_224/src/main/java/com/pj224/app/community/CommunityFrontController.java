@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pj224.app.Result;
+import com.pj224.app.notice.NoticeDetailController;
 
 /**
  * Servlet implementation class CommunityFrontController
@@ -70,9 +71,13 @@ public class CommunityFrontController extends HttpServlet {
 			break;
 		case "/community/comu-detail.cm":
 			System.out.println("디테일 들어옴");
+			result = new CommunityDetailOkController().MemExecute(request, response);
 			request.getRequestDispatcher("/app/community/comu-detail.jsp").forward(request, response);
 			isForwarded = true;
 			break;
+		case "/community/comu-modify.cm":
+			System.out.println("수정 들어옴");
+			request.getRequestDispatcher("/app/community/comu-modify.jsp").forward(request, response);
 		}
 
 		

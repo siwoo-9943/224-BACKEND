@@ -26,13 +26,17 @@ href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
               </div>
             </div>
           </div>
+          
           <div id="topTitle">
-            <h1>고속버스 명당자리.jpg<span id="comment">[38]</span></h1>
+            <h1>고속버스 명당자리.jpg
+            <span id="comment">[38]</span></h1>
             <div class="topTitle-box">
               <span class="topTitle-profile"
                 style="background-image:url(https://www.ppomppu.co.kr/images/no-face.jpg);"></span>
               <ul class="topTitle-mainbox">
-                <li class="topTitle-name"><strong>닉네임1</strong><small>등록일 2024-08-23 13:40</small></li>
+                <li class="topTitle-name">
+                <strong>닉네임1</strong>
+                <small>등록일 2024-08-23 13:40</small></li>
               </ul>
             </div>
           </div>
@@ -56,64 +60,9 @@ href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
 
           <div class="comu-div-flex-content">
             <div class="com-div-flex-box-div">
-              <button class="comu-submit"><a href="./comu-main-member.html">이전</a></button>
+              <button class="comu-submit">
+              <a href="./comu-main-member.html">이전</a></button>
             </div>
-          </div>
-        </div>
-
-        <div id="form-commentInfo">
-          <div id="comment-count">댓글<span id="count">5</span></div>
-          <div id="comment-comment-list">
-            <ul>
-              <li>
-                <div><strong>닉네임2</strong></div>
-                <div><span>감사합니다~!</span>
-                  <div class="comu-member-rewrite-contents">
-                    <a href="../../html/community/comu-post-member-comment-rewrite.html"><button
-                        class="comu-member-rewrite-contents-button" type="button">수정</button></a>
-                    <button class="comu-member-rewrite-contents-button" id="comu-myModal" type="button"
-                      onclick="openDeleteModal()"><span>삭제</span></button>
-                  </div>
-                </div>
-                <div><small>2024-08-23 14:30</small></div>
-              </li>
-              <br>
-              <li>
-                <div><strong>닉네임</strong></div>
-                <div><span>감사합니다~!</span></div>
-
-                <div><small>2024-08-23 14:30</small></div>
-              </li>
-              <br>
-              <li>
-                <div><strong>닉네임</strong></div>
-                <div><span>감사합니다~!</span></div>
-
-                <div><small>2024-08-23 14:30</small></div>
-              </li>
-              <br>
-              <li>
-                <div><strong>닉네임</strong></div>
-                <div><span>감사합니다~!</span></div>
-
-                <div><small>2024-08-23 14:30</small></div>
-              </li>
-              <br>
-              <li>
-                <div><strong>닉네임</strong></div>
-                <div><span>감사합니다~!</span></div>
-
-                <div><small>2024-08-23 14:30</small></div>
-              </li>
-              <br>
-
-            </ul>
-          </div>
-
-          <span id="comu-text-red">[알림]</span><span> 욕설,상처 줄 수 있는 악플은 삼가주세요</span>
-          <div class="comu-inputbox-but">
-            <input id="comment-input" placeholder="댓글을 입력해 주세요.">
-            <button class="comu-submit" id="comu-Null-Modal" type="button" onclick="openNullModal()">등록</button>
           </div>
         </div>
 

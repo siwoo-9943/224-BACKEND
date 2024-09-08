@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pj224.app.MemExecute;
 import com.pj224.app.Result;
+import com.pj224.app.dao.CommunityDAO;
+import com.pj224.app.dto.CommunityDTO;
 
 public class CommunityDeleteOkController implements MemExecute{
 
@@ -17,5 +19,7 @@ public class CommunityDeleteOkController implements MemExecute{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }
