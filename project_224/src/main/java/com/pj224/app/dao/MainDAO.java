@@ -45,22 +45,27 @@ public class MainDAO {
 
 	public List<MainDTO> searchPosts(String searchInput) {
 		System.out.println("searchPosts");
-		return sqlSession.selectList("mainsearch.selectcm", searchInput);
+		return sqlSession.selectList("main.selectcm", searchInput);
 	}
 
 	public List<MainDTO> searchInfo(String inputsearch) {
 		System.out.println("searchInfo");
 		System.out.println("DAO 검색어 : " + inputsearch);
-		return sqlSession.selectList("mainsearch.selectcm", inputsearch);
+		return sqlSession.selectList("main.selectcm", inputsearch);
 	}
 
 	public List<MainDTO> searchList() {
 		System.out.println("검색결과");
 		List<MainDTO> list = null;
 		System.out.println(list);
-		list = sqlSession.selectList("mainsearch.selectcm");
+		list = sqlSession.selectList("main.selectcm");
 
 		return list;
+	}
+	
+	public List<MainDTO> maincomulist() {
+		System.out.println("maincomulist");
+		return sqlSession.selectList("main.cmlist");
 	}
 
 }
