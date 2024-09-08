@@ -8,6 +8,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/hotplace/hotplace.css">
 </head>
+<%@ include file="../../header.jsp"%>
 <body>
 
 	<div style="position: relative; height: 350px;">
