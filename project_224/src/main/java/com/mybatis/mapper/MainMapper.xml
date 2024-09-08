@@ -20,8 +20,8 @@
 		TBL_COMMENT TC ON TB.board_number = TC.board_number
 		LEFT JOIN
 		TBL_RECOMMEND TR ON tb.board_number = tr.board_number
-		WHERE (Tb.BOARD_TITLE LIKE CONCAT('%', #{inputSearch}, '%') OR tb.BOARD_CONTENT LIKE CONCAT('%', #{inputSearch}, '%')) AND
-		tb.BOARD_NUMBER BETWEEN 1 and 5
+		WHERE (Tb.BOARD_TITLE LIKE '%' || #{searchInput} || '%' OR tb.BOARD_CONTENT LIKE '%' || #{searchInput} || '%')
+        AND tb.BOARD_NUMBER BETWEEN 1 AND 5
 		GROUP BY
 		TB.BOARD_NUMBER,
 		TB.BOARD_CATE,
@@ -30,6 +30,6 @@
 		TB.BOARD_REGIST_DATE,
 		TM.MEMBER_NUMBER
 		ORDER BY
-		recommend_count DESC;
+		recommend_count DESC
 	</select>
 </mapper>

@@ -1,16 +1,21 @@
 package com.pj224.app.dto;
 
 public class MainDTO {
-	private String searchInput;
 	private String boardTitle;
 	private int commentCount;
 	private String boardContent;
 	private String boardCate;
 	private String boardRegistDate;
 	private int recommendCount;
+	private String searchInput;
 
 	public MainDTO() {
 		super();
+	}
+	
+	public MainDTO(String searchInput) {
+		super();
+		this.searchInput = searchInput;
 	}
 
 
@@ -74,9 +79,10 @@ public class MainDTO {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + "commentCount : " + commentCount + 
-				"boardContent : " + boardContent + "boardCate : " + boardCate + "boardRegistDate : " + boardRegistDate +
-				"recommendCount" + recommendCount;
+		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount + 
+				" boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : " + boardRegistDate +
+				" recommendCount : " + recommendCount;
+		
 	}
 
 }
