@@ -35,4 +35,11 @@
 		FROM TBL_MEMBER
 		WHERE MEMBER_NICKNAME = #{memberNickname}
 	</select>
+	
+	<!-- 아이디 찾기 이름 전화번호 인증번호 일치값 확인 -->
+	<select id="checkIdFind" parameterType="String" resultType="int">
+		SELECT COUNT(MEMBER_NAME)
+		FROM TBL_MEMBER
+		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone] AND MEMBER_PHONE_INPUT = #{memberPhoneInput}
+	</select>
 </mapper>

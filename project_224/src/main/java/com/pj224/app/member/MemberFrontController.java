@@ -86,13 +86,9 @@ public class MemberFrontController extends HttpServlet {
 			System.out.println("checkNicknameOk");
 			new CheckNicknameController().MemExecute(request, response);
 			break;
-		case "/member/logout.me":
-			System.out.println("logout");
-//			new CheckNicknameController().MemExecute(request, response);
-			break;
-		case "/member/mem-id-fine.me":
-			System.out.println("idfine");
-//			new CheckNicknameController().MemExecute(request, response);
+		case "/member/idFindOk.me":
+			System.out.println("idFindOk");
+			new IdFindOkController().MemExecute(request, response);
 			break;
 		}
 
