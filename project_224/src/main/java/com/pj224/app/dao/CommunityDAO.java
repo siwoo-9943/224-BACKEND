@@ -26,5 +26,13 @@ public class CommunityDAO {
 		
 	}
 	
+	public CommunityDTO comudetail() {
+		System.out.println("detailDAO 들어왔냐?");
+		CommunityDTO detail = null;
+		try (SqlSession sqlSession = MyBatisConfig.getSqlSessionFactory().openSession()){
+			detail = sqlSession.selectOne("community.comudetail");
+		}
+		return detail;
+	}
 
 }

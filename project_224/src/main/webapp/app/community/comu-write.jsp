@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -141,35 +141,53 @@ a {
 		<div class="comu-board-title">
 			<h1>커뮤니티 글작성</h1>
 		</div>
-		<form id="communityForm">
+		<form id="communityForm"
+			action="${pageContext.request.contextPath}/community/comu-writeOk.cm"
+			method="post">
+
+			<!-- Hidden field to pass memberNumber from session -->
+			<input type="hidden" name="memberNumber" value="2" />
+
 			<div class="comu-board-write-wrap">
 				<div class="comu-board-write">
 					<div class="comu-title">
-						<input id="comu-board-title" name="comuTitle" type="text"
-							placeholder="제목을 입력해 주세요" />
+						<input id="comu-board-title" name="boardTitle" type="text"
+							placeholder="제목을 입력해 주세요" value="${boardTile.boardTile}" required />
 					</div>
+
 					<div class="comu-category">
-						<label for="comu-category-select">카테고리 선택:</label> <select
-							id="comu-category-select" name="comuCategory">
-							<option value="전체">전체</option>
-							<option value="자유">자유</option>
-							<option value="핫플 자유">핫플 자유</option>
-							<option value="핫플 후기">핫플 후기</option>
-							<option value="편공 자유">편공 자유</option>
-							<option value="편공 후기">편공 후기</option>
+						<label for="comu-category-select">카테고리 선택:</label> 
+						<select
+							id="comu-category-select" name="boardCate">
+							<option value="자유"
+								<c:if test="${boardCate == '자유'}">selected</c:if>>자유</option>
+							<option value="핫플자유"
+								<c:if test="${boardCate == '핫플자유'}">selected</c:if>>핫플
+								자유</option>
+							<option value="핫플후기"
+								<c:if test="${boardCate == '핫플후기'}">selected</c:if>>핫플
+								후기</option>
+							<option value="편공자유"
+								<c:if test="${boardCate == '편공자유'}">selected</c:if>>편공
+								자유</option>
+							<option value="편공후기"
+								<c:if test="${boardCate == '편공후기'}">selected</c:if>>편공
+								후기</option>
 						</select>
 					</div>
+
 					<div class="comu-cont">
-						<textarea id="summernote" name="editordata"></textarea>
+						<textarea id="summernote" name="editordata">${boardContent.boardContent}</textarea>
 						<p id="letter-length" style="display: inline;"></p>
 						/100
 					</div>
 				</div>
 			</div>
+
 			<div class="comu-button-container">
 				<button class="comu-action-button" type="button"
-					onclick="location.href='../community/comu-main.jsp'">이전</button>
-				<button class="comu-action-button" type="button" id="submitButton">등록</button>
+					onclick="location.href='${pageContext.request.contextPath}/community/comu-main.jsp'">이전</button>
+				<button class="comu-action-button" type="submit" id="submitButton">등록</button>
 			</div>
 		</form>
 	</div>
@@ -195,7 +213,7 @@ a {
 <script
 	src="${pageContext.request.contextPath}/assets/js/community/comu-write.js"></script>
 <script>
-    var contextPath = '${pageContext.request.contextPath}';
+	var contextPath = '${pageContext.request.contextPath}';
 </script>
 <%@ include file="../../footer.jsp"%>
 
