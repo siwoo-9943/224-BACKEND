@@ -79,8 +79,6 @@ public class MypageFrontController extends HttpServlet {
 			System.out.println("비밀번호 확인 성공");
 			result = new MypasscheckOkController().MemExecute(request, response);
 			break;
-		case "/app/mypage/update.my" :
-			System.out.println("개인정보수정 확인");
 		}
 		
 		if (result != null) {
