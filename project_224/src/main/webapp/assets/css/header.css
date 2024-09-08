@@ -146,6 +146,12 @@ body {
   font-weight: 500;
 }
 
+#header-login-logout-btn h5 {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
 
 /* 드롭다운 메뉴 */
 .main-dropdown {
