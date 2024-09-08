@@ -32,8 +32,8 @@
 							href="${pageContext.request.contextPath}/app/mypage/my-pick.jsp">
 							<div class="my-category-menu">찜목록</div>
 						</a> <a
-							href="${pageContext.request.contextPath}/app/mypage/my-quit.jsp"><div
-								class="my-category-menu">회원탈퇴</div></a>
+							href="${pageContext.request.contextPath}/app/mypage/my-quit.jsp">
+							<div class="my-category-menu">회원탈퇴</div></a>
 					</div>
 				</div>
 
