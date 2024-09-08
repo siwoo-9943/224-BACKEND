@@ -61,6 +61,8 @@ public class MainFrontController extends HttpServlet {
 		
 		switch (target) {
 		case "/main.mn":
+			System.out.println("커뮤니티 컨텐츠");
+			result = new MainComuListController().MemExecute(request, response);
 			System.out.println("main페이지이동");
 			request.getRequestDispatcher("main.jsp").forward(request, response);
 			break;
