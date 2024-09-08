@@ -38,7 +38,7 @@
         <ul class="notice-admain-ul-all">
          <c:forEach var="notice" items="${noticeshowlist}">
 			<li>
-            	<a href="${pageContext.request.contextPath}/notice/notice-addetail.no">
+            	<a href="${pageContext.request.contextPath}/notice/notice-addetail.no?title=${notice.noticeTitle}">
               		<div class="notice-admain-ul-main">
 	                	<div class="notice-admain-ul-cate">${notice.noticeCate}</div>
 	                	<div class="notice-admain-ul-title">${notice.noticeTitle}</div>
@@ -48,28 +48,35 @@
             	</a>
 			</li>
          </c:forEach>
-
-          <!-- 추가 게시글 항목 -->
         </ul>
         <!-- 페이지 앞/뒤로 넘기기 버튼 -->
-        <div class="info-bg2">
-          <div class="bottom-list">
-            <a class="prev" onfocus="blur()" href="#"></a>
-            <a class="num on" onfocus="blur()" href="#">1</a>
-            <a class="num" onfocus="blur()" href="#">2</a>
-            <a class="num" onfocus="blur()" href="#">3</a>
-            <a class="num" onfocus="blur()" href="#">4</a>
-            <a class="num" onfocus="blur()" href="#">5</a>
-            <a class="next" onfocus="blur()" href="#"></a>
-          </div>
-        </div>
+              <div class="pagination-container">
+         <ul class="doctorList-ear-pagenation">
+            <!-- 이전 페이지 그룹으로 이동 -->
+            <c:if test="${startPage > 1}">
+               <li><a href="?page=${startPage - 1}">&lt;</a></li>
+            </c:if>
+
+            <!-- 페이지 번호 출력 -->
+            <c:forEach var="i" begin="${startPage}" end="${endPage}">
+               <li><a href="?page=${i}"
+                  style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a></li>
+            </c:forEach>
+
+            <!-- 다음 페이지 그룹으로 이동 -->
+            <c:if test="${endPage < maxPages}">
+               <li><a href="?page=${endPage + 1}">&gt;</a></li>
+            </c:if>
+         </ul>
+      </div>
+      
+
         <div class="notice-admain-btuall">
-          <button class="notice-admain-btu" type="button" onclick="location.href='../notice/notice-adwrite.jsp'">
-            <span class="notice-admain-btu-sp">글쓰기</span>
+          <button class="notice-admain-btu" type="button">         
+          <a href="${pageContext.request.contextPath}/notice/write.no">
+            <span class="notice-admain-btu-sp">글쓰기</span></a>
           </button>
         </div>
-      </div>
-    </div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
