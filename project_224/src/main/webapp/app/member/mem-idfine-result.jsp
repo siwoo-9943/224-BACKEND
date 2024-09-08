@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/member/mem-idfine-result.css" />
 </head>
+<%@ include file="/header.jsp"%>
 <body>
 <div class="wrapper">
     <div class="head">
@@ -32,4 +33,5 @@
   </div>
 
 </body>
+<%@ include file="/footer.jsp"%>
 </html>

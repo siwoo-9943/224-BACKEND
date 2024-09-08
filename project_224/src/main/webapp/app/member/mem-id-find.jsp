@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/member/mem-id-find.css" />
 </head>
+<%@ include file="/header.jsp"%>
 <body>
  <main>
     <div class="login-find">
@@ -34,4 +35,5 @@
     </div>
 
 </body>
+<%@ include file="/footer.jsp"%>
 </html>
