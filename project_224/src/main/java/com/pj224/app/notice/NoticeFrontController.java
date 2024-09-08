@@ -11,6 +11,7 @@ import com.pj224.app.Result;
 import com.pj224.app.community.CommunityListOkController;
 import com.pj224.app.main.MainLoginController;
 import com.pj224.app.main.MainLogoutController;
+import com.pj224.app.member.LoginOkController;
 
 /**
  * Servlet implementation class NoticeFrontController
@@ -63,16 +64,19 @@ public class NoticeFrontController extends HttpServlet {
 			result = new NoticeDetailController().MemExecute(request, response);
 			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
 			break;
-		case "/notice/notice-adwrite.no":
-			System.out.println("글작성");
-			new NoticeWriteController().execute(request, response);
-//			result = new MainLoginController().MemExecute(request, response);
+		case "/notice/write.no":
+			System.out.println("write");
+			response.sendRedirect(request.getContextPath() + "/app/notice/notice-adwrite.jsp");
 			break;
-		case "/notice/notice-admodify.no":
-			System.out.println("글수정");
-			new NoticeModifyController().execute(request, response);
-//			result = new MainLoginController().MemExecute(request, response);
-			break;
+//		case "/notice/writeOk.no":
+//			System.out.println("writeOk");
+//			result = new NoticeWriteOkController().MemExecute(request, response);
+//			break;
+//		case "/notice/notice-admodify.no":
+//			System.out.println("글수정");
+//			new NoticeModifyController().MemExecute(request, response);
+////			result = new MainLoginController().MemExecute(request, response);
+//			break;
 		}
 		
 	      // Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
