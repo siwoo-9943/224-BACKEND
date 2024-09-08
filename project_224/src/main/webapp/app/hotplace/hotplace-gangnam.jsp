@@ -9,8 +9,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/hotplace/hotplace-detail.css">
 </head>
-
-
+<%@ include file="../../header.jsp"%>
 <body>
 	<div style="position: relative; height: 350px;">
 		<div
@@ -37,41 +36,54 @@
 	<c:set var="endIndex" value="${startIndex + itemsPerPage - 1}" />
 
 	<div>
+										<h2>${like.hotplaceNumber }</h2><br>	
+										<h2>${hotplace.hotplaceNumber }</h2><br>	
+										<h2>${like.memberNumber }</h2><br>	
+										<h2>${memberNumber }</h2><br>	
 		<c:forEach var="hotplace" items="${hotplaceList}" varStatus="status">
 			<c:if
 				test="${status.index >= startIndex && status.index <= endIndex}">
 				<div class="hotplace-contents-wrapper">
 					<div class="hotplace-content-left">
+						<!-- 세션에서 memberNumber 가져오기 -->
+						<c:set var="memberNumber"
+							value="${sessionScope.member.memberNumber}" />
+
 						<div class="hotplace-content-name" style="margin-bottom: 10px;">
-							<h1 style="display: inline; margin: 0;">
-								${hotplace.hotplaceTitle}</h1>
-							<c:set var="isLiked" value="false" />
-							<c:forEach var="like" items="${likeList}">
-								<c:if test="${like.hotplaceNumber == hotplace.hotplaceNumber}">
-									<c:set var="isLiked" value="true" />
-								</c:if>
-							</c:forEach>
-							<c:choose>
-								<c:when test="${isLiked}">
-									<!-- 이미지 클릭 시 'unpick'을 위한 URL로 요청을 보냄 -->
-									<a
-										href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
-										<img
-										src="${pageContext.request.contextPath}/assets/images/picked.png"
-										style="width: 30px;">
-									</a>
-								</c:when>
-								<c:otherwise>
-									<!-- 이미지 클릭 시 'pick'을 위한 URL로 요청을 보냄 -->
-									<a
-										href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
-										<img
-										src="${pageContext.request.contextPath}/assets/images/pick.png"
-										style="width: 30px;">
-									</a>
-								</c:otherwise>
-							</c:choose>
+							<h1 style="display: inline; margin: 0;">${hotplace.hotplaceTitle}</h1>
+
+							<c:if test="${memberNumber != null}">
+								<c:set var="isLiked" value="false" />
+								<c:forEach var="like" items="${likeList}">
+									<c:if
+										test="${like.hotplaceNumber == hotplace.hotplaceNumber && like.memberNumber == memberNumber}">
+										<c:set var="isLiked" value="true" />
+									</c:if>
+								</c:forEach>
+
+								<c:choose>
+									<c:when test="${isLiked}">
+										<a
+											href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/picked.png"
+											style="width: 30px;" alt="찜 해제">
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a
+											href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/pick.png"
+											style="width: 30px;" alt="찜하기">
+										</a>
+									</c:otherwise>
+								</c:choose>
+							</c:if>
 						</div>
+
+
+
 						<div class="img-wrapper">
 							<img src="${pageContext.request.contextPath}/assets/images/1.png"
 								style="height: 100%; overflow: hidden; border: 1px solid black;">

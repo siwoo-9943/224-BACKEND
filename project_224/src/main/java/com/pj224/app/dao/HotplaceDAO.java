@@ -20,8 +20,8 @@ public class HotplaceDAO {
         return sqlSession.selectList("hotplace.showInfo", station);
     }
     
-    public List<LikeDTO> checkLike(int memberNumber, int hotplaceNumber){
-    	LikeDTO likeDTO = new LikeDTO(memberNumber, hotplaceNumber);
+    public List<LikeDTO> checkLike(int memberNumber){
+    	LikeDTO likeDTO = new LikeDTO(memberNumber);
     	return sqlSession.selectList("hotplace.checkLike", likeDTO);
     }
     
