@@ -55,7 +55,8 @@
 		LEFT JOIN
 		TBL_RECOMMEND R ON B.BOARD_NUMBER = R.BOARD_NUMBER
 		WHERE
-		B.BOARD_NUMBER = 3
+		B.BOARD_NUMBER
+		= 3
 		GROUP BY
 		B.BOARD_NUMBER,
 		B.BOARD_CATE,
@@ -64,8 +65,16 @@
 		B.BOARD_REGIST_DATE,
 		B.BOARD_UPDATE_DATE,
 		M.MEMBER_NUMBER
-		ORDER BY 
+		ORDER BY
 		B.BOARD_REGIST_DATE DESC
 	</select>
 
+
+
+	<update id="update">
+		UPDATE TBL_BOARD
+		SET BOARD_TITLE = #{boardTitle},
+		BOARD_CONTENT = #{boardContent}
+		WHERE BOARD_NUMBER = #{boardNumber}
+	</update>
 </mapper>

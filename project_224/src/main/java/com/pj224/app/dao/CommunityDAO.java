@@ -34,5 +34,10 @@ public class CommunityDAO {
 		}
 		return detail;
 	}
+	
+	public void update(CommunityDTO communityDTO) {
+		System.out.println("수정값 넘어왔냐?");
+		sqlSession.update("community.update", communityDTO);
+	}
 
 }

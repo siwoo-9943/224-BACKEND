@@ -56,7 +56,7 @@ public class CommunityFrontController extends HttpServlet {
 		switch (target) {
 		case "/community/comu-main.cm":
 			System.out.println("프컨 들어옴");
-			new CommunityListOkController().execute(request, response);
+			result = new CommunityListOkController().MemExecute(request, response);
 			request.getRequestDispatcher("/app/community/comu-main.jsp").forward(request, response);
 			isForwarded = true;
 			break;
@@ -77,9 +77,12 @@ public class CommunityFrontController extends HttpServlet {
 			break;
 		case "/community/comu-modify.cm":
 			System.out.println("수정 들어옴");
+			
 			request.getRequestDispatcher("/app/community/comu-modify.jsp").forward(request, response);
+			
+		
 		}
-
+		
 		
 		if (!isForwarded && result != null) {
 			if (result.isRedirect()) {
