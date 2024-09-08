@@ -56,16 +56,9 @@ public class HotplaceFrontController extends HttpServlet {
 	    HotplaceDAO hotplaceDAO = new HotplaceDAO();
 
 	    List<HotplaceDTO> hotplaceList = null;
-	    List<LikeDTO> likeList = null;
+	    List<LikeDTO> likeList = null;	    
 	    
-	    HttpSession session = request.getSession();
-	    Integer memberNumber = (Integer) session.getAttribute("memberNumber");
-	    if (memberNumber == null) {
-	    	memberNumber = 0;
-	        return;
-	    }
-	    
-	    
+        int memberNumber = Integer.parseInt(request.getParameter("memberNumber"));
 	    int hotplaceNumber;
 	    int page;
 	    String returnUrl;
@@ -73,7 +66,7 @@ public class HotplaceFrontController extends HttpServlet {
 		switch (target) {
 		case "/hotplace/hotplace-euljiro.hp":
             hotplaceList = hotplaceDAO.showInfo("을지로입구역");
-            likeList = hotplaceDAO.checkLike(2, hotplaceList.get(0).getHotplaceNumber());
+            likeList = hotplaceDAO.checkLike(2);
 
 		    request.setAttribute("hotplaceList", hotplaceList);
 		    request.setAttribute("likeList", likeList);
@@ -81,15 +74,19 @@ public class HotplaceFrontController extends HttpServlet {
             break;
 		case "/hotplace/hotplace-gangnam.hp":
 		    hotplaceList = hotplaceDAO.showInfo("강남역");
-		    likeList = hotplaceDAO.checkLike(memberNumber, hotplaceList.get(0).getHotplaceNumber());
+		    likeList = hotplaceDAO.checkLike(memberNumber);
 
 		    request.setAttribute("hotplaceList", hotplaceList);
 		    request.setAttribute("likeList", likeList);
+		    
+		    System.out.println(memberNumber);
+		    System.out.println(hotplaceList.get(0).getHotplaceNumber());
+		    System.out.println(likeList);
 		    request.getRequestDispatcher("/app/hotplace/hotplace-gangnam.jsp").forward(request, response);
 		    break;
 		case "/hotplace/hotplace-hongdae.hp":
             hotplaceList = hotplaceDAO.showInfo("홍대입구역");
-            likeList = hotplaceDAO.checkLike(2, hotplaceList.get(0).getHotplaceNumber());
+            likeList = hotplaceDAO.checkLike(2);
             
 		    request.setAttribute("hotplaceList", hotplaceList);
 		    request.setAttribute("likeList", likeList);
@@ -97,7 +94,7 @@ public class HotplaceFrontController extends HttpServlet {
             break;
 		case "/hotplace/hotplace-jamsil.hp":
             hotplaceList = hotplaceDAO.showInfo("잠실역");
-            likeList = hotplaceDAO.checkLike(2, hotplaceList.get(0).getHotplaceNumber());
+            likeList = hotplaceDAO.checkLike(2);
             
 		    request.setAttribute("hotplaceList", hotplaceList);
 		    request.setAttribute("likeList", likeList);
@@ -105,7 +102,7 @@ public class HotplaceFrontController extends HttpServlet {
             break;
 		case "/hotplace/hotplace-moonrae.hp":
             hotplaceList = hotplaceDAO.showInfo("문래역");
-            likeList = hotplaceDAO.checkLike(2, hotplaceList.get(0).getHotplaceNumber());
+            likeList = hotplaceDAO.checkLike(2);
             
 		    request.setAttribute("hotplaceList", hotplaceList);
 		    request.setAttribute("likeList", likeList);
@@ -113,7 +110,7 @@ public class HotplaceFrontController extends HttpServlet {
             break;
 		case "/hotplace/hotplace-seongsu.hp":
             hotplaceList = hotplaceDAO.showInfo("성수역");
-            likeList = hotplaceDAO.checkLike(2, hotplaceList.get(0).getHotplaceNumber());
+            likeList = hotplaceDAO.checkLike(2);
             
 		    request.setAttribute("hotplaceList", hotplaceList);
 		    request.setAttribute("likeList", likeList);
@@ -125,15 +122,16 @@ public class HotplaceFrontController extends HttpServlet {
 	        String[] str1 = request.getParameter("returnUrl").split("/");
 	        returnUrl = str1[str1.length - 1].replace("jsp", "hp") + "?page=" + page;
             hotplaceDAO.pickHotplace(new LikeDTO(hotplaceNumber, memberNumber));
-            response.sendRedirect(returnUrl); 
+            response.sendRedirect(returnUrl+"&memberNumber="+memberNumber); 
 			break;
 		case "/hotplace/unpick.hp":
+			System.out.println(memberNumber);
 	        hotplaceNumber = Integer.parseInt(request.getParameter("hotplaceNumber"));
 	        page = Integer.parseInt(request.getParameter("page"));
 	        String[] str2 = request.getParameter("returnUrl").split("/");
 	        returnUrl = str2[str2.length - 1].replace("jsp", "hp") + "?page=" + page;
             hotplaceDAO.unpickHotplace(new LikeDTO(hotplaceNumber, memberNumber));
-            response.sendRedirect(returnUrl); 
+            response.sendRedirect(returnUrl+"&memberNumber="+memberNumber); 
 			break;
 
 

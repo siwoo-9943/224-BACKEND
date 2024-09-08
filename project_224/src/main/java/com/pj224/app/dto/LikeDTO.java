@@ -8,6 +8,10 @@ public class LikeDTO {
         this.hotplaceNumber = hotplaceNumber;
         this.memberNumber = memberNumber;
     }
+    
+    public LikeDTO(int memberNumber) {
+        this.memberNumber = memberNumber;
+    }
 
     public LikeDTO() {
 		// TODO Auto-generated constructor stub
