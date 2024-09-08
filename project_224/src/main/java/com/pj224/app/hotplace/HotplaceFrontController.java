@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.pj224.app.Result;
 import com.pj224.app.dao.HotplaceDAO;
@@ -53,9 +54,18 @@ public class HotplaceFrontController extends HttpServlet {
 		System.out.println(target);
 		
 	    HotplaceDAO hotplaceDAO = new HotplaceDAO();
+
 	    List<HotplaceDTO> hotplaceList = null;
 	    List<LikeDTO> likeList = null;
-	    int memberNumber = 2; // 사용자 ID
+	    
+	    HttpSession session = request.getSession();
+	    Integer memberNumber = (Integer) session.getAttribute("memberNumber");
+	    if (memberNumber == null) {
+	    	memberNumber = 0;
+	        return;
+	    }
+	    
+	    
 	    int hotplaceNumber;
 	    int page;
 	    String returnUrl;
