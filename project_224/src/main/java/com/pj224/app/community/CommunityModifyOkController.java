@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.pj224.app.MemExecute;
 import com.pj224.app.Result;
 
-public class CommunityUpdateOkController implements MemExecute{
+public class CommunityModifyOkController implements MemExecute{
 
 	@Override
 	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)

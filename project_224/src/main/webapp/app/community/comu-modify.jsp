@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +49,7 @@ href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
 
               </div>
               <div>
-                <a href="${pageContext.request.contextPath}/app/community/comu-detail.jsp">
+                <a href="${pageContext.request.contextPath}/community/comu-detail.cm">
                   <button id="ok-button" type="button" class="tempas-bt01">작성완료</button>
                 </a>
               </div>
