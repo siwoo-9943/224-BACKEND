@@ -86,7 +86,7 @@ public class MypageDTO {
 		}
 		@Override
 		public String toString() {
-			return "Member = [memberNumber : " + memberNumber + ",memberEmail : " + memberEmail + ",memberPw : " + memberPw + 
+			return "mypageDTO = [memberNumber : " + memberNumber + ",memberEmail : " + memberEmail + ",memberPw : " + memberPw + 
 					",memberName : " + memberName + "memberNickName : " + memberNickName + "memberPhone : " + memberPhone + "memberPhoneInput : " + memberPhoneInput 
 					+"memberGender : " + memberGender + "memberBirth : " + memberBirth + "memberTerms : " + memberTerms + "]";
 		}
