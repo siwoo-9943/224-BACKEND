@@ -7,6 +7,7 @@
 <title>잠실역 핫플레이스</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/hotplace/hotplace-detail.css">
 </head>
+<%@ include file="../../header.jsp"%>
 <body>
     <div style="position: relative; height: 350px;">
         <div style="position: absolute; left: 0px; bottom: 0px; right: 0px; z-index: 10;">
