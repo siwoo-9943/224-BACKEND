@@ -18,7 +18,8 @@ public class NoticeListController implements MemExecute  {
 
 	@Override
 	public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
-		
+
+
 		System.out.println("컨드롤러 들어옴");
 		request.setCharacterEncoding("UTF-8");
 		Result result = new Result();
@@ -28,7 +29,7 @@ public class NoticeListController implements MemExecute  {
         // 리스트를 가져와서 request에 설정
         List<NoticeDTO> noticeList = noticeDAO.showList();
         request.setAttribute("noticeshowlist", noticeList);
-        
+        System.out.println(noticeList);
         result.setRedirect(false);
         result.setPath(request.getContextPath() + "/app/notice/notice-admain.jsp");
         
@@ -37,6 +38,8 @@ public class NoticeListController implements MemExecute  {
 
 
    }
+	
+	
 
 
 

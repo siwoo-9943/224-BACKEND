@@ -23,26 +23,27 @@
     <div class="notice-addetail-main">
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">제목</div>
-        <div class="notice-addetail-ttxt">${noticeshowdetail.noticeTitle}</div>
+        <div class="notice-addetail-ttxt">${noticeshowdetail[0].noticeTitle}</div>
       </div>
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">작성자</div>
-        <div class="notice-addetail-ttxt">${noticeshowdetail.memberNumber}</div>
+        <div class="notice-addetail-ttxt">${noticeshowdetail[0].memberNumber}</div>
       </div>
       <div class="notice-addetail-content">
         <div class="notice-addetail-tcontent">작성일</div>
-        <div class="notice-addetail-ttxt">${noticeshowdetail.noticeRegistDate}</div>
+        <div class="notice-addetail-ttxt">${noticeshowdetail[0].noticeRegistDate}</div>
       </div>
       <div class="notice-addetail-maincont">
         <div>
           <pre>
-                <p style="font-family: Noto Sans, malgun gothic, AppleGothic, dotum, sans-serif;">${noticeshowdetail.noticeContent}</p>
+                <p style="font-family: Noto Sans, malgun gothic, AppleGothic, dotum, sans-serif;">${noticeshowdetail[0].noticeContent}</p>
           </pre>
         </div>
       </div>
       <div class="notice-addetail-btuall">
-        <button onclick="location.href='notice-admain.jsp'" class="notice-addetail-btu" type="button">
-          <span class="notice-addetail-btu-sp">목록</span>
+        <button class="notice-addetail-btu" type="button">
+          <a href="${pageContext.request.contextPath}/notice/notice-admain.no">
+          <span class="notice-addetail-btu-sp">목록</span></a>
         </button>
       </div>
       <div class="notice-addetail-btuleft">
