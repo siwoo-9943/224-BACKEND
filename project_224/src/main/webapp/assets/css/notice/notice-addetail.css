@@ -66,6 +66,11 @@
   justify-content: flex-end;
 }
 
+.notice-addetail-btuall a{
+  	color: rgb(255, 255, 255);
+	text-decoration-line: none;
+}
+
 /* '목록' 버튼 */
 .notice-addetail-btu {
   display: block;
@@ -90,6 +95,7 @@
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
+  color: white;
 }
 .notice-addetail-btuleft {
   display: flex;
