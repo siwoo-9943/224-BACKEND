@@ -19,7 +19,7 @@
 		N.NOTICE_REGIST_DATE DESC
 	</select>
 
-	<select id="showDetail" parameterType="NoticeDTO"
+	<select id="showDetail" parameterType="String"
 		resultType="NoticeDTO">
 		SELECT
 		N.NOTICE_NUMBER,
@@ -37,9 +37,13 @@
 		N.MEMBER_NUMBER =
 		M.MEMBER_NUMBER
 		WHERE
-		N.NOTICE_NUMBER = 6
-		ORDER BY
-		N.NOTICE_REGIST_DATE DESC
+		N.NOTICE_TITLE = #{title}
 	</select>
+	
+	<insert id="write" parameterType="NoticeDTO">
+		INSERT INTO 
+		TBL_NOTICE (NOTICE_NUMBER, NOTICE_CATE, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_REGIST_DATE, MEMBER_NUMBER)
+		VALUES(SEQ_NOTICE.NEXTVAL, #{noticeCate}, #{noticeTitle}, #{noticeContent}, SYSDATE, #{memberNumber})
+	</insert>
 
 </mapper>

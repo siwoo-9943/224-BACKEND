@@ -29,7 +29,7 @@
           </div>
           <div class="notice-cont">
 		    <!-- <div id="summernote"></div> -->
-		    <form method="post">
+		    <form action="${pageContext.request.contextPath}/notice/notice-addetail.no" method="post">
 		        <textarea id="summernote" name="editordata"></textarea>
 		        <p id="letter-length" style="display: inline;"></p>/1000
 		    </form>
