@@ -18,6 +18,9 @@ public class LoginOkController implements MemExecute {
 	@Override
 	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServerException {
+		//컨트롤러 실행확인
+		System.out.println("loginOkController 실행");
+		
 		// 인코딩 설정확인
 		request.setCharacterEncoding("UTF-8");
 
@@ -46,7 +49,7 @@ public class LoginOkController implements MemExecute {
 		 result.setRedirect(true);
 		 } else{
 		 System.out.println("로그인실패");
-		 result.setPath(request.getContextPath() + "/mem-login.jsp"); // 로그인 실패시 로그인 페이지로 이동
+		 result.setPath(request.getContextPath() + "/app/member/mem-login.jsp"); // 로그인 실패시 로그인 페이지로 이동
 		 result.setRedirect(true);
 		 
 		}

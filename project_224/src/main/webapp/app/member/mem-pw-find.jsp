@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/member/mem-pw-find.css" />
-
 </head>
+<%@ include file="/header.jsp"%>
 <body>
 <main>
     <div class="pw-find">
@@ -47,4 +47,5 @@
   </main>
 
 </body>
+<%@ include file="/footer.jsp"%>
 </html>
