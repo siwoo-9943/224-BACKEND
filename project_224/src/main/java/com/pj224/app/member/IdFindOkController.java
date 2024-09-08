@@ -28,7 +28,7 @@ public class IdFindOkController implements MemExecute{
 		String memberName = request.getParameter("memberName");
 		String memberPhone = request.getParameter("memberPhone");
 		String memberPhoneInput = request.getParameter("memberPhoneInput");
-		MemberDTO member = memberDAO.login(memberName, memberPhone);
+		MemberDTO member = memberDAO.idFind(memberName, memberPhone, memberPhoneInput);
 		Result result =  new Result();
 		
 		System.out.println(member + " 입력값 확인");

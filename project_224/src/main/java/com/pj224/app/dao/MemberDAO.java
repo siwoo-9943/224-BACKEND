@@ -1,5 +1,8 @@
 package com.pj224.app.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
@@ -38,11 +41,15 @@ public class MemberDAO {
 		memberDTO.setMemberPw(memberPw);
 		return sqlSession.selectOne("member.login", memberDTO);
 	}
+	//여러값 저장할 map생성
+	Map<String, Object> map = new HashMap();
+	
 	
 	//아이디찾기 시 이름, 전화번호, 인증번호 일치값 확인
-	public boolean idFind(String memberNickname) {
-		System.out.println("아이디 찾기 메소드 실행");
-		return (Integer)sqlSession.selectOne("member.checkIdFind", memberNickname) <= 0;
+	public boolean idFind(String memberName, String memberPhone, String memberPhoneInput) {
+	    System.out.println("아이디 찾기 메소드 실행");
+	    Integer count = sqlSession.selectOne("member.checkIdFind", map);
+	    return count != null && count > 0;
 	}
 
 }
