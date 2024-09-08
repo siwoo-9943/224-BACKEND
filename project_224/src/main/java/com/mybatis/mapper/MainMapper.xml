@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mainsearch">
+<mapper namespace="main">
 	<!-- 쿠키/세션 -->
 
 	<!-- 검색-커뮤니티 -->
 	<select id="selectcm" resultType="MainDTO">
 		SELECT
 		Tb.BOARD_TITLE ,
-		COUNT(DISTINCT TC.COMMENT_NUMBER) AS COMMENT_COUNT,
+		COUNT(DISTINCT TC.COMMENT_NUMBER) AS
+		COMMENT_COUNT,
 		TB.BOARD_CONTENT,
 		TB.BOARD_CATE,
 		TB.BOARD_REGIST_DATE,
-		COUNT(DISTINCT TR.MEMBER_NUMBER) AS RECOMMEND_COUNT
+		COUNT(DISTINCT TR.MEMBER_NUMBER) AS
+		RECOMMEND_COUNT
 		FROM
 		TBL_BOARD TB
 		LEFT JOIN
-		TBL_MEMBER TM ON TB.member_number = TM.member_number
+		TBL_MEMBER TM ON
+		TB.member_number = TM.member_number
 		LEFT JOIN
-		TBL_COMMENT TC ON TB.board_number = TC.board_number
+		TBL_COMMENT TC ON
+		TB.board_number = TC.board_number
 		LEFT JOIN
-		TBL_RECOMMEND TR ON tb.board_number = tr.board_number
-		WHERE (Tb.BOARD_TITLE LIKE '%' || #{searchInput} || '%' OR tb.BOARD_CONTENT LIKE '%' || #{searchInput} || '%')
-        AND tb.BOARD_NUMBER BETWEEN 1 AND 5
+		TBL_RECOMMEND TR ON
+		tb.board_number = tr.board_number
+		WHERE
+		(Tb.BOARD_TITLE LIKE '%' ||
+		#{searchInput} || '%' OR tb.BOARD_CONTENT
+		LIKE '%' || #{searchInput} ||
+		'%')
+		AND tb.BOARD_NUMBER BETWEEN 1 AND 5
 		GROUP BY
 		TB.BOARD_NUMBER,
 		TB.BOARD_CATE,
@@ -31,5 +40,33 @@
 		TM.MEMBER_NUMBER
 		ORDER BY
 		recommend_count DESC
+	</select>
+
+	<!-- 메인페이지 커뮤니티 컨텐츠 -->
+	<select id="cmlist" resultType="MainDTO">
+		SELECT
+		tb.BOARD_TITLE ,
+		tm.MEMBER_NICKNAME ,
+		COUNT(DISTINCT tR.MEMBER_NUMBER) AS RECOMMEND_COUNT,
+		tB.BOARD_CONTENT,
+		tb.BOARD_REGIST_DATE
+		FROM
+		TBL_BOARD TB
+		LEFT JOIN
+		TBL_MEMBER TM ON tb.member_number = TM.member_number
+		LEFT JOIN
+		TBL_RECOMMEND TR ON tb.board_number = TR.board_number
+		WHERE
+		tb.BOARD_NUMBER BETWEEN 1 and 4
+		GROUP BY
+		tB.BOARD_NUMBER,
+		tB.BOARD_TITLE,
+		tB.BOARD_CONTENT,
+		tM.MEMBER_NUMBER,
+		tm.MEMBER_NICKNAME,
+		tb.BOARD_REGIST_DATE
+		ORDER BY
+		recommend_count DESC
+
 	</select>
 </mapper>
