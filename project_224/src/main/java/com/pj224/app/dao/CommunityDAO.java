@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.pj224.app.dto.CommentDTO;
 import com.pj224.app.dto.CommunityDTO;
 
 public class CommunityDAO {
@@ -34,5 +35,9 @@ public class CommunityDAO {
 		}
 		return detail;
 	}
-
+	
+	public List<CommentDTO> commentList(int boardNumber) {
+		System.out.println("commutnityDAO - commentList");
+		return sqlSession.selectList("community.commentList", boardNumber);
+	}
 }

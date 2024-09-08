@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.pj224.app.MemExecute;
 import com.pj224.app.Result;
 import com.pj224.app.dao.CommunityDAO;
+import com.pj224.app.dto.CommentDTO;
 import com.pj224.app.dto.CommunityDTO;
 
 public class CommunityDetailOkController implements MemExecute {
@@ -26,6 +27,8 @@ public class CommunityDetailOkController implements MemExecute {
 
 		CommunityDTO communityDTO = communityDAO.comudetail();
 		request.setAttribute("communitycomudetail", communityDTO);
+		
+		CommentDTO commentDTO = communityDAO.commentList(boardNumber);
 
 		System.out.println(communityDTO);
 

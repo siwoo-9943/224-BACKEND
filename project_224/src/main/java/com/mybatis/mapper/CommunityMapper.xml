@@ -55,7 +55,7 @@
 		LEFT JOIN
 		TBL_RECOMMEND R ON B.BOARD_NUMBER = R.BOARD_NUMBER
 		WHERE
-		B.BOARD_NUMBER = 3
+		B.BOARD_NUMBER = 3tlb_
 		GROUP BY
 		B.BOARD_NUMBER,
 		B.BOARD_CATE,
@@ -68,4 +68,10 @@
 		B.BOARD_REGIST_DATE DESC
 	</select>
 
+
+	<select id="commentList" parameterType="int" resultType="CommentDTO">
+		select c.comment_number, c.comment_content, c.comment_regist_date, c.comment_update_date, c.board_number, c.member_number
+		from tbl_comment c, tbl_board b
+		where b.board_number = #{boardNumber}
+	</select>
 </mapper>
