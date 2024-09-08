@@ -11,4 +11,14 @@
       SELECT * FROM tbl_member
       WHERE member_number = #{memberNumber}
    </select>
+   
+      <!--로그인(아이디 비밀번호가 일치할시 회원번호, 아이디, 비밀번호, 회원이름을 DTO로 보내 쿠키와 세션에 저장 -->
+   <select id="login" parameterType="mypageDTO"
+      resultType="memberDTO">
+      SELECT member_number, member_email, member_pw,
+      member_name
+      FROM tbl_member
+      WHERE member_email =
+      #{memberEmail} AND member_pw = #{memberPw}
+   </select>
 </mapper>
