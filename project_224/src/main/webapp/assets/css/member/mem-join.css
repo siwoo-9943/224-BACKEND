@@ -270,4 +270,11 @@ main{
   display: none;
 } */
 
+.checkBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	left: 140px;
+}
 

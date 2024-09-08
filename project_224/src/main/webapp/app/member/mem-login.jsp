@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/member/mem-login.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<%@ include file="/header.jsp"%>
 <body>
  <main>
     <div class="login">
@@ -30,8 +31,8 @@
           <button type="submit" class="login-bt">로그인</button>
 
           <ul class="find-id">
-            <li><a href="http://localhost:9999/member/mem-id-find.me">아이디 찾기</a></li>
-            <li><a href="http://localhost:9999/member/mem-pw-find.me">비밀번호 찾기</a></li>
+            <li><a href="http://localhost:9999/app/member/mem-id-find.jsp">아이디 찾기</a></li>
+            <li><a href="http://localhost:9999/app/member/mem-pw-find.jsp">비밀번호 찾기</a></li>
           </ul>
           <a href="http://localhost:9999/member/join.me"><button type="button" class="login-join">회원가입</button></a>
         </div>
@@ -40,4 +41,5 @@
   </main>
 <script src="${pageContext.request.contextPath}/assets/js/member/mem-login.js"></script>
 </body>
+<%@ include file="/footer.jsp"%>
 </html>

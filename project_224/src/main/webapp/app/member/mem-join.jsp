@@ -6,10 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/member/mem-join.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/member/mem-join.css?v=1.0" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/mem-modal.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<%@ include file="/header.jsp"%>
 <body>
  <main>
     <section class="join-main">
@@ -29,9 +30,12 @@
           <div class="join-info">
             <div class="join-info-cate">이메일＊</div>
             <input type="text" id="e-mail" name="memberEmail" placeholder="&nbsp;&nbsp; 예 : 224@gmail.com"> <!--이메일 입력창-->
-            <button type="button" class="e-mailok"> 중복확인</button><!--중복확인-->
+            <button type="button" class="e-mailok" id="checkEmailBtn"> 중복확인</button><!--중복확인-->
           </div>
+          <div class="checkBox">
           <div class="join-e-mail-ch"></div> <!--이메일 js -->
+          <div class="checkEmail-result" id="checkEmailResult"></div>
+          </div>
           <br>
           <!--비밀번호-->
           <div class="join-info">
@@ -57,7 +61,11 @@
           <div class="join-info">
             <div class="join-info-cate">닉네임＊</div>
             <input type="text" name="memberNickname" id="join-n-name" placeholder="&nbsp;&nbsp; 닉네임을 입력해 주세요">
-            <button type="button" class="e-mailok"> 중복확인</button>
+            <button type="button" class="e-mailok" id="checkNicknameBtn"> 중복확인</button>
+          </div>
+          <div class="checkBox">
+          <div class="join-nickname-ch"></div> <!-- 닉네임 js -->
+          <div class="checkNickname-result" id="checkNicknameResult"></div>
           </div>
           <br>
           <!-- 휴대폰 -->
@@ -492,5 +500,6 @@
   </main>
 <script src="${pageContext.request.contextPath}/assets/js/member/mem-join.js"></script>
 </body>
+<%@ include file="/footer.jsp"%>
 </html>
 
