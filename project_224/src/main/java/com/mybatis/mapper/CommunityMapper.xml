@@ -3,13 +3,17 @@
 <mapper namespace="community">
 
 
-	<select id="selectAll" parameterType="CommunityDTO" resultType="CommunityDTO">
+	<select id="selectAll" parameterType="CommunityDTO"
+		resultType="CommunityDTO">
 		SELECT
-		B.BOARD_NUMBER, B.BOARD_CATE,B.BOARD_TITLE, B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, B.BOARD_CONTENT,
-		M.MEMBER_NUMBER, COUNT(DISTINCT C.COMMENT_NUMBER) AS COMMENT_COUNT, COUNT(DISTINCT R.MEMBER_NUMBER) AS RECOMMEND_COUNT
+		B.BOARD_NUMBER, B.BOARD_CATE,B.BOARD_TITLE,
+		B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, B.BOARD_CONTENT,
+		M.MEMBER_NUMBER, COUNT(DISTINCT C.COMMENT_NUMBER) AS COMMENT_COUNT,
+		COUNT(DISTINCT R.MEMBER_NUMBER) AS RECOMMEND_COUNT
 		FROM
 		TBL_BOARD B
-		LEFT JOIN
+		LEFT
+		JOIN
 		TBL_MEMBER M ON B.MEMBER_NUMBER = M.MEMBER_NUMBER
 		LEFT JOIN
 		TBL_COMMENT C ON B.BOARD_NUMBER = C.BOARD_NUMBER
@@ -25,16 +29,43 @@
 		M.MEMBER_NUMBER
 	</select>
 
-	
+
 	<insert id="insert" parameterType="CommunityDTO">
 		insert into tbl_board
-		(board_number, board_cate, board_title, board_content, board_regist_date, 
-		board_update_date, member_number)
-		VALUES (seq_board.nextVal, #{boardCate}, #{boardTitle}, #{boardContent}, 
-		#{boardRegistDate}, #{boardUpdateDate}, #{memberNumber})
-		
+		(board_number, board_cate, board_title, board_content, member_number)
+		VALUES (seq_board.nextVal, #{boardCate}, #{boardTitle},
+		#{boardContent},
+		#{memberNumber})
 	</insert>
 
+	<select id="comudetail" parameterType="CommunityDTO"
+		resultType="CommunityDTO">
+		SELECT
+		B.BOARD_NUMBER, B.BOARD_CATE,B.BOARD_TITLE,
+		B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, B.BOARD_CONTENT,
+		M.MEMBER_NUMBER, COUNT(DISTINCT C.COMMENT_NUMBER) AS COMMENT_COUNT,
+		COUNT(DISTINCT R.MEMBER_NUMBER) AS RECOMMEND_COUNT
+		FROM
+		TBL_BOARD B
+		LEFT
+		JOIN
+		TBL_MEMBER M ON B.MEMBER_NUMBER = M.MEMBER_NUMBER
+		LEFT JOIN
+		TBL_COMMENT C ON B.BOARD_NUMBER = C.BOARD_NUMBER
+		LEFT JOIN
+		TBL_RECOMMEND R ON B.BOARD_NUMBER = R.BOARD_NUMBER
+		WHERE
+		B.BOARD_NUMBER = 3
+		GROUP BY
+		B.BOARD_NUMBER,
+		B.BOARD_CATE,
+		B.BOARD_TITLE,
+		B.BOARD_CONTENT,
+		B.BOARD_REGIST_DATE,
+		B.BOARD_UPDATE_DATE,
+		M.MEMBER_NUMBER
+		ORDER BY 
+		B.BOARD_REGIST_DATE DESC
+	</select>
 
-	
 </mapper>
