@@ -8,6 +8,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/hotplace/hotplace.css">
 </head>
+<%@ include file="../../header.jsp"%>
 <body>
 
 	<div style="position: relative; height: 350px;">
@@ -20,6 +21,8 @@
 		<div
 			style="background-image: url(${pageContext.request.contextPath}/assets/images/hotplace.png); width: 1900px; height: 100%;"></div>
 	</div>
+	<c:set var="memberNumber"
+		value="${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}" />
 
 	<div class="sub-contents-inner gettingToSeoul" id="container">
 		<div class="location">
@@ -33,7 +36,8 @@
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-								<a href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp">
+								<a
+									href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp?memberNumber=${memberNumber}">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">강남역</span>
 									</div>
@@ -45,7 +49,8 @@
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-								<a href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
+								<a
+									href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil?memberNumber=${memberNumber}.hp">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">잠실역</span>
 									</div>
@@ -57,7 +62,8 @@
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 150px; bottom: 70px; right: 0px; z-index: 10;">
-								<a href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp">
+								<a
+									href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae?memberNumber=${memberNumber}.hp">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">홍대입구역</span>
 									</div>
@@ -71,7 +77,8 @@
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-								<a href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp">
+								<a
+									href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu?memberNumber=${memberNumber}.hp">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">성수역</span>
 									</div>
@@ -83,7 +90,8 @@
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-								<a href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp">
+								<a
+									href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae?memberNumber=${memberNumber}.hp">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">문래역</span>
 									</div>
@@ -95,7 +103,8 @@
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 150px; bottom: 70px; right: 0px; z-index: 10;">
-								<a href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp">
+								<a
+									href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro?memberNumber=${memberNumber}.hp">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">을지로입구역</span>
 									</div>
