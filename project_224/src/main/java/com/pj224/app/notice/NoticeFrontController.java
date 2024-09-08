@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pj224.app.Result;
 import com.pj224.app.community.CommunityListOkController;
+import com.pj224.app.community.CommunityWriteOkController;
 import com.pj224.app.main.MainLoginController;
 import com.pj224.app.main.MainLogoutController;
 import com.pj224.app.member.LoginOkController;
@@ -64,9 +65,17 @@ public class NoticeFrontController extends HttpServlet {
 			result = new NoticeDetailController().MemExecute(request, response);
 			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
 			break;
+//		case "/notice/write.no":
+//			System.out.println("write");
+//			response.sendRedirect(request.getContextPath() + "/app/notice/notice-adwrite.jsp");
+//			break;
 		case "/notice/write.no":
 			System.out.println("write");
-			response.sendRedirect(request.getContextPath() + "/app/notice/notice-adwrite.jsp");
+			request.getRequestDispatcher("/app/notice/notice-adwrite.jsp").forward(request, response);
+			break;
+		case "/notice/writeOk.no":
+			System.out.println("writeOk");
+			result = new NoticeWriteOkController().MemExecute(request, response);
 			break;
 //		case "/notice/writeOk.no":
 //			System.out.println("writeOk");

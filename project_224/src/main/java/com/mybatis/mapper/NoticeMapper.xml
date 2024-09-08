@@ -46,4 +46,5 @@
 		VALUES(SEQ_NOTICE.NEXTVAL, #{noticeCate}, #{noticeTitle}, #{noticeContent}, SYSDATE, #{memberNumber})
 	</insert>
 
+
 </mapper>
