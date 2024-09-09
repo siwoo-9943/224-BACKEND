@@ -10,8 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>관리자 상세페이지</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/notice/notice-addetail.css" />
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/notice-modal.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/notice/notice-addetail.css?v=1.0" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/notice-modal.css?v=1.0" />
 </head>
 <%@ include file="../../header.jsp"%>
 <body>
@@ -45,17 +45,20 @@
           <a href="${pageContext.request.contextPath}/notice/notice-admain.no">
           <span class="notice-addetail-btu-sp">목록</span></a>
         </button>
-      </div>
+
       <div class="notice-addetail-btuleft">
-        <button onclick="location.href='notice-admodify.jsp'" class="notice-addetail-modi" type="button">
-          <span class="notice-addetail-btu-sp">수정</span>
+      	<button class="notice-addetail-btu" type="button">
+          <a href="${pageContext.request.contextPath}/notice/notice-admodify.no"></a>
+          수정
         </button>
       </div>
       <div class="notice-addetail-btuleft">
-        <button class="notice-addetail-del" type="button" onclick="openDeleteModal()">
-          <span class="notice-addetail-btu-sp">삭제</span>
+        <button class="notice-addetail-del" type="button" onclick="openDeleteModal()">삭제
         </button>
       </div>
+      
+
+      
       <!-- 삭제 모달 HTML -->
       <div id="notice-deleteModal" class="notice-modal">
         <div class="notice-modal-content">
