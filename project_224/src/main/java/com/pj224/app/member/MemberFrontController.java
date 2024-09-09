@@ -68,6 +68,7 @@ public class MemberFrontController extends HttpServlet {
 		case "/member/joinOk.me":
 			System.out.println("joinOk");
 			new JoinOkController().MemExecute(request, response);
+			System.out.println("넘어가기전확인");
 			response.sendRedirect(request.getContextPath() + "/main.jsp");
 			break;
 		case "/member/login.me":
@@ -86,13 +87,14 @@ public class MemberFrontController extends HttpServlet {
 			System.out.println("checkNicknameOk");
 			new CheckNicknameController().MemExecute(request, response);
 			break;
-		case "/member/logout.me":
-			System.out.println("logout");
-//			new CheckNicknameController().MemExecute(request, response);
+		case "/member/idFindOk.me":
+			System.out.println("idFindOk");
+			new IdFindOkController().MemExecute(request, response);
 			break;
-		case "/member/mem-id-fine.me":
-			System.out.println("idfine");
-//			new CheckNicknameController().MemExecute(request, response);
+		case "/member/idFindResult.me":
+			System.out.println("idFindResult");
+			new IdFindResultController().MemExecute(request, response);
+			response.sendRedirect(request.getContextPath() + "/app/member/mem-idfine-result.jsp");
 			break;
 		}
 
