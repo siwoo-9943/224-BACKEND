@@ -38,3 +38,19 @@ $(document).ready(function() {
 		});
 	}
 });
+
+$(document).ready(function() {
+	$('#summernote').summernote({
+		height: 300,
+		maxHeight: 500,
+		minHeight: 300
+	});
+});
+
+// 제출 버튼을 눌렀을 때 이벤트 핸들러 추가
+$('#submitButton').click(function(e) {
+	if (!$('#notice-board-title').val()) {
+		alert('제목을 입력해 주세요.');
+		e.preventDefault();  // 제목이 없으면 제출되지 않도록 함
+	}
+});
