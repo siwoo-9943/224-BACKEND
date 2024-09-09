@@ -30,6 +30,14 @@ public class NoticeDAO {
 		sqlSession.insert("notice.write", noticeDTO);
 		System.out.println("글쓰기" + noticeDTO);
 	}
+	
+	public NoticeDTO getNoitceByNoticeNumber(int noticeNumber) {
+		return sqlSession.selectOne("notice.selectByNoticeNumber", noticeNumber);
+	}
+	
+	public void delete(int noticeNumber) {
+		sqlSession.delete("notice.delete", noticeNumber);
+	}
 
 
 }

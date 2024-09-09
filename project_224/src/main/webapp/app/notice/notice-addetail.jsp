@@ -53,11 +53,11 @@
         </button>
       </div>
       <div class="notice-addetail-btuleft">
-        <button class="notice-addetail-del" type="button" onclick="openDeleteModal()">삭제
+        <button class="notice-addetail-del" type="button" onclick="openDeleteModal()">
+        <a href="${pageContext.request.contextPath}/notice/delete.no"></a>
+        삭제
         </button>
       </div>
-      
-
       
       <!-- 삭제 모달 HTML -->
       <div id="notice-deleteModal" class="notice-modal">
