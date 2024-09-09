@@ -280,6 +280,16 @@ tr {
   
 }
 
+.comu-member-delete-contents-button {
+  background-color: #2BCF81;
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  color: aliceblue;
+  margin-right: 10px;
+}
+
 a{
   color: white;
   text-decoration: none;
