@@ -36,27 +36,6 @@
 					<div width="100" class="notice-admain-container-audate">작성일</div>
 				</div>
 				
-				<!-- 의사목록 -->
-				   <main>
-      <div class="doctorList-ears">이비인후과 의사 목록</div>
-      <div id="doctorList">
-         <c:forEach var="doctor" items="${doctorList}">
-            <div class="doctorList-container">
-               <a
-                  href="${pageContext.request.contextPath}/app/clinic/doctorDetail.memcl?hospitalCall=${doctor.hospitalCall}">
-                  <div class="doctorList-name">
-                     의사명 : ${doctor.doctorName} / 진료과 : <span>${doctor.doctorMajor}</span>
-                  </div>
-                  <div class="doctorList-HospitalName">병원이름 :
-                     ${doctor.hospitalName}</div>
-                  <div class="doctorList-MainNumber">
-                     전화번호 : ${doctor.hospitalCall}
-                  </div>
-               </a>
-            </div>
-         </c:forEach>
-      </div>
-				
 				<!-- 게시글 목록 -->
 				<ul class="notice-admain-ul-all">
 					<c:forEach var="notice" items="${noticeshowlist}">
