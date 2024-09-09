@@ -55,10 +55,54 @@ public class ConvenienceFrontController extends HttpServlet {
 			System.out.println("물품쪽 들어옴?");
 			request.getRequestDispatcher("/app/convenience/conv-storage.jsp").forward(request, response);
 			break;
-		
-		
-		
-		
+		case "/convenience/conv-gangmap.cv":
+			System.out.println("강남지도 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-gangmap.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-jamsilmap.cv":
+			System.out.println("잠실지도 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-jamsilmap.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-hongdaemap.cv":
+			System.out.println("홍대지도 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-hongdaemap.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-seongsumap.cv":
+			System.out.println("성수지도 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-seongsumap.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-moonraemap.cv":
+			System.out.println("문래지도 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-moonraemap.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-euljiromap.cv":
+			System.out.println("을지로지도 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-euljiromap.jsp").forward(request, response);
+			break;	
+		case "/convenience/conv-storage-gangnam.cv":
+			System.out.println("강남물품보관 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-storage-gangnam.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-storage-jamsil.cv":
+			System.out.println("잠실물품보관 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-storage-jamsil.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-storage-hongdae.cv":
+			System.out.println("홍대물품보관 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-storage-hongdae.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-storage-seongsu.cv":
+			System.out.println("성수물품보관 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-storage-seongsu.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-storage-moonrae.cv":
+			System.out.println("문래물품보관 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-storage-moonrae.jsp").forward(request, response);
+			break;
+		case "/convenience/conv-storage-euljiro.cv":
+			System.out.println("을지로물품보관 들어옴?");
+			request.getRequestDispatcher("/app/convenience/conv-storage-euljiro.jsp").forward(request, response);
+			break;
 		}
 		
 	}
