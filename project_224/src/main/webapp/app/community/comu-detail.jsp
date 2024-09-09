@@ -14,6 +14,7 @@
 	href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
 </head>
 <body>
+	<jsp:include page="/header.jsp" />
 	<main>
 		<div class="wrapper">
 			<div class="contnets">
@@ -90,8 +91,52 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
+
+				<div id="form-commentInfo">
+					<div id="comment-count">
+						댓글 <span id="count">${communitycomudetail.commentCount}</span>
+					</div>
+					<ul>
+						<c:forEach var="comment" items="${commentList}">
+							<c:forEach var="member" items="${memberList}">
+								<c:if
+									test="${comment.boardNumber == communitycomudetail.boardNumber}">
+									<div id="comment-comment-list">
+										<c:if test="${comment.memberNumber == member.memberNumber}">
+
+											<li>
+												<div>
+													<strong>${member.memberNickname}</strong>
+												</div>
+												<div>
+													<span>${comment.commentContent}</span><br>
+													<c:if test="${comment.memberNumber == sessionScope.member.memberNumber}">
+														<button class="comu-member-rewrite-contents-button">수정</button>
+														<button class="comu-member-delete-contents-button">삭제</button>
+													</c:if>
+												</div>
+
+												<div>
+													<small>${comment.commentUpdateDate}</small>
+												</div> <br>
+											</li>
+										</c:if>
+									</div>
+								</c:if>
+							</c:forEach>
+						</c:forEach>
+					</ul>
+					<span id="comu-text-red">[알림]</span><span> 욕설,상처 줄 수 있는 악플은
+						삼가주세요</span>
+					<div class="comu-inputbox-but">
+						<input id="comment-input" placeholder="댓글을 입력해 주세요.">
+						<button class="comu-submit" id="comu-Null-Modal" type="button"
+							onclick="openNullModal()">등록</button>
+					</div>
+				</div>
 			</div>
 		</div>
+
 		<form id="deleteForm"
 			action="${pageContext.request.contextPath}/community/comu-deleteOk.cm"
 			method="post" style="display: none;">

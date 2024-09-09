@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
 </head>
+<c:set var="memberNumber" value="${sessionScope.member.memberNumber}" />
 <body>
 	<main>
 		<div class="wrapper">
@@ -30,68 +32,16 @@
 									</div>
 									<div>
 										<span>감사합니다~!</span><br>
-										<button class="comu-member-rewrite-contents-button">수정</button>
-										<button class="comu-member-delete-contents-button">삭제</button>
+										<c:if test="${memberNumber != NULL && commentList.memberNumber == memberNumber}">
+											<button class="comu-member-rewrite-contents-button">수정</button>
+											<button class="comu-member-delete-contents-button">삭제</button>	
+										</c:if>
 									</div>
 
 									<div>
 										<small>2024-08-23 14:30</small>
 									</div> <br>
 								</li>
-
-								<li>
-									<div>
-										<strong>닉네임</strong>
-									</div>
-									<div>
-										<span>감사합니다~!</span>
-									</div>
-
-									<div>
-										<small>2024-08-23 14:30</small>
-									</div> <br>
-								</li>
-
-								<li>
-									<div>
-										<strong>닉네임</strong>
-									</div>
-									<div>
-										<span>감사합니다~!</span>
-									</div>
-
-									<div>
-										<small>2024-08-23 14:30</small>
-									</div> <br>
-								</li>
-
-								<li>
-									<div>
-										<strong>닉네임</strong>
-									</div>
-									<div>
-										<span>감사합니다~!</span>
-									</div>
-
-									<div>
-										<small>2024-08-23 14:30</small>
-									</div> <br>
-								</li>
-
-								<li>
-									<div>
-										<strong>닉네임</strong>
-									</div>
-									<div>
-										<span>감사합니다~!</span>
-									</div>
-
-									<div>
-										<small>2024-08-23 14:30</small>
-									</div> <br>
-								</li>
-
-
 							</ul>
 						</div>
 

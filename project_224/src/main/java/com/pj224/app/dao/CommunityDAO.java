@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.mybatis.config.MyBatisConfig;
 import com.pj224.app.dto.CommentDTO;
 import com.pj224.app.dto.CommunityDTO;
+import com.pj224.app.dto.MemberDTO;
 
 public class CommunityDAO {
 
@@ -21,9 +22,6 @@ public class CommunityDAO {
 		return sqlSession.selectList("community.selectAll");
 	}
 
-	
-	
-	
 	public void insert(CommunityDTO communityDTO) {
 		System.out.println("db에 값이 넘어갔느냐?");
 		sqlSession.insert("community.insert", communityDTO);
@@ -54,5 +52,10 @@ public class CommunityDAO {
 	public List<CommentDTO> commentList(int boardNumber) {
 		System.out.println("commutnityDAO - commentList");
 		return sqlSession.selectList("community.commentList", boardNumber);
+	}
+	
+	public List<MemberDTO> memberList() {
+		System.out.println("commutnityDAO - memberList");
+		return sqlSession.selectList("community.memberList");
 	}
 }

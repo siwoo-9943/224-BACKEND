@@ -54,27 +54,6 @@
 		LEFT JOIN
 		TBL_MEMBER M ON B.MEMBER_NUMBER = M.MEMBER_NUMBER
 		WHERE
-<<<<<<< HEAD
-		B.BOARD_NUMBER = 3tlb_
-		GROUP BY
-		B.BOARD_NUMBER,
-		B.BOARD_CATE,
-		B.BOARD_TITLE,
-		B.BOARD_CONTENT,
-		B.BOARD_REGIST_DATE,
-		B.BOARD_UPDATE_DATE,
-		M.MEMBER_NUMBER
-		ORDER BY 
-		B.BOARD_REGIST_DATE DESC
-	</select>
-
-
-	<select id="commentList" parameterType="int" resultType="CommentDTO">
-		select c.comment_number, c.comment_content, c.comment_regist_date, c.comment_update_date, c.board_number, c.member_number
-		from tbl_comment c, tbl_board b
-		where b.board_number = #{boardNumber}
-	</select>
-=======
 		B.BOARD_NUMBER = #{boardNumber}
 	</select>
 
@@ -89,12 +68,33 @@
 
 
 	<select id="selectByBoardNumber" resultType="CommunityDTO">
-        SELECT * FROM TBL_BOARD WHERE BOARD_NUMBER = #{boardNumber}
-    </select>
-    
-    
-    <delete id="deleteByBoardNumber" parameterType="int">
-        DELETE FROM TBL_BOARD WHERE BOARD_NUMBER = #{boardNumber}
-    </delete>
->>>>>>> main
+		SELECT * FROM
+		TBL_BOARD WHERE BOARD_NUMBER = #{boardNumber}
+	</select>
+
+
+	<delete id="deleteByBoardNumber" parameterType="int">
+		DELETE FROM
+		TBL_BOARD WHERE BOARD_NUMBER = #{boardNumber}
+	</delete>
+
+
+	<select id="commentList" parameterType="int"
+		resultType="CommentDTO">
+		select c.comment_number, c.comment_content,
+		c.comment_regist_date,
+		c.comment_update_date, c.board_number,
+		c.member_number
+		from tbl_comment c, tbl_board b
+		where b.board_number =
+		#{boardNumber}
+	</select>
+
+	<select id="memberList" resultType="MemberDTO">
+		select member_number,
+		member_email, member_pw, member_name, member_nickname, member_phone,
+		member_phone_input, member_gender, member_birth, member_terms
+		from
+		tbl_member
+	</select>
 </mapper>

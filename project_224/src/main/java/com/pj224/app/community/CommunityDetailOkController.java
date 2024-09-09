@@ -63,15 +63,18 @@ public class CommunityDetailOkController implements MemExecute {
 		}
 
 		request.setAttribute("communitycomudetail", communityDTO);
-		
-		List<CommentDTO> commentDTO = communityDAO.commentList(Integer.parseInt(boardNumberStr));
 
 		boolean isAuthor = false;
 		if (member != null && communityDTO.getMemberNumber() == member.getMemberNumber()) {
 			isAuthor = true;
 		}
 		request.setAttribute("isAuthor", isAuthor);
+		
+		List<CommentDTO> commentDTO = communityDAO.commentList(Integer.parseInt(boardNumberStr));
+		List<MemberDTO> memberList = communityDAO.memberList();
 
+		request.setAttribute("commentList", commentDTO);
+		request.setAttribute("memberList", memberList);
 
 		result.setRedirect(false);
 		result.setPath("/app/community/comu-detail.jsp");
