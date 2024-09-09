@@ -13,34 +13,25 @@
 <main>
     <div class="pw-find">
       <h3>비밀번호 찾기</h3>
-      <form>
+      <form action="${pageContext.request.contextPath}/member/pwFindOk.me" method="post">
         <div class="container">
           <div class="name">이름
-            <input type="text" id="name">
+            <input type="text" id="name" name="memberName">
           </div>
           <div class="e-mail">이메일
-            <input type="text" id="e-mail" placeholder="&nbsp;&nbsp;email@gogle.com">
+            <input type="text" id="e-mail" placeholder="&nbsp;&nbsp;email@gogle.com" name="memberEmail">
           </div>
           <div class="pw-info">
             <div class="pw-info-cate">
               <div class="pw-name">휴대폰</div>
-              <input type="text" id="pw-number">
+              <input type="text" id="pw-number" name="memberPhone">
               <button class="numberok"> 인증번호 받기</button>
             </div>
           </div>
             <div class="pw-p-number-ok">
-              <input type="text" id="pw-p-number-ok-box" placeholder="&nbsp;&nbsp;인증번호를 입력하세요">
+              <input type="text" id="pw-p-number-ok-box" placeholder="&nbsp;&nbsp;인증번호를 입력하세요" name="memberPhoneInput">
             </div>
-            <button type="button" class="pw-ok" onclick="openModal()"> 확인</button>
-          
-          <div id="mem-Modal" class="mem-modal">
-            <div class="mem-modal-content">
-              <span class="mem-close" onclick="closeDeleteModal()">&times;</span>
-              <h2>이메일을 전송되었습니다</h2>
-              <p>이메일을 확인해주세요.</p>
-              <button class="mem-cancel-btn" onclick="closeDeleteModal()">확인</button>
-            </div>
-          </div>
+            <button type="submit" class="pw-ok"> 확인</button>
         </div>
       </form>
     </div>
