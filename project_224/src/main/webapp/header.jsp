@@ -68,7 +68,7 @@
 					<li class="main-login-btn">
 						<!-- 마이페이지 -->
 						<div id="header-login-mypage-btn">
-							<a href="${pageContext.request.contextPath }/mypage/mypage.my">
+							<a href="${pageContext.request.contextPath }/mypage.my">
 								<h5>마이페이지</h5>
 							</a>
 						</div>
