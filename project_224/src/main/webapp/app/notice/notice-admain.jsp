@@ -72,13 +72,24 @@
 					</ul>
 				</div>
 
-				<div class="notice-admain-btuall">
-					<button class="notice-admain-btu" type="button">
-						<a href="${pageContext.request.contextPath}/notice/write.no">
-							<span class="notice-admain-btu-sp">글쓰기</span>
-						</a>
-					</button>
-				</div>
+
+
+				<%
+				// memberNumber 값을 가져오는 로직이 필요합니다.
+				// 예를 들어 세션에서 값을 가져올 수 있습니다.
+				Integer memberNumber = (Integer) session.getAttribute("memberNumber");
+				%>
+				<!-- memberNumber가 1일 때만 보이는 버튼 -->
+				<c:if
+					test="${sessionScope.member.memberNumber  == 1}">
+					<div class="notice-admain-btuall">
+						<button class="notice-admain-btu" type="button">
+							<a href="${pageContext.request.contextPath}/notice/write.no">
+								<span class="notice-admain-btu-sp">글쓰기</span>
+							</a>
+						</button>
+					</div>
+				</c:if>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script

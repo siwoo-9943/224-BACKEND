@@ -235,6 +235,7 @@ li::marker {
   color: rgb(255, 255, 255);
   background-color: #2bcf81;
   border: 0px none;
+  margin-top: -200px;
 }
 
 /* '글쓰기' 폰트사이즈 */
@@ -257,6 +258,14 @@ li::marker {
   margin: 0;
   display: flex; /* 가로 정렬 */
   transform: translate(300px, 10px);
+  height: 100px;
+  width: 100px;
+}
+
+
+.pagination-container {
+	  height: 100px;
+	  margin-bottom: 100px;
 }
 
 .pagination-container ul{
@@ -264,6 +273,7 @@ li::marker {
 }
 /* li 요소들을 가로로 배치하고 간격 추가 */
 .notice-pagenation li {
+	
   margin-right: 10px; /* 각 페이지 번호 사이 간격 */
 }
 

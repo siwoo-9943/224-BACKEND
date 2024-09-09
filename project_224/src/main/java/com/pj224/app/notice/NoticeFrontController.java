@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.pj224.app.Result;
 import com.pj224.app.community.CommunityListOkController;
@@ -53,17 +54,24 @@ public class NoticeFrontController extends HttpServlet {
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		Result result = null;
 		System.out.println(target);
+		
+		boolean isForwarded = false;
+		
+		HttpSession session = request.getSession();
+		Integer memberNumber = (Integer) session.getAttribute("memberNumber");
 
 		switch (target) {
 		case "/notice/notice-admain.no":
 			System.out.println("글목록");
 			result = new NoticeListController().MemExecute(request, response);
 //			request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
+			isForwarded = true;
 			break;
 		case "/notice/notice-addetail.no":
 			System.out.println("글상세");
 			result = new NoticeDetailController().MemExecute(request, response);
 //			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
+			isForwarded = true;
 			break;
 		case "/notice/write.no":
 			System.out.println("write");
@@ -72,6 +80,10 @@ public class NoticeFrontController extends HttpServlet {
 		case "/notice/writeOk.no":
 			System.out.println("writeOk");
 			result = new NoticeWriteOkController().MemExecute(request, response);
+			break;
+		case "/notice/delete.no":
+			System.out.println("delete");
+			result = new NoticeDeleteController().MemExecute(request, response);
 			break;
 //		case "/notice/notice-admodify.no":
 //			System.out.println("글수정");
