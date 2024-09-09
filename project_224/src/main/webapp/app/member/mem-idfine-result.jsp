@@ -21,13 +21,13 @@
 
     <div class="result-wrapper">
       <label>
-        <span>아이디 : example@google.com</span><br>
+        <span>아이디 : ${member2}</span><br>
       </label><br>
     </div>
 
     <div class="buttons">
-      <a href="http://localhost:9999/app/member/mem-login.jsp" ><button type="submit">로그인하기</a></button></a>
-      <a href="http://localhost:9999/app/member/mem-pw-find.jsp" ><button type="submit">비밀번호 찾기</a></button></a>
+      <a href="http://localhost:9999/app/member/mem-login.jsp" ><button type="submit">로그인하기</button></a>
+      <a href="http://localhost:9999/app/member/mem-pw-find.jsp" ><button type="submit">비밀번호 찾기</button></a>
     </div>
   </div>
 
