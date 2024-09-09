@@ -54,7 +54,7 @@
 		WHERE NOTICE_NUMBER = #{noticeNumber}
 	</update>
 	
-	<delete id="noticeDelete" parameterType="NoticeDTO">
+	<delete id="noticeDelete" parameterType="int">
 		DELETE FROM TBL_NOTICE 
 		WHERE NOTICE_NUMBER = #{noticeNumber}
 	</delete>
