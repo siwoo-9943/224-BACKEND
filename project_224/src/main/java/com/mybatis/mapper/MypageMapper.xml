@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mypage">
-   <select id="my-profile" parameterType="MypageDTO">
-      select into tbl_member(member_number, member_email, member_pw, member_name, member_nickname, member_phone, member_phone_input, member_gender, member_birth, member_terms)
-      values(seq_member.nextVal, #{memberNumber}, #{memberEmail}, #{memberPw}, #{memberName}, #{memberNickname}, #{memberPhone}, #{memberPhoneInput}, #{memberGender}, #{memberBirth}, #{memberTerms})
-   </select>
+	<!-- 개인정보 수정 전 아이디, 비밀번호 확인 -->
+	<select id="myprofile" parameterType="MypageDTO" resultType="MypageDTO">
+		SELECT MEMBER_EMAIL , MEMBER_NAME,MEMBER_NICKNAME,MEMBER_PHONE,MEMBER_GENDER,MEMBER_BIRTH
+		FROM TBL_MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+      		AND MEMBER_NAME = #{memberName}
+     		AND MEMBER_NICKNAME = #{memberNickName}
+      		AND MEMBER_PHONE = #{memberPhone}
+      		AND MEMBER_GENDER = #{memberGender}
+      		AND MEMBER_BIRTH = #{memberBirth}
+	</select>
    
-   <!-- 데이터베이스에서 데이터를 조회하는 데 사용 -->
-   <select id="get-profile" parameterType="int" resultType="MypageDTO">
-      SELECT * FROM tbl_member
-      WHERE member_number = #{memberNumber}
-   </select>
-   
-      <!--로그인(아이디 비밀번호가 일치할시 회원번호, 아이디, 비밀번호, 회원이름을 DTO로 보내 쿠키와 세션에 저장 -->
-   <select id="login" parameterType="mypageDTO"
-      resultType="memberDTO">
-      SELECT member_number, member_email, member_pw,
-      member_name
-      FROM tbl_member
-      WHERE member_email =
-      #{memberEmail} AND member_pw = #{memberPw}
-   </select>
+  
 </mapper>

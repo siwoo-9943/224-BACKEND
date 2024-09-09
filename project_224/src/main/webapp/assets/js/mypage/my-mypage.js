@@ -1,20 +1,18 @@
  $(document).ready(function() {
             function loadProfile(memberNumber) {
                 $.ajax({
-                    url: '/mypage/Mypage', // 서버 측 컨트롤러 URL
-                    type: 'GET',
+                    url: '/my-profile', // 서버 측 컨트롤러 URL
+                    type: 'post',
                     data: { memberNumber: memberNumber },
                     success: function(data) {
+					
                         // 받은 데이터로 HTML을 업데이트
                         $('#memberEmail').text(data.memberEmail);
-                        $('#memberPw').text(data.memberPw);
                         $('#memberName').text(data.memberName);
                         $('#memberNickName').text(data.memberNickName);
                         $('#memberPhone').text(data.memberPhone);
-                        $('#memberPhoneInput').text(data.memberPhoneInput);
                         $('#memberGender').text(data.memberGender);
                         $('#memberBirth').text(data.memberBirth);
-                        $('#memberTerms').text(data.memberTerms);
                     },
                     error: function() {
                         alert('정보를 불러오는 데 실패했습니다.');

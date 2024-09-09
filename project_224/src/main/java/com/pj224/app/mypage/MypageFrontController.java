@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pj224.app.Result;
+import com.pj224.app.member.CheckNicknameController;
+import com.pj224.app.member.JoinOkController;
 import com.pj224.app.member.LoginOkController;
 
 /**
@@ -66,21 +68,25 @@ public class MypageFrontController extends HttpServlet {
 	      Result result = null; 
 	      
 		switch (target) {
-		case "/app/mypage/my-profile.my":
+		case "/app/mypage/mypage.my":
 			System.out.println("profile");
-			request.getRequestDispatcher("/app/mypage/my-profile.jsp").forward(request, response);
+//			new MypageOkController().MemExecute(request, response);
+			request.getRequestDispatcher(request.getContextPath() +"/app/mypage/my-profile.jsp").forward(request, response);
+			break;
+		case "/app/mypage/mypageOk.my":
+			System.out.println("profile 확인되어주라");
+			new MypageOkController().MemExecute(request, response);
+			response.sendRedirect(request.getContextPath() + "/app/mypage/my-profile.jsp");
 			break;
 		case "/app/mypage/passcheck.my":
 			System.out.println("비밀번호 확인");
 //			result = new MypasscheckOkController().MemExecute(request, response);
-			response.sendRedirect(request.getContextPath() + "/mypage/my-update.jsp");
+			response.sendRedirect(request.getContextPath() + "/app/mypage/my-update.jsp");
 			break;
-		case "/app/mypage/passcheckOk.my":
+		case "/mypage/passcheckOk.my":
 			System.out.println("비밀번호 확인 성공");
 			result = new MypasscheckOkController().MemExecute(request, response);
 			break;
-		case "/app/mypage/update.my" :
-			System.out.println("개인정보수정 확인");
 		}
 		
 		if (result != null) {
