@@ -30,11 +30,12 @@ public class MainLogoutController implements MemExecute{
 		System.out.println(cookie);
 		System.out.println("쿠키삭제");
 
-		Result result = new Result();
+//		Result result = new Result();
 //		result.setPath(request.getContextPath() + "/main.mn");
-		result.setRedirect(true);
-		response.sendRedirect(request.getContextPath() + "/main.jsp");
-		System.out.println("/main.jsp로 이동");
+//		result.setRedirect(true);
+		System.out.println("main.mn");
+		response.sendRedirect(request.getContextPath() + "/main.mn");
+		System.out.println("/main.mn로 dmfh");
 
 		return null;
 	}
