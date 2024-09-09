@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>관리자 목록</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/notice/notice-admain.css">
+	href="${pageContext.request.contextPath}/assets/css/notice/notice-admain.css?v=1.0">
 </head>
 
 
@@ -35,10 +35,10 @@
 					<div width="100" class="notice-admain-container-audate">작성자</div>
 					<div width="100" class="notice-admain-container-audate">작성일</div>
 				</div>
-				
+
 				<!-- 게시글 목록 -->
 				<ul class="notice-admain-ul-all">
-					<c:forEach var="notice" items="${noticeshowlist}">
+					<c:forEach var="notice" items="${noticeList}">
 						<li><a
 							href="${pageContext.request.contextPath}/notice/notice-addetail.no?title=${notice.noticeTitle}">
 								<div class="notice-admain-ul-main">
@@ -51,34 +51,34 @@
 					</c:forEach>
 				</ul>
 
-					<!-- 페이지네이션 -->
-					<div class="pagination-container">
-						<ul class="doctorList-ear-pagenation">
-							<!-- 이전 페이지 그룹으로 이동 -->
-							<c:if test="${startPage > 1}">
-								<li><a href="?page=${startPage - 1}">&lt;</a></li>
-							</c:if>
+				<!-- 페이지네이션 -->
+				<div class="pagination-container">
+					<ul class="notice-pagenation">
+						<!-- 이전 페이지 그룹으로 이동 -->
+						<c:if test="${startPage > 1}">
+							<li><a href="?page=${startPage - 1}">&lt;</a></li>
+						</c:if>
 
-							<!-- 페이지 번호 출력 -->
-							<c:forEach var="i" begin="${startPage}" end="${endPage}">
-								<li><a href="?page=${i}"
-									style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a></li>
-							</c:forEach>
+						<!-- 페이지 번호 출력 -->
+						<c:forEach var="i" begin="${startPage}" end="${endPage}">
+							<li><a href="?page=${i}"
+								style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a></li>
+						</c:forEach>
 
-							<!-- 다음 페이지 그룹으로 이동 -->
-							<c:if test="${endPage < maxPages}">
-								<li><a href="?page=${endPage + 1}">&gt;</a></li>
-							</c:if>
-						</ul>
-					</div>
+						<!-- 다음 페이지 그룹으로 이동 -->
+						<c:if test="${endPage < maxPages}">
+							<li><a href="?page=${endPage + 1}">&gt;</a></li>
+						</c:if>
+					</ul>
+				</div>
 
-					<div class="notice-admain-btuall">
-						<button class="notice-admain-btu" type="button">
-							<a href="${pageContext.request.contextPath}/notice/write.no">
-								<span class="notice-admain-btu-sp">글쓰기</span>
-							</a>
-						</button>
-					</div>
+				<div class="notice-admain-btuall">
+					<button class="notice-admain-btu" type="button">
+						<a href="${pageContext.request.contextPath}/notice/write.no">
+							<span class="notice-admain-btu-sp">글쓰기</span>
+						</a>
+					</button>
+				</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script

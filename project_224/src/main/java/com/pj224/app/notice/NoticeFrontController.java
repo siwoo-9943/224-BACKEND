@@ -58,12 +58,12 @@ public class NoticeFrontController extends HttpServlet {
 		case "/notice/notice-admain.no":
 			System.out.println("글목록");
 			result = new NoticeListController().MemExecute(request, response);
-			request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
+//			request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
 			break;
 		case "/notice/notice-addetail.no":
 			System.out.println("글상세");
 			result = new NoticeDetailController().MemExecute(request, response);
-			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
+//			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
 			break;
 		case "/notice/write.no":
 			System.out.println("write");

@@ -83,6 +83,7 @@ a {
   text-align: center;
   line-height: 20px;
   font-weight: 400;
+
   color: rgb(51, 51, 51);
   margin-left: 40px;
 }
@@ -219,7 +220,7 @@ li::marker {
   padding: 10px 0px;
   -webkit-box-pack: end;
   justify-content: flex-end;
-  margin-top: -60px; /* 위로 올리기 위해 음수 값 사용 */
+  margin: 10px;
 }
 
 /* '글쓰기' 버튼 */
@@ -246,5 +247,36 @@ li::marker {
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
+}
+
+
+/* ul의 기본 스타일 제거 및 가로 배치 */
+.notice-pagenation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* 가로 정렬 */
+  transform: translate(300px, 10px);
+}
+
+.pagination-container ul{
+	display: flex;
+}
+/* li 요소들을 가로로 배치하고 간격 추가 */
+.notice-pagenation li {
+  margin-right: 10px; /* 각 페이지 번호 사이 간격 */
+}
+
+.notice-pagenation li a {
+  text-decoration: none;
+  color: black;
+}
+
+.notice-pagenation li a:hover {
+  text-decoration: underline;
+}
+
+.notice-pagenation li a[style*="font-weight:bold;"] {
+  font-weight: bold;
 }
 
