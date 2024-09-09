@@ -20,7 +20,7 @@
 					<div class="my-leftbox">
 						<div class="my-hello">
 							<div class="my-wellcome">반가워요!</div>
-							<div class="my-nickname">""님</div>
+							<div class="my-nickname">"${sessionScope.member.memberName}"님</div>
 						</div>
 						<div class="my-category">
 							<div class="my-category-menu">메뉴</div>
@@ -48,11 +48,11 @@
 							<div class="my-line"></div>
 							<div class="my-profile-center">
 								<div class="my-profile-category">
-									<div class="my-profile-menu">아이디</div>
+									<div class="my-profile-menu">아이디 ${sessionScope.member.memberEmail}</div>
 									<div class="my-profile-value" id="memberNumber"></div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">이름</div>
+									<div class="my-profile-menu">이름 ${sessionScope.member.memberName}</div>
 									<div class="my-profile-value" id="memberName"></div>
 								</div>
 								<div class="my-profile-category">
