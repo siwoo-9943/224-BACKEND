@@ -12,6 +12,7 @@ public class MypageDAO {
 	   public MypageDAO() {
 	      sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	   }
+	   
 
 	   //"mypage.my-profile"이라는 id를 가진 sql문 실행,dto를 데이터베이스에 삽입
 //	   public void profile(MypageDTO mypageDTO) {
