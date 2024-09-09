@@ -350,7 +350,6 @@ tr {
   font-size: 15px;
   font-weight: bold;
   color: aliceblue;
-  margin-right: 10px;
 }
 
 
@@ -364,15 +363,17 @@ tr {
   /* height: 50px; */
 }
 
-.comu-comment-rewrite-submit {
+.comu-member-delete-contents-button {
   background-color: #2BCF81;
-  width: 100px;
+  width: 60px;
   height: 30px;
   font-size: 15px;
   font-weight: bold;
   color: aliceblue;
-
+  margin-right: 10px;
 }
+
+
 
 a{
   color: white;
