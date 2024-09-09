@@ -37,13 +37,6 @@ public class CommunityDAO {
 		}
 		return detail;
 	}
-<<<<<<< HEAD
-	
-	public List<CommentDTO> commentList(int boardNumber) {
-		System.out.println("commutnityDAO - commentList");
-		return sqlSession.selectList("community.commentList", boardNumber);
-	}
-=======
 
 	public void update(CommunityDTO communityDTO) {
 		System.out.println("수정값 넘어왔냐?");
@@ -58,5 +51,8 @@ public class CommunityDAO {
 		sqlSession.delete("community.deleteByBoardNumber", boardNumber);
 	}
 
->>>>>>> main
+	public List<CommentDTO> commentList(int boardNumber) {
+		System.out.println("commutnityDAO - commentList");
+		return sqlSession.selectList("community.commentList", boardNumber);
+	}
 }
