@@ -22,13 +22,12 @@
     <div class="result-wrapper">
       <label>
         <span>아이디 : example@google.com</span><br>
-        <span>가입 : 2024.08.05</span>
       </label><br>
     </div>
 
     <div class="buttons">
-      <button type="button">로그인하기</a></button>
-      <button type="button">비밀번호 찾기</a></button>
+      <a href="http://localhost:9999/app/member/mem-login.jsp" ><button type="submit">로그인하기</a></button></a>
+      <a href="http://localhost:9999/app/member/mem-pw-find.jsp" ><button type="submit">비밀번호 찾기</a></button></a>
     </div>
   </div>
 

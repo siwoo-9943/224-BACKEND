@@ -18,6 +18,9 @@ public class JoinOkController implements MemExecute {
 	@Override
 	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServerException {
+		//컨트롤러 실행확인
+		System.out.println("회원가입 컨트롤러 실행");
+		
 		// 인코딩 설정확인
 		request.setCharacterEncoding("UTF-8");
 
