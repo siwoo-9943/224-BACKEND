@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/convenience/conv-storage.css">
 </head>
 <body>
+	<jsp:include page="/header.jsp" />
   <div style="position: relative; height: 350px;">
     <div style="position: absolute; left: 0px; bottom: 0px; right: 0px; z-index: 10;">
       <div style="width: 100%; max-width: 1200px; margin: 0 auto 30px;"><span
@@ -141,5 +142,5 @@
     </div>
   </div>
 </body>
-
+<jsp:include page="/footer.jsp" />
 </html>

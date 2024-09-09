@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/convenience/conv-main.css">
 </head>
 <body>
+	<jsp:include page="/header.jsp" />
 	<div style="position: relative; height: 350px;">
 		<div
 			style="position: absolute; left: 0px; bottom: 0px; right: 0px; z-index: 10;">
@@ -31,16 +32,18 @@
 					<div style="position: relative; height: 230px;">
 						<div
 							style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-							<a href="conv-map.jsp"><div
+							<a href="conv-map.jsp">
+							<div
 									style="width: 100%; margin: 0 auto 30px;">
 									<span style="font-size: 24px; color: #fff; font-weight: 600;">강남역</span>
-								</div></a>
+								</div>
+								</a>
 						</div>
 						<div
 							style="background-image: url(${pageContext.request.contextPath}/assets/images/1.png); width: 400px; height: 100%;"></div>
 					</div>
 					<div style="position: relative; height: 230px;">
-						<div
+							<div
 							style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
 							<a href="conv-map.jsp"><div
 									style="width: 100%; margin: 0 auto 30px;">
@@ -101,5 +104,6 @@
 		</div>
 
 	</div>
+	<jsp:include page="/footer.jsp" />
 </body>
 </html>
