@@ -145,8 +145,6 @@ a {
 			action="${pageContext.request.contextPath}/community/comu-writeOk.cm"
 			method="post">
 
-			<!-- Hidden field to pass memberNumber from session -->
-			<input type="hidden" name="memberNumber" value="2" />
 
 			<div class="comu-board-write-wrap">
 				<div class="comu-board-write">
