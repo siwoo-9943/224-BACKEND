@@ -34,6 +34,14 @@
 	<select id="checkIdFind" parameterType="String" resultType="int">
 		SELECT COUNT(MEMBER_NAME)
 		FROM TBL_MEMBER
-		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone] AND MEMBER_PHONE_INPUT = #{memberPhoneInput}
+		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone} AND MEMBER_PHONE_INPUT = #{memberPhoneInput}
+	</select>
+	
+	
+	<!-- 해당 회원 아이디 결과 -->
+	<select id="checkIdFind2" parameterType="String" resultType="int">
+		SELECT MEMBER_EMAIL
+		FROM TBL_MEMBER
+		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone} AND MEMBER_PHONE_INPUT = #{memberPhoneInput}
 	</select>
 </mapper>

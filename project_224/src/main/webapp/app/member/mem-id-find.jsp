@@ -26,11 +26,8 @@
           <!-- 인증번호 입력 칸 -->
           <div class="p-number-ok">
             <input type="text" id="p-number-ok-box" name="memberPhoneInput" placeholder="&nbsp;&nbsp;인증번호를 입력하세요"></div>
-          <button class="login-ok">확인</a></button>
-          
-          
+          <button class="login-ok">확인</a></button>          
         </div>
-        
       </form>
     </div>
 
