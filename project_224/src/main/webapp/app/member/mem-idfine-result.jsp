@@ -22,7 +22,7 @@
     <div class="result-wrapper">
       <label>
         <span>아이디 : ${member2}</span><br>
-      </label><br>
+      </label>
     </div>
 
     <div class="buttons">
