@@ -8,12 +8,46 @@ public class MainDTO {
 	private String boardRegistDate;
 	private int recommendCount;
 	private String searchInput;
-	
+	private int likecount;
 	private String memberNickname;
-	 
-	
+	private String hotplaceStation;
+	private String hotplaceTitle;
+	private int likeCount;
+
 	public MainDTO() {
 		super();
+	}
+
+	public int getLikeCount() {
+		return likeCount;
+	}
+
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
+	}
+
+	public String getHotplaceStation() {
+		return hotplaceStation;
+	}
+
+	public void setHotplaceStation(String hotplaceStation) {
+		this.hotplaceStation = hotplaceStation;
+	}
+
+	public String getHotplaceTitle() {
+		return hotplaceTitle;
+	}
+
+	public void setHotplaceTitle(String hotplaceTitle) {
+		this.hotplaceTitle = hotplaceTitle;
+	}
+
+	public int getLikecount() {
+		return likecount;
+	}
+
+	public void setLikecount(int likecount) {
+		this.likecount = likecount;
 	}
 
 	public String getMemberNickname() {
@@ -23,12 +57,11 @@ public class MainDTO {
 	public void setMemberNickname(String memberNickname) {
 		this.memberNickname = memberNickname;
 	}
-	
+
 	public MainDTO(String searchInput) {
 		super();
 		this.searchInput = searchInput;
 	}
-
 
 	public String getSearchInput() {
 		return searchInput;
@@ -86,14 +119,13 @@ public class MainDTO {
 		this.recommendCount = recommendCount;
 	}
 
-
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount + 
-				" boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : " + boardRegistDate +
-				" recommendCount : " + recommendCount + " memberNickname : " + memberNickname;
-		
+		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount
+				+ " boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : "
+				+ boardRegistDate + " recommendCount : " + recommendCount + " memberNickname : " + memberNickname;
+
 	}
 
 }

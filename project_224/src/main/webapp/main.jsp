@@ -3,7 +3,13 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.pj224.app.dto.MainDTO"%>
 <%
-List<MainDTO> results = (List<MainDTO>) request.getAttribute("comuListResults");
+List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResults");
+%>
+<%
+List<MainDTO> hpresults1 = (List<MainDTO>) request.getAttribute("hplist1");
+%>
+<%
+List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
 %>
 <!DOCTYPE html>
 <html>
@@ -117,82 +123,51 @@ List<MainDTO> results = (List<MainDTO>) request.getAttribute("comuListResults");
 		</section>
 
 		<!-- 핫플콕콕 -->
+		<!-- 1번째 줄 4칸 -->
 		<section class="main-section-third">
 			<div id="main-third-title">
 				<img id="main-body-hot-icon"
 					src="${pageContext.request.contextPath}/assets/images/hotplace-icon.png">핫플콕콕!
 			</div>
 			<section class="main-section-third-top">
-				<div class="main-section-btn">
-					<button id="main-section-left" onclick="prevContent()"><</button>
-					<button id="main-section-right" onclick="nextContent()">></button>
-				</div>
 				<ul id="main-hot">
-					<li id="main-hot-list">
-						<div id="main-hot-list-img"
-							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
-							<img id="main-picked"
-								src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a
-						href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
-							<div class="main-hot-list-txt">
-								<span id="main-hot-title">asd1</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
-								</span>
-							</div>
-					</a>
-					</li>
-					<li id="main-hot-list">
-						<div id="main-hot-list-img"
-							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
-							<img id="main-picked"
-								src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a
-						href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
-							<div class="main-hot-list-txt">
-								<span id="main-hot-title">asd2</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
-								</span>
-							</div>
-					</a>
-					</li>
-					<li id="main-hot-list">
-						<div id="main-hot-list-img"
-							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-2.jpg);">
-							<img id="main-picked"
-								src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a
-						href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
-							<div class="main-hot-list-txt">
-								<span id="main-hot-title">asd3</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
-								</span>
-							</div>
-					</a>
-					</li>
-					<li id="main-hot-list">
-						<div id="main-hot-list-img"
-							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-3.jpg);">
-							<img id="main-picked"
-								src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a
-						href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
-							<div class="main-hot-list-txt">
-								<span id="main-hot-title">asd4</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
-								</span>
-							</div>
-					</a>
-					</li>
-					<li id="main-hot-list">
-						<div id="main-hot-list-img"
-							style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
-							<img id="main-picked"
-								src="${pageContext.request.contextPath}/assets/images/picked.png">
-						</div> <a
-						href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
-							<div class="main-hot-list-txt">
-								<span id="main-hot-title">asd5</span> <span id="main-hot-txt">asdasdadadasdas<br>asdasdadadasdas
-								</span>
-							</div>
-					</a>
-					</li>
+					<c:forEach var="item" items="${hplist1}">
+						<li id="main-hot-list">
+							<div id="main-hot-list-img"
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
+								<img id="main-picked"
+									src="${pageContext.request.contextPath}/assets/images/picked.png">
+							</div> <a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
+								<div class="main-hot-list-txt">
+									<span id="main-hot-title">${item.hotplaceStation}</span> <span id="main-hot-txt">${item.hotplaceTitle}
+									</span>
+								</div>
+						</a>
+						</li>
+					</c:forEach>
+				</ul>
+			</section>
+		</section>
+		<!-- 2번째 줄 4칸 -->
+		<section class="main-section-third-2">
+			<section class="main-section-third-top">
+				<ul id="main-hot">
+					<c:forEach var="item" items="${hplist2}">
+						<li id="main-hot-list">
+							<div id="main-hot-list-img"
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
+								<img id="main-picked"
+									src="${pageContext.request.contextPath}/assets/images/picked.png">
+							</div> <a
+							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
+								<div class="main-hot-list-txt">
+									<span id="main-hot-title">${item.hotplaceStation}</span> <span
+										id="main-hot-txt">${item.hotplaceTitle} </span>
+								</div>
+						</a>
+						</li>
+					</c:forEach>
 				</ul>
 			</section>
 		</section>
@@ -211,8 +186,8 @@ List<MainDTO> results = (List<MainDTO>) request.getAttribute("comuListResults");
 				<ul class="main-comu">
 
 					<c:forEach var="item" items="${comuListResults}">
-						<li id="main-comu-list">
-						<a href="../../html/community/comu-post-guest.html">
+						<li id="main-comu-list"><a
+							href="../../html/community/comu-post-guest.html">
 								<div class="main-comu-left">
 									<div id="main-comu-title">
 										<strong>${item.boardTitle}</strong>
@@ -222,8 +197,7 @@ List<MainDTO> results = (List<MainDTO>) request.getAttribute("comuListResults");
 									<hr>
 									<div id="main-comu-txt">${item.boardContent}</div>
 								</div>
-						</a>
-						</li>
+						</a></li>
 					</c:forEach>
 				</ul>
 

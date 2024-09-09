@@ -67,5 +67,15 @@ public class MainDAO {
 		System.out.println("maincomulist");
 		return sqlSession.selectList("main.cmlist");
 	}
+	
+	public List<MainDTO> hpList1(){
+		System.out.println("핫플 1번째 줄");
+		return sqlSession.selectList("main.hplist1");
+	}
+	
+	public List<MainDTO> hpList2(){
+		System.out.println("핫플 2번째 줄");
+		return sqlSession.selectList("main.hplist2");		
+	}
 
 }
