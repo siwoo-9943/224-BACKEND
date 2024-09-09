@@ -58,4 +58,19 @@ public class CommunityDAO {
 		System.out.println("commutnityDAO - memberList");
 		return sqlSession.selectList("community.memberList");
 	}
+	
+	public void commentUpdate(CommentDTO commentDTO) {
+		System.out.println(commentDTO);
+		sqlSession.update("community.commentUpdate", commentDTO);
+	}
+	
+	public void deleteByCommentNumber(int commentNumber) {
+		System.out.println("delete comment");
+		sqlSession.delete("community.deleteByCommentNumber", commentNumber);
+	}
+	
+	public void insertComment(CommentDTO commentDTO) {
+		System.out.println("insert comment");
+		sqlSession.insert("community.insertComment", commentDTO);
+	}
 }

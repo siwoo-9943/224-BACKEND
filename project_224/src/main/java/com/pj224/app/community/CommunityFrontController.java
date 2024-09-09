@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.pj224.app.Result;
 import com.pj224.app.dao.CommunityDAO;
+import com.pj224.app.dto.CommentDTO;
 import com.pj224.app.dto.CommunityDTO;
 
 public class CommunityFrontController extends HttpServlet {
@@ -112,9 +113,44 @@ public class CommunityFrontController extends HttpServlet {
 			break;
 
 		case "/community/comu-deleteOk.cm":
-		    System.out.println("FrontController: 게시글 삭제 요청 받음");
-		    result = new CommunityDeleteOkController().MemExecute(request, response);
+			System.out.println("FrontController: 게시글 삭제 요청 받음");
+			result = new CommunityDeleteOkController().MemExecute(request, response);
+			break;
+
+		case "/community/comu-comment-modify.cm":
+		    // 댓글 수정 요청을 처리하는 부분
+		    int commentNumber = Integer.parseInt(request.getParameter("commentNumber"));
+		    String commentContent = request.getParameter("commentContent");
+		    
+		    CommentDTO commentDTO = new CommentDTO();
+		    commentDTO.setCommentNumber(commentNumber);
+		    commentDTO.setCommentContent(commentContent);
+		    
+            CommunityDAO communityDAO = new CommunityDAO(/* SqlSessionFactory 인스턴스 주입 */);
+            communityDAO.commentUpdate(commentDTO);
 		    break;
+		    
+		case "/community/comu-comment-deleteOk.cm":
+			System.out.println("FrontController: 댓글 삭제 요청 받음");
+			
+			String boardNum = request.getParameter("boardNumber");
+			request.setAttribute("boardNumber", boardNum);
+			result = new CommunityCommentDeleteOkController().MemExecute(request, response);
+			break;
+
+		case "/community/comu-comment-write.cm":
+			System.out.println("댓글 작성 됨?");
+			System.out.println(request.getParameter("memberNum"));
+			System.out.println(request.getParameter("boardNumber"));
+			System.out.println(request.getParameter("commentCont"));
+			request.setAttribute("memberNumber", request.getParameter("memberNum"));
+			request.setAttribute("boardNumber", request.getParameter("boardNumber"));
+			request.setAttribute("commentContent", request.getParameter("commentCont"));
+			result = new CommunityCommentWriteOkController().MemExecute(request, response);
+			System.out.println(result.getPath());
+			isForwarded = false;
+			break;	
+		
 		}
 
 		if (!isForwarded && result != null) {
