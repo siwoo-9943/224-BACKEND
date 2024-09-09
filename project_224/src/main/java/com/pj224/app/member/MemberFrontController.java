@@ -91,11 +91,6 @@ public class MemberFrontController extends HttpServlet {
 			System.out.println("idFindOk");
 			new IdFindOkController().MemExecute(request, response);
 			break;
-		case "/member/idFindResult.me":
-			System.out.println("idFindResult");
-			new IdFindResultController().MemExecute(request, response);
-			response.sendRedirect(request.getContextPath() + "/app/member/mem-idfine-result.jsp");
-			break;
 		}
 
 		if (result != null) {

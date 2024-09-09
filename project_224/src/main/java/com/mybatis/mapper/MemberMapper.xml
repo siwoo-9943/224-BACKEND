@@ -39,9 +39,9 @@
 	
 	
 	<!-- 해당 회원 아이디 결과 -->
-	<select id="checkIdFind2" parameterType="String" resultType="int">
+	<select id="idFindResult" parameterType="String" resultType="String">
 		SELECT MEMBER_EMAIL
 		FROM TBL_MEMBER
-		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone} AND MEMBER_PHONE_INPUT = #{memberPhoneInput}
+		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone}
 	</select>
 </mapper>

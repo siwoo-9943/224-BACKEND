@@ -45,7 +45,7 @@ public class MemberDAO {
 	
 	//아이디 찾기 이름, 전화번호, 인증번호 일치한지 확인
 	public boolean idFind(String memberName, String memberPhone, String memberPhoneInput) {
-		System.out.println("아이디찾기 다오 실행");
+		System.out.println("아이디 찾기 확인 다오 실행");
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setMemberName(memberName);
 		memberDTO.setMemberPhone(memberPhone);
@@ -55,13 +55,16 @@ public class MemberDAO {
 	}
 	
 	//해당 회원 아이디 찾기 실행
-	public void idFindResult(String memberName, String memberPhone, String memberPhoneInput) {
+	public String idFindResult(String memberName, String memberPhone, String memberPhoneInput) {
 		System.out.println("아이디 찾기 결과 다오 실행");
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setMemberName(memberName);
 		memberDTO.setMemberPhone(memberPhone);
 		memberDTO.setMemberPhoneInput(memberPhoneInput);
-		return;
+		
+		System.out.println(memberDTO + "확인용");
+		
+		return sqlSession.selectOne("member.idFindResult", memberDTO);
 	}
 
 	
