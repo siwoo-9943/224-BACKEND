@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.pj224.app.dto.CommunityDTO;
 import com.pj224.app.dto.LikeDTO;
 import com.pj224.app.dto.NoticeDTO;
 
@@ -27,8 +28,8 @@ public class NoticeDAO {
 
 	public void write(NoticeDTO noticeDTO) {
 		sqlSession.insert("notice.write", noticeDTO);
-		sqlSession.commit();
 		System.out.println("글쓰기" + noticeDTO);
 	}
+
 
 }
