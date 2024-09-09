@@ -2,6 +2,7 @@ package com.pj224.app.community;
 
 import java.io.IOException;
 import java.rmi.ServerException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import com.pj224.app.MemExecute;
 import com.pj224.app.Result;
 import com.pj224.app.dao.CommunityDAO;
+import com.pj224.app.dto.CommentDTO;
 import com.pj224.app.dto.CommunityDTO;
 import com.pj224.app.dto.MemberDTO;
 
@@ -67,7 +69,12 @@ public class CommunityDetailOkController implements MemExecute {
 			isAuthor = true;
 		}
 		request.setAttribute("isAuthor", isAuthor);
+		
+		List<CommentDTO> commentDTO = communityDAO.commentList(Integer.parseInt(boardNumberStr));
+		List<MemberDTO> memberList = communityDAO.memberList();
 
+		request.setAttribute("commentList", commentDTO);
+		request.setAttribute("memberList", memberList);
 
 		result.setRedirect(false);
 		result.setPath("/app/community/comu-detail.jsp");

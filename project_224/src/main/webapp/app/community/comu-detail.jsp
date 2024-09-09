@@ -14,6 +14,7 @@
 	href="${pageContext.request.contextPath}/assets/css/modal/comu-modal.css" />
 </head>
 <body>
+	<jsp:include page="/header.jsp" />
 	<main>
 		<div class="wrapper">
 			<div class="contnets">
@@ -90,8 +91,78 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
+
+				<div id="form-commentInfo">
+					<div id="comment-count">
+						댓글 <span id="count">${communitycomudetail.commentCount}</span>
+					</div>
+					<ul>
+						<c:forEach var="comment" items="${commentList}">
+							<c:forEach var="member" items="${memberList}">
+								<c:if
+									test="${comment.boardNumber == communitycomudetail.boardNumber}">
+									<div id="comment-comment-list">
+										<c:if test="${comment.memberNumber == member.memberNumber}">
+											<li id="comment-${comment.commentNumber}"
+												style="display: block">
+												<div>
+													<strong>${member.memberNickname}</strong>
+												</div>
+												<div class="comment-content">
+													<span>${comment.commentContent}</span><br>
+													<c:if
+														test="${comment.memberNumber == sessionScope.member.memberNumber}">
+														<button class="comu-member-rewrite-contents-button"
+															onclick="openEditForm(${comment.commentNumber})">수정</button>
+
+														<button class="comu-member-delete-contents-button"
+															onclick="openDeleteCommentModal(${comment.commentNumber})">삭제</button>
+													</c:if>
+												</div>
+												<div class="comu-member-rewrite-contents"
+													id="edit-form-${comment.commentNumber}"
+													style="display: none;">
+													<div class="comu-comment-inputbox-but">
+														<input class="comu-comment-rewrite-input"
+															value="${comment.commentContent}">
+														<button class="comu-comment-rewrite-submit" type="button"
+															onclick="submitCommentEdit(${comment.commentNumber})">등록</button>
+														<button class="comu-comment-rewrite-cancel" type="button"
+															onclick="closeEditForm(${comment.commentNumber})">취소</button>
+													</div>
+												</div>
+
+												<div>
+													<small>${comment.commentUpdateDate}</small>
+												</div> <br>
+											</li>
+
+										</c:if>
+									</div>
+								</c:if>
+							</c:forEach>
+						</c:forEach>
+					</ul>
+					<c:if test="${sessionScope.member.memberNumber != null}">
+										<div id="comu-comment-insert-area">
+						<span id="comu-text-red">[알림]</span><span> 욕설,상처 줄 수 있는 악플은
+							삼가주세요</span>
+						<form method="post"
+							action="${pageContext.request.contextPath}/community/comu-comment-write.cm?boardNumber=${communitycomudetail.boardNumber}&memberNum=${sessionScope.member.memberNumber}">
+							<div class="comu-inputbox-but">
+								<input id="comment-input" name="commentCont"
+									placeholder="댓글을 입력해 주세요." value="">
+								<button class="comu-submit" id="comu-insert-comment"
+									type="submit">등록</button>
+
+							</div>
+						</form>
+					</div>
+					</c:if>
+				</div>
 			</div>
 		</div>
+
 		<form id="deleteForm"
 			action="${pageContext.request.contextPath}/community/comu-deleteOk.cm"
 			method="post" style="display: none;">
@@ -117,6 +188,23 @@
 				<button class="comu-cancel-btn" onclick="closeNullModal()">확인</button>
 			</div>
 		</div>
+
+		<form id="deleteCommentForm"
+			action="${pageContext.request.contextPath}/community/comu-comment-deleteOk.cm?boardNumber=${communitycomudetail.boardNumber}"
+			method="post" style="display: none;">
+			<input type="hidden" id="commentNumberInput" name="commentNumber"
+				value="">
+		</form>
+		<!-- 삭제 모달 HTML -->
+		<div id="comu-deleteCommentModal" class="comu-modal">
+			<div class="comu-modal-content">
+				<span class="comu-close" onclick="closeDeleteCommentModal()">&times;</span>
+				<h2>정말로 삭제하시겠습니까?</h2>
+				<p>삭제 버튼을 클릭하면 댓글이 영구히 삭제됩니다.</p>
+				<button class="confirm-btn" onclick="confirmCommentDelete()">삭제</button>
+				<button class="comu-cancel-btn" onclick="closeDeleteCommentModal()">취소</button>
+			</div>
+		</div>
 	</main>
 </body>
 <script
@@ -135,8 +223,56 @@ function confirmPostDelete() {
     document.getElementById('deleteForm').submit();
 }
 
-function closeNullModal() {
-    document.getElementById('comu-NullModal').style.display = 'none';
+function openEditForm(commentNumber) {
+    document.querySelector('#comment-' + commentNumber + ' .comment-content').style.display = 'none';
+    document.getElementById('edit-form-' + commentNumber).style.display = 'block';
 }
+
+function submitCommentEdit(commentNumber) {
+
+    const newContent = document.querySelector('#edit-form-' + commentNumber + ' .comu-comment-rewrite-input').value;
+    
+    if (newContent.trim() === '') {
+        alert('댓글 내용을 입력하세요.');
+        return;
+    }
+
+    $.ajax({
+        url: `${pageContext.request.contextPath}/community/comu-comment-modify.cm`,
+        type: 'POST',
+        data: {
+            commentNumber: commentNumber,
+            commentContent: newContent
+        },
+        success: function(response) {
+			document.querySelector('#comment-' + commentNumber + ' .comment-content span').innerText = newContent;
+			closeEditForm(commentNumber);
+        },
+        error: function() {
+            alert('서버 통신 오류 발생');
+        }
+    });
+}
+
+function closeEditForm(commentNumber) {
+    document.querySelector('#comment-' + commentNumber + ' .comment-content').style.display = 'block';
+    document.getElementById('edit-form-' + commentNumber).style.display = 'none';
+}
+
+function openDeleteCommentModal(commentNumber) {
+    document.getElementById('commentNumberInput').value = commentNumber;
+    document.getElementById('comu-deleteCommentModal').style.display = 'block';
+}
+
+function closeDeleteCommentModal() {
+    document.getElementById('comu-deleteCommentModal').style.display = 'none';
+}
+
+function confirmCommentDelete() {
+    document.getElementById('deleteCommentForm').submit();
+}
+
 </script>
+
+
 </html>
