@@ -44,4 +44,18 @@
 		FROM TBL_MEMBER
 		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone}
 	</select>
+	
+	<!-- 비밀번호 찾기 아이디, 이름 전화번호 인증번호 일치값 확인 -->
+	<select id="checkPwFind" parameterType="String" resultType="int">
+		SELECT COUNT(MEMBER_PW)
+		FROM TBL_MEMBER
+		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone} AND MEMBER_PHONE_INPUT = #{memberPhoneInput} AND MEMBER_EMAIL = #{memberEmail}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="pwUpdate" parameterType="String">
+		SELECT COUNT(MEMBER_PW)
+		FROM TBL_MEMBER
+		WHERE MEMBER_NAME = #{memberName} AND MEMBER_PHONE = #{memberPhone} AND MEMBER_PHONE_INPUT = #{memberPhoneInput} AND MEMBER_EMAIL = #{memberEmail}
+	</update>
 </mapper>

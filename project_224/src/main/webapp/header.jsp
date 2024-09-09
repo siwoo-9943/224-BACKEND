@@ -165,15 +165,15 @@
 						src="${pageContext.request.contextPath}/assets/images/convenience-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="${pageContext.request.contextPath}/app/convenience/conv-main.jsp">편의공공</a>
+					<a href="${pageContext.request.contextPath}/convenience/conv-main.cv">편의공공</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-conv">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="${pageContext.request.contextPath}/app/convenience/conv-main.jsp">편의공공</a></li>
-						<li><a href="${pageContext.request.contextPath}/app/convenience/conv-storage.jsp">물품보관함</a></li>
+						<li><a href="${pageContext.request.contextPath}/convenience/conv-main.cv">편의공공</a></li>
+						<li><a href="${pageContext.request.contextPath}/convenience/conv-storage.cv">물품보관함</a></li>
 					</ul>
 				</div>
 			</div>
