@@ -46,7 +46,7 @@ public class IdFindOkController implements MemExecute {
 			System.out.println(member2 + "보낼값들어오는지확인");
 			request.setAttribute("member2", member2);
 			
-			request.getRequestDispatcher("/app/member/mem-idfine-result.jsp").forward(request, response); // 아이디 찾기 성공 후 프컨타고 아이디결과페이지로 이동
+			request.getRequestDispatcher(request.getContextPath() + "/app/member/mem-idfine-result.jsp").forward(request, response); // 아이디 찾기 성공 후 프컨타고 아이디결과페이지로 이동
 			result.setRedirect(true);
 		} else {
 			System.out.println("아이디 찾기 실패");

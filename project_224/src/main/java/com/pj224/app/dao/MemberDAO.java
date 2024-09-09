@@ -66,6 +66,29 @@ public class MemberDAO {
 		
 		return sqlSession.selectOne("member.idFindResult", memberDTO);
 	}
+	
+	//비밀번호 찾기 이름, 전화번호, 인증번호 일치한지 확인
+	public boolean pwFind(String memberEmail, String memberName, String memberPhone, String memberPhoneInput) {
+		System.out.println("비밀번호 찾기 확인 다오 실행");
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setMemberName(memberName);
+		memberDTO.setMemberPhone(memberPhone);
+		memberDTO.setMemberPhoneInput(memberPhoneInput);
+		memberDTO.setMemberEmail(memberEmail);
+		boolean pwCheckResult = (Integer)sqlSession.selectOne("member.checkPwFind", memberDTO) <= 0;
+		return pwCheckResult;
+	}
+	
+	//비밀번호 변경
+	public String pwUpdate(String memberPw) {
+		System.out.println("비밀번호 변경 다오 실행");
+		MemberDTO memberDTO = new MemberDTO();
+		
+		System.out.println(memberDTO + "확인용");
+		
+		return sqlSession.selectOne("member.idFindResult", memberDTO);
+	}
+
 
 	
 

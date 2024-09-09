@@ -91,6 +91,14 @@ public class MemberFrontController extends HttpServlet {
 			System.out.println("idFindOk");
 			new IdFindOkController().MemExecute(request, response);
 			break;
+		case "/member/pwFindOk.me":
+			System.out.println("pwFindOk");
+			new PwFindOkController().MemExecute(request, response);
+			break;
+		case "/member/pwUpdate.me":
+			System.out.println("pwUpdateOk");
+			new PwUpdateController().MemExecute(request, response);
+			break;
 		}
 
 		if (result != null) {
