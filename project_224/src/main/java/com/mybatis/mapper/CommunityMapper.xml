@@ -34,27 +34,27 @@
 		insert into tbl_board
 		(board_number, board_cate, board_title, board_content, member_number)
 		VALUES (seq_board.nextVal, #{boardCate}, #{boardTitle},
-		#{boardContent},
-		#{memberNumber})
+		#{boardContent}, #{memberNumber})
 	</insert>
 
 	<select id="comudetail" parameterType="CommunityDTO"
 		resultType="CommunityDTO">
 		SELECT
-		B.BOARD_NUMBER, B.BOARD_CATE,B.BOARD_TITLE,
+		B.BOARD_NUMBER, B.BOARD_CATE, B.BOARD_TITLE,
 		B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, B.BOARD_CONTENT,
-		M.MEMBER_NUMBER, COUNT(DISTINCT C.COMMENT_NUMBER) AS COMMENT_COUNT,
-		COUNT(DISTINCT R.MEMBER_NUMBER) AS RECOMMEND_COUNT
+		M.MEMBER_NUMBER,
+		(SELECT COUNT(*) FROM TBL_COMMENT C WHERE
+		C.BOARD_NUMBER = B.BOARD_NUMBER) AS
+		COMMENT_COUNT,
+		(SELECT
+		COUNT(DISTINCT R.MEMBER_NUMBER) FROM TBL_RECOMMEND R WHERE
+		R.BOARD_NUMBER = B.BOARD_NUMBER) AS RECOMMEND_COUNT
 		FROM
 		TBL_BOARD B
-		LEFT
-		JOIN
+		LEFT JOIN
 		TBL_MEMBER M ON B.MEMBER_NUMBER = M.MEMBER_NUMBER
-		LEFT JOIN
-		TBL_COMMENT C ON B.BOARD_NUMBER = C.BOARD_NUMBER
-		LEFT JOIN
-		TBL_RECOMMEND R ON B.BOARD_NUMBER = R.BOARD_NUMBER
 		WHERE
+<<<<<<< HEAD
 		B.BOARD_NUMBER = 3tlb_
 		GROUP BY
 		B.BOARD_NUMBER,
@@ -74,4 +74,27 @@
 		from tbl_comment c, tbl_board b
 		where b.board_number = #{boardNumber}
 	</select>
+=======
+		B.BOARD_NUMBER = #{boardNumber}
+	</select>
+
+
+
+	<update id="update">
+		UPDATE TBL_BOARD
+		SET BOARD_TITLE = #{boardTitle},
+		BOARD_CONTENT = #{boardContent}
+		WHERE BOARD_NUMBER = #{boardNumber}
+	</update>
+
+
+	<select id="selectByBoardNumber" resultType="CommunityDTO">
+        SELECT * FROM TBL_BOARD WHERE BOARD_NUMBER = #{boardNumber}
+    </select>
+    
+    
+    <delete id="deleteByBoardNumber" parameterType="int">
+        DELETE FROM TBL_BOARD WHERE BOARD_NUMBER = #{boardNumber}
+    </delete>
+>>>>>>> main
 </mapper>
