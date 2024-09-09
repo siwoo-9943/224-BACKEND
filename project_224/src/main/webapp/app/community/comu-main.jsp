@@ -113,7 +113,7 @@
 								<div class="baseList-space baseList-title">${community.boardTitle}</div>
 								<!-- 내용 -->
 								<div class="baseList-space">
-									<a href="${pageContext.request.contextPath}/community/comu-detail.cm">
+									  <a href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${community.boardNumber}">
 									<span
 										class="baseList-sector-content">${community.boardContent}</span>
 									</a>
