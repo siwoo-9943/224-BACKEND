@@ -16,14 +16,14 @@ import com.pj224.app.dto.NoticeDTO;
 
 public class NoticeListController implements MemExecute  {
 
-	@Override
-	public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
+   @Override
+   public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
 
 
-		System.out.println("컨드롤러 들어옴");
-		request.setCharacterEncoding("UTF-8");
-		Result result = new Result();
-		
+      System.out.println("컨드롤러 들어옴");
+      request.setCharacterEncoding("UTF-8");
+      Result result = new Result();
+      
         NoticeDAO noticeDAO = new NoticeDAO();
 
         // 리스트를 가져와서 request에 설정
@@ -38,8 +38,8 @@ public class NoticeListController implements MemExecute  {
 
 
    }
-	
-	
+   
+   
 
 
 

@@ -20,7 +20,7 @@
       <div class="notice-modi-board-write-wrap">
         <div class="notice-modi-board-write">
           <div class="notice-modi-title">
-            <input id="notice-modi-board-title" name="notbTitle" type="text" placeholder="제목을 입력해 주세요" />
+            <input id="notice-modi-board-title" name="noteTitle" type="text" placeholder="제목을 입력해 주세요" />
           </div>
           <div class="notice-modi-cont">
             <textarea id="notice-modi-board-content" name="notbContent" inputmode="text" placeholder="내용을 입력하세요">
