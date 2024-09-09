@@ -21,28 +21,31 @@
     <div class="notice-board-title">
       <h1>공지사항 게시판</h1>
     </div>
-    <form method="get">
+    <!-- 하나의 form으로 통합 -->
+    <form action="${pageContext.request.contextPath}/notice/writeOk.no" method="post">
       <div class="notice-board-write-wrap">
         <div class="notice-board-write">
           <div class="notice-title">
-            <input id="notice-board-title" name="notbTitle" type="text" placeholder="제목을 입력해 주세요" />
+            <input id="notice-board-title" name="noticeTitle" type="text" placeholder="제목을 입력해 주세요" />
           </div>
+          	<div class="notice-category">
+				<label for="notice-category-select">카테고리 선택:</label> 
+					<select	id="notice-category-select" name="noticeCate">
+						<option value="안내" <c:if test="${noticeCate == '안내'}">selected</c:if>>안내</option>
+						<option value="이벤트" <c:if test="${noticeCate == '이벤트'}">selected</c:if>>이벤트</option>
+					</select>
+			</div>
           <div class="notice-cont">
-		    <!-- <div id="summernote"></div> -->
-		    <form action="${pageContext.request.contextPath}/notice/notice-addetail.no" method="post">
-		        <textarea id="summernote" name="editordata"></textarea>
-		        <p id="letter-length" style="display: inline;"></p>/1000
-		    </form>
+            <textarea id="summernote" name="noticeContent"></textarea>
+            <p id="letter-length" style="display: inline;"></p>/1000
           </div>
         </div>
       </div>
       <div class="notice-button-container">
-        <button class="notice-action-button" type="button" onclick="location.href='../notice/notice-admain.jsp'">
+        <button class="notice-action-button" type="button" onclick="location.href='${pageContext.request.contextPath}/notice/notice-admain.no'">
           이전
         </button>
-        <button class="notice-action-button" type="button" onclick="location.href='../notice/notice-addetail.jsp'">
-          등록
-        </button>
+		<button class="notice-action-button" type="submit" id="submitButton">등록</button>
       </div>
     </form>
   </div>
