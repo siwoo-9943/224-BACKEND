@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/convenience/conv-main.css">
 </head>
 <body>
+	<jsp:include page="/header.jsp" />
 	<div style="position: relative; height: 350px;">
 		<div
 			style="position: absolute; left: 0px; bottom: 0px; right: 0px; z-index: 10;">
@@ -31,18 +32,23 @@
 					<div style="position: relative; height: 230px;">
 						<div
 							style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-							<a href="conv-map.jsp"><div
+							<a href="${pageContext.request.contextPath}/convenience/conv-gangmap.cv">
+							<div
 									style="width: 100%; margin: 0 auto 30px;">
 									<span style="font-size: 24px; color: #fff; font-weight: 600;">강남역</span>
-								</div></a>
+								</div>
+								</a>
 						</div>
 						<div
 							style="background-image: url(${pageContext.request.contextPath}/assets/images/1.png); width: 400px; height: 100%;"></div>
 					</div>
+					
+					
 					<div style="position: relative; height: 230px;">
-						<div
+							<div
 							style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-							<a href="conv-map.jsp"><div
+							<a href="${pageContext.request.contextPath}/convenience/conv-jamsilmap.cv">
+							<div
 									style="width: 100%; margin: 0 auto 30px;">
 									<span style="font-size: 24px; color: #fff; font-weight: 600;">잠실역</span>
 								</div></a>
@@ -53,7 +59,8 @@
 					<div style="position: relative; height: 230px;">
 						<div
 							style="position: absolute; left: 150px; bottom: 70px; right: 0px; z-index: 10;">
-							<a href="conv-map.jsp"><div
+							<a href="${pageContext.request.contextPath}/convenience/conv-hongdaemap.cv">
+							<div
 									style="width: 100%; margin: 0 auto 30px;">
 									<span style="font-size: 24px; color: #fff; font-weight: 600;">홍대입구역</span>
 								</div></a>
@@ -66,7 +73,8 @@
 					<div style="position: relative; height: 230px;">
 						<div
 							style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-							<a href="conv-map.jsp"><div
+							<a href="${pageContext.request.contextPath}/convenience/conv-seongsumap.cv">
+							<div
 									style="width: 100%; margin: 0 auto 30px;">
 									<span style="font-size: 24px; color: #fff; font-weight: 600;">성수역</span>
 								</div></a>
@@ -77,7 +85,8 @@
 					<div style="position: relative; height: 230px;">
 						<div
 							style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
-							<a href="conv-map.jsp"><div
+							<a href="${pageContext.request.contextPath}/convenience/conv-moonraemap.cv">
+							<div
 									style="width: 100%; margin: 0 auto 30px;">
 									<span style="font-size: 24px; color: #fff; font-weight: 600;">문래역</span>
 								</div></a>
@@ -88,7 +97,8 @@
 					<div style="position: relative; height: 230px;">
 						<div
 							style="position: absolute; left: 150px; bottom: 70px; right: 0px; z-index: 10;">
-							<a href="conv-map.jsp"><div
+							<a href="${pageContext.request.contextPath}/convenience/conv-euljiromap.cv">
+							<div
 									style="width: 100%; margin: 0 auto 30px;">
 									<span style="font-size: 24px; color: #fff; font-weight: 600;">을지로입구역</span>
 								</div></a>
@@ -101,5 +111,6 @@
 		</div>
 
 	</div>
+	<jsp:include page="/footer.jsp" />
 </body>
 </html>
