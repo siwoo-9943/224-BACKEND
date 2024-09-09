@@ -44,7 +44,7 @@
 					<div class="header-search">
 						<div id="header-search-frame">
 							<form action="${pageContext.request.contextPath}/main-search.mn" method="get">
-								<div>
+				 				<div>
 									<button type="button" id="searchBtn"
 										href="${pageContext.request.contextPath}/main-search.mn">
 										<img src="${pageContext.request.contextPath}/assets/images/main-search.png">
