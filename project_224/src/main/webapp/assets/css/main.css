@@ -267,6 +267,14 @@
 }
 
 .main-hot-list-txt {
+	width: 200px;
+	height: 30px;
+	transform: translate(-200px, 150px);
+}
+
+.main-hot-list-txt2 {
+	width: 200px;
+	height: 30px;
 	transform: translate(-200px, 150px);
 }
 

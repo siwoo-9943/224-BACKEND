@@ -2,28 +2,39 @@ package com.pj224.app.dto;
 
 public class MainDTO {
 	private String boardTitle;
-	private int commentCount;
 	private String boardContent;
 	private String boardCate;
 	private String boardRegistDate;
+	private int commentCount;
 	private int recommendCount;
-	private String searchInput;
-	private int likecount;
-	private String memberNickname;
+
+	private int hotplaceNumber;
 	private String hotplaceStation;
 	private String hotplaceTitle;
-	private int likeCount;
+	private int likecount;
+
+	private String searchInput;
+	private int memberNumber;
+	private String memberNickname;
 
 	public MainDTO() {
 		super();
 	}
 
-	public int getLikeCount() {
-		return likeCount;
+	public int getHotplaceNumber() {
+		return hotplaceNumber;
 	}
 
-	public void setLikeCount(int likeCount) {
-		this.likeCount = likeCount;
+	public void setHotplaceNumber(int hotplaceNumber) {
+		this.hotplaceNumber = hotplaceNumber;
+	}
+
+	public int getMemberNumber() {
+		return memberNumber;
+	}
+
+	public void setMemberNumber(int memberNumber) {
+		this.memberNumber = memberNumber;
 	}
 
 	public String getHotplaceStation() {
@@ -124,7 +135,8 @@ public class MainDTO {
 		// TODO Auto-generated method stub
 		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount
 				+ " boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : "
-				+ boardRegistDate + " recommendCount : " + recommendCount + " memberNickname : " + memberNickname;
+				+ boardRegistDate + " recommendCount : " + recommendCount + " memberNickname : " + memberNickname
+				+ " likecount : " + likecount + " hotplaceNumber : " + hotplaceNumber + " memberNumber : " + memberNumber;
 
 	}
 
