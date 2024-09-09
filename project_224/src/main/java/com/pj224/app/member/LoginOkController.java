@@ -45,7 +45,7 @@ public class LoginOkController implements MemExecute {
 
 		 
 		 System.out.println("로그인성공");
-		 result.setPath(request.getContextPath() + "/main.jsp"); // 로그인 성공 후 메인페이지로 이동
+		 result.setPath(request.getContextPath() + "/main.mn"); // 로그인 성공 후 메인페이지로 이동
 		 result.setRedirect(true);
 		 } else{
 		 System.out.println("로그인실패");
