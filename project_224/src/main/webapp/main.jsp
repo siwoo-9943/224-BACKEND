@@ -140,8 +140,8 @@ List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
 							</div> <a
 							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
 								<div class="main-hot-list-txt">
-									<span id="main-hot-title">${item.hotplaceStation}</span> <span id="main-hot-txt">${item.hotplaceTitle}
-									</span>
+									<span id="main-hot-title">${item.hotplaceStation}</span> <span
+										id="main-hot-txt">${item.hotplaceTitle} </span>
 								</div>
 						</a>
 						</li>

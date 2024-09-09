@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //핫플콕콕
 const contents = document.querySelectorAll('#main-hot li');
-const contentsPerPage = 4; // 한 번에 보여줄 항목 수
+const contentsPerPage = 8; // 한 번에 보여줄 항목 수
 let currentPage = 0;
 
 function showContents(startContent) {
