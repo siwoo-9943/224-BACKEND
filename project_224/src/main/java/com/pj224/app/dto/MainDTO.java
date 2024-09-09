@@ -1,6 +1,7 @@
 package com.pj224.app.dto;
 
 public class MainDTO {
+	private int boardNumber;
 	private String boardTitle;
 	private String boardContent;
 	private String boardCate;
@@ -11,6 +12,13 @@ public class MainDTO {
 	private int hotplaceNumber;
 	private String hotplaceStation;
 	private String hotplaceTitle;
+	private String hotplaceHours;
+	private String hotplaceAddress;
+	private String hotplaceLink;
+	private String hotplaceAttractionContent;
+	private String hotplaceRestCuisine;
+	private String hotplaceRestMenu;
+
 	private int likecount;
 
 	private String searchInput;
@@ -19,6 +27,62 @@ public class MainDTO {
 
 	public MainDTO() {
 		super();
+	}
+
+	public String getHotplaceHours() {
+		return hotplaceHours;
+	}
+
+	public void setHotplaceHours(String hotplaceHours) {
+		this.hotplaceHours = hotplaceHours;
+	}
+
+	public String getHotplaceAddress() {
+		return hotplaceAddress;
+	}
+
+	public void setHotplaceAddress(String hotplaceAddress) {
+		this.hotplaceAddress = hotplaceAddress;
+	}
+
+	public String getHotplaceAttractionContent() {
+		return hotplaceAttractionContent;
+	}
+
+	public void setHotplaceAttractionContent(String hotplaceAttractionContent) {
+		this.hotplaceAttractionContent = hotplaceAttractionContent;
+	}
+
+	public String getHotplaceRestCuisine() {
+		return hotplaceRestCuisine;
+	}
+
+	public void setHotplaceRestCuisine(String hotplaceRestCuisine) {
+		this.hotplaceRestCuisine = hotplaceRestCuisine;
+	}
+
+	public String getHotplaceRestMenu() {
+		return hotplaceRestMenu;
+	}
+
+	public void setHotplaceRestMenu(String hotplaceRestMenu) {
+		this.hotplaceRestMenu = hotplaceRestMenu;
+	}
+
+	public String getHotplaceLink() {
+		return hotplaceLink;
+	}
+
+	public void setHotplaceLink(String hotplaceLink) {
+		this.hotplaceLink = hotplaceLink;
+	}
+
+	public int getBoardNumber() {
+		return boardNumber;
+	}
+
+	public void setBoardNumber(int boardNumber) {
+		this.boardNumber = boardNumber;
 	}
 
 	public int getHotplaceNumber() {
@@ -136,7 +200,10 @@ public class MainDTO {
 		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount
 				+ " boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : "
 				+ boardRegistDate + " recommendCount : " + recommendCount + " memberNickname : " + memberNickname
-				+ " likecount : " + likecount + " hotplaceNumber : " + hotplaceNumber + " memberNumber : " + memberNumber;
+				+ " likecount : " + likecount + " hotplaceNumber : " + hotplaceNumber + " memberNumber : "
+				+ memberNumber + " hotplaceAddress :" + hotplaceAddress + " hotplaceLink : " + hotplaceLink
+				+ " hotplaceAttractionContent : " + hotplaceAttractionContent + " hotplaceRestCuisine : "
+				+ hotplaceRestCuisine + " hotplaceRestMenu : " + hotplaceRestMenu;
 
 	}
 

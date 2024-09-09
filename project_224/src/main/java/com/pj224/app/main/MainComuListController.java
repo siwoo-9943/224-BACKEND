@@ -24,7 +24,7 @@ public class MainComuListController implements MemExecute{
 	    Result result = new Result();
 	    
 	    List<MainDTO> comuListResults;
-	    comuListResults = mainDAO.maincomulist();
+	    comuListResults = mainDAO.maincomuList();
 	    System.out.println("목록 \n" + comuListResults);
 		
 	    request.setAttribute("comuListResults", comuListResults);

@@ -70,36 +70,23 @@ public class MainFrontController extends HttpServlet {
 			break;
 		case "/main-search.mn":
 			System.out.println("검색페이지이동");
-			result = new MainSearchController().MemExecute(request, response);
-			System.out.println("검색어결과");
+			result = new SearchComuController().MemExecute(request, response);
+			System.out.println("검색어커뮤결과");
+			result = new SearchHotController().MemExecute(request, response);
+			System.out.println("검색어핫플결과");
 		    request.getRequestDispatcher("main-search.jsp").forward(request, response);
 		    System.out.println("페이지이동");
 			break;
-		case "/member/mem-login.me":
-			System.out.println("로그인");
-//			request.getRequestDispatcher("/app/member/mem-login.jsp").forward(request, response);
-			result = new MainLoginController().MemExecute(request, response);
-//			request.getRequestDispatcher("/app/member/mem-login.jsp").forward(request, response);
-			System.out.println("로그아웃!");
-			break;
-		case "/member/main/logout.mn":
+		case "/logout.mn":
 			System.out.println("로그아웃");
 			result = new MainLogoutController().MemExecute(request, response);
-//			request.getRequestDispatcher("main.jsp").forward(request, response);
-			break;
-		case "":
-			System.out.println("?");
 			break;
 
 		default:
+			System.out.println("페이지 오류 메인으로 이동합니다");
+			request.getRequestDispatcher("main.mn").forward(request, response);
 			break;
 		}
-
-		
-		
-		
-		
-		
 		
 	}
 

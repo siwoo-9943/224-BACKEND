@@ -33,46 +33,62 @@ public class MainDAO {
 //		System.out.println(inputSearch);
 //		return sqlSession.selectList("mainsearch.selectcm");
 //	}
-	public List<MainDTO> searchInput(String inputsearch) {
-	    System.out.println("검색어 DTO 입력: " + inputsearch);
-	    MainDTO mainDTO = new MainDTO(inputsearch);
-	    System.out.println(mainDTO);
-	    List<MainDTO> results = sqlSession.selectList("searchmain.selectcm", mainDTO);
-	    System.out.println("검색 결과: " + results);
-	    System.out.println(mainDTO);
-	    return results;
-	}
+//	public List<MainDTO> searchhpInput(String inputsearch) {
+//	    System.out.println("검색어 DTO 입력: " + inputsearch);
+//	    MainDTO mainDTO = new MainDTO(inputsearch);
+//	    System.out.println(mainDTO);
+//	    List<MainDTO> results = sqlSession.selectList("searchmain.selectcm", mainDTO);
+//	    System.out.println("검색 결과: " + results);
+//	    System.out.println(mainDTO);
+//	    return results;
+//	}
 
-	public List<MainDTO> searchPosts(String searchInput) {
-		System.out.println("searchPosts");
-		return sqlSession.selectList("main.selectcm", searchInput);
-	}
+//	public List<MainDTO> searchcmPosts(String searchInput) {
+//		System.out.println("searchPosts");
+//		return sqlSession.selectList("main.selectcm", searchInput);
+//	}
 
-	public List<MainDTO> searchInfo(String inputsearch) {
+//	검색 커뮤니티
+	public List<MainDTO> searchcmInfo(String inputsearch) {
 		System.out.println("searchInfo");
 		System.out.println("DAO 검색어 : " + inputsearch);
 		return sqlSession.selectList("main.selectcm", inputsearch);
 	}
 
-	public List<MainDTO> searchList() {
+	public List<MainDTO> searchcmList() {
 		System.out.println("검색결과");
 		List<MainDTO> list = null;
 		System.out.println(list);
 		list = sqlSession.selectList("main.selectcm");
-
 		return list;
 	}
 	
-	public List<MainDTO> maincomulist() {
+//	검색 핫플레이스
+	public List<MainDTO> searchhpInfo(String inputsearch) {
+		System.out.println("searchInfo");
+		System.out.println("DAO 검색어 : " + inputsearch);
+		return sqlSession.selectList("main.selecthp", inputsearch);
+	}
+	
+	public List<MainDTO> searchhpList() {
+		System.out.println("검색결과");
+		List<MainDTO> list = null;
+		System.out.println(list);
+		list = sqlSession.selectList("main.selecthp");
+		return list;
+	}
+	
+//	메인페이지 커뮤니티 목록
+	public List<MainDTO> maincomuList() {
 		System.out.println("maincomulist");
 		return sqlSession.selectList("main.cmlist");
 	}
-	
+//	메인페이지 핫플 목록 1번째 줄
 	public List<MainDTO> hpList1(){
 		System.out.println("핫플 1번째 줄");
 		return sqlSession.selectList("main.hplist1");
 	}
-	
+//	메인페이지 핫플 목록 2번째 줄
 	public List<MainDTO> hpList2(){
 		System.out.println("핫플 2번째 줄");
 		return sqlSession.selectList("main.hplist2");		

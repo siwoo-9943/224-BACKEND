@@ -3,13 +3,13 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.pj224.app.dto.MainDTO"%>
 <%
-List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResults");
-%>
-<%
 List<MainDTO> hpresults1 = (List<MainDTO>) request.getAttribute("hplist1");
 %>
 <%
 List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
+%>
+<%
+List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResults");
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,11 @@ List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/main.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+a{
+color: black;
+}
+</style>
 
 </head>
 <%@ include file="header.jsp"%>
@@ -138,7 +143,7 @@ List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
 								<img id="main-picked"
 									src="${pageContext.request.contextPath}/assets/images/picked.png">
 							</div> <a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
+							href="${item.hotplaceLink}">
 								<div class="main-hot-list-txt">
 									<span id="main-hot-title">${item.hotplaceStation}</span>
 								</div>
@@ -162,7 +167,7 @@ List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
 								<img id="main-picked"
 									src="${pageContext.request.contextPath}/assets/images/picked.png">
 							</div> <a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">
+							href="${item.hotplaceLink}">
 								<div class="main-hot-list-txt">
 									<span id="main-hot-title">${item.hotplaceStation}</span>
 								</div>
@@ -194,7 +199,9 @@ List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
 							href="../../html/community/comu-post-guest.html">
 								<div class="main-comu-left">
 									<div id="main-comu-title">
-										<strong>${item.boardTitle}</strong>
+										<a href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${item.boardNumber}">
+											<strong>${item.boardTitle}</strong>
+										</a>
 									</div>
 									<div id="main-comu-writer">작성자 : ${item.memberNickname} |
 										추천수 : ${item.recommendCount}</div>

@@ -90,7 +90,7 @@
 					<li class="main-login-btn">
 						<!-- 로그인일때 로그아웃 버튼 -->
 						<div id="header-login-logout-btn">
-							<a href="${pageContext.request.contextPath}/member/main/logout.mn">
+							<a href="${pageContext.request.contextPath}/logout.mn">
 								<h5>로그아웃</h5>
 							</a>
 						</div>
