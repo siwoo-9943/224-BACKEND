@@ -17,7 +17,7 @@ import com.pj224.app.dto.MainDTO;
 import com.pj224.app.dto.MemberDTO;
 import com.pj224.app.dto.NoticeDTO;
 
-public class MainSearchController implements MemExecute {
+public class SearchComuController implements MemExecute {
 
 	@Override
 	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
@@ -33,23 +33,23 @@ public class MainSearchController implements MemExecute {
 	    System.out.println("검색어: " + searchInput);
 	    mainDTO.setSearchInput(searchInput);
 	    System.out.println(mainDTO);
-	    List<MainDTO> searchResults;
+	    List<MainDTO> searchcmResults;
 
 	    // 검색어가 비어있지 않은 경우에만 검색 수행
 	    if (searchInput != null && !searchInput.trim().isEmpty()) {
 	        // 검색 결과 가져오기
-	        searchResults = mainDAO.searchInfo(searchInput);
+	        searchcmResults = mainDAO.searchcmInfo(searchInput);
 	        System.out.println("컨트롤러 검색어 : " + searchInput);
-	        System.out.println("검색! \n" + searchResults);
+	        System.out.println("검색! \n" + searchcmResults);
 	    } else {
 	        // 검색어가 비어있을 경우 전체 리스트 가져오기
-	        searchResults = mainDAO.searchList();
-	        System.out.println(searchResults);
+	        searchcmResults = mainDAO.searchcmList();
+	        System.out.println(searchcmResults);
 	        System.out.println("검색값 없음!");
 	    }
 
 	    // 검색 결과를 request에 저장
-	    request.setAttribute("searchResults", searchResults);
+	    request.setAttribute("searchcmResults", searchcmResults);
 
 	    // 결과 페이지 설정
 	    result.setRedirect(false);

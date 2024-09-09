@@ -1,19 +1,128 @@
 package com.pj224.app.dto;
 
 public class MainDTO {
+	private int boardNumber;
 	private String boardTitle;
-	private int commentCount;
 	private String boardContent;
 	private String boardCate;
 	private String boardRegistDate;
+	private int commentCount;
 	private int recommendCount;
+
+	private int hotplaceNumber;
+	private String hotplaceStation;
+	private String hotplaceTitle;
+	private String hotplaceHours;
+	private String hotplaceAddress;
+	private String hotplaceLink;
+	private String hotplaceAttractionContent;
+	private String hotplaceRestCuisine;
+	private String hotplaceRestMenu;
+
+	private int likecount;
+
 	private String searchInput;
-	
+	private int memberNumber;
 	private String memberNickname;
-	 
-	
+
 	public MainDTO() {
 		super();
+	}
+
+	public String getHotplaceHours() {
+		return hotplaceHours;
+	}
+
+	public void setHotplaceHours(String hotplaceHours) {
+		this.hotplaceHours = hotplaceHours;
+	}
+
+	public String getHotplaceAddress() {
+		return hotplaceAddress;
+	}
+
+	public void setHotplaceAddress(String hotplaceAddress) {
+		this.hotplaceAddress = hotplaceAddress;
+	}
+
+	public String getHotplaceAttractionContent() {
+		return hotplaceAttractionContent;
+	}
+
+	public void setHotplaceAttractionContent(String hotplaceAttractionContent) {
+		this.hotplaceAttractionContent = hotplaceAttractionContent;
+	}
+
+	public String getHotplaceRestCuisine() {
+		return hotplaceRestCuisine;
+	}
+
+	public void setHotplaceRestCuisine(String hotplaceRestCuisine) {
+		this.hotplaceRestCuisine = hotplaceRestCuisine;
+	}
+
+	public String getHotplaceRestMenu() {
+		return hotplaceRestMenu;
+	}
+
+	public void setHotplaceRestMenu(String hotplaceRestMenu) {
+		this.hotplaceRestMenu = hotplaceRestMenu;
+	}
+
+	public String getHotplaceLink() {
+		return hotplaceLink;
+	}
+
+	public void setHotplaceLink(String hotplaceLink) {
+		this.hotplaceLink = hotplaceLink;
+	}
+
+	public int getBoardNumber() {
+		return boardNumber;
+	}
+
+	public void setBoardNumber(int boardNumber) {
+		this.boardNumber = boardNumber;
+	}
+
+	public int getHotplaceNumber() {
+		return hotplaceNumber;
+	}
+
+	public void setHotplaceNumber(int hotplaceNumber) {
+		this.hotplaceNumber = hotplaceNumber;
+	}
+
+	public int getMemberNumber() {
+		return memberNumber;
+	}
+
+	public void setMemberNumber(int memberNumber) {
+		this.memberNumber = memberNumber;
+	}
+
+	public String getHotplaceStation() {
+		return hotplaceStation;
+	}
+
+	public void setHotplaceStation(String hotplaceStation) {
+		this.hotplaceStation = hotplaceStation;
+	}
+
+	public String getHotplaceTitle() {
+		return hotplaceTitle;
+	}
+
+	public void setHotplaceTitle(String hotplaceTitle) {
+		this.hotplaceTitle = hotplaceTitle;
+	}
+
+	public int getLikecount() {
+		return likecount;
+	}
+
+	public void setLikecount(int likecount) {
+		this.likecount = likecount;
 	}
 
 	public String getMemberNickname() {
@@ -23,12 +132,11 @@ public class MainDTO {
 	public void setMemberNickname(String memberNickname) {
 		this.memberNickname = memberNickname;
 	}
-	
+
 	public MainDTO(String searchInput) {
 		super();
 		this.searchInput = searchInput;
 	}
-
 
 	public String getSearchInput() {
 		return searchInput;
@@ -86,14 +194,17 @@ public class MainDTO {
 		this.recommendCount = recommendCount;
 	}
 
-
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount + 
-				" boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : " + boardRegistDate +
-				" recommendCount : " + recommendCount + " memberNickname : " + memberNickname;
-		
+		return "MainDTO [input : " + searchInput + "]\n [boardTitle : " + boardTitle + " commentCount : " + commentCount
+				+ " boardContent : " + boardContent + " boardCate : " + boardCate + " boardRegistDate : "
+				+ boardRegistDate + " recommendCount : " + recommendCount + " memberNickname : " + memberNickname
+				+ " likecount : " + likecount + " hotplaceNumber : " + hotplaceNumber + " memberNumber : "
+				+ memberNumber + " hotplaceAddress :" + hotplaceAddress + " hotplaceLink : " + hotplaceLink
+				+ " hotplaceAttractionContent : " + hotplaceAttractionContent + " hotplaceRestCuisine : "
+				+ hotplaceRestCuisine + " hotplaceRestMenu : " + hotplaceRestMenu;
+
 	}
 
 }

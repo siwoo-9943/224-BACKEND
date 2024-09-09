@@ -12,7 +12,7 @@ import com.pj224.app.Result;
 import com.pj224.app.dao.MainDAO;
 import com.pj224.app.dto.MainDTO;
 
-public class MainComuListController implements MemExecute{
+public class MainHpListController implements MemExecute{
 
 	@Override
 	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
@@ -20,17 +20,17 @@ public class MainComuListController implements MemExecute{
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 	    MainDAO mainDAO = new MainDAO();
-	    
 	    Result result = new Result();
 	    
-	    List<MainDTO> comuListResults;
-	    comuListResults = mainDAO.maincomuList();
-	    System.out.println("목록 \n" + comuListResults);
-		
-	    request.setAttribute("comuListResults", comuListResults);
-
+	    List<MainDTO> hpListResults1;
+	    hpListResults1 = mainDAO.hpList1();
+	    request.setAttribute("hplist1", hpListResults1);
+	    	    
+	    List<MainDTO> hpListResults2;
+	    hpListResults2 = mainDAO.hpList2();
+	    request.setAttribute("hplist2", hpListResults2);
+	    
 		return result;
 	}
 	
-
 }
