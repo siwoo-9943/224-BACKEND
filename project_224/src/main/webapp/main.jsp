@@ -140,8 +140,39 @@ color: black;
 						<li id="main-hot-list">
 							<div id="main-hot-list-img"
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
+								
+								<c:if test="${sessionScope.member.memberNumber != null}">
+								<c:set var="isLiked" value="false" />
+								<c:forEach var="like" items="${likeList}">
+									<c:if
+										test="${like.hotplaceNumber == hotplace.hotplaceNumber && like.memberNumber == memberNumber}">
+										<c:set var="isLiked" value="true" />
+									</c:if>
+								</c:forEach>
+
+								<c:choose>
+									<c:when test="${isLiked}">
+										<a
+											href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/picked.png"
+											style="width: 30px;" alt="찜 해제">
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a
+											href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/pick.png"
+											style="width: 30px;" alt="찜하기">
+										</a>
+									</c:otherwise>
+								</c:choose>
+							</c:if>
+								
 								<img id="main-picked"
 									src="${pageContext.request.contextPath}/assets/images/picked.png">
+									
 							</div> <a
 							href="${item.hotplaceLink}">
 								<div class="main-hot-list-txt">
@@ -164,8 +195,36 @@ color: black;
 						<li id="main-hot-list">
 							<div id="main-hot-list-img"
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
-								<img id="main-picked"
-									src="${pageContext.request.contextPath}/assets/images/picked.png">
+								
+								<c:if test="${sessionScope.member.memberNumber != null}">
+								<c:set var="isLiked" value="false" />
+								<c:forEach var="like" items="${likeList}">
+									<c:if
+										test="${like.hotplaceNumber == hotplace.hotplaceNumber && like.memberNumber == memberNumber}">
+										<c:set var="isLiked" value="true" />
+									</c:if>
+								</c:forEach>
+
+								<c:choose>
+									<c:when test="${isLiked}">
+										<a
+											href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/picked.png"
+											style="width: 30px;" alt="찜 해제">
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a
+											href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/pick.png"
+											style="width: 30px;" alt="찜하기">
+										</a>
+									</c:otherwise>
+								</c:choose>
+							</c:if>
+									
 							</div> <a
 							href="${item.hotplaceLink}">
 								<div class="main-hot-list-txt">

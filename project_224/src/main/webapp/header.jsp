@@ -18,6 +18,8 @@
 <body>
 </body>
 <header>
+	<c:set var="memberNumber"
+		value="${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}" />
 	<section class="header-section">
 		<div class="header-fixed">
 			<ul class="header-list">
@@ -30,7 +32,7 @@
 							alt="로고">
 						</a>
 					</div>
-
+	
 					<div id="header-img-1">
 						<a href="${pageContext.request.contextPath}/main.mn"> <img
 							src="${pageContext.request.contextPath}/assets/images/logo-224-0.png"
@@ -43,11 +45,13 @@
 
 					<div class="header-search">
 						<div id="header-search-frame">
-							<form action="${pageContext.request.contextPath}/main-search.mn" method="get">
-				 				<div>
+							<form action="${pageContext.request.contextPath}/main-search.mn"
+								method="get">
+								<div>
 									<button type="button" id="searchBtn"
 										href="${pageContext.request.contextPath}/main-search.mn">
-										<img src="${pageContext.request.contextPath}/assets/images/main-search.png">
+										<img
+											src="${pageContext.request.contextPath}/assets/images/main-search.png">
 									</button>
 								</div>
 								<label> <input id="search" name="search" type="text"
@@ -64,38 +68,43 @@
 					</div>
 				</li>
 
-				<c:if test="${ not empty sessionScope.member}">
-					<li class="main-login-btn">
-						<!-- 마이페이지 -->
-						<div id="header-login-mypage-btn">
-							<a href="${pageContext.request.contextPath }/mypage.my">
-								<h5>마이페이지</h5>
-							</a>
+				<!-- 버튼 -->
+				<c:choose>
+					<c:when test="${empty sessionScope.member}">
+						<div class="main-login-btns">
+							<div class="main-login-btn">
+								<!-- 로그인 및 회원가입 버튼 -->
+								<div id="header-login-join-btn">
+									<a href="${pageContext.request.contextPath}/member/login.me">
+										<h5>로그인 및 회원가입</h5>
+									</a>
+								</div>
+							</div>
 						</div>
-					</li>
-				</c:if>
-
-				<c:if test="${empty sessionScope.member }">
-					<li class="main-login-btn">
-						<!-- 로그인 및 회원가입 버튼 -->
-						<div id="header-login-join-btn">
-							<a href="${pageContext.request.contextPath}/member/login.me">
-								<h5>로그인 및 회원가입</h5>
-							</a>
+					</c:when>
+					<c:otherwise>
+						<div class="main-login-btns">
+							<c:if test="${sessionScope.member.memberNumber != 1}">
+							<div class="main-login-btn">
+								<!-- 마이페이지 -->
+								<div id="header-login-mypage-btn">
+									<a href="${pageContext.request.contextPath }/mypage.my">
+										<h5>마이페이지</h5>
+									</a>
+								</div>
+							</div>
+							</c:if>
+							<div class="main-login-btn">
+								<!-- 로그인일때 로그아웃 버튼 -->
+								<div id="header-login-logout-btn">
+									<a href="${pageContext.request.contextPath}/logout.mn">
+										<h5>로그아웃</h5>
+									</a>
+								</div>
+							</div>
 						</div>
-					</li>
-				</c:if>
-
-				<c:if test="${ not empty sessionScope.member}">
-					<li class="main-login-btn">
-						<!-- 로그인일때 로그아웃 버튼 -->
-						<div id="header-login-logout-btn">
-							<a href="${pageContext.request.contextPath}/logout.mn">
-								<h5>로그아웃</h5>
-							</a>
-						</div>
-					</li>
-				</c:if>
+					</c:otherwise>
+				</c:choose>
 
 			</ul>
 		</div>
@@ -144,17 +153,17 @@
 						<li><a
 							href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp">강남역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam?memberNumber=${memberNumber}.hp">강남역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp">잠실역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil?memberNumber=${memberNumber}.hp">잠실역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp">성수역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu?memberNumber=${memberNumber}.hp">성수역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp">문래역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae?memberNumber=${memberNumber}.hp">문래역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp">홍대입구역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae?memberNumber=${memberNumber}.hp">홍대입구역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp">을지로입구역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro?memberNumber=${memberNumber}.hp">을지로입구역</a></li>
 					</ul>
 				</div>
 			</div>
@@ -165,15 +174,18 @@
 						src="${pageContext.request.contextPath}/assets/images/convenience-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="${pageContext.request.contextPath}/convenience/conv-main.cv">편의공공</a>
+					<a
+						href="${pageContext.request.contextPath}/convenience/conv-main.cv">편의공공</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-conv">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="${pageContext.request.contextPath}/convenience/conv-main.cv">편의공공</a></li>
-						<li><a href="${pageContext.request.contextPath}/convenience/conv-storage.cv">물품보관함</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/convenience/conv-main.cv">편의공공</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/convenience/conv-storage.cv">물품보관함</a></li>
 					</ul>
 				</div>
 			</div>
@@ -204,14 +216,16 @@
 						src="${pageContext.request.contextPath}/assets/images/notice-icon.png">
 				</div>
 				<div class="dropdown-menu-txt">
-					<a href="${pageContext.request.contextPath}/notice/notice-admain.no">공지쏙쏙</a>
+					<a
+						href="${pageContext.request.contextPath}/notice/notice-admain.no">공지쏙쏙</a>
 				</div>
 				<div class="dropdown-content">
 					<ul class="dropdown-notice">
 						<li>
 							<div class="dropdown-line"></div>
 						</li>
-						<li><a href="${pageContext.request.contextPath}/notice/notice-admain.no">공지쏙쏙</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/notice/notice-admain.no">공지쏙쏙</a></li>
 					</ul>
 				</div>
 			</div>
