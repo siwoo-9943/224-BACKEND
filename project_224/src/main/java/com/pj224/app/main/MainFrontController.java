@@ -82,16 +82,29 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("로그아웃");
 			result = new MainLogoutController().MemExecute(request, response);
 			break;
-		case "/pick.mn":
-            System.out.println("찜 하기");
-            result = new MainLikeController().MemExecute(request, response);
-            System.out.println("찜 하기 완료");
-            break;
-        case "/unpick.mn":
-            System.out.println("찜 풀기");
-            result = new MainUnlikeController().MemExecute(request, response);
-            System.out.println("찜 풀기 완료");
-            break;
+//		case "/pick.mn":
+//		    System.out.println("찜 하기");
+//		    MainDTO likeResult = new MainLikeController().MemExecute(request, response);
+//		    request.setAttribute("hotplaceDetails", likeResult); // JSP로 전달
+//		    request.getRequestDispatcher("result.jsp").forward(request, response); // 결과 페이지로 포워딩
+//		    break;
+//
+//		case "/unpick.mn":
+//		    System.out.println("찜 풀기");
+//		    result = new MainUnlikeController().MemExecute(request, response);
+//		    request.setAttribute("hotplaceDetails", unlikeResult); // JSP로 전달
+//		    request.getRequestDispatcher("result.jsp").forward(request, response); // 결과 페이지로 포워딩
+//		    break;
+//		case "/pick.mn":
+//            System.out.println("찜 하기");
+//            result = new MainLikeController().MemExecute(request, response);
+//            System.out.println("찜 하기 완료");
+//            break;
+//        case "/unpick.mn":
+//            System.out.println("찜 풀기");
+//            result = new MainUnlikeController().MemExecute(request, response);
+//            System.out.println("찜 풀기 완료");
+//            break;
 
 		default:
 			System.out.println("페이지 오류 메인으로 이동합니다");

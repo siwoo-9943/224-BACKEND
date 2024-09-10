@@ -28,19 +28,28 @@ public class MainLikeController implements MemExecute {
         mainDTO.setMemberNumber(memberNumber);
         mainDTO.setHotplaceNumber(hotplaceNumber);
 
+        System.out.println(mainDTO);
+        
         // 찜하기 전 체크
-        MainDTO memCheckLike = mainDAO.likeCheck(memberNumber);
+//        MainDTO memCheckLike = mainDAO.likeCheck(memberNumber);
+//        System.out.println(memCheckLike);
+//
+//        if (memCheckLike == null) {
+//        	mainDAO.pickHotplace(mainDTO);
+////            sqlSession.commit(); // 변경사항 커밋
+//        }
+     // 찜하기 전 체크
+        MainDTO memCheckLike = mainDAO.likeCheck(memberNumber, hotplaceNumber);
         System.out.println(memCheckLike);
-
         if (memCheckLike == null) {
-        	mainDAO.pickHotplace(mainDTO);
-//            sqlSession.commit(); // 변경사항 커밋
+            mainDAO.pickHotplace(mainDTO);
+        } else {
+            mainDAO.unpickHotplace(mainDTO);
         }
-        
-        
-        
-        result.setRedirect(false);
-	    return result;
+
+        // 쿼리 실행 후 결과를 DTO에 담아 반환
+        result = mainDAO.pickHotplace(hotplaceNumber);
+        return 
         
     }
 }

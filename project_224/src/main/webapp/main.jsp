@@ -153,7 +153,7 @@ color: black;
 								<c:choose>
 									<c:when test="${isLiked}">
 										<a
-											href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											href="${pageContext.request.contextPath}/">
 											<img
 											src="${pageContext.request.contextPath}/assets/images/picked.png"
 											style="width: 30px;" alt="찜 해제">
@@ -161,7 +161,7 @@ color: black;
 									</c:when>
 									<c:otherwise>
 										<a
-											href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											href="${pageContext.request.contextPath}/">
 											<img
 											src="${pageContext.request.contextPath}/assets/images/pick.png"
 											style="width: 30px;" alt="찜하기">
@@ -207,7 +207,7 @@ color: black;
 								<c:choose>
 									<c:when test="${isLiked}">
 										<a
-											href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											href="${pageContext.request.contextPath}/">
 											<img
 											src="${pageContext.request.contextPath}/assets/images/picked.png"
 											style="width: 30px;" alt="찜 해제">
@@ -215,7 +215,7 @@ color: black;
 									</c:when>
 									<c:otherwise>
 										<a
-											href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											href="${pageContext.request.contextPath}/">
 											<img
 											src="${pageContext.request.contextPath}/assets/images/pick.png"
 											style="width: 30px;" alt="찜하기">

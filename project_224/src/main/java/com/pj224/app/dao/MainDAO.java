@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.pj224.app.Result;
 import com.pj224.app.dto.MainDTO;
 import com.pj224.app.dto.MemberDTO;
 
@@ -95,7 +96,7 @@ public class MainDAO {
 	}
 	
 	// 찜하기 체크
-    public MainDTO likeCheck(int memberNumber) {
+    public MainDTO likeCheck(int memberNumber,int hotplaceNumber) {
     	System.out.println("회원번호 : " + memberNumber);
         return sqlSession.selectOne("main.likecheck", memberNumber);
     }
@@ -113,5 +114,10 @@ public class MainDAO {
     	System.out.println(mainDTO);
         sqlSession.delete("main.unpickhp", mainDTO);
     }
+
+	public Result getHotplaceDetails(int hotplaceNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
