@@ -74,12 +74,23 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("검색어커뮤결과");
 			result = new SearchHotController().MemExecute(request, response);
 			System.out.println("검색어핫플결과");
+//			response.sendRedirect("main-search.jsp");
 		    request.getRequestDispatcher("main-search.jsp").forward(request, response);
 		    System.out.println("페이지이동");
 			break;
 		case "/logout.mn":
 			System.out.println("로그아웃");
 			result = new MainLogoutController().MemExecute(request, response);
+			break;
+		case "/pick.mn":
+			System.out.println("찜 하기");
+			
+			System.out.println("찜 하기 완료");
+			break;
+		case "/unpick.mn":
+			System.out.println("찜 풀기");
+			
+			System.out.println("찜 풀기 완료");
 			break;
 
 		default:

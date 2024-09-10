@@ -93,5 +93,7 @@ public class MainDAO {
 		System.out.println("핫플 2번째 줄");
 		return sqlSession.selectList("main.hplist2");		
 	}
+	
+	
 
 }
