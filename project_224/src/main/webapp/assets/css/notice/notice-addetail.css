@@ -64,6 +64,8 @@
   padding: 20px 0px;
   -webkit-box-pack: end;
   justify-content: flex-end;
+  display: flex;
+  cursor: pointer;
 }
 
 .notice-addetail-btuall a{
@@ -85,25 +87,6 @@
   border: 0px none;
 }
 
-/* '목록' 폰트사이즈 */
-.notice-addetail-btuall span {
-  font-size: 13px;
-}
-
-/* '목록' 폰트 두께 */
-.notice-addetail-btu-sp {
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 500;
-  color: white;
-}
-.notice-addetail-btuleft {
-  display: flex;
-  width: 100%;
-  padding: 20px 0px;
-  -webkit-box-pack: end;
-  justify-content: flex-start; /* 왼쪽 정렬로 변경 */
-}
 
 .notice-addetail-modi {
   display: block;
@@ -116,8 +99,9 @@
   color: rgb(255, 255, 255);
   background-color: #2bcf81;
   border: 0px none;
-  margin-top: -80px;
+  transform: translate(-800px, 0px);
 }
+
 .notice-addetail-del {
   display: block;
   padding: 0px 10px;
@@ -129,11 +113,6 @@
   color: rgb(255, 255, 255);
   background-color: #2bcf81;
   border: 0px none;
-  margin-top: -120px;
-  margin-left: 90px;
+  transform: translate(-790px, 0px);
 }
 
-/* '수정/삭제' 폰트사이즈 */
-.notice-addetail-btuleft span {
-  font-size: 13px;
-}
