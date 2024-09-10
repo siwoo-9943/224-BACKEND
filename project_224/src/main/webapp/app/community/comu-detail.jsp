@@ -59,7 +59,12 @@
 												<!-- 추천한 회원 목록이 필요하면 여기에서 추가할 수 있습니다 -->
 											</div>
 										</div>
-									</span> <span class="recommend-up">추천하기</span> <span class="wall">|</span>
+									</span> 
+									<span class="recommend-up" role="button"
+										data-board-number="${communitycomudetail.boardNumber}">
+										추천하기 
+									</span> 
+									<span class="wall">|</span>
 								</div>
 							</div>
 
@@ -144,20 +149,20 @@
 						</c:forEach>
 					</ul>
 					<c:if test="${sessionScope.member.memberNumber != null}">
-										<div id="comu-comment-insert-area">
-						<span id="comu-text-red">[알림]</span><span> 욕설,상처 줄 수 있는 악플은
-							삼가주세요</span>
-						<form method="post"
-							action="${pageContext.request.contextPath}/community/comu-comment-write.cm?boardNumber=${communitycomudetail.boardNumber}&memberNum=${sessionScope.member.memberNumber}">
-							<div class="comu-inputbox-but">
-								<input id="comment-input" name="commentCont"
-									placeholder="댓글을 입력해 주세요." value="">
-								<button class="comu-submit" id="comu-insert-comment"
-									type="submit">등록</button>
+						<div id="comu-comment-insert-area">
+							<span id="comu-text-red">[알림]</span><span> 욕설,상처 줄 수 있는
+								악플은 삼가주세요</span>
+							<form method="post"
+								action="${pageContext.request.contextPath}/community/comu-comment-write.cm?boardNumber=${communitycomudetail.boardNumber}&memberNum=${sessionScope.member.memberNumber}">
+								<div class="comu-inputbox-but">
+									<input id="comment-input" name="commentCont"
+										placeholder="댓글을 입력해 주세요." value="">
+									<button class="comu-submit" id="comu-insert-comment"
+										type="submit">등록</button>
 
-							</div>
-						</form>
-					</div>
+								</div>
+							</form>
+						</div>
 					</c:if>
 				</div>
 			</div>
@@ -271,6 +276,49 @@ function closeDeleteCommentModal() {
 function confirmCommentDelete() {
     document.getElementById('deleteCommentForm').submit();
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.recommend-up').addEventListener('click', function() {
+        let boardNumber = this.getAttribute('data-board-number');
+        recommendPost(boardNumber);
+    });
+});
+
+/* 추천부분 AJAX */
+function recommendPost(boardNumber) {
+    console.log("추천 함수 호출됨, 게시글 번호:", boardNumber);  // 디버깅용 로그
+    $.ajax({
+        url: `${pageContext.request.contextPath}/community/recommendOk.cm`,
+        type: "POST",
+        data: { boardNumber: boardNumber },
+        dataType: 'text',
+        success: function(response) {
+            console.log("서버 응답:", response);  // 디버깅용 로그
+            switch(response.trim()) {
+                case "success":
+                    alert("추천이 완료되었습니다.");
+                    // 추천 수 업데이트 로직
+                    let currentCount = parseInt($("#vote-list-btn-txt").text());
+                    $("#vote-list-btn-txt").text(currentCount + 1);
+                    break;
+                case "already":
+                    alert("이미 추천한 게시글입니다.");
+                    break;
+                default:
+                    alert("추천은 로그인 후 가능합니다.");
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.error("AJAX 오류:", textStatus, errorThrown);
+            console.log("상세 오류:", jqXHR.responseText);  // 디버깅용 로그
+            alert("서버 오류가 발생했습니다.");
+        }
+    });
+}
+
+
+
 
 </script>
 
