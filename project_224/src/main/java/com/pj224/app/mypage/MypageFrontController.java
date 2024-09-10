@@ -13,6 +13,7 @@ import com.pj224.app.Result;
 import com.pj224.app.member.CheckNicknameController;
 import com.pj224.app.member.JoinOkController;
 import com.pj224.app.member.LoginOkController;
+import com.pj224.app.member.PwFindOkController;
 
 /**
  * Servlet implementation class MypageFrontController
@@ -67,36 +68,38 @@ public class MypageFrontController extends HttpServlet {
 
 	      Result result = null; 
 	      
-		switch (target) {
-		case "/mypage.my":
-			System.out.println("profile");
-//			new MypageOkController().MemExecute(request, response);
-			request.getRequestDispatcher(request.getContextPath() +"/app/mypage/my-profile.jsp").forward(request, response);
-			break;
-		case "/mypageOk.my":
-			System.out.println("profile 확인되어주라");
-			new MypageOkController().MemExecute(request, response);
-			response.sendRedirect(request.getContextPath() + "/app/mypage/my-profile.jsp");
-			break;
-		case "/app/mypage/passcheck.my":
-			System.out.println("비밀번호 확인");
-//			result = new MypasscheckOkController().MemExecute(request, response);
-			response.sendRedirect(request.getContextPath() + "/app/mypage/my-update.jsp");
-			break;
-		case "/mypage/passcheckOk.my":
-			System.out.println("비밀번호 확인 성공");
-			result = new MypasscheckOkController().MemExecute(request, response);
-			break;
-		}
-		
-		if (result != null) {
-			if(result.isRedirect()) {
-				response.sendRedirect(result.getPath());
-			}else {
-				request.getRequestDispatcher(result.getPath()).forward(request, response);
+	      switch (target) {
+			case "/mypage.my":
+				System.out.println("profile");
+				new MypageOkController().MemExecute(request, response);
+				request.getRequestDispatcher("/app/mypage/my-profile.jsp").forward(request, response);
+				break;
+			case "/mypageOk.my":
+				System.out.println("profile 확인되어주라");
+				new MypageOkController().MemExecute(request, response);
+				response.sendRedirect("/app/mypage/my-profile.jsp");
+				break;
+			case "/app/mypage/passcheckOk.my":
+				System.out.println("비밀번호 확인 페이지");
+				new MypasscheckOkController().MemExecute(request, response);
+				request.getRequestDispatcher("/app/mypage/my-update.jsp").forward(request, response);
+				break;
+			
+			case "/mypick.my":
+	    	  System.out.println("찜목록 확인");
+	    	  response.sendRedirect(request.getContextPath() + "/app/mypage/my-pick.jsp");
+	    	  break;
+	    	  
+	      }
+	    	  
+			if (result != null) {
+				if(result.isRedirect()) {
+					response.sendRedirect(result.getPath());
+				}else {
+					request.getRequestDispatcher(result.getPath()).forward(request, response);
+				}
 			}
+
 		}
 
 	}
-
-}

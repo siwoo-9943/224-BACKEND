@@ -8,6 +8,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/mypage/my-passcheck.css" />
 </head>
+<%@ include file="/header.jsp"%>
 <body>
 	<main>
 		<!-- 목록 -->
@@ -15,7 +16,7 @@
 			<div class="my-leftbox">
 				<div class="my-hello">
 					<div class="my-wellcome">반가워요!</div>
-					<div class="my-nickname">""님</div>
+					<div class="my-nickname">"${sessionScope.member.memberName}"님</div>
 				</div>
 				<div class="my-category">
 					<div class="my-category-menu">메뉴</div>
@@ -65,4 +66,5 @@
 			</div>
 	</main>
 </body>
+<%@ include file="/footer.jsp"%>
 </html>
