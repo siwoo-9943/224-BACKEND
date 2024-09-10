@@ -28,10 +28,11 @@ public class MainLikeController implements MemExecute {
         mainDTO.setMemberNumber(memberNumber);
         mainDTO.setHotplaceNumber(hotplaceNumber);
 
+        // 찜하기 전 체크
+        MainDTO memCheckLike = mainDAO.likeCheck(memberNumber);
+        System.out.println(memCheckLike);
 
-		// 찜하기 전 체크
-        MainDTO existingLike = mainDAO.likeCheck(memberNumber);
-        if (existingLike == null) {
+        if (memCheckLike == null) {
         	mainDAO.pickHotplace(mainDTO);
 //            sqlSession.commit(); // 변경사항 커밋
         }
@@ -39,7 +40,6 @@ public class MainLikeController implements MemExecute {
         
         
         result.setRedirect(false);
-	    result.setPath(request.getContextPath() + "/main-search.jsp");
 	    return result;
         
     }
