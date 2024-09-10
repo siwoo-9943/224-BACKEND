@@ -18,7 +18,8 @@
 		FROM
 		TBL_BOARD TB
 		LEFT JOIN
-		TBL_MEMBER TM ON
+		TBL_MEMBER TM
+		ON
 		TB.member_number = TM.member_number
 		LEFT JOIN
 		TBL_COMMENT TC ON
@@ -164,4 +165,27 @@
 		) RANKLIKE
 		WHERE rank BETWEEN 5 AND 8
 	</select>
+
+	<select id="likecheck" resultType="MainDTO">
+		SELECT TM.MEMBER_NUMBER ,
+		TL.HOTPLACE_NUMBER
+		FROM TBL_MEMBER TM
+		LEFT JOIN TBL_LIKE TL ON
+		TM.MEMBER_NUMBER = TL.MEMBER_NUMBER
+		WHERE TM.MEMBER_NUMBER = #{memberNumber};
+	</select>
+
+	<insert id="pickhp" parameterType="MainDTO">
+		INSERT INTO TBL_LIKE
+		(HOTPLACE_NUMBER, MEMBER_NUMBER)
+		VALUES (#{hotplaceNumber},
+		#{memberNumber})
+	</insert>
+
+	<delete id="unpickhp" parameterType="MainDTO">
+		DELETE FROM TBL_LIKE
+		WHERE HOTPLACE_NUMBER = #{hotplaceNumber} AND
+		MEMBER_NUMBER =
+		#{memberNumber}
+	</delete>
 </mapper>
