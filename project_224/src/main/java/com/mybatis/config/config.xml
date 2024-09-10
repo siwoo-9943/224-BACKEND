@@ -31,6 +31,7 @@
 		<typeAlias type="com.pj224.app.dto.MainDTO" alias="MainDTO" />
 		<typeAlias type="com.pj224.app.dto.CommentDTO"
 			alias="CommentDTO" />
+		<typeAlias type="com.pj224.app.dto.RecommendDTO" alias="RecommendDTO"/>
 	</typeAliases>
 
 	<environments default="oracle">
