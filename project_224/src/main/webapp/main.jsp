@@ -141,7 +141,7 @@ color: black;
 							<div id="main-hot-list-img"
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
 								
-								<c:if test="${sessionScope.member.memberNumber != null}">
+								<c:if test="${sessionScope.memberNumber != null}">
 								<c:set var="isLiked" value="false" />
 								<c:forEach var="like" items="${likeList}">
 									<c:if
@@ -196,7 +196,7 @@ color: black;
 							<div id="main-hot-list-img"
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
 								
-								<c:if test="${sessionScope.member.memberNumber != null}">
+								<c:if test="${sessionScope.memberNumber != null}">
 								<c:set var="isLiked" value="false" />
 								<c:forEach var="like" items="${likeList}">
 									<c:if
