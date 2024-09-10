@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.pj224.app.Result;
-import com.pj224.app.community.CommunityListOkController;
-import com.pj224.app.community.CommunityWriteOkController;
-import com.pj224.app.main.MainLoginController;
 import com.pj224.app.main.MainLogoutController;
 import com.pj224.app.member.LoginOkController;
 
