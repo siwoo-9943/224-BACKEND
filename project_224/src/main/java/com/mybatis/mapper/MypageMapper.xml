@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mypage">
-	<!-- 개인정보 수정 전 아이디, 비밀번호 확인 -->
+	<!-- 내프로필 -->
 	<select id="myprofile" parameterType="MypageDTO" resultType="MypageDTO">
 		SELECT MEMBER_EMAIL , MEMBER_NAME,MEMBER_NICKNAME,MEMBER_PHONE,MEMBER_GENDER,MEMBER_BIRTH
 		FROM TBL_MEMBER
@@ -12,6 +12,12 @@
       		AND MEMBER_GENDER = #{memberGender}
       		AND MEMBER_BIRTH = #{memberBirth}
 	</select>
-   
+   <!-- 개인정보 수정 전 아이디,비밀번호 확인 -->
+   <select id="pwOk" parameterType="Object" resultType="MypageDTO">
+		SELECT MEMBER_EMAIL ,MEMBER_PW
+		FROM TBL_MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail} AND MEMBER_PW = #{memberPw}
+	</select>
+	
   
 </mapper>
