@@ -54,9 +54,9 @@ public class NoticeFrontController extends HttpServlet {
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		Result result = null;
 		System.out.println(target);
-		
+
 		boolean isForwarded = false;
-		
+
 		HttpSession session = request.getSession();
 		Integer memberNumber = (Integer) session.getAttribute("memberNumber");
 
@@ -64,13 +64,13 @@ public class NoticeFrontController extends HttpServlet {
 		case "/notice/notice-admain.no":
 			System.out.println("글목록");
 			result = new NoticeListController().MemExecute(request, response);
-//			request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
+//         request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
 			isForwarded = true;
 			break;
 		case "/notice/notice-addetail.no":
 			System.out.println("글상세");
 			result = new NoticeDetailController().MemExecute(request, response);
-//			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
+//         request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
 			isForwarded = true;
 			break;
 		case "/notice/write.no":
@@ -85,22 +85,21 @@ public class NoticeFrontController extends HttpServlet {
 			System.out.println("delete");
 			result = new NoticeDeleteController().MemExecute(request, response);
 			break;
-//		case "/notice/notice-admodify.no":
-//			System.out.println("글수정");
-//			new NoticeModifyController().MemExecute(request, response);
-////			result = new MainLoginController().MemExecute(request, response);
-//			break;
+//      case "/notice/notice-admodify.no": 
+//         System.out.println("글수정");
+//         new NoticeModifyController().MemExecute(request, response);
+////         result = new MainLoginController().MemExecute(request, response);
+//         break;
 		}
-		
-	      // Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
-	      if (result != null) {
-	         if (result.isRedirect()) {
-	            response.sendRedirect(result.getPath()); // 리다이렉트 처리
-	         } else {
-	            request.getRequestDispatcher(result.getPath()).forward(request, response); // 포워드 처리
-	         }
-	      }
 
+		// Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
+		if (result != null) {
+			if (result.isRedirect()) {
+				response.sendRedirect(result.getPath()); // 리다이렉트 처리
+			} else {
+				request.getRequestDispatcher(result.getPath()).forward(request, response); // 포워드 처리
+			}
+		}
 
 	}
 }

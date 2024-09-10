@@ -34,8 +34,9 @@ $(document).ready(function() {
   };
 
  // 삭제 확인
-  window.confirmDelete = function() {
-    window.location.href = 'notice-admain.jsp';
+ confirmDelete = function() {
+   // window.location.href = '/notice/delete.no';
+   console.log("값들어오는지확인");
   };
 
   // 모달 외부 클릭 시 닫기
