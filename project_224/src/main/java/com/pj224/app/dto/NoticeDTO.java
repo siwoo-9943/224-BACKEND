@@ -21,6 +21,7 @@ public class NoticeDTO {
 	private String noticeRegistDate;
 	private String noticeUpdateDate;
 	private int memberNumber;
+	
 
 	public int getNoticeNumber() {
 		return noticeNumber;

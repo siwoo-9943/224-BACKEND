@@ -6,11 +6,15 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.pj224.app.MemExecute;
 import com.pj224.app.Result;
+import com.pj224.app.dao.CommunityDAO;
 import com.pj224.app.dao.MemberDAO;
 import com.pj224.app.dao.NoticeDAO;
+import com.pj224.app.dto.CommentDTO;
+import com.pj224.app.dto.CommunityDTO;
 import com.pj224.app.dto.MemberDTO;
 import com.pj224.app.dto.NoticeDTO;
 
@@ -41,6 +45,7 @@ public class NoticeDetailController implements MemExecute {
 
 		// 포워드 처리는 프론트 컨트롤러에서 담당
 		return result;
+		
 	}
 
 }
