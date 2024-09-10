@@ -184,7 +184,7 @@ a {
 
 			<div class="comu-button-container">
 				<button class="comu-action-button" type="button"
-					onclick="location.href='${pageContext.request.contextPath}/community/comu-main.jsp'">이전</button>
+					onclick="location.href='${pageContext.request.contextPath}/community/comu-main.cm'">이전</button>
 				<button class="comu-action-button" type="submit" id="submitButton">등록</button>
 			</div>
 		</form>

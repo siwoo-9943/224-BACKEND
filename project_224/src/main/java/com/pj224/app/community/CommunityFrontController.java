@@ -118,21 +118,21 @@ public class CommunityFrontController extends HttpServlet {
 			break;
 
 		case "/community/comu-comment-modify.cm":
-		    // 댓글 수정 요청을 처리하는 부분
-		    int commentNumber = Integer.parseInt(request.getParameter("commentNumber"));
-		    String commentContent = request.getParameter("commentContent");
-		    
-		    CommentDTO commentDTO = new CommentDTO();
-		    commentDTO.setCommentNumber(commentNumber);
-		    commentDTO.setCommentContent(commentContent);
-		    
-            CommunityDAO communityDAO = new CommunityDAO(/* SqlSessionFactory 인스턴스 주입 */);
-            communityDAO.commentUpdate(commentDTO);
-		    break;
-		    
+			// 댓글 수정 요청을 처리하는 부분
+			int commentNumber = Integer.parseInt(request.getParameter("commentNumber"));
+			String commentContent = request.getParameter("commentContent");
+
+			CommentDTO commentDTO = new CommentDTO();
+			commentDTO.setCommentNumber(commentNumber);
+			commentDTO.setCommentContent(commentContent);
+
+			CommunityDAO communityDAO = new CommunityDAO(/* SqlSessionFactory 인스턴스 주입 */);
+			communityDAO.commentUpdate(commentDTO);
+			break;
+
 		case "/community/comu-comment-deleteOk.cm":
 			System.out.println("FrontController: 댓글 삭제 요청 받음");
-			
+
 			String boardNum = request.getParameter("boardNumber");
 			request.setAttribute("boardNumber", boardNum);
 			result = new CommunityCommentDeleteOkController().MemExecute(request, response);
@@ -149,8 +149,11 @@ public class CommunityFrontController extends HttpServlet {
 			result = new CommunityCommentWriteOkController().MemExecute(request, response);
 			System.out.println(result.getPath());
 			isForwarded = false;
-			break;	
-		
+			break;
+		case "/community/recommendOk.cm":
+			System.out.println("추천 됨?");
+			result = new CommunityRecommendOkController().MemExecute(request, response);
+			break;
 		}
 
 		if (!isForwarded && result != null) {
