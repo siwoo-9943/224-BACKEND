@@ -2,14 +2,6 @@ package com.pj224.app.dto;
 
 public class CommunityDTO {
 
-//	   BOARD_NUMBER NUMBER PRIMARY KEY,
-//	   BOARD_CATE VARCHAR2(1000) NOT NULL,
-//	   BOARD_TITLE VARCHAR2(1000) NOT NULL,
-//	   BOARD_CONTENT VARCHAR2(1000) NOT NULL,
-//	   BOARD_REGIST_DATE DATE DEFAULT SYSDATE,
-//	   BOARD_UPDATE_DATE DATE DEFAULT SYSDATE,
-//	   MEMBER_NUMBER NUMBER NOT NULL,  
-
 	private int boardNumber;
 	private String boardCate;
 	private String boardTitle;
@@ -19,6 +11,7 @@ public class CommunityDTO {
 	private int memberNumber;
 	private int recommendCount;
 	private int commentCount;
+	private String memberNickname;
 
 	public int getBoardNumber() {
 		return boardNumber;
@@ -92,12 +85,20 @@ public class CommunityDTO {
 		this.commentCount = commentCount;
 	}
 
+	public String getMemberNickname() {
+		return memberNickname;
+	}
+
+	public void setMemberNickname(String memberNickname) {
+		this.memberNickname = memberNickname;
+	}
+
 	@Override
 	public String toString() {
 		return "CommunityDTO [boardNumber=" + boardNumber + ", boardCate=" + boardCate + ", boardTitle=" + boardTitle
 				+ ", boardContent=" + boardContent + ", boardRegistDate=" + boardRegistDate + ", boardUpdateDate="
 				+ boardUpdateDate + ", memberNumber=" + memberNumber + ", recommendCount=" + recommendCount
-				+ ", commentCount=" + commentCount + "]";
+				+ ", commentCount=" + commentCount + ",memberNickname=" + memberNickname + "]";
 	}
 
 }

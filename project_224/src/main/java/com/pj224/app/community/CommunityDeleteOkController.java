@@ -17,12 +17,13 @@ public class CommunityDeleteOkController implements MemExecute {
     @Override
     public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
+        Result result = new Result();
         
         System.out.println("삭제 컨트롤러 들어왔냐??");
         
         MemberDTO member = (MemberDTO) session.getAttribute("member");
         String boardNumberStr = request.getParameter("boardNumber");
-        Result result = new Result();
+       
 
         System.out.println("DeleteOkController 실행됨. boardNumber: " + boardNumberStr);
 
