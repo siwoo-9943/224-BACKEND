@@ -30,7 +30,8 @@
 	<c:set var="itemsPerPage" value="4" />
 	<c:set var="currentPage" value="${param.page eq null ? 1 : param.page}" />
 	<c:set var="totalItems" value="${hotplaceList.size()}" />
-	<c:set var="totalPages"	value="${(totalItems + itemsPerPage - 1) / itemsPerPage}" />
+	<c:set var="totalPages"
+		value="${(totalItems + itemsPerPage - 1) / itemsPerPage}" />
 	<c:set var="startIndex" value="${(currentPage - 1) * itemsPerPage}" />
 	<c:set var="endIndex" value="${startIndex + itemsPerPage - 1}" />
 
@@ -42,12 +43,13 @@
 					<div class="hotplace-content-left">
 						<!-- 세션에서 memberNumber 가져오기 -->
 						<c:set var="memberNumber"
-							value="${sessionScope.member.memberNumber}" />
+							value="${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}" />
+
 
 						<div class="hotplace-content-name" style="margin-bottom: 10px;">
 							<h1 style="display: inline; margin: 0;">${hotplace.hotplaceTitle}</h1>
 
-							<c:if test="${memberNumber != null}">
+							<c:if test="${memberNumber != 0}">
 								<c:set var="isLiked" value="false" />
 								<c:forEach var="like" items="${likeList}">
 									<c:if
@@ -116,15 +118,18 @@
 	<div class="info-bg2">
 		<div class="bottom-list">
 			<c:if test="${currentPage > 1}">
-				<a class="prev" href="?page=${currentPage - 1}&memberNumber=${memberNumber}"></a>
+				<a class="prev"
+					href="?page=${currentPage - 1}&memberNumber=${memberNumber}"></a>
 			</c:if>
 
 			<c:forEach var="i" begin="1" end="${totalPages}">
-				<a class="num ${currentPage == i ? 'on' : ''}" href="?page=${i}&memberNumber=${memberNumber}">${i}</a>
+				<a class="num ${currentPage == i ? 'on' : ''}"
+					href="?page=${i}&memberNumber=${memberNumber}">${i}</a>
 			</c:forEach>
 
 			<c:if test="${currentPage < totalPages}">
-				<a class="next" href="?page=${currentPage + 1}&memberNumber=${memberNumber}"></a>
+				<a class="next"
+					href="?page=${currentPage + 1}&memberNumber=${memberNumber}"></a>
 			</c:if>
 		</div>
 	</div>
