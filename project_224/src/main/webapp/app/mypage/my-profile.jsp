@@ -48,28 +48,28 @@
 							<div class="my-line"></div>
 							<div class="my-profile-center">
 								<div class="my-profile-category">
-									<div class="my-profile-menu">아이디 ${sessionScope.member.memberEmail}</div>
-									<div class="my-profile-value" id="memberNumber"></div>
+									<div class="my-profile-menu">아이디 </div>
+									<div class="my-profile-value" id="memberNumber">${sessionScope.member.memberEmail}</div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">이름 ${sessionScope.member.memberName}</div>
-									<div class="my-profile-value" id="memberName"></div>
+									<div class="my-profile-menu">이름 </div>
+									<div class="my-profile-value" id="memberName">${sessionScope.member.memberName}</div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">닉네임 ${sessionScope.member.memberNickname}</div>
-									<div class="my-profile-value" id="memberNickName"></div>
+									<div class="my-profile-menu">닉네임 </div>
+									<div class="my-profile-value" id="memberNickName">${sessionScope.member.memberNickname}</div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">휴대폰 ${sessionScope.member.memberPhone}</div>
-									<div class="my-profile-value" id="memberPhone"></div>
+									<div class="my-profile-menu">휴대폰 </div>
+									<div class="my-profile-value" id="memberPhone">${sessionScope.member.memberPhone}</div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">성별 ${sessionScope.member.memberGender}</div>
-									<div class="my-profile-value" id="memberGender"></div>
+									<div class="my-profile-menu">성별 </div>
+									<div class="my-profile-value" id="memberGender">${sessionScope.member.memberGender}</div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">생년월일 ${sessionScope.member.memberBirth}</div>
-									<div class="my-profile-value" id="memberBirth"></div>
+									<div class="my-profile-menu">생년월일 </div>
+									<div class="my-profile-value" id="memberBirth">${sessionScope.member.memberBirth}</div>
 								</div>
 							</div>
 
