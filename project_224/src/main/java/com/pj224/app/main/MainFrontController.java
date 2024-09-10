@@ -99,13 +99,7 @@ public class MainFrontController extends HttpServlet {
 			break;
 		}
 		
-		if (result != null) {
-            if (result.isRedirect()) {
-                response.sendRedirect(result.getPath());
-            } else {
-                request.getRequestDispatcher(result.getPath()).forward(request, response);
-            }
-        }
+		
     
 	}
 
