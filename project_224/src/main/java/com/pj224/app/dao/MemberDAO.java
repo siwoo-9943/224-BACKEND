@@ -80,13 +80,14 @@ public class MemberDAO {
 	}
 	
 	//비밀번호 변경
-	public String pwUpdate(String memberPw) {
+	public int pwUpdate(String memberEmail, String memberPw) {
 		System.out.println("비밀번호 변경 다오 실행");
 		MemberDTO memberDTO = new MemberDTO();
-		
-		System.out.println(memberDTO + "확인용");
-		
-		return sqlSession.selectOne("member.idFindResult", memberDTO);
+		memberDTO.setMemberEmail(memberEmail);
+		System.out.println(memberEmail);
+		memberDTO.setMemberPw(memberPw);
+		System.out.println(memberPw);
+		return sqlSession.update("member.pwUpdate", memberDTO);
 	}
 
 

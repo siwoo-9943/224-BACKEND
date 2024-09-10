@@ -36,7 +36,13 @@ public class PwFindOkController implements MemExecute {
 
 		// 입력값이 디비에 존재하는지 확인
 		if (member != true) {
-			System.out.println("비밀번호 찾기 성공");		
+			System.out.println("비밀번호 찾기 성공");
+			
+			//비밀번호 찾기 전 인증할때 사용한 이메일 보내주기
+			request.setAttribute("memberEmail", memberEmail);
+			System.out.println(memberEmail);
+			
+
 			request.getRequestDispatcher(request.getContextPath() + "/app/member/mem-pwfine-result.jsp").forward(request, response);
 			result.setRedirect(true);
 		} else {
