@@ -34,12 +34,13 @@ public class MemberDAO {
 	}
 	
 	//쿠키 세션(로그인시 사용)
-	public MemberDTO login(String memberEmail, String  memberPw) {
+	public Object login(String memberEmail, String  memberPw) {
 		System.out.println("로그인 다오 실행");
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setMemberEmail(memberEmail);
 		memberDTO.setMemberPw(memberPw);
-		return sqlSession.selectOne("member.login", memberDTO);
+		Object member = sqlSession.selectOne("member.login", memberDTO);
+		return member;
 	}
 	
 	

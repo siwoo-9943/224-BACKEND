@@ -28,7 +28,7 @@ public class LoginOkController implements MemExecute {
 		MemberDAO memberDAO = new MemberDAO();
 		String memberEmail = request.getParameter("memberEmail");
 		String memberPw = request.getParameter("memberPw");
-		MemberDTO member = memberDAO.login(memberEmail, memberPw);
+		Object member = memberDAO.login(memberEmail, memberPw);
 		Result result =  new Result();
 		
 		System.out.println(member);
