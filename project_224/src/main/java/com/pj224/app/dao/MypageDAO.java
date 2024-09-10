@@ -33,12 +33,19 @@ public class MypageDAO {
 	   }
 		
 		   // 개인정보 수정 전 아이디, 비밀번호 확인 페이지
-		public String pwOk(String memberEmail, String memberPw) {
-			System.out.println("아이디, 비밀번호 확인 페이지 다오 실행");
-			MypageDTO mypageDTO = new MypageDTO();
-			mypageDTO.setMemberEmail(memberEmail);
-			mypageDTO.setMemberPw(memberPw);
-			return sqlSession.selectList("mypage.myprofile", mypageDTO);
-			
+	   public boolean pwOk(String memberEmail, String memberPw) {
+		    System.out.println("아이디, 비밀번호 확인 페이지 다오 실행");
+
+		    // MypageDTO 객체 생성 및 설정
+		    MypageDTO mypageDTO = new MypageDTO();
+		    mypageDTO.setMemberEmail(memberEmail);
+		    mypageDTO.setMemberPw(memberPw);
+
+		    // SQL 쿼리 실행 및 결과 확인
+		    // 쿼리에서 비밀번호를 확인하여 사용자 정보를 반환하거나, 비밀번호가 일치하지 않으면 null 반환
+		    MypageDTO result = sqlSession.selectOne("mypage.myprofile", mypageDTO);
+
+		    // 결과가 null이 아니면 비밀번호가 일치하는 것으로 간주
+		    return result != null;
 		}
 }
