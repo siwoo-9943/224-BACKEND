@@ -31,7 +31,7 @@ public class LoginOkController implements MemExecute {
 		Object member = memberDAO.login(memberEmail, memberPw);
 		Result result =  new Result();
 		
-		System.out.println(member);
+		System.out.println(member + "세션에 저장할 정보들");
 
 		 if(member!= null) {
 		 // 로그인 성공시 세션에 사용자 정보 저장

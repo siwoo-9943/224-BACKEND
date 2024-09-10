@@ -39,8 +39,8 @@ public class MemberDAO {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setMemberEmail(memberEmail);
 		memberDTO.setMemberPw(memberPw);
-		Object member = sqlSession.selectOne("member.login", memberDTO);
-		return member;
+		sqlSession.selectOne("member.login", memberDTO);
+		return sqlSession.selectList("member.login", memberDTO);
 	}
 	
 	
