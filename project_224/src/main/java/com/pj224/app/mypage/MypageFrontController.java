@@ -79,10 +79,10 @@ public class MypageFrontController extends HttpServlet {
 				new MypageOkController().MemExecute(request, response);
 				response.sendRedirect("/app/mypage/my-profile.jsp");
 				break;
-			case "/app/mypage/passcheckOk.my":
+			case "/app/mypage/passcheck.my":
 				System.out.println("비밀번호 확인 페이지");
 				new MypasscheckOkController().MemExecute(request, response);
-				request.getRequestDispatcher("/app/mypage/my-update.jsp").forward(request, response);
+				request.getRequestDispatcher("/app/mypage/my-passcheck.jsp").forward(request, response);
 				break;
 			
 			case "/mypick.my":

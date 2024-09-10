@@ -43,9 +43,9 @@ public class MypageDAO {
 
 		    // SQL 쿼리 실행 및 결과 확인
 		    // 쿼리에서 비밀번호를 확인하여 사용자 정보를 반환하거나, 비밀번호가 일치하지 않으면 null 반환
-		    MypageDTO result = sqlSession.selectOne("mypage.myprofile", mypageDTO);
+		    boolean result = (Integer)sqlSession.selectOne("mypage.pwOk", mypageDTO) <= 0;
 
 		    // 결과가 null이 아니면 비밀번호가 일치하는 것으로 간주
-		    return result != null;
+		    return result;
 		}
 }

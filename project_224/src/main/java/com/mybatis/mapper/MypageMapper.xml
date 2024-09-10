@@ -13,8 +13,8 @@
       		AND MEMBER_BIRTH = #{memberBirth}
 	</select>
    <!-- 개인정보 수정 전 아이디,비밀번호 확인 -->
-   <select id="pwOk" parameterType="Object" resultType="MypageDTO">
-		SELECT MEMBER_EMAIL ,MEMBER_PW
+   <select id="pwOk" parameterType="String" resultType="int">
+		SELECT count(MEMBER_Name)
 		FROM TBL_MEMBER
 		WHERE MEMBER_EMAIL = #{memberEmail} AND MEMBER_PW = #{memberPw}
 	</select>
