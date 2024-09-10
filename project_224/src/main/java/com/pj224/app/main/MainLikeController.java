@@ -2,6 +2,7 @@ package com.pj224.app.main;
 
 import java.io.IOException;
 import java.rmi.ServerException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,39 +18,34 @@ public class MainLikeController implements MemExecute {
     @Override
     public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServerException, ServletException {
-    	// 세션에서 memberNumber 가져오기 (정수형으로 변환)
-        int memberNumber = (int) request.getSession().getAttribute("memberNumber");
-        // 요청 파라미터에서 hotplaceNumber 가져오기 (정수형으로 변환)
-        int hotplaceNumber = Integer.parseInt(request.getParameter("hotplaceNumber"));
-        
-        MainDAO mainDAO = new MainDAO();
-        MainDTO mainDTO = new MainDTO();
-        Result result = new Result();
-        mainDTO.setMemberNumber(memberNumber);
-        mainDTO.setHotplaceNumber(hotplaceNumber);
+    	
+    	
+    	MainDAO mainDAO = new MainDAO();
+		MainDTO mainDTO = new MainDTO();
+		Result result = new Result();
+		try {
+			int membersessionNum = (int) request.getSession().getAttribute("memberNumber");
+			System.out.println("1번 세션쿠키" + membersessionNum);
 
-        System.out.println(mainDTO);
-        
-        // 찜하기 전 체크
-//        MainDTO memCheckLike = mainDAO.likeCheck(memberNumber);
-//        System.out.println(memCheckLike);
-//
-//        if (memCheckLike == null) {
-//        	mainDAO.pickHotplace(mainDTO);
-////            sqlSession.commit(); // 변경사항 커밋
-//        }
-     // 찜하기 전 체크
-        MainDTO memCheckLike = mainDAO.likeCheck(memberNumber, hotplaceNumber);
-        System.out.println(memCheckLike);
-        if (memCheckLike == null) {
-            mainDAO.pickHotplace(mainDTO);
-        } else {
-            mainDAO.unpickHotplace(mainDTO);
-        }
+			int hotplaceNumber = Integer.parseInt(request.getParameter("hotplaceNumber"));
+			
+			mainDTO.setMemberNumber(membersessionNum);
+			mainDTO.setHotplaceNumber(hotplaceNumber);
 
-        // 쿼리 실행 후 결과를 DTO에 담아 반환
-        result = mainDAO.pickHotplace(hotplaceNumber);
-        return 
-        
+			System.out.println(mainDTO);		
+			
+			List<MainDTO> memCheckLike = mainDAO.likeCheck(membersessionNum, hotplaceNumber);
+			System.out.println(memCheckLike);
+			System.out.println(mainDTO);
+			
+			request.setAttribute("memCheckLike", memCheckLike);
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			e.printStackTrace();		
+		}
+
+        return result;
     }
 }

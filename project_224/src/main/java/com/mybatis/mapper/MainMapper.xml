@@ -167,12 +167,13 @@
 	</select>
 
 	<select id="likecheck" resultType="MainDTO">
-		SELECT TM.MEMBER_NUMBER ,
-		TL.HOTPLACE_NUMBER
-		FROM TBL_MEMBER TM
-		LEFT JOIN TBL_LIKE TL ON
-		TM.MEMBER_NUMBER = TL.MEMBER_NUMBER
-		WHERE TM.MEMBER_NUMBER = #{memberNumber};
+		SELECT TL.MEMBER_NUMBER ,TL.HOTPLACE_NUMBER 
+		FROM TBL_HOTPLACE TH
+		LEFT JOIN TBL_LIKE TL ON TL.HOTPLACE_NUMBER
+		= TH.HOTPLACE_NUMBER
+		LEFT JOIN TBL_MEMBER TM ON TM.MEMBER_NUMBER =
+		TH.MEMBER_NUMBER
+		WHERE tl.MEMBER_NUMBER =  #{memberNumber}
 	</select>
 
 	<insert id="pickhp" parameterType="MainDTO">
@@ -184,7 +185,8 @@
 
 	<delete id="unpickhp" parameterType="MainDTO">
 		DELETE FROM TBL_LIKE
-		WHERE HOTPLACE_NUMBER = #{hotplaceNumber} AND
+		WHERE
+		HOTPLACE_NUMBER = #{hotplaceNumber} AND
 		MEMBER_NUMBER =
 		#{memberNumber}
 	</delete>

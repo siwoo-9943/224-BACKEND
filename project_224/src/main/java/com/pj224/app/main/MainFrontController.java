@@ -6,9 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.pj224.app.Result;
-import com.pj224.app.dto.MainDTO;
 
 /**
  * Servlet implementation class MainFrontController
@@ -56,6 +56,12 @@ public class MainFrontController extends HttpServlet {
 		// 전체 URI에서 ContextPath를 제외시킨 부분만 변수에 저장(분기처리할 때 비교할 변수로 사용)
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		System.out.println(target);
+		
+		HttpSession session = request.getSession();
+		Integer memberNumber = (Integer) session.getAttribute("memberNumber");
+		System.out.println("세션에 저장된 회원번호 : " + session.getAttribute("memberNumber"));
+	      System.out.println("로그인 회원번호 : " + memberNumber);
+	      //로그인했을때 세션쿠키에서 memberNumber
 
 		Result result = null; // Result 클래스 객체
 		
@@ -63,6 +69,12 @@ public class MainFrontController extends HttpServlet {
 		case "/main.mn":
 			System.out.println("핫플 컨텐츠");
 			result = new MainHpListController().MemExecute(request, response);
+			//아래 실행 안됨
+//			if (memberNumber != null) {	
+			System.out.println("로그인 일때 찜목록 체크");
+				result = new MainLikeController().MemExecute(request, response);
+				System.out.println("체크?");
+//			}
 			System.out.println("커뮤니티 컨텐츠");
 			result = new MainComuListController().MemExecute(request, response);
 			System.out.println("main페이지이동");
@@ -82,19 +94,8 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("로그아웃");
 			result = new MainLogoutController().MemExecute(request, response);
 			break;
-//		case "/pick.mn":
-//		    System.out.println("찜 하기");
-//		    MainDTO likeResult = new MainLikeController().MemExecute(request, response);
-//		    request.setAttribute("hotplaceDetails", likeResult); // JSP로 전달
-//		    request.getRequestDispatcher("result.jsp").forward(request, response); // 결과 페이지로 포워딩
-//		    break;
-//
-//		case "/unpick.mn":
-//		    System.out.println("찜 풀기");
-//		    result = new MainUnlikeController().MemExecute(request, response);
-//		    request.setAttribute("hotplaceDetails", unlikeResult); // JSP로 전달
-//		    request.getRequestDispatcher("result.jsp").forward(request, response); // 결과 페이지로 포워딩
-//		    break;
+			
+			
 //		case "/pick.mn":
 //            System.out.println("찜 하기");
 //            result = new MainLikeController().MemExecute(request, response);

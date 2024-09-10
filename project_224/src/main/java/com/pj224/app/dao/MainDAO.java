@@ -96,8 +96,8 @@ public class MainDAO {
 	}
 	
 	// 찜하기 체크
-    public MainDTO likeCheck(int memberNumber,int hotplaceNumber) {
-    	System.out.println("회원번호 : " + memberNumber);
+    public List<MainDTO> likeCheck(int memberNumber,int hotplaceNumber) {
+    	System.out.println("회원번호 : " + memberNumber + "핫플번호 : " + hotplaceNumber);
         return sqlSession.selectOne("main.likecheck", memberNumber);
     }
 
