@@ -25,7 +25,16 @@ public class NoticeDAO {
 	public List<NoticeDTO> showDetail(String title) {
 		return sqlSession.selectList("notice.showDetail", title);
 	}
-
+	
+	public NoticeDTO noticedetail(NoticeDTO noticeDTO) {
+		System.out.println("detailDAO 들어왔냐?");
+		NoticeDTO detail = null;
+		try (SqlSession sqlSession = MyBatisConfig.getSqlSessionFactory().openSession()) {
+			detail = sqlSession.selectOne("notice.noticedetail", noticeDTO);
+		}
+		return detail;
+	}
+	
 	public void write(NoticeDTO noticeDTO) {
 		sqlSession.insert("notice.write", noticeDTO);
 		System.out.println("글쓰기" + noticeDTO);
@@ -36,7 +45,7 @@ public class NoticeDAO {
 	}
 	
 	public void delete(int noticeNumber) {
-		sqlSession.delete("notice.delete", noticeNumber);
+		sqlSession.delete("notice.noticeDelete", noticeNumber);
 	}
 
 

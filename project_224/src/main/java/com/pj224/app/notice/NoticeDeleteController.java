@@ -15,51 +15,25 @@ import com.pj224.app.dto.MemberDTO;
 import com.pj224.app.dto.NoticeDTO;
 
 public class NoticeDeleteController implements MemExecute {
+	   @Override
+	    public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	        HttpSession session = request.getSession();
+	        MemberDTO member = (MemberDTO) session.getAttribute("member");
 
-	@Override
-	public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        HttpSession session = request.getSession();
-        
-        System.out.println("삭제");
-        
-        MemberDTO member = (MemberDTO) session.getAttribute("member");
-        String noticeNumberStr = request.getParameter("noticeNumber");
-        Result result = new Result();
+	        // 파라미터로 넘어온 noticeNumber를 받음
+	        String noticeNumberStr = request.getParameter("noticeNumber");
+	        int noticeNumber = Integer.parseInt(noticeNumberStr);
 
-        System.out.println("noticeNumber: " + noticeNumberStr);
-        
-		int noticeNumber = Integer.parseInt(noticeNumberStr);
-		NoticeDAO noticeDAO = new NoticeDAO();
-        
-      noticeDAO.delete(noticeNumber);
-      System.out.println("게시글 삭제 성공" + noticeNumber);
+	        // DAO를 사용하여 해당 공지사항 삭제
+	        NoticeDAO noticeDAO = new NoticeDAO();
+	        noticeDAO.delete(noticeNumber);
 
-      result.setRedirect(true);
-      result.setPath(request.getContextPath() + "/notice/notice-admain.no");
+	        // 삭제 완료 후, 목록 페이지로 리다이렉트
+	        Result result = new Result();
+	        result.setRedirect(true);
+	        result.setPath(request.getContextPath() + "/notice/notice-admain.no");
 
-//        if (member == null) {
-//            System.out.println("로그인되지 않은 사용자가 삭제 시도");
-//            result.setRedirect(true);
-//            result.setPath(request.getContextPath() + "/member/login.me");
-//            return result;
-//        }
-//
-//        if (noticeNumberStr != null && !noticeNumberStr.isEmpty()) {
-//            int noticeNumber = Integer.parseInt(noticeNumberStr);
-//            NoticeDAO noticeDAO = new NoticeDAO();
-//
-//            // 게시글 정보 조회
-//            NoticeDTO noticeDTO = noticeDAO.getNoitceByNoticeNumber(noticeNumber);
-//
-//
-//            // 게시글 삭제 실행
-//            noticeDAO.delete(noticeNumber);
-//            System.out.println("게시글 삭제 성공" + noticeNumber);
-//
-//            result.setRedirect(true);
-//            result.setPath(request.getContextPath() + "/notice/notice-admain.no");
-//        }
+	        return result;
 
-        return result;
 	}
 }
