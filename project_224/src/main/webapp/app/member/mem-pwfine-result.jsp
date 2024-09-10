@@ -16,13 +16,13 @@
 			<h1>비밀번호 변경</h1>
 		</div>
 		<form action="${pageContext.request.contextPath}/member/pwUpdate.me" method="post">
+		<input type="hidden" name="memberEmail" value="${requestScope.memberEmail}">
 			<div class="info-text">
 				<p>변경할 비밀번호를 입력해주세요.</p>
 			</div>
 
 			<div class="result-wrapper">
-				<input type="text" id="e-mail"
-					placeholder="&nbsp;&nbsp; 영문자 8글자 이상 15글자 이하, 특수문자 필수" name="memberEmail">
+				<input type="password" name="memberPw" placeholder="&nbsp;&nbsp; 영문자 8글자 이상 15글자 이하, 특수문자 필수" >
 			</div>
 
 			<div class="buttons">
