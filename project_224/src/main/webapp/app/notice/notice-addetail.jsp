@@ -76,7 +76,7 @@
 					<h2>정말로 삭제하시겠습니까?</h2>
 					<p>삭제 버튼을 클릭하면 항목이 영구히 삭제됩니다.</p>
 					`
-					<button onclick="confirmDelete(${notice.noticeNumber})">삭제</button>
+					<button class="notice-addetail-del" type="button" onclick="confirmDelete(${notice.noticeNumber})">삭제</button>
 					<button class="notice-cancel-btn" onclick="closeDeleteModal()">취소</button>
 				</div>
 			</div>
