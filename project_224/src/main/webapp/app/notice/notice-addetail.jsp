@@ -80,7 +80,7 @@
 				action="${pageContext.request.contextPath}/notice/delete.no"
 				method="post" style="display: none;">
 				<input type="hidden" id="noticeNumberInput" name="noticeNumber"
-					value="${noticeshowdetail[0].noticeNumber}">
+					value="">
 			</form>
 
 		</div>
@@ -92,35 +92,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
-
-//j쿼리 사용한  삭제모달창
-$(document).ready(function() {
-const $modal = $('#notice-deleteModal');
-
-// 삭제 모달 열기
-window.openDeleteModal = function() {
- $modal.css('display', 'block');
-};
-
-// 삭제 모달 닫기
-window.closeDeleteModal = function() {
- $modal.css('display', 'none');
-};
-
-// 삭제 확인
-confirmDelete = function() {
- window.location.href = '/notice/delete.no';
-console.log("값들어오는지확인");
-};
-
-// 모달 외부 클릭 시 닫기
-$(window).on('click', function(event) {
- if ($(event.target).is($modal)) {
-   closeDeleteModal();
- }
-});
-});
-
 
 </script>
 </html>
