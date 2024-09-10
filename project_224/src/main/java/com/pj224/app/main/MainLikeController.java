@@ -33,7 +33,7 @@ public class MainLikeController implements MemExecute {
         MainDTO existingLike = mainDAO.likeCheck(memberNumber);
         if (existingLike == null) {
         	mainDAO.pickHotplace(mainDTO);
-            sqlSession.commit(); // 변경사항 커밋
+//            sqlSession.commit(); // 변경사항 커밋
         }
         
         

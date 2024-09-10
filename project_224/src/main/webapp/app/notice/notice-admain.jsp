@@ -44,7 +44,7 @@
 								<div class="notice-admain-ul-main">
 									<div class="notice-admain-ul-cate">${notice.noticeCate}</div>
 									<div class="notice-admain-ul-title">${notice.noticeTitle}</div>
-									<div class="notice-admain-ul-author">${notice.memberNumber}</div>
+									<div class="notice-admain-ul-author">관리자</div>
 									<div class="notice-admain-ul-date">${notice.noticeRegistDate}</div>
 								</div>
 						</a></li>
@@ -53,26 +53,28 @@
 
 				<!-- 페이지네이션 -->
 				<div class="pagination-container">
-					<ul class="notice-pagenation">
-						<!-- 이전 페이지 그룹으로 이동 -->
-						<c:if test="${startPage > 1}">
-							<li><a href="?page=${startPage - 1}">&lt;</a></li>
-						</c:if>
-
-						<!-- 페이지 번호 출력 -->
-						<c:forEach var="i" begin="${startPage}" end="${endPage}">
-							<li><a href="?page=${i}"
-								style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a></li>
-						</c:forEach>
-
-						<!-- 다음 페이지 그룹으로 이동 -->
-						<c:if test="${endPage < maxPages}">
-							<li><a href="?page=${endPage + 1}">&gt;</a></li>
-						</c:if>
-					</ul>
+				    <ul class="notice-pagenation">
+				        <!-- 이전 페이지 그룹으로 이동 -->
+				        <c:if test="${startPage > 1}">
+				            <li><a href="?page=${startPage - 1}">&lt;</a></li>
+				        </c:if>
+				
+				        <!-- 페이지 번호 출력 -->
+				        <c:forEach var="i" begin="${startPage}" end="${endPage}">
+				            <li>
+				                <a href="?page=${i}" 
+				                   style="${i == currentPage ? 'font-weight:bold;' : ''}">
+				                    ${i}
+				                </a>
+				            </li>
+				        </c:forEach>
+				
+				        <!-- 다음 페이지 그룹으로 이동 -->
+				        <c:if test="${endPage < maxPages}">
+				            <li><a href="?page=${endPage + 1}">&gt;</a></li>
+				        </c:if>
+				    </ul>
 				</div>
-
-
 
 				<%
 				// memberNumber 값을 가져오는 로직이 필요합니다.
