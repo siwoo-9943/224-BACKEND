@@ -23,7 +23,7 @@ public class MypageOkController  implements MemExecute {
 
 		System.out.println("내프로필 컨트롤러 실행 확인");
 		
-//		MypageDTO mypageDTO = new MypageDTO();
+		MypageDTO mypageDTO = new MypageDTO();
 		MypageDAO mypageDAO = new MypageDAO();
 		
 		String memberEmail = request.getParameter("memberEmail");

@@ -56,19 +56,19 @@
 									<div class="my-profile-value" id="memberName"></div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">닉네임</div>
+									<div class="my-profile-menu">닉네임 ${sessionScope.member.memberNickname}</div>
 									<div class="my-profile-value" id="memberNickName"></div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">휴대폰</div>
+									<div class="my-profile-menu">휴대폰 ${sessionScope.member.memberPhone}</div>
 									<div class="my-profile-value" id="memberPhone"></div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">성별</div>
+									<div class="my-profile-menu">성별 ${sessionScope.member.memberGender}</div>
 									<div class="my-profile-value" id="memberGender"></div>
 								</div>
 								<div class="my-profile-category">
-									<div class="my-profile-menu">생년월일</div>
+									<div class="my-profile-menu">생년월일 ${sessionScope.member.memberBirth}</div>
 									<div class="my-profile-value" id="memberBirth"></div>
 								</div>
 							</div>
