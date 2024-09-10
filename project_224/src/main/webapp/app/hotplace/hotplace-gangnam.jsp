@@ -30,16 +30,11 @@
 	<c:set var="itemsPerPage" value="4" />
 	<c:set var="currentPage" value="${param.page eq null ? 1 : param.page}" />
 	<c:set var="totalItems" value="${hotplaceList.size()}" />
-	<c:set var="totalPages"
-		value="${(totalItems + itemsPerPage - 1) / itemsPerPage}" />
+	<c:set var="totalPages"	value="${(totalItems + itemsPerPage - 1) / itemsPerPage}" />
 	<c:set var="startIndex" value="${(currentPage - 1) * itemsPerPage}" />
 	<c:set var="endIndex" value="${startIndex + itemsPerPage - 1}" />
 
 	<div>
-										<h2>${like.hotplaceNumber }</h2><br>	
-										<h2>${hotplace.hotplaceNumber }</h2><br>	
-										<h2>${like.memberNumber }</h2><br>	
-										<h2>${memberNumber }</h2><br>	
 		<c:forEach var="hotplace" items="${hotplaceList}" varStatus="status">
 			<c:if
 				test="${status.index >= startIndex && status.index <= endIndex}">
@@ -121,15 +116,15 @@
 	<div class="info-bg2">
 		<div class="bottom-list">
 			<c:if test="${currentPage > 1}">
-				<a class="prev" href="?page=${currentPage - 1}"></a>
+				<a class="prev" href="?page=${currentPage - 1}&memberNumber=${memberNumber}"></a>
 			</c:if>
 
 			<c:forEach var="i" begin="1" end="${totalPages}">
-				<a class="num ${currentPage == i ? 'on' : ''}" href="?page=${i}">${i}</a>
+				<a class="num ${currentPage == i ? 'on' : ''}" href="?page=${i}&memberNumber=${memberNumber}">${i}</a>
 			</c:forEach>
 
 			<c:if test="${currentPage < totalPages}">
-				<a class="next" href="?page=${currentPage + 1}"></a>
+				<a class="next" href="?page=${currentPage + 1}&memberNumber=${memberNumber}"></a>
 			</c:if>
 		</div>
 	</div>

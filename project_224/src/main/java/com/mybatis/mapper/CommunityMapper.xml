@@ -88,6 +88,7 @@
 		from tbl_comment c, tbl_board b
 		where b.board_number =
 		#{boardNumber}
+		order by c.comment_update_date desc
 	</select>
 
 	<select id="memberList" resultType="MemberDTO">
