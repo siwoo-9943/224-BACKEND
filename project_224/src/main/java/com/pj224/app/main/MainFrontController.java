@@ -74,6 +74,7 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("검색어커뮤결과");
 			result = new SearchHotController().MemExecute(request, response);
 			System.out.println("검색어핫플결과");
+//			response.sendRedirect("main-search.jsp");
 		    request.getRequestDispatcher("main-search.jsp").forward(request, response);
 		    System.out.println("페이지이동");
 			break;
@@ -81,6 +82,16 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("로그아웃");
 			result = new MainLogoutController().MemExecute(request, response);
 			break;
+		case "/pick.mn":
+            System.out.println("찜 하기");
+            result = new MainLikeController().MemExecute(request, response);
+            System.out.println("찜 하기 완료");
+            break;
+        case "/unpick.mn":
+            System.out.println("찜 풀기");
+            result = new MainUnlikeController().MemExecute(request, response);
+            System.out.println("찜 풀기 완료");
+            break;
 
 		default:
 			System.out.println("페이지 오류 메인으로 이동합니다");
@@ -88,6 +99,14 @@ public class MainFrontController extends HttpServlet {
 			break;
 		}
 		
+		if (result != null) {
+            if (result.isRedirect()) {
+                response.sendRedirect(result.getPath());
+            } else {
+                request.getRequestDispatcher(result.getPath()).forward(request, response);
+            }
+        }
+    
 	}
 
 }

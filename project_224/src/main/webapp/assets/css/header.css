@@ -15,6 +15,8 @@ body {
   width: 100%;
   background-color: white;
   height: 90px;
+  display: flex;
+  justify-content: center;
   position: fixed;
   z-index: 1000;
 }
@@ -23,8 +25,8 @@ body {
   height: 0px;
   display: flex;
   list-style-type: none;
-  justify-content: center;
-  margin-right: 15%;
+  position: relative;
+  transform: translate(-130px,0px);
 }
 
 /* 로고 */
@@ -90,25 +92,21 @@ body {
 }
 
 /* 로그인 및 회원가입 버튼 */
+.main-login-btns{
+	width: 200px;
+	height: 50px;
+	display: flex;
+	position: relative;
+	transform: translate(200px , 0px);
+}
+
 .main-login-btn{
-  width: 200px;
+  width: 80px;
   height: 50px;
 }
 
 .main-login-btn a {
   text-decoration: none;
-}
-
-#header-login-mypage-btn{
-  background-color: #2BCF81;
-  width: 120px;
-  height: 35px;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  transform: translate(110px, 0px);
-  padding: 1px;
-  margin: 10px;
 }
 
 #header-login-join-btn {
@@ -118,7 +116,20 @@ body {
   border-radius: 10px;
   color: white;
   text-align: center;
-  transform: translate(250px, 0px);
+  transform: translate(80px,0px);
+  padding: 1px;
+  margin: 10px;
+}
+
+#header-login-mypage-btn{
+  background-color: #2BCF81;
+  width: 120px;
+  height: 35px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+
+  transform: translate(-80px,0px);
   padding: 1px;
   margin: 10px;
 }
@@ -130,7 +141,7 @@ body {
   border-radius: 10px;
   color: white;
   text-align: center;
-  transform: translate(50px, 0px);
+
   padding: 1px;
   margin: 10px;
 }
