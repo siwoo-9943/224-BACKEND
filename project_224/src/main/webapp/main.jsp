@@ -141,11 +141,11 @@ color: black;
 							<div id="main-hot-list-img"
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
 								
-								<c:if test="${sessionScope.memberNumber != null}">
+								<c:if test="${sessionScope.member.memberNumber != null}">
 								<c:set var="isLiked" value="false" />
 								<c:forEach var="like" items="${likeList}">
 									<c:if
-										test="${like.hotplaceNumber == hotplace.hotplaceNumber && like.memberNumber == memberNumber}">
+										test="${like.hotplaceNumber == hotplace.hotplaceNumber && like.memberNumber == sessionScope.member.memberNumber}">
 										<c:set var="isLiked" value="true" />
 									</c:if>
 								</c:forEach>
@@ -170,8 +170,6 @@ color: black;
 								</c:choose>
 							</c:if>
 								
-								<img id="main-picked"
-									src="${pageContext.request.contextPath}/assets/images/picked.png">
 									
 							</div> <a
 							href="${item.hotplaceLink}">
@@ -193,10 +191,11 @@ color: black;
 				<ul id="main-hot">
 					<c:forEach var="item" items="${hplist2}">
 						<li id="main-hot-list">
+						
 							<div id="main-hot-list-img"
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
 								
-								<c:if test="${sessionScope.memberNumber != null}">
+								<c:if test="${sessionScope.member.memberNumber != null}">
 								<c:set var="isLiked" value="false" />
 								<c:forEach var="like" items="${likeList}">
 									<c:if

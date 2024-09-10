@@ -19,7 +19,7 @@
 </body>
 <header>
 	<c:set var="memberNumber"
-		value="${sessionScope.memberNumber != null ? sessionScope.memberNumber : 0}" />
+		value="${sessionScope.member.memberNumber != null ? sessionScope.memberNumber : 0}" />
 	<section class="header-section">
 		<div class="header-fixed">
 			<ul class="header-list">
@@ -84,7 +84,7 @@
 					</c:when>
 					<c:otherwise>
 						<div class="main-login-btns">
-							<c:if test="${sessionScope.memberNumber != 1}">
+							<c:if test="${sessionScope.member.memberNumber != 1}">
 							<div class="main-login-btn">
 								<!-- 마이페이지 -->
 								<div id="header-login-mypage-btn">
