@@ -83,15 +83,15 @@ public class MainFrontController extends HttpServlet {
 			result = new MainLogoutController().MemExecute(request, response);
 			break;
 		case "/pick.mn":
-			System.out.println("찜 하기");
-			
-			System.out.println("찜 하기 완료");
-			break;
-		case "/unpick.mn":
-			System.out.println("찜 풀기");
-			
-			System.out.println("찜 풀기 완료");
-			break;
+            System.out.println("찜 하기");
+            result = new MainLikeController().MemExecute(request, response);
+            System.out.println("찜 하기 완료");
+            break;
+        case "/unpick.mn":
+            System.out.println("찜 풀기");
+            result = new MainUnlikeController().MemExecute(request, response);
+            System.out.println("찜 풀기 완료");
+            break;
 
 		default:
 			System.out.println("페이지 오류 메인으로 이동합니다");
@@ -99,6 +99,14 @@ public class MainFrontController extends HttpServlet {
 			break;
 		}
 		
+		if (result != null) {
+            if (result.isRedirect()) {
+                response.sendRedirect(result.getPath());
+            } else {
+                request.getRequestDispatcher(result.getPath()).forward(request, response);
+            }
+        }
+    
 	}
 
 }
