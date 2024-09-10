@@ -93,5 +93,25 @@ public class MainDAO {
 		System.out.println("핫플 2번째 줄");
 		return sqlSession.selectList("main.hplist2");		
 	}
+	
+	// 찜하기 체크
+    public MainDTO likeCheck(int memberNumber) {
+    	System.out.println("회원번호 : " + memberNumber);
+        return sqlSession.selectOne("main.likecheck", memberNumber);
+    }
+
+    // 찜하기
+    public void pickHotplace(MainDTO mainDTO) {
+    	System.out.println("찜하기DAO");
+    	System.out.println(mainDTO);
+        sqlSession.insert("main.pickhp", mainDTO);
+    }
+
+    // 찜 풀기
+    public void unpickHotplace(MainDTO mainDTO) {
+    	System.out.println("찜풀기DAO");
+    	System.out.println(mainDTO);
+        sqlSession.delete("main.unpickhp", mainDTO);
+    }
 
 }
