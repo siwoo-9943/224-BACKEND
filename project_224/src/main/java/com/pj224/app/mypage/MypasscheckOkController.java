@@ -29,12 +29,12 @@ public class MypasscheckOkController implements MemExecute{
 	      MypageDAO mypageDAO = new MypageDAO();
 	      String memberEmail = request.getParameter("memberEmail");
 	      String memberPw = request.getParameter("memberPw");
-	      String mypage = mypageDAO.pwOk(memberEmail, memberPw);
+	      Object mypage = mypageDAO.pwOk(memberEmail, memberPw);
 	      Result result =  new Result();
 	      
 	      System.out.println(mypage + "값 확인");
 	      
-	      if(mypage != true) {
+	      if(mypage) {
 			 
 			 System.out.println("비밀번호 확인 성공");
 			 request.getRequestDispatcher(request.getContextPath() + "/app/mypage/my-update.jsp"); // 로그인 성공 후 메인페이지로 이동
