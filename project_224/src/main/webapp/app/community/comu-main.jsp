@@ -49,8 +49,13 @@
 .baseList-sector {
 	font-weight: bold;
 	display: block;
-	margin: 5px 0;
+	margin: 5px 0;	
 }
+.category-filter.active {
+    font-weight: bold;
+    color: #2BCF81;
+}
+
 </style>
 <body>
 	<jsp:include page="/header.jsp" />
@@ -70,16 +75,18 @@
 
 					<div class="navcontainer">
 						<ul id="navlist">
-							<li><a id="current" href="" onfocus="blur()">전체</a></li>
-							<li><a href="" onfocus="blur()">자유</a></li>
-							<li><a href="" onfocus="blur()">핫플 자유</a></li>
-							<li><a href="" onfocus="blur()">핫플 후기</a></li>
-							<li><a href="" onfocus="blur()">편공 자유</a></li>
-							<li><a href="" onfocus="blur()">편공 후기</a></li>
+							<li><a href="#" class="category-filter" data-category="전체">전체</a></li>
+							<li><a href="#" class="category-filter" data-category="자유">자유</a></li>
+							<li><a href="#" class="category-filter" data-category="핫플 자유">핫플 자유</a></li>
+							<li><a href="#" class="category-filter" data-category="핫플 후기">핫플 후기</a></li>
+							<li><a href="#" class="category-filter" data-category="편공 자유">편공 자유</a></li>
+							<li><a href="#" class="category-filter" data-category="편공 후기">편공 후기</a></li>
 						</ul>
-						<a class="write-btn" onfocus="blur()"
+						<a class="write-btn"
 							href="${pageContext.request.contextPath}/community/comu-write.cm">글쓰기</a>
 					</div>
+
+
 					<div id="revolution-main-table"
 						class="title-bg bbs bid-publictransport">
 						<div align="center" id="headNotice" style="display: flex;">
@@ -113,13 +120,13 @@
 								<div class="baseList-space baseList-title">${community.boardTitle}</div>
 								<!-- 내용 -->
 								<div class="baseList-space">
-									  <a href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${community.boardNumber}">
-									<span
-										class="baseList-sector-content">${community.boardContent}</span>
+									<a
+										href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${community.boardNumber}">
+										<span class="baseList-sector-content">${community.boardContent}</span>
 									</a>
 								</div> <!-- 글쓴이 -->
 								<div class="baseList-space">
-									<span class="baseList-sector">${community.memberNumber}</span>
+									<span class="baseList-sector">${community.memberNickname}</span>
 								</div> <!-- 등록일 -->
 								<div class="baseList-space">
 									<span class="baseList-sector">${community.boardRegistDate}</span>
@@ -131,21 +138,25 @@
 						</c:forEach>
 					</ul>
 
-					<div class="bottom-search">
-						<form method="get" name="search" action="/zboard/zboard.php">
-							<select name="search-type" id="search-type">
-								<option value="sub-memo">제목+본문</option>
-								<option value="subject">제목</option>
-								<option value="contnets">본문</option>
-								<option value="name">닉네임</option>
-							</select> <span class="default"> <input type="hidden" name="id"
-								value="publictransport"> <input type="hidden"
-								name="page-num" value="25"> <input type="text"
-								name="keyword" id="keyword" value="" placeholder="검색어를 입력하세요..."
-								onkeyup="filterFunction()"> <input type="submit"
-								onfocus="blur()" value="검색">
-							</span>
-						</form>
+					<!-- 페이지네이션 -->
+					<div class="pagination-container">
+						<ul class="notice-pagenation">
+							<!-- 이전 페이지 그룹으로 이동 -->
+							<c:if test="${startPage > 1}">
+								<li><a href="?page=${startPage - 1}">&lt;</a></li>
+							</c:if>
+
+							<!-- 페이지 번호 출력 -->
+							<c:forEach var="i" begin="${startPage}" end="${endPage}">
+								<li><a href="?page=${i}"
+									style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a></li>
+							</c:forEach>
+
+							<!-- 다음 페이지 그룹으로 이동 -->
+							<c:if test="${endPage < maxPages}">
+								<li><a href="?page=${endPage + 1}">&gt;</a></li>
+							</c:if>
+						</ul>
 					</div>
 
 				</div>
@@ -154,6 +165,10 @@
 	</main>
 	<jsp:include page="/footer.jsp" />
 </body>
+
+
 <script
 	src="${pageContext.request.contextPath}/assets/js/community/comu-main.js"></script>
+	
+
 </html>
