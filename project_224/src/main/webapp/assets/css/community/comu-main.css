@@ -201,3 +201,43 @@ ul {
     width: 30px;
     height: 30px;
   }
+  
+/* ul의 기본 스타일 제거 및 가로 배치 */
+.notice-pagenation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* 가로 정렬 */
+  transform: translate(300px, 10px);
+  height: 100px;
+  width: 100px;
+}
+
+
+.pagination-container {
+	  height: 100px;
+	  margin-bottom: 100px;
+}
+
+.pagination-container ul{
+	display: flex;
+}
+/* li 요소들을 가로로 배치하고 간격 추가 */
+.notice-pagenation li {
+	
+  margin-right: 10px; /* 각 페이지 번호 사이 간격 */
+}
+
+.notice-pagenation li a {
+  text-decoration: none;
+  color: black;
+}
+
+.notice-pagenation li a:hover {
+  text-decoration: underline;
+}
+
+.notice-pagenation li a[style*="font-weight:bold;"] {
+  font-weight: bold;
+}
+
