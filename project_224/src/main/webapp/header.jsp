@@ -19,7 +19,7 @@
 </body>
 <header>
 	<c:set var="memberNumber"
-		value="${sessionScope.member.memberNumber != null ? sessionScope.memberNumber : 0}" />
+		value="${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}" />
 	<section class="header-section">
 		<div class="header-fixed">
 			<ul class="header-list">
