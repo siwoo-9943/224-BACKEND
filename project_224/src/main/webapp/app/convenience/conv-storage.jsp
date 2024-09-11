@@ -43,7 +43,7 @@
           <div class="conv-storage-content-name" style="margin-bottom: 10px;">
             <h1 style="display: inline; margin: 0;">강남역 </h2>
           </div>
-          <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 256px; width: 256px; border: 1px solid black;">
+          <img src="${pageContext.request.contextPath}/assets/images/conv-gangnam.png" style="height: 256px; width: 256px; border: 1px solid black;">
         </div>
       </a>
       <div class="conv-storage-content-right">
@@ -63,7 +63,7 @@
           <div class="conv-storage-content-name" style="margin-bottom: 10px;">
             <h1 style="display: inline; margin: 0;">잠실역 </h2>
           </div>
-          <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 256px; width: 256px; border: 1px solid black;">
+          <img src="${pageContext.request.contextPath}/assets/images/conv-jamsil.png" style="height: 256px; width: 256px; border: 1px solid black;">
         </div>
       </a>
       <div class="conv-storage-content-right">
@@ -81,7 +81,7 @@
           <div class="conv-storage-content-name" style="margin-bottom: 10px;">
             <h1 style="display: inline; margin: 0;">홍대입구역 </h2>
           </div>
-          <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 256px; width: 256px; border: 1px solid black;">
+          <img src="${pageContext.request.contextPath}/assets/images/conv-hongdae.png" style="height: 256px; width: 256px; border: 1px solid black;">
         </div>
       </a>
       <div class="conv-storage-content-right">
@@ -99,7 +99,7 @@
           <div class="conv-storage-content-name" style="margin-bottom: 10px;">
             <h1 style="display: inline; margin: 0;">성수역 </h2>
           </div>
-          <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 256px; width: 256px; border: 1px solid black;">
+          <img src="${pageContext.request.contextPath}/assets/images/conv-seongsu.png" style="height: 256px; width: 256px; border: 1px solid black;">
         </div>
       </a>
       <div class="conv-storage-content-right">
@@ -117,7 +117,7 @@
           <div class="conv-storage-content-name" style="margin-bottom: 10px;">
             <h1 style="display: inline; margin: 0;">문래역 </h2>
           </div>
-          <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 256px; width: 256px; border: 1px solid black;">
+          <img src="${pageContext.request.contextPath}/assets/images/conv-moonrae.png" style="height: 256px; width: 256px; border: 1px solid black;">
         </div>
       </a>
       <div class="conv-storage-content-right">
@@ -135,7 +135,7 @@
           <div class="conv-storage-content-name" style="margin-bottom: 10px;">
             <h1 style="display: inline; margin: 0;">을지로입구역 </h2>
           </div>
-          <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 256px; width: 256px; border: 1px solid black;">
+          <img src="${pageContext.request.contextPath}/assets/images/conv-eulhiro.png" style="height: 256px; width: 256px; border: 1px solid black;">
         </div>
       </a>
       <div class="conv-storage-content-right">
