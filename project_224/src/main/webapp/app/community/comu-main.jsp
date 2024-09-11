@@ -9,166 +9,85 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/community/comu-main.css" />
 </head>
-<style>
-#communityList {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-#communityList li {
-	display: flex;
-	align-items: center;
-	padding: 10px;
-	border-bottom: 1px solid #ddd;
-	background-color: #ffffff;
-}
-
-.baseList-item:nth-child(odd) {
-	background-color: #f9f9f9;
-}
-
-.baseList-space {
-	flex: 1;
-	text-align: center;
-	padding: 0px;
-	margin: 0;
-	margin-right: 100px;
-	margin-bottom: 10px;
-}
-
-.baseList-sector-title {
-	margin-left: 20px;
-	font-weight: bold;
-}
-
-.baseList-sector-content {
-	font-weight: bold;
-}
-
-.baseList-sector {
-	font-weight: bold;
-	display: block;
-	margin: 5px 0;	
-}
-.category-filter.active {
-    font-weight: bold;
-    color: #2BCF81;
-}
-
-</style>
 <body>
 	<jsp:include page="/header.jsp" />
 	<main>
 		<div class="wrapper">
 			<div class="contents">
-				<div class="container"></div>
-				<div>
-					<div id="header-box">
-						<div class="bbs-title">
-							<h1 style="font-weight: bold;">커뮤톡톡!</h1>
-						</div>
-						<div class="desc">2호선 이용에 대한 정보 공유 및 각종 이야기를 나누는 공간입니다.</div>
+				<div id="header-box">
+					<div class="bbs-title">
+						<h1>커뮤톡톡!</h1>
 					</div>
+					<div class="desc">2호선 이용에 대한 정보 공유 및 각종 이야기를 나누는 공간입니다.</div>
+				</div>
 
-
-
-					<div class="navcontainer">
-						<ul id="navlist">
-							<li><a href="#" class="category-filter" data-category="전체">전체</a></li>
-							<li><a href="#" class="category-filter" data-category="자유">자유</a></li>
-							<li><a href="#" class="category-filter" data-category="핫플 자유">핫플 자유</a></li>
-							<li><a href="#" class="category-filter" data-category="핫플 후기">핫플 후기</a></li>
-							<li><a href="#" class="category-filter" data-category="편공 자유">편공 자유</a></li>
-							<li><a href="#" class="category-filter" data-category="편공 후기">편공 후기</a></li>
-						</ul>
+				<div class="navcontainer">
+					<ul id="navlist">
+						<li><a href="#" class="category-filter" data-category="전체">전체</a></li>
+						<li><a href="#" class="category-filter" data-category="자유">자유</a></li>
+						<li><a href="#" class="category-filter" data-category="핫플 자유">핫플
+								자유</a></li>
+						<li><a href="#" class="category-filter" data-category="핫플 후기">핫플
+								후기</a></li>
+						<li><a href="#" class="category-filter" data-category="편공 자유">편공
+								자유</a></li>
+						<li><a href="#" class="category-filter" data-category="편공 후기">편공
+								후기</a></li>
+					</ul>
+					<c:if test="${not empty sessionScope.member}">
 						<a class="write-btn"
 							href="${pageContext.request.contextPath}/community/comu-write.cm">글쓰기</a>
-					</div>
-
-
-					<div id="revolution-main-table"
-						class="title-bg bbs bid-publictransport">
-						<div align="center" id="headNotice" style="display: flex;">
-							<div class="baseList-space" style="width: 63px;">
-								<span class="baseList-sector">분류</span>
-							</div>
-							<div class="baseList-space" style="width: 100%;">
-								<span class="baseList-sector-title">제목</span>
-							</div>
-							<div class="baseList-space" style="width: 100%;">
-								<span class="baseList-sector-content">내용</span>
-							</div>
-							<div class="baseList-space" style="width: 90px;">
-								<span class="baseList-sector">글쓴이</span>
-							</div>
-							<div class="baseList-space" style="width: 90px;">
-								<span class="baseList-sector">등록일</span>
-							</div>
-							<div class="baseList-space" style="width: 60px;">
-								<span class="baseList-sector">추천</span>
-							</div>
-						</div>
-					</div>
-					<ul id="communityList">
-						<c:forEach var="community" items="${communityList}">
-							<li class="baseList-item">
-								<!-- 분류 -->
-								<div class="baseList-space">
-									<span class="baseList-sector">${community.boardCate}</span>
-								</div> <!-- 제목 -->
-								<div class="baseList-space baseList-title">${community.boardTitle}</div>
-								<!-- 내용 -->
-								<div class="baseList-space">
-									<a
-										href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${community.boardNumber}">
-										<span class="baseList-sector-content">${community.boardContent}</span>
-									</a>
-								</div> <!-- 글쓴이 -->
-								<div class="baseList-space">
-									<span class="baseList-sector">${community.memberNickname}</span>
-								</div> <!-- 등록일 -->
-								<div class="baseList-space">
-									<span class="baseList-sector">${community.boardRegistDate}</span>
-								</div> <!-- 추천 수 -->
-								<div class="baseList-space">
-									<span class="baseList-sector">${community.recommendCount}</span>
-								</div>
-							</li>
-						</c:forEach>
-					</ul>
-
-					<!-- 페이지네이션 -->
-					<div class="pagination-container">
-						<ul class="notice-pagenation">
-							<!-- 이전 페이지 그룹으로 이동 -->
-							<c:if test="${startPage > 1}">
-								<li><a href="?page=${startPage - 1}">&lt;</a></li>
-							</c:if>
-
-							<!-- 페이지 번호 출력 -->
-							<c:forEach var="i" begin="${startPage}" end="${endPage}">
-								<li><a href="?page=${i}"
-									style="${i == currentPage ? 'font-weight:bold;' : ''}">${i}</a></li>
-							</c:forEach>
-
-							<!-- 다음 페이지 그룹으로 이동 -->
-							<c:if test="${endPage < maxPages}">
-								<li><a href="?page=${endPage + 1}">&gt;</a></li>
-							</c:if>
-						</ul>
-					</div>
-
+					</c:if>
 				</div>
+
+				<div id="headNotice">
+					<div class="baseList-space">
+						<span class="baseList-sector">분류</span> <span
+							class="baseList-sector">제목</span> <span class="baseList-sector">글쓴이</span>
+						<span class="baseList-sector">등록일</span> <span
+							class="baseList-sector">추천</span>
+					</div>
+				</div>
+
+				<ul id="communityList">
+					<c:forEach var="community" items="${communityList}">
+						<li class="baseList-item">
+							<div class="baseList-space">
+								<span class="baseList-sector">${community.boardCate}</span> <a
+									href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${community.boardNumber}"
+									class="baseList-sector baseList-title">${community.boardTitle}</a>
+								<span class="baseList-sector">${community.memberNickname}</span>
+								<span class="baseList-sector">${community.boardRegistDate}</span>
+								<span class="baseList-sector">${community.recommendCount}</span>
+							</div>
+						</li>
+					</c:forEach>
+				</ul>
+
+				<!-- 페이지네이션 -->
+				<div class="pagination-container">
+					<ul class="community-pagenation">
+						<c:if test="${currentPage > 1}">
+							<li><a href="?page=${currentPage - 1}">&lt;</a></li>
+						</c:if>
+
+						<c:forEach var="i" begin="${startPage}" end="${endPage}">
+							<li><a href="?page=${i}"
+								class="${i == currentPage ? 'active' : ''}">${i}</a></li>
+						</c:forEach>
+
+						<c:if test="${currentPage < maxPages}">
+							<li><a href="?page=${currentPage + 1}">&gt;</a></li>
+						</c:if>
+					</ul>
+				</div>
+
+
 			</div>
 		</div>
 	</main>
 	<jsp:include page="/footer.jsp" />
 </body>
-
-
 <script
 	src="${pageContext.request.contextPath}/assets/js/community/comu-main.js"></script>
-	
-
 </html>
