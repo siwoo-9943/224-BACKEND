@@ -200,6 +200,13 @@
 	height: 0px;
 }
 
+.Btn{
+	width: 30px;
+	height: 30px;
+	border: 1px;
+	background: none;
+}
+
 .main-section-btn button {
 	margin-left: 10px;
 	font-size: 20px;
