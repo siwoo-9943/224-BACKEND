@@ -48,6 +48,9 @@ public class JoinOkController implements MemExecute {
 		// 데이터베이스에 회원 정보 저장
 		memberDAO.join(memberDTO);
 		System.out.println("저장완료");
+		
+		//
+		
 
 		// 결과처리
 		result.setRedirect(true);
