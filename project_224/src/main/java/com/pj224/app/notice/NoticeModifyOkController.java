@@ -31,7 +31,7 @@ public class NoticeModifyOkController implements MemExecute {
 
 	    // noticeNumber를 request에서 가져오기
 	    System.out.println(request.getAttribute("noticeNumber"));
-	    String noticeNumberString = (String) request.getAttribute("notice.noticeNumber");
+	    String noticeNumberString = (String) request.getAttribute("noticeNumber");
 	    System.out.println("디버깅 noticeNumber: " + noticeNumberString); // 디버깅용 로그
 	    
 
@@ -39,6 +39,7 @@ public class NoticeModifyOkController implements MemExecute {
 	        try {
 	            int noticeNumber = Integer.parseInt(noticeNumberString);
 	            noticeDTO.setNoticeNumber(noticeNumber);
+	            result.setPath(request.getContextPath() + "/notice/notice-admain.no");
 	        } catch (NumberFormatException e) {
 	            System.out.println("잘못된 noticeNumber : " + noticeNumberString);
 	            result.setRedirect(true);
@@ -53,10 +54,10 @@ public class NoticeModifyOkController implements MemExecute {
 	    }
 	    
 	    // 나머지 정보 설정
-	    noticeDTO.setNoticeTitle(request.getParameter("notice.noticeTitle"));
-	    noticeDTO.setNoticeContent(request.getParameter("notice.noticeContent"));
-        noticeDTO.setNoticeNumber(Integer.parseInt(request.getParameter("notice.noticeNumber")));
-        noticeDTO.setNoticeCate(request.getParameter("notice.noticeCate"));
+	    noticeDTO.setNoticeTitle(request.getParameter("noticeTitle"));
+	    noticeDTO.setNoticeContent(request.getParameter("noticeContent"));
+        noticeDTO.setNoticeNumber(Integer.parseInt(request.getParameter("noticeNumber")));
+        noticeDTO.setNoticeCate(request.getParameter("noticeCate"));
 
 
 	    // 디버깅을 위한 로그 추가
@@ -76,8 +77,6 @@ public class NoticeModifyOkController implements MemExecute {
 
 	    result.setRedirect(true);
 //	    result.setPath(request.getContextPath() + "/notice/notice-addetail.cm?noticeNumber=" + noticeDTO.getNoticeNumber());
-
-		request.getRequestDispatcher("/app/notice/notice-admodify.jsp").forward(request, response);
 	    return result;
 	}
 }

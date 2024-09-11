@@ -26,22 +26,22 @@
     
     <!-- 하나의 form으로 통합 -->
     <form action="${pageContext.request.contextPath}/notice/modifyOk.no" method="post">
-    	<input type="hidden" name="noticeNumber" value="${noticeNumber}"> 
+    	<input type="hidden" name="noticeNumber" value="${notice.noticeNumber}"> 
       <div class="notice-board-write-wrap">
         <div class="notice-board-write">
           <div class="notice-title">
-            <input id="notice-board-title" name="noticeTitle" type="text" value="${noticeTitle}" placeholder="제목을 입력해 주세요" />
+            <input id="notice-board-title" name="noticeTitle" type="text" value="${notice.noticeTitle}" placeholder="제목을 입력해 주세요" />
           </div>
           	<div class="notice-category">
 				<label for="notice-category-select">카테고리 선택:</label> 
 					<select	id="notice-category-select" name="noticeCate">
-					   <option value="안내" <c:if test="${noticeCate == '안내'}">selected</c:if>>안내</option>
-   					   <option value="이벤트" <c:if test="${noticeCate == '이벤트'}">selected</c:if>>이벤트</option>
+					   <option value="안내" <c:if test="${notice.noticeCate == '안내'}">selected</c:if>>안내</option>
+   					   <option value="이벤트" <c:if test="${notice.noticeCate == '이벤트'}">selected</c:if>>이벤트</option>
 					</select>
 			</div>
           <div class="notice-cont">
-            <textarea id="summernote" name="noticeContent">${noticeContent}</textarea>
-            <p id="letter-length" style="display: inline;"></p>/1000
+            <textarea id="summernote" name="noticeContent">${notice.noticeContent}</textarea>
+ <!--            <p id="letter-length" style="display: inline;"></p>/1000 -->
           </div>
         </div>
       </div>
