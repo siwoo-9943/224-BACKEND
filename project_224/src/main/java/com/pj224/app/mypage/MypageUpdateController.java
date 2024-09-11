@@ -34,9 +34,14 @@ public class MypageUpdateController implements MemExecute {
 		String memberGender = request.getParameter("memberGender");
 		String memberBirth = request.getParameter("memberBirth");
 		String memberTerms = request.getParameter("memberTerms");
-		System.out.println(memberNickName + "값 들어오는지 확인");
-		System.out.println(memberGender + "값 들어오는지 확인");
-		
+		System.out.println(memberNumber +"넘버 값 들어오셈");
+		System.out.println(memberNickName + "닉네임 들어오는지 확인");
+		System.out.println(memberPw +"비번 값 들어오셈");
+		System.out.println(memberName +"이름 값 들어오셈");
+		System.out.println(memberPhone +"번호 값 들어오셈");
+		System.out.println(memberGender +"성별 값 들어오셈");
+		System.out.println(memberBirth + "생일 들어오는지 확인");
+		System.out.println(memberTerms + "동의 들어오는지 확인");
 
 		int result = mypageDAO.MypageUpdate(memberNumber, memberNickName, memberPw, memberName, memberPhone, memberGender, memberBirth, memberTerms);
 
@@ -46,7 +51,7 @@ public class MypageUpdateController implements MemExecute {
         } else {
             System.out.println("정보 업데이트 실패ㅠ");
             request.setAttribute("error", "정보 업데이트에 실패했습니다.");
-//            request.getRequestDispatcher("/app/mypage/my-update.jsp").forward(request, response);
+            request.getRequestDispatcher("/app/mypage/my-update.jsp").forward(request, response);
         }
 
         return null;

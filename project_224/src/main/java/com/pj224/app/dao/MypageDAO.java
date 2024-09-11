@@ -77,9 +77,9 @@ public class MypageDAO {
 		        return 0; // 적절한 에러 처리
 		    }
 
-//		int memberNumber2 = Integer.parseInt(memberNumber);
-//		System.out.println(memberNumber2);
-//		mypageDTO.setMemberNumber(memberNumber2);
+		int memberNumber2 = Integer.parseInt(memberNumber);
+		System.out.println(memberNumber2);
+		mypageDTO.setMemberNumber(memberNumber2);
         mypageDTO.setMemberNickName(memberNickName);
         mypageDTO.setMemberPw(memberPw);
         mypageDTO.setMemberName(memberName);
