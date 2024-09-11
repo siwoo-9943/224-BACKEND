@@ -44,8 +44,6 @@
             </div>
          </div>
          
-
-
          <div class="notice-addetail-btuall">
             <%
             // memberNumber 값을 가져오는 로직이 필요합니다.
