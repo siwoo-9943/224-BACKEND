@@ -44,8 +44,6 @@
             </div>
          </div>
          
-
-
          <div class="notice-addetail-btuall">
             <%
             // memberNumber 값을 가져오는 로직이 필요합니다.
@@ -55,8 +53,7 @@
             <!-- memberNumber가 1일 때만 보이는 버튼 -->
             <c:if test="${sessionScope.member.memberNumber  == 1}">
                <button class="notice-addetail-modi" type="button">
-                  <a
-                     href="${pageContext.request.contextPath}/notice/modify.no?noticeNumber=${noticeshowdetail[0].noticeNumber}">수정</a>
+                  <a href="${pageContext.request.contextPath}/notice/modify.no?noticeNumber=${noticeshowdetail[0].noticeNumber}">수정</a>
                </button>
                <button class="notice-addetail-del" type="button"
                   onclick="openDeleteModal(${noticeshowdetail[0].noticeNumber})">
