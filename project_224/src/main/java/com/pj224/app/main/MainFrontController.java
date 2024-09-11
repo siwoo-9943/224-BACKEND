@@ -90,6 +90,8 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("검색어커뮤결과");
 			result = new SearchHotController().MemExecute(request, response);
 			System.out.println("검색어핫플결과");
+			result = new SearchNoticeController().MemExecute(request, response);
+			System.out.println("검색어핫플결과");
 //			response.sendRedirect("main-search.jsp");
 			request.getRequestDispatcher("main-search.jsp").forward(request, response);
 			System.out.println("페이지이동");

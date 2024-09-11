@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+.sub-form-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sub-form-box-title{
+  display: flex;
+  justify-content: center;
+
+}
+
+.sub-form-box{
+  display: flex;
+  justify-content: center;
+  /* width: 50%; */
+}
+
+.sub-form-inputbox{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-form-inputbox input{
+  margin: 10px;
+}
+
+.sub-nav-list{
+  display: flex;
+}
+
+.sub-nav-list li{
+  list-style: none;
+}
+
+.sub-nav-list button{
+  width: 90px;
+  margin: 3px;
+}
+
+.sub-btn{
+  width: 110px;
+  height: 30px;
+  background-color:  #2BCF81;
+  border-radius: 10px;
+}
+
+.selected {
+  background-color: #2BCF81; /* 선택된 버튼의 배경 색상 */
+  color: white; /* 선택된 버튼의 글자 색상 */
+}
+
+.mem-info{
+  display: flex;
+  margin-top: 20px;
+}
+
+.mem-info-type{
+  /* border: 1px solid gray; */
+  text-align: center;
+}
+
+.mem-info-box {
+  overflow: auto;
+  max-height: 250px;
+  margin: 1px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
+  width: 280px;
+}
+
+/*스크롤바 */
+.mem-info-box::-webkit-scrollbar {
+  width: 20px;
+}
+
+.mem-info-box::-webkit-scrollbar-thumb {
+  border: 6px solid white;
+  height: 40px;
+  background: #2BCF81;
+  border-radius: 10px;
+}
+
+.mem-info-box::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}

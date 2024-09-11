@@ -6,86 +6,71 @@
 <head>
 <meta charset="UTF-8">
 <title>지하철 도착 시간표</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/subway/subway-schedule.css" />
 </head>
 
 <body>
 	<%@ include file="../../header.jsp"%>
 	<main>
-
 		<div>
-		<h1>배차시간 조회</h1>
-			출발시간<input type="time">
-			도착시간<input type="time">
-			<button type="button">검색</button>
+			<div class="sub-form-box">
+				<form action="" method="get">
+					<div class="sub-form-box-title">
+						<h1>역 배차시간 조회</h1>
+					</div>
+					<div class="sub-form-box-area">
+						<nav>
+							<ul class="sub-nav-list">
+								<li><button type="button" class="location-btn selected"
+										data-value="강남">강남</button></li>
+								<li><button type="button" class="location-btn"
+										data-value="잠실">잠실</button></li>
+								<li><button type="button" class="location-btn"
+										data-value="홍대입구">홍대입구</button></li>
+								<li><button type="button" class="location-btn"
+										data-value="성수">성수</button></li>
+								<li><button type="button" class="location-btn"
+										data-value="문재">문재</button></li>
+								<li><button type="button" class="location-btn"
+										data-value="을지로입구">을지로입구</button></li>
+							</ul>
+						</nav>
 
+						<div class="sub-form-inputbox">
+							<input type="time" id="start">
+							<p>~</p>
+							<input type="time" id="end">
+							<input type="submit"
+								class="sub-btn" value="조회">
+						</div>
+					</div>
+					<div class="mem-info">
+						<div class="mem-info-type">
+							<h3>상행선</h3>
+							<div class="mem-info-box">
+								<section id="section1">
+								<!-- 배차시간 API 상행선 -->
+								</section>
+							</div>
+						</div>
+						<div class="mem-info-type">
+							<h3>하행선</h3>
+							<div class="mem-info-box">
+								<section id="section2">
+								<!-- 배차시간 API 하행선 -->
+								</section>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
-		<section id="section1"></section>
+
 	</main>
 	<%@ include file="../../footer.jsp"%>
 	<script>
-// JSON 파일 경로
-const jsonFilePath = "../../assets/json/jamsil.json";
-
-//JSON 데이터를 불러오는 함수
-function loadJSON() {
-    fetch(jsonFilePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('네트워크 응답이 좋지 않습니다');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('JSON 데이터:', data); // 전체 데이터 확인
-
-            if (data.SearchSTNTimeTableByIDService) {
-                const service = data.SearchSTNTimeTableByIDService;
-                
-                // SearchSTNTimeTableByIDService와 row가 있는지 확인
-                console.log('SearchSTNTimeTableByIDService:', service);
-                if (service.row) {
-                    console.log('row 데이터:', service.row); // row 데이터를 확인
-                    displayTrainInfo(service.row);
-                } else {
-                    displayError('row 데이터가 없습니다.');
-                }
-            } else {
-                displayError('SearchSTNTimeTableByIDService가 정의되지 않았습니다.');
-            }
-        })
-        .catch(error => {
-            console.error('JSON 파일을 불러오는 중 오류 발생:', error);
-        });
-}
-
-
-// 역 도착 및 출발 시간 정보를 표시하는 함수
-function displayTrainInfo(trainData) {
-    let section = document.getElementById('section1');
-    section.innerHTML = '<h2>잠실역 도착 및 출발 시간</h2>';
-
-    
-	for(i = 0; i < trainData.length; i++){
-		console.log('train: ' + trainData[i].ARRIVETIME);
-		const arriveTime = trainData[i].ARRIVETIME;
-		const leftTime = trainData[i].LEFTTIME;
-		
-	    const trainInfo = 
-	        '<div>' +
-	            '<p>도착 시간: ' + arriveTime + '</p>' + 
-	            '<p>출발 시간: ' + leftTime + '</p>' + 
-	            '<hr>' +
-	        '</div>';
-	    
-	    
-	    section.innerHTML += trainInfo;
-	}
-}
-
-
-// 페이지가 로드될 때 JSON 데이터를 불러옴
-document.addEventListener('DOMContentLoaded', loadJSON);
-
 </script>
 </body>
+<script src="${pageContext.request.contextPath}/assets/js/subway/subway-schedule.js"></script>
 </html>

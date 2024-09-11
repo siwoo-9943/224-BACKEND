@@ -60,6 +60,7 @@ public class SubwayFrontController extends HttpServlet {
 			break;
 		case "/subway/subway-schedule.sw":
 			System.out.println("2호선배차시간");
+			result = new SubwayTimeAPIController().MemExecute(request, response);
 			request.getRequestDispatcher("/app/subway/subway-schedule.jsp").forward(request, response);
 			break;
 

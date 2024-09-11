@@ -24,13 +24,62 @@ public class MainDTO {
 	private String searchInput;
 	private int memberNumber;
 	private String memberNickname;
+	
+	private int noticeNumber;
+	private String noticeCate;
+	private String noticeTitle;
+	private String noticeContent;
+	private String noticeRegistDate; 
 
-//	스크롤 고정
+
+
+	//	스크롤 고정
 	private Integer position;
 
-    // Getter와 Setter
+	//생성자
 	public MainDTO() {
 		super();
+	}
+	
+	// Getter와 Setter
+	public int getNoticeNumber() {
+		return noticeNumber;
+	}
+
+	public void setNoticeNumber(int noticeNumber) {
+		this.noticeNumber = noticeNumber;
+	}
+
+	public String getNoticeCate() {
+		return noticeCate;
+	}
+
+	public void setNoticeCate(String noticeCate) {
+		this.noticeCate = noticeCate;
+	}
+
+	public String getNoticeTitle() {
+		return noticeTitle;
+	}
+
+	public void setNoticeTitle(String noticeTitle) {
+		this.noticeTitle = noticeTitle;
+	}
+
+	public String getNoticeContent() {
+		return noticeContent;
+	}
+
+	public void setNoticeContent(String noticeContent) {
+		this.noticeContent = noticeContent;
+	}
+
+	public String getNoticeRegistDate() {
+		return noticeRegistDate;
+	}
+
+	public void setNoticeRegistDate(String noticeRegistDate) {
+		this.noticeRegistDate = noticeRegistDate;
 	}
 	
 	public Integer getPosition() {
@@ -215,7 +264,9 @@ public class MainDTO {
 				+ " likecount : " + likecount + " hotplaceNumber : " + hotplaceNumber + " memberNumber : "
 				+ memberNumber + " hotplaceAddress :" + hotplaceAddress + " hotplaceLink : " + hotplaceLink
 				+ " hotplaceAttractionContent : " + hotplaceAttractionContent + " hotplaceRestCuisine : "
-				+ hotplaceRestCuisine + " hotplaceRestMenu : " + hotplaceRestMenu;
+				+ hotplaceRestCuisine + " hotplaceRestMenu : " + hotplaceRestMenu + " noticeNumber : " + noticeNumber
+				+ " noticeCate : " + noticeCate + " noticeTitle : " + noticeTitle + " noticeContent : " + noticeContent
+				+ " noticeRegistDate : " + noticeRegistDate;
 
 	}
 
