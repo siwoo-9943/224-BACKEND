@@ -16,7 +16,6 @@
 
 <%@ include file="../../header.jsp"%>
 <body>
-<body>
 	<!-- 페이지의 메인 부분 -->
 	<div class="wrapper">
 		<div class="notice-admain-all">
@@ -53,27 +52,24 @@
 
 				<!-- 페이지네이션 -->
 				<div class="pagination-container">
-				    <ul class="notice-pagenation">
-				        <!-- 이전 페이지 그룹으로 이동 -->
-				        <c:if test="${startPage > 1}">
-				            <li><a href="?page=${startPage - 1}">&lt;</a></li>
-				        </c:if>
-				
-				        <!-- 페이지 번호 출력 -->
-				        <c:forEach var="i" begin="${startPage}" end="${endPage}">
-				            <li>
-				                <a href="?page=${i}" 
-				                   style="${i == currentPage ? 'font-weight:bold;' : ''}">
-				                    ${i}
-				                </a>
-				            </li>
-				        </c:forEach>
-				
-				        <!-- 다음 페이지 그룹으로 이동 -->
-				        <c:if test="${endPage < maxPages}">
-				            <li><a href="?page=${endPage + 1}">&gt;</a></li>
-				        </c:if>
-				    </ul>
+					<ul class="notice-pagenation">
+						<!-- 이전 페이지 그룹으로 이동 -->
+						<c:if test="${startPage > 1}">
+							<li><a href="?page=${startPage - 1}">&lt;</a></li>
+						</c:if>
+
+						<!-- 페이지 번호 출력 -->
+						<c:forEach var="i" begin="${startPage}" end="${endPage}">
+							<li><a href="?page=${i}"
+								style="${i == currentPage ? 'font-weight:bold;' : ''}"> ${i}
+							</a></li>
+						</c:forEach>
+
+						<!-- 다음 페이지 그룹으로 이동 -->
+						<c:if test="${endPage < maxPages}">
+							<li><a href="?page=${endPage + 1}">&gt;</a></li>
+						</c:if>
+					</ul>
 				</div>
 
 				<%
@@ -82,8 +78,7 @@
 				Integer memberNumber = (Integer) session.getAttribute("memberNumber");
 				%>
 				<!-- memberNumber가 1일 때만 보이는 버튼 -->
-				<c:if
-					test="${sessionScope.member.memberNumber  == 1}">
+				<c:if test="${sessionScope.member.memberNumber  == 1}">
 					<div class="notice-admain-btuall">
 						<button class="notice-admain-btu" type="button">
 							<a href="${pageContext.request.contextPath}/notice/write.no">
