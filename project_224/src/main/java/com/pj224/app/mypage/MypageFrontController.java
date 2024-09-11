@@ -73,7 +73,6 @@ public class MypageFrontController extends HttpServlet {
 			case "/mypage.my":
 				System.out.println("profile");
 				new MypageOkController().MemExecute(request, response);
-				request.getRequestDispatcher("/app/mypage/my-profile.jsp").forward(request, response);
 				break;
 			case "/app/mypage/passcheck.my":
 				System.out.println("비밀번호 확인 페이지");
@@ -95,13 +94,13 @@ public class MypageFrontController extends HttpServlet {
 	    	  
 	      }
 	    	  
-			if (result != null) {
-				if(result.isRedirect()) {
-					response.sendRedirect(result.getPath());
-				}else {
-					request.getRequestDispatcher(result.getPath()).forward(request, response);
-				}
-			}
+//			if (result != null) {
+//				if(result.isRedirect()) {
+//					response.sendRedirect(result.getPath());
+//				}else {
+//					request.getRequestDispatcher(result.getPath()).forward(request, response);
+//				}
+//			}
 
 		}
 

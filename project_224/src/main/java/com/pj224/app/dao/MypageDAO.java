@@ -77,9 +77,9 @@ public class MypageDAO {
 		        return 0; // 적절한 에러 처리
 		    }
 
-		int memberNumber2 = Integer.parseInt(memberNumber);
-		System.out.println(memberNumber2);
-		mypageDTO.setMemberNumber(memberNumber2);
+//		int memberNumber2 = Integer.parseInt(memberNumber);
+//		System.out.println(memberNumber2);
+//		mypageDTO.setMemberNumber(memberNumber2);
         mypageDTO.setMemberNickName(memberNickName);
         mypageDTO.setMemberPw(memberPw);
         mypageDTO.setMemberName(memberName);
@@ -90,6 +90,28 @@ public class MypageDAO {
 		
 		return sqlSession.update("mypage.MypageUpdate", mypageDTO);
 	}
+	
+	//쿠키 세션(로그인시 사용)
+		public int  UpdateOk(String memberNumber) {
+			MypageDTO mypageDTO = new MypageDTO();
+			
+			 try {
+			        if (memberNumber != null && !memberNumber.isEmpty()) {
+			            int memberNumber2 = Integer.parseInt(memberNumber);
+			            System.out.println(memberNumber2);
+			            mypageDTO.setMemberNumber(memberNumber2);
+			        } else {
+			            throw new IllegalArgumentException("memberNumber는 null 또는 빈 문자열일 수 없습니다.");
+			        }
+			    } catch (NumberFormatException e) {
+			        System.err.println("memberNumber 형변환 실패: " + e.getMessage());
+			        return 0; // 적절한 에러 처리
+			    }
+			 
+			 mypageDTO.setMemberNumber(memberNumber2);
+		      
+			 return 1;
+		}
 
 
 	}

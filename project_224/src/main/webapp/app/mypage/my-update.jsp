@@ -115,14 +115,15 @@
 
 								<div class="my-line"></div>
 								
-								<input type="hidden" value="${sessionScope.member.memberNumber}">
+								<form action="/updateProfile" method="post">
+								<input type="hidden" name="memberNumber" value="${sessionScope.member.memberNumber}">
 
 								<!-- 이벤트 수신 동의 -->
 								<div class="my-update-event">
 									<div class="my-update-evnetSelect-up">
 										<div class="my-update-value">선택약관동의</div>
 										<div class="my-update-evnetSelect-sub">
-											<input type="checkbox" name="memberTerms" value="">이벤트
+											<input type="checkbox" name="memberTerms" value="c">이벤트
 											등 혜택/정보 수신 동의(선택)
 										</div>
 									</div>

@@ -114,15 +114,6 @@ public class NoticeFrontController extends HttpServlet {
 			result = new NoticeModifyOkController().MemExecute(request, response);
 			break;
 		}
-		
-		// Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
-		if (result != null) {
-			if (result.isRedirect()) {
-				response.sendRedirect(result.getPath());
-			} else {
-				request.getRequestDispatcher(result.getPath()).forward(request, response);
-			}
-		}
 
 	}
 }
