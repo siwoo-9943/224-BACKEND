@@ -10,7 +10,7 @@ List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
 %>
 <%
 List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResults");
-%>
+%>z
 <!DOCTYPE html>
 <html>
 <head>
