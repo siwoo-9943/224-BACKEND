@@ -2,6 +2,7 @@ package com.pj224.app.main;
 
 import java.io.IOException;
 import java.rmi.ServerException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,33 +15,48 @@ import com.pj224.app.dto.MainDTO;
 
 public class MainLikeController implements MemExecute {
 
-    @Override
-    public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServerException, ServletException {
-    	// 세션에서 memberNumber 가져오기 (정수형으로 변환)
-        int memberNumber = (int) request.getSession().getAttribute("memberNumber");
-        // 요청 파라미터에서 hotplaceNumber 가져오기 (정수형으로 변환)
-        int hotplaceNumber = Integer.parseInt(request.getParameter("hotplaceNumber"));
-        
-        MainDAO mainDAO = new MainDAO();
-        MainDTO mainDTO = new MainDTO();
-        Result result = new Result();
-        mainDTO.setMemberNumber(memberNumber);
-        mainDTO.setHotplaceNumber(hotplaceNumber);
+	@Override
+	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServerException, ServletException {
+		// TODO Auto-generated method stub
 
+		// 클라이언트에서 전송된 데이터 받기
+		String memberNumberStr = request.getParameter("memberNumber");
+	    String hotplaceNumberStr = request.getParameter("hotplaceNumber");
+//	    String scrollPositionStr = request.getParameter("scrollPosition");
+	    
+	    System.out.println(memberNumberStr);
+	    System.out.println(hotplaceNumberStr);
+//	    System.out.println(scrollPositionStr);
 
-		// 찜하기 전 체크
-        MainDTO existingLike = mainDAO.likeCheck(memberNumber);
-        if (existingLike == null) {
-        	mainDAO.pickHotplace(mainDTO);
-//            sqlSession.commit(); // 변경사항 커밋
-        }
-        
-        
-        
-        result.setRedirect(false);
-	    result.setPath(request.getContextPath() + "/main-search.jsp");
-	    return result;
-        
-    }
+	    // 문자열을 int로 변환
+	    int memberNumber = Integer.parseInt(memberNumberStr);
+	    int hotplaceNumber = Integer.parseInt(hotplaceNumberStr);
+//	    int scrollPosition = Integer.parseInt(scrollPositionStr);
+	    
+	    // 변환된 데이터 확인
+	    System.out.println("Member Number: " + memberNumber);
+	    System.out.println("Hotplace Number: " + hotplaceNumber);
+//	    System.out.println("Scroll Position: " + scrollPosition);
+
+	    MainDTO mainDTO = new MainDTO();
+	    MainDAO mainDAO = new MainDAO();
+	    Result result = new Result();
+	    
+	    mainDTO.setMemberNumber(memberNumber);
+	    mainDTO.setHotplaceNumber(hotplaceNumber);
+	    
+	    request.setAttribute("memberNumber" , memberNumber);
+	    request.setAttribute("hotplaceNumber" , hotplaceNumber);
+//	    request.setAttribute("scrollPosition", scrollPosition);
+
+		System.out.println(mainDTO);		
+		
+		mainDAO.pickHotplace(mainDTO);
+	    
+		result.setRedirect(true);
+	    result.setPath(request.getContextPath() + "/main.mn?scrollPosition=\" + scrollPosition");
+		return result;
+	}
+
 }
