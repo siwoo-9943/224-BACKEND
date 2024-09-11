@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pj224.app.MemExecute;
 import com.pj224.app.Result;
-import com.pj224.app.dao.CommunityDAO;
 import com.pj224.app.dao.NoticeDAO;
-import com.pj224.app.dto.CommunityDTO;
 import com.pj224.app.dto.NoticeDTO;
 
 public class NoticeWriteOkController implements MemExecute {
@@ -29,8 +27,11 @@ public class NoticeWriteOkController implements MemExecute {
 		noticeDTO.setNoticeContent(request.getParameter("noticeContent"));
 		noticeDTO.setMemberNumber(1);
 //		noticeDTO.setMemberNumber(Integer.valueOf(request.getParameter("memberNumber")));
+		
+	    request.setAttribute("noticeCate", noticeDTO.getNoticeCate());
+	    request.setAttribute("noticeTitle", noticeDTO.getNoticeTitle());
+	    request.setAttribute("noticeContent", noticeDTO.getNoticeContent());
 
-		request.setAttribute("noticeCate", noticeDTO.getNoticeCate());
 		System.out.println(noticeDTO);
 		// 데이터베이스에 저장
 		noticeDAO.write(noticeDTO);

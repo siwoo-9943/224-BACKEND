@@ -53,8 +53,9 @@ public class NoticeListController implements MemExecute  {
 
 		   // 결과 처리
 		   Result result = new Result();
-		   result.setRedirect(false); 
-		   result.setPath(request.getContextPath() + "/app/notice/notice-admain.jsp");
+//		   result.setRedirect(false); 
+//		   result.setPath(request.getContextPath() + "/app/notice/notice-admain.jsp");
+		   System.out.println("실행확인");
 
 		   return result;
 	   }

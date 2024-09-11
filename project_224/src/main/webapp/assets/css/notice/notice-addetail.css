@@ -65,7 +65,6 @@
   -webkit-box-pack: end;
   justify-content: flex-end;
   display: flex;
-  cursor: pointer;
 }
 
 .notice-addetail-btuall a{
@@ -85,6 +84,7 @@
   color: rgb(255, 255, 255);
   background-color: #2bcf81;
   border: 0px none;
+  cursor: pointer;
 }
 
 
@@ -100,6 +100,7 @@
   background-color: #2bcf81;
   border: 0px none;
   transform: translate(-800px, 0px);
+  cursor: pointer;
 }
 
 .notice-addetail-del {
@@ -114,5 +115,6 @@
   background-color: #2bcf81;
   border: 0px none;
   transform: translate(-790px, 0px);
+  cursor: pointer;
 }
 
