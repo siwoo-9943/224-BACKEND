@@ -1,18 +1,15 @@
 package com.pj224.app.notice;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.pj224.app.Result;
 import com.pj224.app.dao.NoticeDAO;
 import com.pj224.app.dto.NoticeDTO;
-import com.pj224.app.main.MainLogoutController;
-import com.pj224.app.member.LoginOkController;
 
 /**
  * Servlet implementation class NoticeFrontController
