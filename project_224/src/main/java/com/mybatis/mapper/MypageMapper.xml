@@ -19,5 +19,23 @@
 		WHERE MEMBER_EMAIL = #{memberEmail} AND MEMBER_PW = #{memberPw}
 	</select>
 	
-  
+	<!-- 닉네임 중복값 확인 -->
+  	<select id="MycheckNicknameOk" parameterType="String" resultType="int">
+		SELECT COUNT(MEMBER_NICKNAME)
+		FROM TBL_MEMBER
+		WHERE MEMBER_NICKNAME = #{memberNickName}
+	</select>
+	
+	<!-- 업데이트 -->
+	<update id="MypageUpdate" parameterType="MypageDTO" >
+    UPDATE TBL_MEMBER
+    SET MEMBER_NICKNAME = #{memberNickName},
+        MEMBER_PW = #{memberPw},
+        MEMBER_NAME = #{memberName},
+        MEMBER_PHONE = #{memberPhone},
+        MEMBER_GENDER = #{memberGender},
+        MEMBER_BIRTH = #{memberBirth},
+        MEMBER_TERMS = #{memberTerms}
+    WHERE MEMBER_NUMBER = #{memberNumber}
+</update>
 </mapper>
