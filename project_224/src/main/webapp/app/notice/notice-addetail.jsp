@@ -55,8 +55,7 @@
             <c:if test="${sessionScope.member.memberNumber  == 1}">
                <button class="notice-addetail-modi" type="button">
                   <a
-                     href="${pageContext.request.contextPath}/notice/notice-admodify.no"></a>
-                  수정
+                     href="${pageContext.request.contextPath}/notice/modify.no?noticeNumber=${noticeshowdetail[0].noticeNumber}">수정</a>
                </button>
                <button class="notice-addetail-del" type="button"
                   onclick="openDeleteModal(${noticeshowdetail[0].noticeNumber})">
