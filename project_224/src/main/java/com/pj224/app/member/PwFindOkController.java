@@ -47,7 +47,7 @@ public class PwFindOkController implements MemExecute {
 			result.setRedirect(true);
 		} else {
 			System.out.println("비밀번호 찾기 실패");
-			response.sendRedirect(request.getContextPath() + "/app/member/mem-pw-find.jsp"); // 비밀번호찾기 값 없을시 재입력
+			response.sendRedirect(request.getContextPath() + "/app/member/mem-p w-find.jsp"); // 비밀번호찾기 값 없을시 재입력
 			result.setRedirect(true);
 		}
 
