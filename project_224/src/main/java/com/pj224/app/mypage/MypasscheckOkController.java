@@ -35,16 +35,16 @@ public class MypasscheckOkController implements MemExecute{
 	      
 	      System.out.println(isPasswordCorrect + "값 확인");
 	      
-	      if(isPasswordCorrect) {
+	      if(isPasswordCorrect != true) {
 			 
 			 System.out.println("비밀번호 확인 성공");
 			 request.getRequestDispatcher("/app/mypage/my-update.jsp").forward(request, response);
-	            result.setRedirect(false); // 포워딩이므로 false
+	            result.setRedirect(true); 
 	        } else {
 	            System.out.println("비밀번호 확인 실패");
 	            // 실패 페이지로 리다이렉트
 	            response.sendRedirect(request.getContextPath() + "/app/mypage/my-passcheck.jsp");
-	            result.setRedirect(true); // 리다이렉트이므로 true
+	            result.setRedirect(true);
 			}
 	      
 	      
