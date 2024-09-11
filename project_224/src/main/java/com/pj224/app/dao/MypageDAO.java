@@ -66,7 +66,7 @@ public class MypageDAO {
 		MypageDTO mypageDTO = new MypageDTO();
 		
 		 try {
-		        if (memberNumber != null || !memberNumber.isEmpty()) {
+		        if (memberNumber != null && !memberNumber.isEmpty()) {
 		            int memberNumber2 = Integer.parseInt(memberNumber);
 		            mypageDTO.setMemberNumber(memberNumber2);
 		        } else {
