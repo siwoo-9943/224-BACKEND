@@ -177,7 +177,7 @@ a {
 					<div class="comu-cont">
 						<textarea id="summernote" name="editordata">${boardContent.boardContent}</textarea>
 						<p id="letter-length" style="display: inline;"></p>
-						/100
+						
 					</div>
 				</div>
 			</div>

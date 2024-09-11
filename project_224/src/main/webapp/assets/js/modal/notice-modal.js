@@ -1,7 +1,6 @@
 $(document).ready(function() {
   const $modal = $('#notice-deleteModal');
   let currentNoticeNumber;
-
   // 삭제 모달 열기
  window.openDeleteModal = function(noticeNumber) {
   currentNoticeNumber = noticeNumber;
@@ -27,3 +26,4 @@ $(document).ready(function() {
     }
   });
 });
+
