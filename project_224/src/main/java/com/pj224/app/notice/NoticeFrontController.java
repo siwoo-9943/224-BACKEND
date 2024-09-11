@@ -38,7 +38,7 @@ public class NoticeFrontController extends HttpServlet {
 		// TODO Auto-generated method stub
 		doProcess(request, response);
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doProcess(request, response);
@@ -46,83 +46,82 @@ public class NoticeFrontController extends HttpServlet {
 	}
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String target = request.getRequestURI().substring(request.getContextPath().length());
-		Result result = null;
-		System.out.println(target);
+	        throws ServletException, IOException {
+	    String target = request.getRequestURI().substring(request.getContextPath().length());
+	    Result result = null;
+	    System.out.println(target);
 
-		HttpSession session = request.getSession();
-		Integer memberNumber = (Integer) session.getAttribute("memberNumber");
+	    HttpSession session = request.getSession();
+	    Integer memberNumber = (Integer) session.getAttribute("memberNumber");
 
-		switch (target) {
-		case "/notice/notice-admain.no":
-			System.out.println("글목록");
-			result = new NoticeListController().MemExecute(request, response);
-            request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
-			break;
-			
-		case "/notice/notice-addetail.no":
-			System.out.println("글상세");
-			result = new NoticeDetailController().MemExecute(request, response);
-			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
-			break;
-			
-		case "/notice/write.no":
-			System.out.println("write");
-			request.getRequestDispatcher("/app/notice/notice-adwrite.jsp").forward(request, response);
-			break;
-			
-		case "/notice/writeOk.no":
-			System.out.println("writeOk");
-			result = new NoticeWriteOkController().MemExecute(request, response);
-			break;
-			
-		case "/notice/delete.no":
-			System.out.println("delete");
-			result = new NoticeDeleteController().MemExecute(request, response);
-			break;
+	
+	        switch (target) {
+	        case "/notice/notice-admain.no":
+	            System.out.println("글목록");
+	            result = new NoticeListController().MemExecute(request, response);
+	            request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
+	            break;
 
-		case "/notice/modify.no":
-			System.out.println("modify");
-			String noticeNumber = request.getParameter("noticeNumber");
-			
-			if (noticeNumber != null && !noticeNumber.isEmpty()) {
-				try {
-					int noticeNum = Integer.parseInt(noticeNumber);
-					NoticeDTO notice = noticeDAO.getNoticeByNoticeNumber(noticeNum);
-					System.out.println(notice);
-					if (notice != null) {
-						request.setAttribute("notice", notice);
-//						request.getRequestDispatcher("/app/notice/notice-admodify.jsp").forward(request, response);
-						result = new NoticeModifyOkController().MemExecute(request, response);
-					} else {
-						System.out.println("해당 게시글을 찾을 수 없습니다: " + noticeNumber);
-						response.sendRedirect(request.getContextPath() + "/notice/notice-admain.no?error=notFound");
-					}
-				} catch (NumberFormatException e) {
-					System.out.println("잘못된 noticeNumber 형식: " + noticeNumber);
-					response.sendRedirect(request.getContextPath() + "/notice/notice-admain.no?error=notFound");
-				}
-			} else {
-				System.out.println("noticeNumber가 없습니다.");
-				response.sendRedirect(request.getContextPath() + "/notice/notice-admain.no?error=notFound");
-			}
-			break;
-			
-		case "/notice/modifyOk.no":
-			System.out.println("글 수정 완료");
-			result = new NoticeModifyOkController().MemExecute(request, response);
-			break;
-		}
-		
-		// Result 객체가 null이 아닌 경우, 리다이렉트 또는 포워드 처리
-		if (result != null) {
-			if (result.isRedirect()) {
-				response.sendRedirect(result.getPath());
-			} else {
-				request.getRequestDispatcher(result.getPath()).forward(request, response);
-			}
-		}
+	        case "/notice/notice-addetail.no":
+	            System.out.println("글상세");
+	            result = new NoticeDetailController().MemExecute(request, response);
+	            request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
+	            break;
 
+	        case "/notice/write.no":
+	            System.out.println("write");
+	            request.getRequestDispatcher("/app/notice/notice-adwrite.jsp").forward(request, response);
+	            break;
+
+	        case "/notice/writeOk.no":
+	            System.out.println("writeOk");
+	            result = new NoticeWriteOkController().MemExecute(request, response);
+	            break;
+
+	        case "/notice/delete.no":
+	            System.out.println("delete");
+	            result = new NoticeDeleteController().MemExecute(request, response);
+	            break;
+
+	        case "/notice/modify.no":
+	            System.out.println("modify");
+	            String noticeNumber = request.getParameter("noticeNumber");
+
+	            if (noticeNumber != null && !noticeNumber.isEmpty()) {
+	                try {
+	                    int noticeNum = Integer.parseInt(noticeNumber);
+	                    NoticeDTO notice = noticeDAO.getNoticeByNoticeNumber(noticeNum);
+	                    System.out.println(notice);
+	                    if (notice != null) {
+	                        request.setAttribute("notice", notice);
+	                        // result = new NoticeModifyOkController().MemExecute(request, response);
+	                        // 포워드 시 필요한 경우 아래로 수정
+	                        request.getRequestDispatcher("/app/notice/notice-admodify.jsp").forward(request, response);
+	                    } else {
+	                        System.out.println("해당 게시글을 찾을 수 없습니다: " + noticeNumber);
+	                        response.sendRedirect(request.getContextPath() + "/notice/notice-admain.no?error=notFound");
+	                    }
+	                } catch (NumberFormatException e) {
+	                    System.out.println("잘못된 noticeNumber 형식: " + noticeNumber);
+	                    response.sendRedirect(request.getContextPath() + "/notice/notice-admain.no?error=notFound");
+	                }
+	            } else {
+	                System.out.println("noticeNumber가 없습니다.");
+	                response.sendRedirect(request.getContextPath() + "/notice/notice-admain.no?error=notFound");
+	            }
+	            break;
+
+	        case "/notice/modifyOk.no":
+	            System.out.println("글 수정 완료");
+	            result = new NoticeModifyOkController().MemExecute(request, response);
+	            break;
+
+	        default:
+	            response.sendError(HttpServletResponse.SC_NOT_FOUND); // 404 Not Found
+	            break;
+	        
+	        }
+	    
+	    
 	}
 }
