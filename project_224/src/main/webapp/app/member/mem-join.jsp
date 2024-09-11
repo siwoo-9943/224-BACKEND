@@ -72,12 +72,12 @@
           <div class="join-info">
             <div class="join-info-cate">휴대폰＊</div>
             <input type="text" name="memberPhone" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
-            <button type="button" class="e-mailok"> 인증번호 받기</button>
+            <button type="button" class="e-mailok" id="checkNumberBtn"> 인증번호 받기</button>
           </div>
           <!-- 휴대폰 인증 -->
           <div class="join-info">
             <div class="join-info-cate">인증번호＊</div>
-            <input type="text" name="memberPhoneInput" id="join-number" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
+            <input type="text" name="memberPhoneInput" id="join-number2" placeholder="&nbsp;&nbsp; 숫자만 입력해주세요">
           </div>
           <!-- 성별 -->
           <div class="join-info">
