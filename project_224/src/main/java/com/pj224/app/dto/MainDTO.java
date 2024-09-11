@@ -25,8 +25,20 @@ public class MainDTO {
 	private int memberNumber;
 	private String memberNickname;
 
+//	스크롤 고정
+	private Integer position;
+
+    // Getter와 Setter
 	public MainDTO() {
 		super();
+	}
+	
+	public Integer getPosition() {
+		return position;
+	}
+	
+	public void setPosition(Integer position) {
+		this.position = position;
 	}
 
 	public String getHotplaceHours() {

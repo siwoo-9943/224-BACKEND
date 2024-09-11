@@ -6,43 +6,25 @@
 	<!-- 검색-커뮤니티 -->
 	<select id="selectcm" resultType="MainDTO">
 		SELECT
-		Tb.BOARD_TITLE ,
-		COUNT(DISTINCT TC.COMMENT_NUMBER) AS
-		COMMENT_COUNT,
-		TB.BOARD_CONTENT,
-		TB.BOARD_CATE,
-		TB.BOARD_REGIST_DATE,
-		COUNT(DISTINCT TR.MEMBER_NUMBER) AS
-		RECOMMEND_COUNT,
-		TB.BOARD_NUMBER
-		FROM
-		TBL_BOARD TB
-		LEFT JOIN
-		TBL_MEMBER TM
-		ON
-		TB.member_number = TM.member_number
-		LEFT JOIN
-		TBL_COMMENT TC ON
-		TB.board_number = TC.board_number
-		LEFT JOIN
-		TBL_RECOMMEND TR ON
-		tb.board_number = tr.board_number
-		WHERE
-		(Tb.BOARD_TITLE LIKE '%' ||
-		#{searchInput} || '%' OR tb.BOARD_CONTENT
-		LIKE '%' || #{searchInput} ||
-		'%')
-		AND tb.BOARD_NUMBER BETWEEN 1 AND 5
-		GROUP BY
 		TB.BOARD_NUMBER,
-		TB.BOARD_CATE,
 		TB.BOARD_TITLE,
 		TB.BOARD_CONTENT,
+		TB.BOARD_CATE,
 		TB.BOARD_REGIST_DATE,
-		TM.MEMBER_NUMBER,
-		TB.BOARD_NUMBER
+		(SELECT COUNT(*) FROM TBL_COMMENT TC WHERE TC.BOARD_NUMBER =
+		TB.BOARD_NUMBER)
+		AS COMMENT_COUNT,
+		(SELECT COUNT(*) FROM TBL_RECOMMEND
+		TR WHERE TR.BOARD_NUMBER =
+		TB.BOARD_NUMBER) AS RECOMMEND_COUNT
+		FROM
+		TBL_BOARD TB
+		WHERE
+		(TB.BOARD_TITLE LIKE '%' || #{searchInput} || '%' OR
+		TB.BOARD_CONTENT LIKE '%' ||
+		#{searchInput} || '%')
 		ORDER BY
-		recommend_count DESC
+		RECOMMEND_COUNT DESC
 	</select>
 
 	<select id="selecthp" resultType="MainDTO">
@@ -167,12 +149,18 @@
 	</select>
 
 	<select id="likecheck" resultType="MainDTO">
-		SELECT TM.MEMBER_NUMBER ,
-		TL.HOTPLACE_NUMBER
-		FROM TBL_MEMBER TM
+		SELECT TL.MEMBER_NUMBER
+		,TL.HOTPLACE_NUMBER
+		FROM TBL_HOTPLACE TH
 		LEFT JOIN TBL_LIKE TL ON
-		TM.MEMBER_NUMBER = TL.MEMBER_NUMBER
-		WHERE TM.MEMBER_NUMBER = #{memberNumber};
+		TL.HOTPLACE_NUMBER
+		=
+		TH.HOTPLACE_NUMBER
+		LEFT JOIN TBL_MEMBER TM ON
+		TM.MEMBER_NUMBER =
+		TH.MEMBER_NUMBER
+		WHERE tl.MEMBER_NUMBER =
+		#{memberNumber}
 	</select>
 
 	<insert id="pickhp" parameterType="MainDTO">
@@ -184,7 +172,8 @@
 
 	<delete id="unpickhp" parameterType="MainDTO">
 		DELETE FROM TBL_LIKE
-		WHERE HOTPLACE_NUMBER = #{hotplaceNumber} AND
+		WHERE
+		HOTPLACE_NUMBER = #{hotplaceNumber} AND
 		MEMBER_NUMBER =
 		#{memberNumber}
 	</delete>
