@@ -16,7 +16,6 @@
 
 <%@ include file="../../header.jsp"%>
 <body>
-<body>
 	<!-- 페이지의 메인 부분 -->
 	<div class="wrapper">
 		<div class="notice-admain-all">
