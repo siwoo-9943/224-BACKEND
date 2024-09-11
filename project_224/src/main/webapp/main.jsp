@@ -15,6 +15,7 @@ List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResult
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/main.css" />
+	
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style type="text/css">
 a {

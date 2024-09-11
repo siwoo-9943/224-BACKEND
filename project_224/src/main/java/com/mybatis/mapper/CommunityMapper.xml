@@ -34,6 +34,42 @@
 		BOARD_NUMBER DESC
 	</select>
 
+	<!-- 페이지네이션을 위한 쿼리 추가 -->
+	<select id="selectAllPaged" parameterType="map"
+		resultType="CommunityDTO">
+		SELECT * FROM (
+		SELECT A.*, ROWNUM RN FROM (
+		SELECT
+		B.BOARD_NUMBER, B.BOARD_CATE, B.BOARD_TITLE,
+		B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, B.BOARD_CONTENT,
+		M.MEMBER_NUMBER, M.MEMBER_NICKNAME,
+		COUNT(DISTINCT C.COMMENT_NUMBER) AS COMMENT_COUNT,
+		COUNT(DISTINCT R.MEMBER_NUMBER) AS RECOMMEND_COUNT
+		FROM
+		TBL_BOARD B
+		LEFT JOIN
+		TBL_MEMBER M ON B.MEMBER_NUMBER = M.MEMBER_NUMBER
+		LEFT JOIN
+		TBL_COMMENT C ON B.BOARD_NUMBER = C.BOARD_NUMBER
+		LEFT JOIN
+		TBL_RECOMMEND R ON B.BOARD_NUMBER = R.BOARD_NUMBER
+		GROUP BY
+		B.BOARD_NUMBER, B.BOARD_CATE, B.BOARD_TITLE, B.BOARD_CONTENT,
+		B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, M.MEMBER_NUMBER, M.MEMBER_NICKNAME
+		ORDER BY
+		B.BOARD_NUMBER DESC
+		) A
+		WHERE ROWNUM &lt;= #{end}
+		)
+		WHERE RN > #{start}
+	</select>
+
+	<!-- 전체 게시글 수를 가져오는 쿼리 -->
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*) FROM TBL_BOARD
+	</select>
+
+
 
 	<insert id="insert" parameterType="CommunityDTO">
 		insert into tbl_board
@@ -47,8 +83,9 @@
 		SELECT
 		B.BOARD_NUMBER, B.BOARD_CATE, B.BOARD_TITLE,
 		B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, B.BOARD_CONTENT,
-		M.MEMBER_NUMBER,
-		(SELECT COUNT(*) FROM TBL_COMMENT C WHERE
+		M.MEMBER_NUMBER, M.MEMBER_NICKNAME,
+		(SELECT COUNT(*) FROM TBL_COMMENT C
+		WHERE
 		C.BOARD_NUMBER = B.BOARD_NUMBER) AS
 		COMMENT_COUNT,
 		(SELECT
@@ -89,7 +126,8 @@
 	</delete>
 
 	<delete id="deleteCommentsByBoardNumber" parameterType="int">
-		DELETE FROM TBL_COMMENT WHERE BOARD_NUMBER = #{boardNumber}
+		DELETE
+		FROM TBL_COMMENT WHERE BOARD_NUMBER = #{boardNumber}
 	</delete>
 
 	<select id="commentList" parameterType="int"
@@ -150,7 +188,7 @@
 		VALUES (#{boardNumber},
 		#{memberNumber})
 	</insert>
-	<!--  특정 게시글에 대한 사용자의 추천 여부 확인 -->
+	<!-- 특정 게시글에 대한 사용자의 추천 여부 확인 -->
 	<select id="hasAlreadyRecommended" parameterType="map"
 		resultType="int">
 		SELECT COUNT(*)
@@ -158,7 +196,7 @@
 		WHERE BOARD_NUMBER =
 		#{boardNumber} AND MEMBER_NUMBER = #{memberNumber}
 	</select>
-	<!--  특정 게시글의 추천 수 조회 -->
+	<!-- 특정 게시글의 추천 수 조회 -->
 	<select id="getRecommendCount" parameterType="int"
 		resultType="int">
 		SELECT COUNT(*)

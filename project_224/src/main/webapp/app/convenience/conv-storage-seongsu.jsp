@@ -32,7 +32,7 @@
         <div class="conv-storage-content-name" style="margin-bottom: 10px;">
           <h1 style="display: inline; margin: 0;">성수역 </h2>
         </div>
-        <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 256px; width: 256px; margin-bottom: 0px;">
+        <img src="${pageContext.request.contextPath}/assets/images/conv-seongsu.png" style="height: 256px; width: 256px; margin-bottom: 0px;">
       </div>
       <div class="conv-storage-content-center">
         <div class="conv-storage-content-center-text">
