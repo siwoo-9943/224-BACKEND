@@ -162,5 +162,18 @@ $(document).ready(function() {
 	});
 });
 
+//문자인증발송
+$(document).ready(function() {
+	$('#checkNumberBtn').on('click', function() {
+		console.log("인증문자발송");
+		alert("인증문자가 발송되었습니다.");
+
+		$.ajax({
+			url: "/member/joinSMS.me",
+		});
+
+	});
+});
+
 
 
