@@ -99,6 +99,10 @@ public class MemberFrontController extends HttpServlet {
 			System.out.println("pwUpdateOk");
 			new PwUpdateController().MemExecute(request, response);
 			break;
+		case "/member/joinSMS.me":
+			System.out.println("joinSMSOK");
+			new JoinSMSController().MemExecute(request, response);
+			break;
 		}
 
 		if (result != null) {
