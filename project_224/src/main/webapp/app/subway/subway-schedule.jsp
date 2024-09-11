@@ -9,12 +9,20 @@
 </head>
 
 <body>
-	<section id="section1">
+	<%@ include file="../../header.jsp"%>
+	<main>
 
-	</section>
-<%@ include file="../../footer.jsp"%>
+		<div>
+		<h1>배차시간 조회</h1>
+			출발시간<input type="time">
+			도착시간<input type="time">
+			<button type="button">검색</button>
 
-<script>
+		</div>
+		<section id="section1"></section>
+	</main>
+	<%@ include file="../../footer.jsp"%>
+	<script>
 // JSON 파일 경로
 const jsonFilePath = "../../assets/json/jamsil.json";
 
