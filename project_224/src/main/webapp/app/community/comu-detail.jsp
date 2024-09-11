@@ -39,7 +39,7 @@
 								<div class="topTitle-box">
 									<span class="topTitle-profile"></span>
 									<ul class="topTitle-mainbox">
-										<li class="topTitle-name"><strong>${communitycomudetail.memberNumber}</strong>
+										<li class="topTitle-name"><strong>${communitycomudetail.memberNickname}</strong>
 											<small>등록일 ${communitycomudetail.boardRegistDate}</small></li>
 									</ul>
 								</div>

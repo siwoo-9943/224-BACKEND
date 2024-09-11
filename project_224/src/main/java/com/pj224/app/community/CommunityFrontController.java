@@ -40,7 +40,13 @@ public class CommunityFrontController extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+<<<<<<< HEAD
 		request.setCharacterEncoding("UTF-8");
+=======
+		
+		request.setCharacterEncoding("UTF-8");
+		
+>>>>>>> main
 		System.out.println(request.getContextPath());
 		System.out.println(request.getRequestURI());
 

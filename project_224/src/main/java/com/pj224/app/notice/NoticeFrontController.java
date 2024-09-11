@@ -50,10 +50,7 @@ public class NoticeFrontController extends HttpServlet {
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		Result result = null;
 		System.out.println(target);
-
-		HttpSession session = request.getSession();
-		Integer memberNumber = (Integer) session.getAttribute("memberNumber");
-
+		
 		switch (target) {
 		case "/notice/notice-admain.no":
 			System.out.println("글목록");
