@@ -17,33 +17,22 @@
 			<div class="sub-form-box">
 				<form action="" method="get">
 					<div class="sub-form-box-title">
-						<h1>역 배차시간 조회</h1>
+						<h1 id="station"></h1>
+						<h1>배차시간표</h1>
 					</div>
 					<div class="sub-form-box-area">
 						<nav>
 							<ul class="sub-nav-list">
-								<li><button type="button" class="location-btn selected"
-										data-value="강남">강남</button></li>
-								<li><button type="button" class="location-btn"
-										data-value="잠실">잠실</button></li>
-								<li><button type="button" class="location-btn"
-										data-value="홍대입구">홍대입구</button></li>
-								<li><button type="button" class="location-btn"
-										data-value="성수">성수</button></li>
-								<li><button type="button" class="location-btn"
-										data-value="문재">문재</button></li>
-								<li><button type="button" class="location-btn"
-										data-value="을지로입구">을지로입구</button></li>
+								<li><button type="button" class="location-btn" data-value="강남" onclick="onLocationButtonClick('강남',this)">강남</button></li>
+								<li><button type="button" class="location-btn" data-value="잠실" onclick="onLocationButtonClick('잠실',this)">잠실</button></li>
+								<li><button type="button" class="location-btn" data-value="홍대입구" onclick="onLocationButtonClick('홍대입구',this)">홍대입구</button></li>
+								<li><button type="button" class="location-btn" data-value="성수" onclick="onLocationButtonClick('성수',this)">성수</button></li>
+								<li><button type="button" class="location-btn" data-value="문래" onclick="onLocationButtonClick('문래',this)">문래</button></li>
+								<li><button type="button" class="location-btn" data-value="을지로입구" onclick="onLocationButtonClick('을지로입구',this)">을지로입구</button></li>
 							</ul>
 						</nav>
 
-						<div class="sub-form-inputbox">
-							<input type="time" id="start">
-							<p>~</p>
-							<input type="time" id="end">
-							<input type="submit"
-								class="sub-btn" value="조회">
-						</div>
+						
 					</div>
 					<div class="mem-info">
 						<div class="mem-info-type">

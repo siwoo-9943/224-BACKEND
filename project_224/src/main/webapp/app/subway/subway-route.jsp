@@ -11,8 +11,9 @@
 <%@ include file="../../header.jsp"%>
 <body>
 <div class="sub-map" style="text-align: center;">
+<h1>2호선 지하철 노선도</h1>
     <div style="width: 70%; display: inline-block;">
-      <img src="${pageContext.request.contextPath }/assets/images/sub-01.png" style="width:70%">
+      <img src="${pageContext.request.contextPath }/assets/images/subwayLine2.png" style="width:70%">
     </div>
   </div>
 

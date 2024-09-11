@@ -1,95 +1,105 @@
 @charset "UTF-8";
 
-.sub-form-box{
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.sub-form-box {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
 
-.sub-form-box-title{
-  display: flex;
-  justify-content: center;
-
+.sub-form-box-title {
+	display: flex;
+	justify-content: center;
 }
 
-.sub-form-box{
-  display: flex;
-  justify-content: center;
-  /* width: 50%; */
+.sub-form-box-title h1{
+	margin: 10px;
 }
 
-.sub-form-inputbox{
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.sub-form-box {
+	display: flex;
+	justify-content: center;
+	/* width: 50%; */
 }
 
-.sub-form-inputbox input{
-  margin: 10px;
+.sub-form-inputbox {
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.sub-nav-list{
-  display: flex;
+.sub-form-inputbox input {
+	margin: 10px;
 }
 
-.sub-nav-list li{
-  list-style: none;
+.sub-nav-list {
+	display: flex;
 }
 
-.sub-nav-list button{
-  width: 90px;
-  margin: 3px;
+.sub-nav-list li {
+	list-style: none;
 }
 
-.sub-btn{
-  width: 110px;
-  height: 30px;
-  background-color:  #2BCF81;
-  border-radius: 10px;
+.sub-nav-list button {
+	width:110px;
+	margin: 3px;
+	border: 1px solid #2BCF81;
+	font-size: large;
+	
 }
 
-.selected {
-  background-color: #2BCF81; /* 선택된 버튼의 배경 색상 */
-  color: white; /* 선택된 버튼의 글자 색상 */
+.sub-btn {
+	width: 110px;
+	height: 30px;
+	background-color: #2BCF81;
+	border-radius: 10px;
 }
 
-.mem-info{
-  display: flex;
-  margin-top: 20px;
+.mem-info {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
 
-.mem-info-type{
-  /* border: 1px solid gray; */
-  text-align: center;
+.mem-info-type {
+	/* border: 1px solid gray; */
+	text-align: center;
 }
 
 .mem-info-box {
-  overflow: auto;
-  max-height: 250px;
-  margin: 1px;
-  padding: 15px 15px 15px 15px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  color: gray;
-  font-size: 13px;
-  font-weight: 600;
-  width: 280px;
+	overflow: auto;
+	max-height: 490px;
+	margin: 1px;
+	padding: 15px 15px 15px 15px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	color: gray;
+	font-size: 15px;
+	font-weight: 600;
+	width: 280px;
 }
 
 /*스크롤바 */
 .mem-info-box::-webkit-scrollbar {
-  width: 20px;
+	width: 20px;
 }
 
 .mem-info-box::-webkit-scrollbar-thumb {
-  border: 6px solid white;
-  height: 40px;
-  background: #2BCF81;
-  border-radius: 10px;
+	border: 6px solid white;
+	height: 40px;
+	background: #2BCF81;
+	border-radius: 10px;
 }
 
 .mem-info-box::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: transparent;
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+/*클릭시 효과*/
+.active {
+	background-color: #2BCF81;
+	/* 클릭 시 버튼 색상 */
+	color: white;
+	/* 텍스트 색상 변경 */
 }
