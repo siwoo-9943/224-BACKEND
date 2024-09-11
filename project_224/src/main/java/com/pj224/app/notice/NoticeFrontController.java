@@ -75,11 +75,25 @@ public class NoticeFrontController extends HttpServlet {
 		case "/notice/writeOk.no":
 			System.out.println("writeOk");
 			result = new NoticeWriteOkController().MemExecute(request, response);
+			if (result != null) {
+				if (result.isRedirect()) {
+					response.sendRedirect(result.getPath());
+				} else {
+					request.getRequestDispatcher(result.getPath()).forward(request, response);
+				}
+			}
 			break;
 			
 		case "/notice/delete.no":
 			System.out.println("delete");
 			result = new NoticeDeleteController().MemExecute(request, response);
+			if (result != null) {
+				if (result.isRedirect()) {
+					response.sendRedirect(result.getPath());
+				} else {
+					request.getRequestDispatcher(result.getPath()).forward(request, response);
+				}
+			}
 			break;
 
 		case "/notice/modify.no":
@@ -93,8 +107,8 @@ public class NoticeFrontController extends HttpServlet {
 					System.out.println(notice);
 					if (notice != null) {
 						request.setAttribute("notice", notice);
-//						request.getRequestDispatcher("/app/notice/notice-admodify.jsp").forward(request, response);
-						result = new NoticeModifyOkController().MemExecute(request, response);
+						request.getRequestDispatcher("/app/notice/notice-admodify.jsp").forward(request, response);
+//						result = new NoticeModifyOkController().MemExecute(request, response);
 					} else {
 						System.out.println("해당 게시글을 찾을 수 없습니다: " + noticeNumber);
 						response.sendRedirect(request.getContextPath() + "/notice/notice-admain.no?error=notFound");
@@ -111,9 +125,25 @@ public class NoticeFrontController extends HttpServlet {
 			
 		case "/notice/modifyOk.no":
 			System.out.println("글 수정 완료");
+			request.setAttribute("noticeNumber", request.getParameter("noticeNumber"));
+			request.setAttribute("noticeContent", request.getParameter("noticeContent"));
+			request.setAttribute("noticeTitle", request.getParameter("noticeTitle"));
+			request.setAttribute("noticeCate", request.getParameter("noticeCate"));
 			result = new NoticeModifyOkController().MemExecute(request, response);
+			
+			if (result != null) {
+				if (result.isRedirect()) {
+					response.sendRedirect(result.getPath());
+				} else {
+					request.getRequestDispatcher(result.getPath()).forward(request, response);
+				}
+			}
 			break;
 		}
+<<<<<<< HEAD
+=======
+		
+>>>>>>> main
 
 	}
 }
