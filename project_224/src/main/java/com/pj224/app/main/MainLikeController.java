@@ -15,37 +15,48 @@ import com.pj224.app.dto.MainDTO;
 
 public class MainLikeController implements MemExecute {
 
-    @Override
-    public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServerException, ServletException {
-    	
-    	
-    	MainDAO mainDAO = new MainDAO();
-		MainDTO mainDTO = new MainDTO();
-		Result result = new Result();
-		try {
-			int membersessionNum = (int) request.getSession().getAttribute("memberNumber");
-			System.out.println("1번 세션쿠키" + membersessionNum);
+	@Override
+	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServerException, ServletException {
+		// TODO Auto-generated method stub
 
-			int hotplaceNumber = Integer.parseInt(request.getParameter("hotplaceNumber"));
-			
-			mainDTO.setMemberNumber(membersessionNum);
-			mainDTO.setHotplaceNumber(hotplaceNumber);
+		// 클라이언트에서 전송된 데이터 받기
+		String memberNumberStr = request.getParameter("memberNumber");
+	    String hotplaceNumberStr = request.getParameter("hotplaceNumber");
+//	    String scrollPositionStr = request.getParameter("scrollPosition");
+	    
+	    System.out.println(memberNumberStr);
+	    System.out.println(hotplaceNumberStr);
+//	    System.out.println(scrollPositionStr);
 
-			System.out.println(mainDTO);		
-			
-			List<MainDTO> memCheckLike = mainDAO.likeCheck(membersessionNum, hotplaceNumber);
-			System.out.println(memCheckLike);
-			System.out.println(mainDTO);
-			
-			request.setAttribute("memCheckLike", memCheckLike);
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NullPointerException e) {
-			e.printStackTrace();		
-		}
+	    // 문자열을 int로 변환
+	    int memberNumber = Integer.parseInt(memberNumberStr);
+	    int hotplaceNumber = Integer.parseInt(hotplaceNumberStr);
+//	    int scrollPosition = Integer.parseInt(scrollPositionStr);
+	    
+	    // 변환된 데이터 확인
+	    System.out.println("Member Number: " + memberNumber);
+	    System.out.println("Hotplace Number: " + hotplaceNumber);
+//	    System.out.println("Scroll Position: " + scrollPosition);
 
-        return result;
-    }
+	    MainDTO mainDTO = new MainDTO();
+	    MainDAO mainDAO = new MainDAO();
+	    Result result = new Result();
+	    
+	    mainDTO.setMemberNumber(memberNumber);
+	    mainDTO.setHotplaceNumber(hotplaceNumber);
+	    
+	    request.setAttribute("memberNumber" , memberNumber);
+	    request.setAttribute("hotplaceNumber" , hotplaceNumber);
+//	    request.setAttribute("scrollPosition", scrollPosition);
+
+		System.out.println(mainDTO);		
+		
+		mainDAO.pickHotplace(mainDTO);
+	    
+		result.setRedirect(true);
+	    result.setPath(request.getContextPath() + "/main.mn?scrollPosition=\" + scrollPosition");
+		return result;
+	}
+
 }

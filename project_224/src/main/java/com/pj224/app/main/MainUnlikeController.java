@@ -12,28 +12,42 @@ import com.pj224.app.Result;
 import com.pj224.app.dao.MainDAO;
 import com.pj224.app.dto.MainDTO;
 
-public class MainUnlikeController implements MemExecute{
+public class MainUnlikeController implements MemExecute {
 
 	@Override
 	public Result MemExecute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServerException, ServletException {
-		Integer memberNumber = (Integer) request.getSession().getAttribute("memberNumber");
-        if (memberNumber == null) {
-            throw new ServletException("회원 정보가 없습니다.");
-        }
+		// 클라이언트에서 전송된 데이터 받기
+		String memberNumberStr = request.getParameter("memberNumber");
+		String hotplaceNumberStr = request.getParameter("hotplaceNumber");
+//		String scrollPositionStr = request.getParameter("scrollPosition");
 
-        int hotplaceNumber = Integer.parseInt(request.getParameter("hotplaceNumber"));
-        MainDAO mainDAO = new MainDAO();
-        MainDTO mainDTO = new MainDTO();
-        mainDTO.setMemberNumber(memberNumber);
-        mainDTO.setHotplaceNumber(hotplaceNumber);
+		// 문자열을 int로 변환
+		int memberNumber = Integer.parseInt(memberNumberStr);
+		int hotplaceNumber = Integer.parseInt(hotplaceNumberStr);
+//		int scrollPosition = Integer.parseInt(scrollPositionStr);
 
-        // 찜 해제 로직
-        mainDAO.unpickHotplace(mainDTO);
+		// 변환된 데이터 확인
+		System.out.println("Member Number: " + memberNumber);
+		System.out.println("Hotplace Number: " + hotplaceNumber);
+//		System.out.println("Scroll Position: " + scrollPosition);
 
-        // 쿼리 실행 후 결과를 DTO에 담아 반환
-        return mainDAO.getHotplaceDetails(hotplaceNumber); // 가정: hotplace의 세부 정보를 가져오는 메소드
+		MainDTO mainDTO = new MainDTO();
+		MainDAO mainDAO = new MainDAO();
+		Result result = new Result();
+		
+		mainDTO.setMemberNumber(memberNumber);
+	    mainDTO.setHotplaceNumber(hotplaceNumber);
+		
+	    System.out.println(mainDTO);
+	    //삭제
+		mainDAO.unpickHotplace(mainDTO);
+		
+//		request.setAttribute("scrollPosition", scrollPosition);
+		
+		result.setRedirect(true);
+	    result.setPath(request.getContextPath() + "/main.mn?scrollPosition=\" + scrollPosition");
+		return result;
 	}
-	
 
 }

@@ -142,22 +142,37 @@ a {
 									<c:set var="isLiked" value="false" />
 
 									<c:forEach var="like" items="${memCheckLike}">
-										<c:if
-											test="${like.hotplaceNumber == item.hotplaceNumber}">
+										<c:if test="${item.hotplaceNumber == like.hotplaceNumber}">
 											<c:set var="isLiked" value="true" />
 										</c:if>
 									</c:forEach>
 
 									<c:choose>
 										<c:when test="${isLiked}">
-											<img
-												src="${pageContext.request.contextPath}/assets/images/pick.pn"
-												style="width: 30px;" alt="찜한 상태" />
+											<form action="${pageContext.request.contextPath}/unpick.mn" method="post">
+												<input type="hidden" name="hotplaceNumber"
+													value="${item.hotplaceNumber}" /> <input type="hidden"
+													name="memberNumber"
+													value="${sessionScope.member.memberNumber}" />
+												<button type="submit" class="Btn" id="main-picked">
+													<img
+														src="${pageContext.request.contextPath}/assets/images/pick.png"
+														style="width: 30px" alt="찜한 상태" />
+												</button>
+											</form>
 										</c:when>
 										<c:otherwise>
-											<img
-												src="${pageContext.request.contextPath}/assets/images/picked.pn"
-												style="width: 30px;" alt="찜하지 않은 상태" />
+											<form action="${pageContext.request.contextPath}/pick.mn" method="post">
+												<input type="hidden" name="hotplaceNumber"
+													value="${item.hotplaceNumber}" /> <input type="hidden"
+													name="memberNumber"
+													value="${sessionScope.member.memberNumber}" />
+												<button type="submit" class="Btn" id="main-picked">
+													<img 
+														src="${pageContext.request.contextPath}/assets/images/picked.png"
+														style="width: 30px" alt="찜하지 않은 상태" />
+												</button>
+											</form>
 										</c:otherwise>
 									</c:choose>
 								</c:if>
@@ -176,36 +191,53 @@ a {
 			</section>
 		</section>
 		<!-- 2번째 줄 4칸 -->
-		<section class="main-section-third-2">
+		<section class="main-section-third">
+			<div id="main-third-title">
+				<img id="main-body-hot-icon"
+					src="${pageContext.request.contextPath}/assets/images/hotplace-icon.png">핫플콕콕!
+			</div>
 			<section class="main-section-third-top">
 				<ul id="main-hot">
 					<c:forEach var="item" items="${hplist2}">
 						<li id="main-hot-list">
-
 							<div id="main-hot-list-img"
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
 
-								<c:if test="${sessionScope.member.memberNumber != null}">
+								<c:if test="${not empty sessionScope.member.memberNumber}">
 									<c:set var="isLiked" value="false" />
-									<c:forEach var="like" items="${likeList}">
-										<c:if test="${like.hotplaceNumber == item.hotplaceNumber}">
+
+									<c:forEach var="like" items="${memCheckLike}">
+										<c:if test="${item.hotplaceNumber == like.hotplaceNumber}">
 											<c:set var="isLiked" value="true" />
-											<!-- 찜 상태가 확인되면 반복문 종료 -->
 										</c:if>
 									</c:forEach>
 
 									<c:choose>
 										<c:when test="${isLiked}">
-											<a href="${pageContext.request.contextPath}/"> <img
-												src="${pageContext.request.contextPath}/assets/images/picked.png"
-												style="width: 30px;" alt="찜 해제">
-											</a>
+											<form action="${pageContext.request.contextPath}/unpick.mn" method="post">
+												<input type="hidden" name="hotplaceNumber"
+													value="${item.hotplaceNumber}" /> <input type="hidden"
+													name="memberNumber"
+													value="${sessionScope.member.memberNumber}" />
+												<button type="submit" class="Btn" id="main-picked">
+													<img
+														src="${pageContext.request.contextPath}/assets/images/pick.png"
+														style="width: 30px" alt="찜한 상태" />
+												</button>
+											</form>
 										</c:when>
 										<c:otherwise>
-											<a href="${pageContext.request.contextPath}/"> <img
-												src="${pageContext.request.contextPath}/assets/images/pick.png"
-												style="width: 30px;" alt="찜하기">
-											</a>
+											<form action="${pageContext.request.contextPath}/pick.mn" method="post">
+												<input type="hidden" name="hotplaceNumber"
+													value="${item.hotplaceNumber}" /> <input type="hidden"
+													name="memberNumber"
+													value="${sessionScope.member.memberNumber}" />
+												<button type="submit" class="Btn" id="main-picked">
+													<img 
+														src="${pageContext.request.contextPath}/assets/images/picked.png"
+														style="width: 30px" alt="찜하지 않은 상태" />
+												</button>
+											</form>
 										</c:otherwise>
 									</c:choose>
 								</c:if>
