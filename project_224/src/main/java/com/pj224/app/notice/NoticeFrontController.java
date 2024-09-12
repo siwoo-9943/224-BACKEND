@@ -47,6 +47,8 @@ public class NoticeFrontController extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		Result result = null;
 		System.out.println(target);
@@ -56,13 +58,13 @@ public class NoticeFrontController extends HttpServlet {
 
 		switch (target) {
 		case "/notice/notice-admain.no":
-			System.out.println("글목록");
+			System.out.println("list");
 			result = new NoticeListController().MemExecute(request, response);
             request.getRequestDispatcher("/app/notice/notice-admain.jsp").forward(request, response);
 			break;
 			
 		case "/notice/notice-addetail.no":
-			System.out.println("글상세");
+			System.out.println("detail");
 			result = new NoticeDetailController().MemExecute(request, response);
 			request.getRequestDispatcher("/app/notice/notice-addetail.jsp").forward(request, response);
 			break;
@@ -124,7 +126,7 @@ public class NoticeFrontController extends HttpServlet {
 			break;
 			
 		case "/notice/modifyOk.no":
-			System.out.println("글 수정 완료");
+			System.out.println("modifyOk");
 			request.setAttribute("noticeNumber", request.getParameter("noticeNumber"));
 			request.setAttribute("noticeContent", request.getParameter("noticeContent"));
 			request.setAttribute("noticeTitle", request.getParameter("noticeTitle"));

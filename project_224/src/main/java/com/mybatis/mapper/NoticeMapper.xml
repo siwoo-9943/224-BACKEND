@@ -8,7 +8,8 @@
       N.NOTICE_CATE,
       N.NOTICE_TITLE,
       N.MEMBER_NUMBER,
-      N.NOTICE_REGIST_DATE
+      N.NOTICE_REGIST_DATE,
+      M.MEMBER_NICKNAME
       FROM
       TBL_NOTICE N
       JOIN
@@ -29,7 +30,8 @@
       M.MEMBER_NUMBER,
       N.NOTICE_REGIST_DATE,
       N.NOTICE_UPDATE_DATE,
-      N.NOTICE_CONTENT
+      N.NOTICE_CONTENT,
+      M.MEMBER_NICKNAME
       FROM
       TBL_NOTICE N
       JOIN
@@ -38,7 +40,7 @@
       N.MEMBER_NUMBER =
       M.MEMBER_NUMBER
       WHERE
-      N.NOTICE_TITLE = #{title}
+      N.NOTICE_NUMBER = #{number}
    </select>
    
    <insert id="write" parameterType="NoticeDTO">
@@ -59,7 +61,15 @@
 
 	<select id="selectByNoticeNumber" parameterType="int"
 		resultType="NoticeDTO">
-		SELECT * FROM TBL_NOTICE WHERE NOTICE_NUMBER = #{noticeNumber}
+		SELECT 
+		NOTICE_NUMBER,
+      	NOTICE_CATE,
+      	NOTICE_TITLE,
+      	MEMBER_NUMBER,
+      	NOTICE_REGIST_DATE,
+      	NOTICE_UPDATE_DATE,
+      	NOTICE_CONTENT
+		FROM TBL_NOTICE WHERE NOTICE_NUMBER = #{noticeNumber}
 	</select>
    
    <delete id="noticeDelete" parameterType="int">

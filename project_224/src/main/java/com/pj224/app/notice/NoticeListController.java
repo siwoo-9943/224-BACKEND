@@ -19,7 +19,7 @@ public class NoticeListController implements MemExecute  {
 	   @Override
 	   public Result MemExecute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
 
-		   System.out.println("컨트롤러 들어옴");
+		   System.out.println("공지 목록 컨트롤러 들어옴");
 		   request.setCharacterEncoding("UTF-8");
 
 		   // 페이지 처리 관련 변수
@@ -55,7 +55,6 @@ public class NoticeListController implements MemExecute  {
 		   Result result = new Result();
 //		   result.setRedirect(false); 
 //		   result.setPath(request.getContextPath() + "/app/notice/notice-admain.jsp");
-		   System.out.println("실행확인");
 
 		   return result;
 	   }
