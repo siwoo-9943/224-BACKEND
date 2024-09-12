@@ -44,33 +44,33 @@
 								</a>
 							</div>
 							<div
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/1.png); width: 400px; height: 100%;"></div>
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-gangnam.png); width: 400px; height: 100%;"></div>
 						</div>
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
 								<a
-									href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil?memberNumber=${memberNumber}.hp">
+									href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp?memberNumber=${memberNumber}">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">잠실역</span>
 									</div>
 								</a>
 							</div>
 							<div
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/2.png); width: 400px; height: 100%;"></div>
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-jamsil.png); width: 400px; height: 100%;"></div>
 						</div>
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 150px; bottom: 70px; right: 0px; z-index: 10;">
 								<a
-									href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae?memberNumber=${memberNumber}.hp">
+									href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp?memberNumber=${memberNumber}">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">홍대입구역</span>
 									</div>
 								</a>
 							</div>
 							<div
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/3.png); width: 400px; height: 100%;"></div>
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-hongdae.png); width: 400px; height: 100%;"></div>
 						</div>
 					</div>
 					<div class="thumb-cont" style="display: flex;">
@@ -78,40 +78,40 @@
 							<div
 								style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
 								<a
-									href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu?memberNumber=${memberNumber}.hp">
+									href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp?memberNumber=${memberNumber}">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">성수역</span>
 									</div>
 								</a>
 							</div>
 							<div
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/4.png); width: 400px; height: 100%;"></div>
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-seongsu.png); width: 400px; height: 100%;"></div>
 						</div>
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 180px; bottom: 70px; right: 0px; z-index: 10;">
 								<a
-									href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae?memberNumber=${memberNumber}.hp">
+									href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp?memberNumber=${memberNumber}">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">문래역</span>
 									</div>
 								</a>
 							</div>
 							<div
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/3.png); width: 400px; height: 100%;"></div>
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-moonrae.png); width: 400px; height: 100%;"></div>
 						</div>
 						<div style="position: relative; height: 230px;">
 							<div
 								style="position: absolute; left: 150px; bottom: 70px; right: 0px; z-index: 10;">
 								<a
-									href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro?memberNumber=${memberNumber}.hp">
+									href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp?memberNumber=${memberNumber}">
 									<div style="width: 100%; margin: 0 auto 30px;">
 										<span style="font-size: 24px; color: #fff; font-weight: 600;">을지로입구역</span>
 									</div>
 								</a>
 							</div>
 							<div
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/6.png); width: 400px; height: 100%;"></div>
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-eulhiro.png); width: 400px; height: 100%;"></div>
 						</div>
 					</div>
 				</div>

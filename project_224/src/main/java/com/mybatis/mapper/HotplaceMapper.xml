@@ -21,6 +21,7 @@
 		ha.hotplace_attraction_number
 		where
 		hp.hotplace_station = #{station}
+		order by hp.hotplace_number
 	</select>
 	<select id="checkLike" parameterType="LikeDTO"
 		resultType="LikeDTO">

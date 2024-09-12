@@ -4,10 +4,13 @@
 <%@ page import="com.pj224.app.dto.MainDTO"%>
 <%
 List<MainDTO> hpresults1 = (List<MainDTO>) request.getAttribute("hplist1");
-List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
-List<MainDTO> hplikecheck = (List<MainDTO>) request.getAttribute("memCheckLike");
-List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResults");
 %>
+<%
+List<MainDTO> hpresults2 = (List<MainDTO>) request.getAttribute("hplist2");
+%>
+<%
+List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResults");
+%>z
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +18,6 @@ List<MainDTO> comuresults = (List<MainDTO>) request.getAttribute("comuListResult
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/main.css" />
-	
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style type="text/css">
 a {
@@ -139,44 +141,35 @@ a {
 							<div id="main-hot-list-img"
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
 
-								<c:if test="${not empty sessionScope.member.memberNumber}">
+								<c:if test="${sessionScope.member.memberNumber != null}">
 									<c:set var="isLiked" value="false" />
-
-									<c:forEach var="like" items="${memCheckLike}">
-										<c:if test="${item.hotplaceNumber == like.hotplaceNumber}">
+									<c:forEach var="like" items="${likeList}">
+										<c:if
+											test="${like.hotplaceNumber == hotplace.hotplaceNumber && like.memberNumber == sessionScope.member.memberNumber}">
 											<c:set var="isLiked" value="true" />
 										</c:if>
 									</c:forEach>
 
 									<c:choose>
 										<c:when test="${isLiked}">
-											<form action="${pageContext.request.contextPath}/unpick.mn" method="post">
-												<input type="hidden" name="hotplaceNumber"
-													value="${item.hotplaceNumber}" /> <input type="hidden"
-													name="memberNumber"
-													value="${sessionScope.member.memberNumber}" />
-												<button type="submit" class="Btn" id="main-picked">
-													<img
-														src="${pageContext.request.contextPath}/assets/images/pick.png"
-														style="width: 30px" alt="찜한 상태" />
-												</button>
-											</form>
+											<a
+												href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+												<img
+												src="${pageContext.request.contextPath}/assets/images/picked.png"
+												style="width: 30px;" alt="찜 해제">
+											</a>
 										</c:when>
 										<c:otherwise>
-											<form action="${pageContext.request.contextPath}/pick.mn" method="post">
-												<input type="hidden" name="hotplaceNumber"
-													value="${item.hotplaceNumber}" /> <input type="hidden"
-													name="memberNumber"
-													value="${sessionScope.member.memberNumber}" />
-												<button type="submit" class="Btn" id="main-picked">
-													<img 
-														src="${pageContext.request.contextPath}/assets/images/picked.png"
-														style="width: 30px" alt="찜하지 않은 상태" />
-												</button>
-											</form>
+											<a
+												href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+												<img
+												src="${pageContext.request.contextPath}/assets/images/pick.png"
+												style="width: 30px;" alt="찜하기">
+											</a>
 										</c:otherwise>
 									</c:choose>
 								</c:if>
+
 
 							</div> <a href="${item.hotplaceLink}">
 								<div class="main-hot-list-txt">
@@ -193,7 +186,7 @@ a {
 		</section>
 		<!-- 2번째 줄 4칸 -->
 		<section class="main-section-third-2">
-			
+
 			<section class="main-section-third-top">
 				<ul id="main-hot">
 					<c:forEach var="item" items="${hplist2}">
@@ -212,7 +205,8 @@ a {
 
 									<c:choose>
 										<c:when test="${isLiked}">
-											<form action="${pageContext.request.contextPath}/unpick.mn" method="post">
+											<form action="${pageContext.request.contextPath}/unpick.mn"
+												method="post">
 												<input type="hidden" name="hotplaceNumber"
 													value="${item.hotplaceNumber}" /> <input type="hidden"
 													name="memberNumber"
@@ -225,13 +219,14 @@ a {
 											</form>
 										</c:when>
 										<c:otherwise>
-											<form action="${pageContext.request.contextPath}/pick.mn" method="post">
+											<form action="${pageContext.request.contextPath}/pick.mn"
+												method="post">
 												<input type="hidden" name="hotplaceNumber"
 													value="${item.hotplaceNumber}" /> <input type="hidden"
 													name="memberNumber"
 													value="${sessionScope.member.memberNumber}" />
 												<button type="submit" class="Btn" id="main-picked">
-													<img 
+													<img
 														src="${pageContext.request.contextPath}/assets/images/picked.png"
 														style="width: 30px" alt="찜하지 않은 상태" />
 												</button>
@@ -253,6 +248,7 @@ a {
 				</ul>
 			</section>
 		</section>
+
 
 		<!-- 커뮤톡톡 -->
 		<section class="main-section-fourth">
