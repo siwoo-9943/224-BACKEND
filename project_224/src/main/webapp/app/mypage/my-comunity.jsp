@@ -20,13 +20,13 @@
         <div class="my-category">
           <div class="my-category-menu">메뉴</div>
           <div class="my-line"></div>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-passcheck.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/mypasscheck.my">
           <div class="my-category-menu">개인정보수정</div></a>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-comunity.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/mycomunity.my">
           <div class="my-category-menu">내가 작성한 글</div></a>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-pick.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/mypick.my">
           <div class="my-category-menu">찜목록</div></a>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-quit.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/myquit.my">
           <div class="my-category-menu">회원탈퇴</div></a>
         </div>
       </div>
@@ -47,85 +47,16 @@
             </div>
 
             <ul class="my-comunity-ul">
+            <c:forEach var="item" items="${mywritepage}">
+ 
               <li>
                 <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
+                <div class="my-comunity-info-title">[${item.boardCate}] ${item.boardTitle}</div>
+                <div class="my-comunity-info-author"> ${sessionScope.member.memberName}</div>
+                <div class="my-comunity-info-date"> ${item.boardRegistDate} </div>
               </div>
               </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플자유] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[핫플후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
-
-              <li>
-                <div class="my-comunity-info-list">
-                <div class="my-comunity-info-title">[공공후기] 퍼블리싱 그만하고 싶다[4]</div>
-                <div class="my-comunity-info-author">금쪽이</div>
-                <div class="my-comunity-info-date">2024.07.30</div>
-              </div>
-              </li>
+			</c:forEach>
             </ul>
 
           </div>

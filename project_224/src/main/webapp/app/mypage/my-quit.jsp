@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/my-quit.css" />
  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/my-modal.css" />
 </head>
+<%@ include file="/header.jsp"%>
 <body>
 	  <main>
     <!-- 목록 -->
@@ -20,16 +21,16 @@
         <div class="my-category">
           <div class="my-category-menu">메뉴</div>
           <div class="my-line"></div>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-passcheck.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/mypasscheck.my">
             <div class="my-category-menu">개인정보수정</div>
           </a>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-comunity.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/mycomunity.my">
             <div class="my-category-menu">내가 작성한 글</div>
           </a>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-pick.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/mypick.my">
             <div class="my-category-menu">찜목록</div>
           </a>
-          <a href="${pageContext.request.contextPath}/app/mypage/my-quit.jsp">
+          <a href="${pageContext.request.contextPath}/app/mypage/myquit.my">
             <div class="my-category-menu">회원탈퇴</div>
           </a>
         </div>
@@ -79,4 +80,5 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="${pageContext.request.contextPath}/assets/js/mypage/my-quit.js"></script>
 </body>
+<%@ include file="/footer.jsp"%>
 </html>

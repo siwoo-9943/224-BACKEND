@@ -15,6 +15,7 @@ import com.pj224.app.dao.MypageDAO;
 import com.pj224.app.dto.CommunityDTO;
 import com.pj224.app.dto.HotplaceDTO;
 import com.pj224.app.dto.MemberDTO;
+import com.pj224.app.dto.MypageDTO;
 
 public class MycomunityController implements MemExecute{
 
@@ -24,7 +25,7 @@ public class MycomunityController implements MemExecute{
 		System.out.println("커뮤니티 컨트롤러 실행");
 		HttpSession session = request.getSession(false);
 		
-		CommunityDTO communityDTO = new CommunityDTO();
+		MypageDTO mypageDTO = new MypageDTO();
 		MypageDAO mypageDAO = new MypageDAO();
 		Result result = new Result();
 		
@@ -34,18 +35,18 @@ public class MycomunityController implements MemExecute{
 		System.out.println("membernumber 들어왔니");
 		System.out.println(membersessionNum);
 		
-		communityDTO.setBoardNumber(membersessionNum);
-		System.out.println(communityDTO);
+		mypageDTO.setMemberNumber(membersessionNum);
+		System.out.println(mypageDTO);
 		
-		List<CommunityDTO> mywritepage = mypageDAO.mywritelist(membersessionNum);
+		List<MypageDTO> mywritepage = mypageDAO.mywritelist(membersessionNum);
 		System.out.println("mywritelist 들어왔니");
 		System.out.println("Community 값 들어왔니");
 		System.out.println(mywritepage);
 		
 		request.setAttribute("mywritepage",mywritepage);
 		
-		request.getRequestDispatcher(request.getContextPath())
-		return null;
+		request.getRequestDispatcher(request.getContextPath()+"/app/mypage/my-comunity.jsp").forward(request, response);
+		return result;
 	}
 
 }

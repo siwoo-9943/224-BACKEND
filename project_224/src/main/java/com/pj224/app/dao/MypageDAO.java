@@ -24,7 +24,7 @@ public class MypageDAO {
 		MypageDTO mypageDTO = new MypageDTO();
 		mypageDTO.setMemberEmail(memberEmail);
 		mypageDTO.setMemberName(memberName);
-		mypageDTO.setmemberNickname(memberNickname);
+		mypageDTO.setMemberNickname(memberNickname);
 		mypageDTO.setMemberPhone(memberPhone);
 		mypageDTO.setMemberGender(memberGender);
 		mypageDTO.setMemberBirth(memberBirth);
@@ -79,7 +79,7 @@ public class MypageDAO {
 			return 0; // 적절한 에러 처리
 		}
 
-		mypageDTO.setmemberNickname(memberNickname);
+		mypageDTO.setMemberNickname(memberNickname);
 		mypageDTO.setMemberPw(memberPw);
 		mypageDTO.setMemberName(memberName);
 		mypageDTO.setMemberPhone(memberPhone);
@@ -129,51 +129,42 @@ public class MypageDAO {
 			return null; // 적절한 에러 처리
 		}
 
-		// 데이터베이스에서 사용자 정보를 조회
+		// 데이터베이스에서 사용자 정보를 조회,탈퇴
 		return sqlSession.selectOne("mypage.MypageUpdateOk", mypageDTO);
 	}
 
 	public boolean delete(String memberNumberStr) {
-		
-			System.out.println("회원탈퇴 조회");
-			
-			MypageDTO mypageDTO = new MypageDTO();
-			try {
-				if (memberNumberStr != null && !memberNumberStr.isEmpty()) {
-					int memberNumber2 = Integer.parseInt(memberNumberStr);
-					mypageDTO.setMemberNumber(memberNumber2);
-				} else {
-					throw new IllegalArgumentException("memberNumber는 null 또는 빈 문자열일 수 없습니다.");
-				}
-			} catch (NumberFormatException e) {
-				System.err.println("memberNumber 형변환 실패: " + e.getMessage());
-			}
-			int result2 = sqlSession.delete("mypage.memberDelete", mypageDTO);
-			return result2 <= 0;
 
-}
-	//내가 찜한 목록
-	public List<CommunityDTO> mylikelist(int memberNumber){
-		System.out.println("리스트 잘 들어왔니");
-		return sqlSession.selectList("mypage.mypick",memberNumber);
-	}
-	
-	//내가 작성한 글
-		public List<CommunityDTO> mywritelist(int memberNumber){
-			System.out.println("리스트 잘 들어왔니");
-			return sqlSession.selectList("mypage.community",memberNumber);
+		System.out.println("회원탈퇴 조회");
+
+		MypageDTO mypageDTO = new MypageDTO();
+		try {
+			if (memberNumberStr != null && !memberNumberStr.isEmpty()) {
+				int memberNumber2 = Integer.parseInt(memberNumberStr);
+				mypageDTO.setMemberNumber(memberNumber2);
+				System.out.println(memberNumber2 + "??");
+			} else {
+				throw new IllegalArgumentException("memberNumber는 null 또는 빈 문자열일 수 없습니다.");
+			}
+		} catch (NumberFormatException e) {
+			System.err.println("memberNumber 형변환 실패: " + e.getMessage());
 		}
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		int result2 = sqlSession.delete("mypage.memberDelete", mypageDTO);
+
+		return result2 <= 0;
+
+	}
+
+	// 내가 찜한 목록
+	public List<HotplaceDTO> mylikelist(int memberNumber) {
+		System.out.println("리스트 잘 들어왔니");
+		return sqlSession.selectList("mypage.mypick", memberNumber);
+	}
+
+//	//내가 작성한 글
+	public List<MypageDTO> mywritelist(int memberNumber) {
+		System.out.println("리스트 잘 들어왔니");
+		return sqlSession.selectList("mypage.mywrite", memberNumber);
+	}
+
 }

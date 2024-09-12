@@ -97,7 +97,10 @@ public class MypageFrontController extends HttpServlet {
 	    	  break;
 	    	  
 			case "/app/mypage/mycomunity.my" :
-				
+				System.out.println("내가 작성한 글 확인");
+				request.setAttribute("mywritepage", request.getAttribute("mywritepage"));
+				new MycomunityController().MemExecute(request, response);
+				break;
 	    	  
 	      }
 	    	  
