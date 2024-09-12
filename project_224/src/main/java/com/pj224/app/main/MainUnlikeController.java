@@ -46,7 +46,7 @@ public class MainUnlikeController implements MemExecute {
 //		request.setAttribute("scrollPosition", scrollPosition);
 		
 		result.setRedirect(true);
-	    result.setPath(request.getContextPath() + "/main.mn?scrollPosition=\" + scrollPosition");
+	    result.setPath(request.getContextPath() + "subway-schedule.sw");
 		return result;
 	}
 
