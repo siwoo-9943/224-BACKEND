@@ -192,17 +192,14 @@ a {
 			</section>
 		</section>
 		<!-- 2번째 줄 4칸 -->
-		<section class="main-section-third">
-			<div id="main-third-title">
-				<img id="main-body-hot-icon"
-					src="${pageContext.request.contextPath}/assets/images/hotplace-icon.png">핫플콕콕!
-			</div>
+		<section class="main-section-third-2">
+			
 			<section class="main-section-third-top">
 				<ul id="main-hot">
 					<c:forEach var="item" items="${hplist2}">
 						<li id="main-hot-list">
 							<div id="main-hot-list-img"
-								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-3.jpg);">
 
 								<c:if test="${not empty sessionScope.member.memberNumber}">
 									<c:set var="isLiked" value="false" />

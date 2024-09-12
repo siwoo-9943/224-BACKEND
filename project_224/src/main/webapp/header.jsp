@@ -154,17 +154,17 @@
 						<li><a
 							href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp?memberNumber=${sessionScope.member.memberNumber}">강남역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">강남역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp?memberNumber=${sessionScope.member.memberNumber}">잠실역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">잠실역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp?memberNumber=${sessionScope.member.memberNumber}">성수역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">성수역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp?memberNumber=${sessionScope.member.memberNumber}">문래역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">문래역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp?memberNumber=${sessionScope.member.memberNumber}">홍대입구역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">홍대입구역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp?memberNumber=${sessionScope.member.memberNumber}">을지로입구역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">을지로입구역</a></li>
 					</ul>
 				</div>
 			</div>

@@ -120,16 +120,7 @@ List<MainDTO> noresults = (List<MainDTO>) request.getAttribute("searchnoResults"
 						<p>검색 결과가 없습니다.</p>
 					</c:if>
 
-					<div class="info-bg2">
-						<div class="bottom-list">
-							<a class="prev" onfocus="blur()" href="#"></a> <a class="num on"
-								onfocus="blur()" href="#">1</a> <a class="num" onfocus="blur()"
-								href="#">2</a> <a class="num" onfocus="blur()" href="#">3</a> <a
-								class="num" onfocus="blur()" href="#">4</a> <a class="num"
-								onfocus="blur()" href="#">5</a> <a class="next" onfocus="blur()"
-								href="#"></a>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</form>
