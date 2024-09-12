@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/my-comunity.css" />
 </head>
+<%@ include file="/header.jsp"%>
 <body>
 	  <main>
     <!-- 목록 -->
@@ -14,7 +15,7 @@
       <div class="my-leftbox">
         <div class="my-hello">
           <div class="my-wellcome">반가워요!</div>
-          <div class="my-nickname">"금쪽이"님</div>
+          <div class="my-nickname">"${sessionScope.member.memberName}"님</div>
         </div>
         <div class="my-category">
           <div class="my-category-menu">메뉴</div>
@@ -129,7 +130,7 @@
 
           </div>
 
-          <div class="info-bg2">
+      <!--     <div class="info-bg2">
             <div class="bottom-list">
               <a class="prev" onfocus="blur()" href="#"></a>
               <a class="num on" onfocus="blur()" href="#">1</a>
@@ -139,7 +140,7 @@
               <a class="num" onfocus="blur()" href="#">5</a>
               <a class="next" onfocus="blur()" href="#"></a>
             </div>
-          </div>
+          </div>	 -->
 
         </div>
 
@@ -149,4 +150,5 @@
 
   </main>
 </body>
+<%@ include file="/footer.jsp"%>
 </html>
