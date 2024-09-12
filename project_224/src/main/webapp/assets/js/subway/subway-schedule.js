@@ -1,19 +1,19 @@
 // JSON 파일 경로를 저장할 객체
 const jsonFileUpPaths = {
-    '강남': "../../assets/json/up-gangnam.json",
-    '잠실': "../../assets/json/up-jamsil.json",
-    '홍대입구': "../../assets/json/up-hongdae.json",
-    '성수': "../../assets/json/up-seongsu.json",
-    '문래': "../../assets/json/up-moonrae.json",
-    '을지로입구': "../../assets/json/up-euljiro.json"
+    '강남': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0222/1/1/",
+    '잠실': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0216/1/1/",
+    '홍대입구': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0239/1/1/",
+    '성수': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0211/1/1/",
+    '문래': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0235/1/1/",
+    '을지로입구': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0202/1/1/"
 };
 const jsonFileDownPaths = {
-    '강남': "../../assets/json/down-gangnam.json",
-    '잠실': "../../assets/json/down-jamsil.json",
-    '홍대입구': "../../assets/json/down-hongdae.json",
-    '성수': "../../assets/json/down-seongsu.json",
-    '문래': "../../assets/json/down-moonrae.json",
-    '을지로입구': "../../assets/json/down-euljiro.json"
+    '강남': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0222/1/2/",
+    '잠실': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0216/1/2/",
+    '홍대입구': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0239/1/2/",
+    '성수': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0211/1/2/",
+    '문래': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0235/1/2/",
+    '을지로입구': "http://openapi.seoul.go.kr:8088/526b4b794a73736d313131694779517a/json/SearchSTNTimeTableByIDService/1/999/0202/1/2/"
 };
 
 // 상행선 JSON 데이터를 불러오는 함수
