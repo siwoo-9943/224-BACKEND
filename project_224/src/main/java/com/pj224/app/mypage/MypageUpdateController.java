@@ -30,7 +30,7 @@ public class MypageUpdateController implements MemExecute {
 		
 
 		String memberNumber = request.getParameter("memberNumber");
-		String memberNickName = request.getParameter("memberNickname");
+		String memberNickname = request.getParameter("memberNickname");
 		String memberPw = request.getParameter("memberPw");
 		String memberName = request.getParameter("memberName");
 		String memberPhone = request.getParameter("memberPhone");
@@ -38,7 +38,7 @@ public class MypageUpdateController implements MemExecute {
 		String memberBirth = request.getParameter("memberBirth");
 		String memberTerms = request.getParameter("memberTerms");
 		System.out.println(memberNumber + "넘버 값 들어오셈");
-		System.out.println(memberNickName + "닉네임 들어오는지 확인");
+		System.out.println(memberNickname + "닉네임 들어오는지 확인");
 		System.out.println(memberPw + "비번 값 들어오셈");
 		System.out.println(memberName + "이름 값 들어오셈");
 		System.out.println(memberPhone + "번호 값 들어오셈");
@@ -46,40 +46,25 @@ public class MypageUpdateController implements MemExecute {
 		System.out.println(memberBirth + "생일 들어오는지 확인");
 		System.out.println(memberTerms + "동의 들어오는지 확인");
 
-		int result = mypageDAO.MypageUpdate(memberNumber, memberNickName, memberPw, memberName, memberPhone,
+		int result = mypageDAO.MypageUpdate(memberNumber, memberNickname, memberPw, memberName, memberPhone,
 				memberGender, memberBirth, memberTerms);
 
 		if (result > 0) {
 			System.out.println("정보 업데이트 성공");
+			// 세션 값 업데이트
+			MypageDTO updateInfo = mypageDAO.getMemberByNumber(memberNumber);
+	        request.getSession().setAttribute("member", updateInfo);
+
+	        response.sendRedirect(request.getContextPath() + "/mypage.my");
 		} else {
 			System.out.println("정보 업데이트 실패ㅠ");
 			request.setAttribute("error", "정보 업데이트에 실패했습니다.");
+			request.getRequestDispatcher("/app/mypage/my-update.jsp").forward(request, response);
 			
 		}
+			
 
-		MypageDTO member = mypageDAO.UpdateOk(memberNumber);
-		Result result2 = new Result();
-		System.out.println("멤버 쿼리문확인" + member);
-		
-	       if(member!= null) {
-	           // 로그인 성공시 세션에 사용자 정보 저장
-	           HttpSession session = request.getSession();
-	           session.setAttribute("member", member);
-
-
-	           
-	           System.out.println("세션저장 성공");
-	           response.sendRedirect(request.getContextPath() + "/mypage.my");
-	           result2.setRedirect(true);
-	           } else{
-	           System.out.println("세션 저장 실패");
-	          
-	           request.getRequestDispatcher("/app/mypage/my-update.jsp").forward(request, response);
-	           result2.setRedirect(true);
-	           
-	          }
-
-		return result2;
+		return null;
 	}
 
 }

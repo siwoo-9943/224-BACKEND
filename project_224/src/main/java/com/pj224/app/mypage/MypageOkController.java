@@ -27,11 +27,11 @@ public class MypageOkController implements MemExecute {
 
 		String memberEmail = request.getParameter("memberEmail");
 		String memberName = request.getParameter("memberName");
-		String memberNickName = request.getParameter("memberNickName");
+		String memberNickname = request.getParameter("memberNickname");
 		String memberPhone = request.getParameter("memberPhone");
 		String memberGender = request.getParameter("memberGender");
 		String memberBirth = request.getParameter("memberBirth");
-		String myprofile = mypageDAO.myprofile(memberEmail, memberName, memberNickName, memberPhone, memberGender,
+		String myprofile = mypageDAO.myprofile(memberEmail, memberName, memberNickname, memberPhone, memberGender,
 				memberBirth);
 		Result result = new Result();
 
@@ -41,7 +41,7 @@ public class MypageOkController implements MemExecute {
 
 		System.out.println("내 프로필 성공");
 
-		String mypage1 = mypageDAO.myprofile(memberEmail, memberName, memberNickName, memberPhone, memberGender,
+		String mypage1 = mypageDAO.myprofile(memberEmail, memberName, memberNickname, memberPhone, memberGender,
 				memberBirth);
 		System.out.println(mypage1 + "보낼값들어오는지확인");
 		request.setAttribute("mypage1", mypage1);

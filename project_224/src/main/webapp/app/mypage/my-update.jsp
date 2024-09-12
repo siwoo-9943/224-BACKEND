@@ -40,13 +40,15 @@
 
 			<!-- 회원정보수정 -->
 			<div class="my-rightbox">
-				<form action="${pageContext.request.contextPath}/app/mypage/mypageupdate.my" method="post">
+				<form
+					action="${pageContext.request.contextPath}/app/mypage/mypageupdate.my"
+					method="post">
 					<div class="my-update">
 						<div class="my-update-title">개인정보수정</div>
 						<div class="my-line"></div>
 
 						<div class="my-update-center">
-						<!-- 닉네임 수정하기 위한 form -->
+							<!-- 닉네임 수정하기 위한 form -->
 							<form
 								action="${pageContext.request.contextPath}/app/mypage/updateNickname.my"
 								method="post">
@@ -54,7 +56,7 @@
 									<div class="my-update-value">닉네임</div>
 									<input type="text" class="my-update-input"
 										value="${sessionScope.member.memberNickname}"
-										name="memberNickname" id="my-newNikename">
+										name="memberNickname" id="my-newNickename">
 									<button type="button" class="my-update-value-check">중복확인</button>
 								</div>
 								<div class="checkBox">
@@ -114,9 +116,13 @@
 								</div>
 
 								<div class="my-line"></div>
-								
-								<form action="/updateProfile" method="post">
-								<input type="hidden" name="memberNumber" value="${sessionScope.member.memberNumber}">
+
+								<form
+									action="${pageContext.request.contextPath}/app/mypage/mypageupdate.my"
+									method="post">
+									<input type="hidden" name="memberNumber"
+										value="${sessionScope.member.memberNumber}">
+								</form>
 
 								<!-- 이벤트 수신 동의 -->
 								<div class="my-update-event">
@@ -128,9 +134,16 @@
 										</div>
 									</div>
 								</div>
-
-								<button type="submit" class="my-update-button">개인정보수정</button>
+								<form
+									action="${pageContext.request.contextPath}/app/mypage/mypageupdate.my"
+									method="post">
+									<!-- 다른 폼 요소들 -->
+									<input type="hidden" name="memberTerms"
+										value="${sessionScope.member.memberTerms}">
+									
+								</form>
 						</div>
+						<button type="submit" class="my-update-button">개인정보수정</button>
 				</form>
 			</div>
 	</main>

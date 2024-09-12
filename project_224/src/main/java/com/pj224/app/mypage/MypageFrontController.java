@@ -86,10 +86,14 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("업데이트 확인");
 				new MypageUpdateController().MemExecute(request, response);
 				break;
-			
-			case "/mypick.my":
+			case "/app/mypage/myquit.my":
+				System.out.println("탈퇴 확인");
+				new MyquitController().MemExecute(request, response);
+				break;
+			case "/app/mypage/mypick.my":
 	    	  System.out.println("찜목록 확인");
-	    	  response.sendRedirect(request.getContextPath() + "/app/mypage/my-pick.jsp");
+	    	  request.setAttribute("myCheckLike", request.getAttribute("myCheckLike"));
+	    	  new MypickController().MemExecute(request, response);
 	    	  break;
 	    	  
 	      }

@@ -16,12 +16,14 @@ public class MypageDTO {
 		private String memberEmail;
 		private String memberPw;
 		private String memberName;
-		private String memberNickName;
+		private String memberNickname;
 		private String memberPhone;
 		private String memberPhoneInput;
 		private String memberGender;
 		private String memberBirth;
 		private String memberTerms;
+		
+		
 		
 		
 		public int getMemberNumber() {
@@ -48,11 +50,12 @@ public class MypageDTO {
 		public void setMemberName(String memberName) {
 			this.memberName = memberName;
 		}
-		public String getMemberNickName() {
-			return memberNickName;
+		public String getmemberNickname() {
+			return memberNickname;
 		}
-		public void setMemberNickName(String memberNickName) {
-			this.memberNickName = memberNickName;
+		public void setmemberNickname(String memberNickname) {
+			this.memberNickname = memberNickname;
+			
 		}
 		public String getMemberPhone() {
 			return memberPhone;
@@ -87,7 +90,7 @@ public class MypageDTO {
 		@Override
 		public String toString() {
 			return "mypageDTO = [memberNumber : " + memberNumber + ",memberEmail : " + memberEmail + ",memberPw : " + memberPw + 
-					",memberName : " + memberName + "memberNickName : " + memberNickName + "memberPhone : " + memberPhone + "memberPhoneInput : " + memberPhoneInput 
+					",memberName : " + memberName + "memberNickname : " + memberNickname + "memberPhone : " + memberPhone + "memberPhoneInput : " + memberPhoneInput 
 					+"memberGender : " + memberGender + "memberBirth : " + memberBirth + "memberTerms : " + memberTerms + "]";
 		}
 
