@@ -43,58 +43,28 @@
               <div class="my-pick-area">
                 <div class="my-pick-textArea">
                   <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
                 </div>
                 <div class="my-pick-pictureArea">
-                  <a href="https://www.naver.com" target="_blank"><img src="../../images/main-seoul.jpg" width="190px" height="240px"></a>
+                  <a href="#" target="_blank"><img src="../../assets/images/main-seoul.jpg" width="190px" height="240px"></a>
                 </div>
               </div>
               <div class="my-pick-area">
                 <div class="my-pick-textArea">
                   <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
                 </div>
                 <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
                 </div>
               </div>
               <div class="my-pick-area">
                 <div class="my-pick-textArea">
                   <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
                 </div>
                 <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
-                </div>
-              </div>
-            </div>
-
-            <div class="my-pick-box">
-              <div class="my-pick-area">
-                <div class="my-pick-textArea">
-                  <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
-                </div>
-                <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
-                </div>
-              </div>
-              <div class="my-pick-area">
-                <div class="my-pick-textArea">
-                  <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
-                </div>
-                <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
-                </div>
-              </div>
-              <div class="my-pick-area">
-                <div class="my-pick-textArea">
-                  <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
-                </div>
-                <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
                 </div>
               </div>
             </div>
@@ -103,28 +73,58 @@
               <div class="my-pick-area">
                 <div class="my-pick-textArea">
                   <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
                 </div>
                 <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
                 </div>
               </div>
               <div class="my-pick-area">
                 <div class="my-pick-textArea">
                   <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
                 </div>
                 <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
                 </div>
               </div>
               <div class="my-pick-area">
                 <div class="my-pick-textArea">
                   <div class="my-pick-name">롯데월드</div>
-                  <img src="../../images/picked.png" width="30px" height="30px">
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
                 </div>
                 <div class="my-pick-pictureArea">
-                  <img src="../../images/main-seoul.jpg" width="190px" height="240px">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
+                </div>
+              </div>
+            </div>
+
+            <div class="my-pick-box">
+              <div class="my-pick-area">
+                <div class="my-pick-textArea">
+                  <div class="my-pick-name">롯데월드</div>
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
+                </div>
+                <div class="my-pick-pictureArea">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
+                </div>
+              </div>
+              <div class="my-pick-area">
+                <div class="my-pick-textArea">
+                  <div class="my-pick-name">롯데월드</div>
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
+                </div>
+                <div class="my-pick-pictureArea">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
+                </div>
+              </div>
+              <div class="my-pick-area">
+                <div class="my-pick-textArea">
+                  <div class="my-pick-name">롯데월드</div>
+                  <img src="../../assets/images/picked.png" width="30px" height="30px">
+                </div>
+                <div class="my-pick-pictureArea">
+                  <img src="../../assets/images/main-seoul.jpg" width="190px" height="240px">
                 </div>
               </div>
             </div>
