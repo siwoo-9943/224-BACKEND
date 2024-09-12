@@ -17,6 +17,7 @@
 </head>
 <%@ include file="../../header.jsp"%>
 <body>
+
    <!-- 페이지의 메인 부분 -->
    <div class="notice-addetail-all">
       <div class="notice-addetail-top">
@@ -29,20 +30,20 @@
          </div>
          <div class="notice-addetail-content">
             <div class="notice-addetail-tcontent">작성자</div>
-            <div class="notice-addetail-ttxt">관리자</div>
+            <div class="notice-addetail-ttxt">${noticeshowdetail[0].memberNickname}</div>
          </div>
          <div class="notice-addetail-content">
             <div class="notice-addetail-tcontent">작성일</div>
             <div class="notice-addetail-ttxt">${noticeshowdetail[0].noticeRegistDate}</div>
          </div>
-         <div class="notice-addetail-maincont">
-            <div>
-               <pre>
-                <p
-                     style="font-family: Noto Sans, malgun gothic, AppleGothic, dotum, sans-serif;">${noticeshowdetail[0].noticeContent}</p>
-          </pre>
-            </div>
-         </div>
+			<div class="notice-addetail-maincont">
+			    <div>
+			        <p style="font-family: Noto Sans, malgun gothic, AppleGothic, dotum, sans-serif; white-space: pre-wrap; word-wrap: break-word;">
+			            ${noticeshowdetail[0].noticeContent}
+			        </p>
+			    </div>
+			</div>
+
          
          <div class="notice-addetail-btuall">
             <%

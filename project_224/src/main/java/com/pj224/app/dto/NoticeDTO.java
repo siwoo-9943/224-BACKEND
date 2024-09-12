@@ -21,6 +21,7 @@ public class NoticeDTO {
 	private String noticeRegistDate;
 	private String noticeUpdateDate;
 	private int memberNumber;
+	private String memberNickname;
 	
 
 	public int getNoticeNumber() {
@@ -79,12 +80,19 @@ public class NoticeDTO {
 		this.memberNumber = memberNumber;
 	}
 
+	public String getMemberNickname() {
+		return memberNickname;
+	}
+
+	public void setMemberNickname(String memberNickname) {
+		this.memberNickname = memberNickname;
+	}
 
 	@Override
 	public String toString() {
 		return "NoticeDTO [noticeNumber = " + noticeNumber + ", noticeCate = " + noticeCate + ", noticeTitle = "
 				+ noticeTitle + ", noticeContent = " + noticeContent + ", noticeRegistDate = " + noticeRegistDate + ", noticeUpdateDate = "
-				+ noticeUpdateDate + ", memberNumber = " + memberNumber + "]";
+				+ noticeUpdateDate + ", memberNumber = " + memberNumber + ",memberNickname=" + memberNickname + "]";
 	}
 
 }
