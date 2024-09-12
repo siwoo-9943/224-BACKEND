@@ -25,14 +25,12 @@ function loadJSONUp(location) {
         return;
     }
 
-    fetch(jsonFileUpPath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('네트워크 응답이 좋지 않습니다');
-            }
-            return response.json();
-        })
-        .then(data => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', jsonFileUpPath, true);
+    
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            const data = JSON.parse(xhr.responseText);
             console.log('JSON 데이터:', data); // 전체 데이터 확인
 
             if (data.SearchSTNTimeTableByIDService) {
@@ -48,10 +46,16 @@ function loadJSONUp(location) {
             } else {
                 displayError('SearchSTNTimeTableByIDService가 정의되지 않았습니다.');
             }
-        })
-        .catch(error => {
-            console.error('JSON 파일을 불러오는 중 오류 발생:', error);
-        });
+        } else {
+            console.error('네트워크 응답이 좋지 않습니다:', xhr.statusText);
+        }
+    };
+
+    xhr.onerror = function() {
+        console.error('JSON 파일을 불러오는 중 오류 발생:', xhr.statusText);
+    };
+
+    xhr.send();
 }
 
 // 하행선 JSON 데이터를 불러오는 함수
@@ -63,14 +67,12 @@ function loadJSONDown(location) {
         return;
     }
 
-    fetch(jsonFileDownPath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('네트워크 응답이 좋지 않습니다');
-            }
-            return response.json();
-        })
-        .then(data => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', jsonFileDownPath, true);
+    
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            const data = JSON.parse(xhr.responseText);
             console.log('JSON 데이터:', data); // 전체 데이터 확인
 
             if (data.SearchSTNTimeTableByIDService) {
@@ -86,11 +88,19 @@ function loadJSONDown(location) {
             } else {
                 displayError('SearchSTNTimeTableByIDService가 정의되지 않았습니다.');
             }
-        })
-        .catch(error => {
-            console.error('JSON 파일을 불러오는 중 오류 발생:', error);
-        });
+        } else {
+            console.error('네트워크 응답이 좋지 않습니다:', xhr.statusText);
+        }
+    };
+
+    xhr.onerror = function() {
+        console.error('JSON 파일을 불러오는 중 오류 발생:', xhr.statusText);
+    };
+
+    xhr.send();
 }
+
+
 
 // 역 도착 및 출발 시간 정보를 표시하는 함수
 // 상행선
