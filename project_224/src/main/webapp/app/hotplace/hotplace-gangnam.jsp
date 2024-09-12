@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div
-			style="background-image: url(${pageContext.request.contextPath}/assets/images/hotplace.png); width: 100%; height: 100%;"></div>
+			style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-gangnam.png); width: 100%; height: 100%;background-size:cover;background-repeat: no-repeat;"></div>
 	</div>
 	<div class="sub-contents-inner gettingToSeoul" id="container">
 		<div class="location">
@@ -107,7 +107,7 @@
 							</c:choose>
 						</div>
 						<div class="hotplace-content-right-button">
-							<button style="width: 50%; height: 50px;">자세히 보기</button>
+							<button type="button" style="width: 50%; height: 50px;" onclick="window.open('${hotplace.hotplaceLink}')">자세히 보기</button>
 						</div>
 					</div>
 				</div>
@@ -115,23 +115,27 @@
 		</c:forEach>
 	</div>
 
-	<div class="info-bg2">
-		<div class="bottom-list">
-			<c:if test="${currentPage > 1}">
-				<a class="prev"
-					href="?page=${currentPage - 1}&memberNumber=${memberNumber}"></a>
-			</c:if>
+<c:set var="pageRange" value="5" />
+<c:set var="startPage" value="${currentPage - (pageRange / 2) > 1 ? currentPage - (pageRange / 2) : 1}" />
+<c:set var="endPage" value="${startPage + pageRange - 1 > totalPages ? totalPages : startPage + pageRange - 1}" />
+<c:if test="${endPage - startPage + 1 < pageRange}">
+    <c:set var="startPage" value="${endPage - pageRange + 1 > 1 ? endPage - pageRange + 1 : 1}" />
+</c:if>
 
-			<c:forEach var="i" begin="1" end="${totalPages}">
-				<a class="num ${currentPage == i ? 'on' : ''}"
-					href="?page=${i}&memberNumber=${memberNumber}">${i}</a>
-			</c:forEach>
+<div class="info-bg2">
+    <div class="bottom-list">
+        <c:if test="${currentPage > 1}">
+            <a class="prev" href="?page=${currentPage - 1}&memberNumber=${memberNumber}"></a>
+        </c:if>
 
-			<c:if test="${currentPage < totalPages}">
-				<a class="next"
-					href="?page=${currentPage + 1}&memberNumber=${memberNumber}"></a>
-			</c:if>
-		</div>
-	</div>
+        <c:forEach var="i" begin="${startPage}" end="${endPage}">
+            <a class="num ${currentPage == i ? 'on' : ''}" href="?page=${i}&memberNumber=${memberNumber}">${i}</a>
+        </c:forEach>
+
+        <c:if test="${currentPage < totalPages}">
+            <a class="next" href="?page=${currentPage + 1}&memberNumber=${memberNumber}"></a>
+        </c:if>
+    </div>
+</div>
 </body>
 </html>
