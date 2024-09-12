@@ -39,11 +39,11 @@
 				<ul class="notice-admain-ul-all">
 					<c:forEach var="notice" items="${noticeList}">
 						<li><a
-							href="${pageContext.request.contextPath}/notice/notice-addetail.no?title=${notice.noticeTitle}">
+							href="${pageContext.request.contextPath}/notice/notice-addetail.no?number=${notice.noticeNumber}">
 								<div class="notice-admain-ul-main">
 									<div class="notice-admain-ul-cate">${notice.noticeCate}</div>
 									<div class="notice-admain-ul-title">${notice.noticeTitle}</div>
-									<div class="notice-admain-ul-author">관리자</div>
+									<div class="notice-admain-ul-author">${notice.memberNickname}</div>
 									<div class="notice-admain-ul-date">${notice.noticeRegistDate}</div>
 								</div>
 						</a></li>
