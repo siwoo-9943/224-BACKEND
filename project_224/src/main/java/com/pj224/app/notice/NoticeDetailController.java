@@ -26,19 +26,19 @@ public class NoticeDetailController implements MemExecute {
 
 		request.setCharacterEncoding("UTF-8");
 
-		System.out.println("컨드롤러 들어옴1");
+		System.out.println("공지 상세 컨드롤러 들어옴1");
 		Result result = new Result();
 
-		String title = request.getParameter("title");
+		String number = request.getParameter("number");
 
-		System.out.println("가져온 제목: " + title);
+		System.out.println("noticeNumber: " + number);
 
 		// 리스트를 가져와서 request에 설정
 		NoticeDAO noticeDAO = new NoticeDAO();
-		List<NoticeDTO> noticeDTO = noticeDAO.showDetail(title);
+		List<NoticeDTO> noticeDTO = noticeDAO.showDetail(number);
 		request.setAttribute("noticeshowdetail", noticeDTO);
 
-		System.out.println("쿼리 결과 : " + noticeDTO);
+		System.out.println("상세 쿼리 결과 : " + noticeDTO);
 
 		result.setRedirect(false);
 		result.setPath(request.getContextPath() + "/app/notice/notice-addetail.jsp");
