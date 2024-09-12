@@ -15,7 +15,7 @@
                 <span style="font-size: 58px; color: #fff; font-weight: 700;">홍대입구역</span>
             </div>
         </div>
-        <div style="background-image: url(${pageContext.request.contextPath}/assets/images/hotplace.png); width: 100%; height: 100%;"></div>
+        <div style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-hongdae.png); width: 100%; height: 100%;background-size:cover;background-repeat: no-repeat;"></div>
     </div>
     <div class="sub-contents-inner gettingToSeoul" id="container">
         <div class="location">
@@ -41,7 +41,7 @@
                             <img src="${pageContext.request.contextPath}/assets/images/pick.png" style="width: 30px;">
                         </div>
                         <div class="img-wrapper">
-                            <img src="${pageContext.request.contextPath}/assets/images/1.png" style="height: 100%; overflow: hidden; border: 1px solid black;">
+                            <img src="${pageContext.request.contextPath}/assets/images/3.png" style="height: 100%; overflow: hidden; border: 1px solid black;">
                         </div>
                     </div>
                     <div class="hotplace-content-right">
