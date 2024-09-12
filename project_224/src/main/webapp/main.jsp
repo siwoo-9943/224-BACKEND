@@ -187,12 +187,17 @@ color: black;
 		</section>
 		<!-- 2번째 줄 4칸 -->
 		<section class="main-section-third-2">
+<<<<<<< HEAD
+=======
+			
+>>>>>>> main
 			<section class="main-section-third-top">
 				<ul id="main-hot">
 					<c:forEach var="item" items="${hplist2}">
 						<li id="main-hot-list">
 						
 							<div id="main-hot-list-img"
+<<<<<<< HEAD
 								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-5.jpg);">
 								
 								<c:if test="${sessionScope.member.memberNumber != null}">
@@ -203,6 +208,9 @@ color: black;
 										<c:set var="isLiked" value="true" />
 									</c:if>
 								</c:forEach>
+=======
+								style="background-image: url(${pageContext.request.contextPath}/assets/images/main-3.jpg);">
+>>>>>>> main
 
 								<c:choose>
 									<c:when test="${isLiked}">
