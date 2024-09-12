@@ -29,27 +29,6 @@ public class MainDAO {
 		return sqlSession.selectOne("member.login", memberDTO);
 	}
 
-	// 검색-커뮤니티
-//	public List<String> SearchInputResult(String search) {
-//		String inputSearch = search;
-//		System.out.println(inputSearch);
-//		return sqlSession.selectList("mainsearch.selectcm");
-//	}
-//	public List<MainDTO> searchhpInput(String inputsearch) {
-//	    System.out.println("검색어 DTO 입력: " + inputsearch);
-//	    MainDTO mainDTO = new MainDTO(inputsearch);
-//	    System.out.println(mainDTO);
-//	    List<MainDTO> results = sqlSession.selectList("searchmain.selectcm", mainDTO);
-//	    System.out.println("검색 결과: " + results);
-//	    System.out.println(mainDTO);
-//	    return results;
-//	}
-
-//	public List<MainDTO> searchcmPosts(String searchInput) {
-//		System.out.println("searchPosts");
-//		return sqlSession.selectList("main.selectcm", searchInput);
-//	}
-
 //	검색 커뮤니티
 	public List<MainDTO> searchcmInfo(String inputsearch) {
 		System.out.println("searchInfo");
@@ -77,6 +56,21 @@ public class MainDAO {
 		List<MainDTO> list = null;
 		System.out.println(list);
 		list = sqlSession.selectList("main.selecthp");
+		return list;
+	}
+	
+//	검색 핫플레이스
+	public List<MainDTO> searchnoInfo(String inputsearch) {
+		System.out.println("searchInfo");
+		System.out.println("DAO 검색어 : " + inputsearch);
+		return sqlSession.selectList("main.selectno", inputsearch);
+	}
+	
+	public List<MainDTO> searchnoList() {
+		System.out.println("검색결과");
+		List<MainDTO> list = null;
+		System.out.println(list);
+		list = sqlSession.selectList("main.selectno");
 		return list;
 	}
 	

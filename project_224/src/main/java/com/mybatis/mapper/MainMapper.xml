@@ -59,6 +59,18 @@
 		HOTPLACE_NUMBER BETWEEN 1 AND 5
 	</select>
 
+	<select id="selectno" resultType="MainDTO">
+		SELECT NOTICE_NUMBER , NOTICE_CATE ,NOTICE_TITLE ,NOTICE_CONTENT
+		,NOTICE_REGIST_DATE
+		FROM TBL_NOTICE TN
+		WHERE NOTICE_CATE LIKE '%' ||
+		#{searchInput} || '%' OR NOTICE_TITLE LIKE '%' ||
+		#{searchInput} || '%' OR NOTICE_CONTENT LIKE '%' ||
+		#{searchInput} ||
+		'%'
+		ORDER BY NOTICE_TITLE
+	</select>
+
 	<!-- 메인페이지 커뮤니티 컨텐츠 -->
 	<select id="cmlist" resultType="MainDTO">
 		SELECT
