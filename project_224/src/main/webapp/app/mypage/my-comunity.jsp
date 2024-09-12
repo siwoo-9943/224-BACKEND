@@ -39,7 +39,7 @@
 
           <div class="my-comunity-center">
 
-            <h3>금쪽이 님이 작성한 글 조회</h3>
+            <h3>${sessionScope.member.memberName} 님이 작성한 글 조회</h3>
             <div class="my-comunity-info">
               <div class="my-comunity-info-title">제목</div>
               <div class="my-comunity-info-author">닉네임</div>

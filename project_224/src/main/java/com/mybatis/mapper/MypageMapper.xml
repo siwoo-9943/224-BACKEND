@@ -68,12 +68,22 @@
 		WHERE MEMBER_NUMBER = #{memberNumber}
 	</delete>
 
+	<!-- 내가 찜한 목록 -->
 	<select id="mypick" parameterType="int" resultType="HotplaceDTO">
-		SELECT h.HOTPLACE_STATION , h.HOTPLACE_TITLE , h.HOTPLACE_LINK 
+		SELECT
+		h.HOTPLACE_STATION , h.HOTPLACE_TITLE , h.HOTPLACE_LINK
 		from tbl_hotplace h, tbl_like l
-		where h.hotplace_number = l.hotplace_number AND l.member_number = #{memberNumber}
+		where h.hotplace_number = l.hotplace_number
+		AND l.member_number = #{memberNumber}
 	</select>
 
+	<!-- 내가 작성한 게시글 -->
+	<select id="mywrite" parameterType="mypageDTO"
+		resultType="mypageDTO">
+		SELECT TB.BOARD_CATE ,TB.BOARD_TITLE, TM.MEMBER_NICKNAME,TB.BOARD_REGIST_DATE
+		FROM TBL_BOARD TB JOIN TBL_MEMBER TM ON TB.MEMBER_NUMBER =TM.MEMBER_NUMBER
+		WHERE tb.MEMBER_NUMBER = #{memberNumber}
+	</select>
 </mapper>
 
 

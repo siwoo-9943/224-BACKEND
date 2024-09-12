@@ -23,6 +23,10 @@ public class MypageDTO {
 		private String memberBirth;
 		private String memberTerms;
 		
+		private String boardCate;
+		private String boardTitle;
+		private String boardRegistDate;
+		
 		
 		
 		
@@ -87,6 +91,32 @@ public class MypageDTO {
 		public void setMemberTerms(String memberTerms) {
 			this.memberTerms = memberTerms;
 		}
+		
+		public String getMemberNickname() {
+			return memberNickname;
+		}
+		public void setMemberNickname(String memberNickname) {
+			this.memberNickname = memberNickname;
+		}
+		public String getBoardCate() {
+			return boardCate;
+		}
+		public void setBoardCate(String boardCate) {
+			this.boardCate = boardCate;
+		}
+		public String getBoardTitle() {
+			return boardTitle;
+		}
+		public void setBoardTitle(String boardTitle) {
+			this.boardTitle = boardTitle;
+		}
+		public String getBoardRegistDate() {
+			return boardRegistDate;
+		}
+		public void setBoardRegistDate(String boardRegistDate) {
+			this.boardRegistDate = boardRegistDate;
+		}
+		
 		@Override
 		public String toString() {
 			return "mypageDTO = [memberNumber : " + memberNumber + ",memberEmail : " + memberEmail + ",memberPw : " + memberPw + 

@@ -47,7 +47,7 @@ public class MypickController implements MemExecute {
 //		result.setRedirect(true);
 //		result.setPath(request.getContextPath() + "/app/mypage/my-pick.jsp");
 
-		request.getRequestDispatcher(request.getContextPath() +"/app/mypage/my-pick.jsp").forward(request, response);;
+		request.getRequestDispatcher(request.getContextPath() +"/app/mypage/my-pick.jsp").forward(request, response);
 		return result;
 	}
 

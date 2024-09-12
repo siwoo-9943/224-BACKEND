@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.pj224.app.dto.CommunityDTO;
 import com.pj224.app.dto.HotplaceDTO;
 import com.pj224.app.dto.MemberDTO;
 import com.pj224.app.dto.MypageDTO;
@@ -152,10 +153,17 @@ public class MypageDAO {
 
 }
 	//내가 찜한 목록
-	public List<HotplaceDTO> mylikelist(int memberNumber){
+	public List<CommunityDTO> mylikelist(int memberNumber){
 		System.out.println("리스트 잘 들어왔니");
 		return sqlSession.selectList("mypage.mypick",memberNumber);
 	}
+	
+	//내가 작성한 글
+		public List<CommunityDTO> mywritelist(int memberNumber){
+			System.out.println("리스트 잘 들어왔니");
+			return sqlSession.selectList("mypage.community",memberNumber);
+		}
+		
 	
 	
 	
