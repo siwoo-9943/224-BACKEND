@@ -41,7 +41,7 @@
 			</div>
           <div class="notice-cont">
             <textarea id="summernote" name="noticeContent">${notice.noticeContent}</textarea>
- <!--            <p id="letter-length" style="display: inline;"></p>/1000 -->
+             <p id="letter-length" style="display: inline;"></p>/1000 
           </div>
         </div>
       </div>
@@ -53,29 +53,7 @@
       </div>
     </form>
   </div>
-  
-  
-  
-  <!-- 
-      <div class="notice-modi-button-container">
-        <button class="notice-modi-action-button" type="button" onclick="openModal()">
-          이전
-        </button>
-        <button class="notice-modi-action-button" type="button" onclick="goToPage()">수정</button>
-      </div>
- -->
-      <!-- 모달 HTML 
-      <div id="notice-myModal" class="notice-modal">
-        <div class="notice-modal-content">
-          <span class="notice-close" onclick="closeModal()">&times;</span>
-          <h2>이전 페이지로 돌아가시겠습니까?</h2>
-          <p>확인 버튼을 클릭하면 이전 페이지로 이동합니다.</p>
-          <button onclick="goToPage()">확인</button>
-          <button class="notice-cancel-btn" onclick="closeModal()">취소</button>
-        </div>
-      </div>
-    </form>
-  </div> -->
+
 </body>
 <%@ include file="../../footer.jsp"%>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
