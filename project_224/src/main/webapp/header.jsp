@@ -18,8 +18,9 @@
 <body>
 </body>
 <header>
-	<c:set var="memberNumber"
-		value="${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}" />
+	
+		<c:set var="memberNumber"
+		value="${sessionScope.member != null && sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}" />
 	<section class="header-section">
 		<div class="header-fixed">
 			<ul class="header-list">
@@ -153,17 +154,17 @@
 						<li><a
 							href="${pageContext.request.contextPath}/app/hotplace/hotplace.jsp">핫플콕콕</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam?memberNumber=${memberNumber}.hp">강남역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-gangnam.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">강남역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil?memberNumber=${memberNumber}.hp">잠실역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-jamsil.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">잠실역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu?memberNumber=${memberNumber}.hp">성수역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-seongsu.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">성수역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae?memberNumber=${memberNumber}.hp">문래역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-moonrae.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">문래역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae?memberNumber=${memberNumber}.hp">홍대입구역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-hongdae.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">홍대입구역</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro?memberNumber=${memberNumber}.hp">을지로입구역</a></li>
+							href="${pageContext.request.contextPath}/hotplace/hotplace-euljiro.hp?memberNumber=${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}">을지로입구역</a></li>
 					</ul>
 				</div>
 			</div>

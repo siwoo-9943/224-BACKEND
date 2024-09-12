@@ -73,12 +73,11 @@ public class MainFrontController extends HttpServlet {
 		case "/main.mn":
 			System.out.println("핫플 컨텐츠");
 			result = new MainHpListController().MemExecute(request, response);
-			// 아래 실행 안됨
-			if (session != null) {
-				System.out.println("로그인 일때 찜목록 체크");
-				result = new MainLikeCheckController().MemExecute(request, response);
-				System.out.println("체크?");
-			}
+			//로그인일때만 실행
+			System.out.println("로그인 일때 찜목록 체크");
+			result = new MainLikeCheckController().MemExecute(request, response);
+			System.out.println("체크?");
+
 			System.out.println("커뮤니티 컨텐츠");
 			result = new MainComuListController().MemExecute(request, response);
 			System.out.println("main페이지이동");
@@ -90,6 +89,8 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("검색어커뮤결과");
 			result = new SearchHotController().MemExecute(request, response);
 			System.out.println("검색어핫플결과");
+			result = new SearchNoticeController().MemExecute(request, response);
+			System.out.println("검색어핫플결과");
 //			response.sendRedirect("main-search.jsp");
 			request.getRequestDispatcher("main-search.jsp").forward(request, response);
 			System.out.println("페이지이동");
@@ -100,22 +101,22 @@ public class MainFrontController extends HttpServlet {
 			break;
 
 		case "/pick.mn":
-            System.out.println("찜 하기");
-            result = new MainLikeController().MemExecute(request, response);
-            request.getRequestDispatcher("main.mn").forward(request, response);
-            System.out.println("찜 하기 완료");
-            break;
-        case "/unpick.mn":
-            System.out.println("찜 풀기");
-            result = new MainUnlikeController().MemExecute(request, response);
-            request.getRequestDispatcher("main.mn").forward(request, response);
-            System.out.println("찜 풀기 완료");
-            break;
+			System.out.println("찜 하기");
+			result = new MainLikeController().MemExecute(request, response);
+			request.getRequestDispatcher("main.mn").forward(request, response);
+			System.out.println("찜 하기 완료");
+			break;
+		case "/unpick.mn":
+			System.out.println("찜 풀기");
+			result = new MainUnlikeController().MemExecute(request, response);
+			request.getRequestDispatcher("main.mn").forward(request, response);
+			System.out.println("찜 풀기 완료");
+			break;
 
 		default:
 			System.out.println("페이지 오류 메인으로 이동합니다");
 			request.getRequestDispatcher("main.mn").forward(request, response);
-			
+
 			break;
 		}
 
