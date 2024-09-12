@@ -43,27 +43,27 @@ phoneBtn.addEventListener("click", phonecheckbox);
 
 //닉네임 중복체크
 $(document).ready(function() {
-	$('.my-update-value-check').on('click', function() {
-		console.log("닉네임중복체크클릭");
-		let memberNickname = $("#my-newNikename").val();
-		console.log(memberNickname + "닉네임저장확인");
+   $('.my-update-value-check').on('click', function() {
+      console.log("닉네임중복체크클릭");
+      let memberNickname = $("#my-newNikename").val();
+      console.log(memberNickname + "닉네임저장확인");
 
-		if (memberNickname === '') {
-			alert("아이디를 입력하세요.");
-			return;
-		}
+      if (memberNickname === '') {
+         alert("아이디를 입력하세요.");
+         return;
+      }
 
-		$.ajax({
-			url: "/app/mypage/mychecknickname.my",
-			type: "get",
-			data: { "Nick": memberNickname },
-			success: function(result) {
-				$('#mypagecheckNicknameResult').text(result);
-			},
-			error: function() {
-				$('#mypagecheckNicknameResult').text('오류가 발생했습니다. 다시 시도하세요.');
-			}
-		});
+      $.ajax({
+         url: "/app/mypage/mychecknickname.my",
+         type: "get",
+         data: { "Nick": memberNickname },
+         success: function(result) {
+            $('#mypagecheckNicknameResult').text(result);
+         },
+         error: function() {
+            $('#mypagecheckNicknameResult').text('오류가 발생했습니다. 다시 시도하세요.');
+         }
+      });
 
-	});
+   });
 });

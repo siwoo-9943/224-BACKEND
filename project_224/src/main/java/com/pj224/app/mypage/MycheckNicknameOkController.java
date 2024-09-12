@@ -19,7 +19,7 @@ public class MycheckNicknameOkController implements MemExecute{
 			throws IOException, ServerException, ServletException {
 		
 		MypageDAO mypageDAO = new MypageDAO();
-		boolean isTrue = mypageDAO.MycheckNicknameOk(request.getParameter("Nick"));
+		boolean isTrue = mypageDAO.MycheckNickNameOk(request.getParameter("Nick"));
 		String result = null;
 		
 		System.out.println("MycheckNicknameOkController");
