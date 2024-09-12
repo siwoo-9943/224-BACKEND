@@ -20,7 +20,7 @@ public class NoticeModifyOkController implements MemExecute {
 	        throws IOException, ServerException, ServletException {
 	    request.setCharacterEncoding("UTF-8");
 
-	    System.out.println("수정 컨트롤러");
+	    System.out.println("공지 수정 컨트롤러 들어옴");
 
 	    HttpSession session = request.getSession();
 	    MemberDTO member = (MemberDTO) session.getAttribute("member");

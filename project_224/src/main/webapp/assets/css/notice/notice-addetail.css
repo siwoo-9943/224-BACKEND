@@ -23,6 +23,7 @@
 
 /* 게시글 컨테이너 */
 .notice-addetail-main {
+	width: 1000px;
   margin-top: 20px;
   border-top: 2px solid rgb(51, 51, 51);
   color: rgb(51, 51, 51);
@@ -53,9 +54,15 @@
 
 /* 게시글 상세 내용 파트 */
 .notice-addetail-maincont {
+  width: 130px;
   padding: 30px 10px 100px;
-  border-bottom: 1px solid rgb(128, 128, 128);
+  /*border-bottom: 1px solid rgb(128, 128, 128);*/
 }
+
+.notice-addetail-maincont p{
+	width: 1000px;
+}
+
 
 /* '목록' 버튼 파트 컨테이너 */
 .notice-addetail-btuall {
@@ -99,7 +106,7 @@
   color: rgb(255, 255, 255);
   background-color: #2bcf81;
   border: 0px none;
-  transform: translate(-800px, 0px);
+  transform: translate(-750px, 0px);
   cursor: pointer;
 }
 
@@ -114,7 +121,7 @@
   color: rgb(255, 255, 255);
   background-color: #2bcf81;
   border: 0px none;
-  transform: translate(-790px, 0px);
+  transform: translate(-740px, 0px);
   cursor: pointer;
 }
 
