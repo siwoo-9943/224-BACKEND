@@ -140,10 +140,6 @@ public class NoticeFrontController extends HttpServlet {
 			}
 			break;
 		}
-<<<<<<< HEAD
-=======
-		
 
->>>>>>> main
 	}
 }
