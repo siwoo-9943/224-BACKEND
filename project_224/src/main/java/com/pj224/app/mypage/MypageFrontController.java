@@ -96,6 +96,9 @@ public class MypageFrontController extends HttpServlet {
 	    	  new MypickController().MemExecute(request, response);
 	    	  break;
 	    	  
+			case "/app/mypage/mycomunity.my" :
+				
+	    	  
 	      }
 	    	  
 //			if (result != null) {
