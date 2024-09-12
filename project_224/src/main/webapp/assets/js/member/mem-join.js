@@ -163,6 +163,7 @@ $(document).ready(function() {
 });
 
 //문자인증발송
+/*
 $(document).ready(function() {
 	$('#checkNumberBtn').on('click', function() {
 		console.log("인증문자발송");
@@ -174,6 +175,4 @@ $(document).ready(function() {
 
 	});
 });
-
-
-
+*/

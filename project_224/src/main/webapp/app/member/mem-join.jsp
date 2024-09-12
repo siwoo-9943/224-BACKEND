@@ -499,6 +499,37 @@
     </section>
   </main>
 <script src="${pageContext.request.contextPath}/assets/js/member/mem-join.js"></script>
+
+<script>
+$(document).ready(function() {
+    // 인증번호 입력 필드 초기에 숨기기
+    $("#join-number2").parent().hide();
+
+    // 인증번호 받기 버튼 클릭 이벤트
+    $("#checkNumberBtn").click(function() {
+        var phoneNumber = $("#join-number").val();
+        if (phoneNumber) {
+            $.ajax({
+                url: "${pageContext.request.contextPath}/member/joinSMS.me",
+                type: "POST",
+                data: { phoneNumber: phoneNumber },
+                success: function(response) {
+                    alert(response);
+                    $("#join-number2").parent().show(); // 인증번호 입력 필드 보이기
+                },
+                error: function(xhr, status, error) {
+                    alert("오류 발생: " + xhr.responseText);
+                }
+            });
+        } else {
+            alert("휴대폰 번호를 입력해주세요.");
+        }
+    });
+
+});
+
+
+</script>
 </body>
 <%@ include file="/footer.jsp"%>
 </html>
