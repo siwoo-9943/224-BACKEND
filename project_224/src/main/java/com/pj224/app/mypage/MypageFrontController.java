@@ -90,16 +90,17 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("탈퇴 확인");
 				new MyquitController().MemExecute(request, response);
 				break;
-			case "/app/mypage/mypick.my":
+			case "/app/mypage/my-pick.my":
 	    	  System.out.println("찜목록 확인");
 	    	  request.setAttribute("myCheckLike", request.getAttribute("myCheckLike"));
 	    	  new MypickController().MemExecute(request, response);
 	    	  break;
 	    	  
-			case "/app/mypage/mycomunity.my" :
+			case "/app/mypage/my-comunity.my" :
 				System.out.println("내가 작성한 글 확인");
 				request.setAttribute("mywritepage", request.getAttribute("mywritepage"));
 				new MycomunityController().MemExecute(request, response);
+				request.getRequestDispatcher(request.getContextPath()+"/app/mypage/my-comunity.jsp").forward(request, response);
 				break;
 	    	  
 	      }
