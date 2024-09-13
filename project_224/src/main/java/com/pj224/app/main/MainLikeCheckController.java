@@ -28,8 +28,8 @@ public class MainLikeCheckController implements MemExecute {
 		
 		HttpSession session = request.getSession(false); // false로 설정하여 세션이 없으면 null 반환
 		
-		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
 		try {
+			MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
 			int membersessionNum = memberDTO.getMemberNumber();
 			System.out.println("세션쿠키" + membersessionNum);
 
