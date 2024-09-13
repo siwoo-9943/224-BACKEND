@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>잠실역 핫플레이스</title>
+<title>문래역 핫플레이스</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/hotplace/hotplace-detail.css">
 </head>
 <%@ include file="../../header.jsp"%>
@@ -12,14 +12,14 @@
     <div style="position: relative; height: 350px;">
         <div style="position: absolute; left: 0px; bottom: 0px; right: 0px; z-index: 10;">
             <div style="width: 100%; max-width: 1200px; margin: 0 auto 30px;">
-                <span style="font-size: 58px; color: #fff; font-weight: 700;">잠실역</span>
+                <span style="font-size: 58px; color: #fff; font-weight: 700;">문래역</span>
             </div>
         </div>
         <div style="background-image: url(${pageContext.request.contextPath}/assets/images/conv-moonrae.png); width: 100%; height: 100%;background-size:cover;background-repeat: no-repeat;"></div>
     </div>
     <div class="sub-contents-inner gettingToSeoul" id="container">
         <div class="location">
-            <span class="ar">&gt;</span> 핫플콕콕<span class="ar">&gt;</span> <span>잠실역</span>
+            <span class="ar">&gt;</span> 핫플콕콕<span class="ar">&gt;</span> <span>문래역</span>
         </div>
     </div>
 
