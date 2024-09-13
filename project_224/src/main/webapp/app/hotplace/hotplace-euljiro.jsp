@@ -41,13 +41,46 @@
 				test="${status.index >= startIndex && status.index <= endIndex}">
 				<div class="hotplace-contents-wrapper">
 					<div class="hotplace-content-left">
+						<!-- 세션에서 memberNumber 가져오기 -->
+						<c:set var="memberNumber"
+							value="${sessionScope.member.memberNumber != null ? sessionScope.member.memberNumber : 0}" />
+
+
 						<div class="hotplace-content-name" style="margin-bottom: 10px;">
-							<h1 style="display: inline; margin: 0;">
-								${hotplace.hotplaceTitle}</h1>
-							<img
-								src="${pageContext.request.contextPath}/assets/images/pick.png"
-								style="width: 30px;">
+							<h1 style="display: inline; margin: 0;">${hotplace.hotplaceTitle}</h1>
+
+							<c:if test="${memberNumber != 0}">
+								<c:set var="isLiked" value="false" />
+								<c:forEach var="like" items="${likeList}">
+									<c:if
+										test="${like.hotplaceNumber == hotplace.hotplaceNumber && like.memberNumber == memberNumber}">
+										<c:set var="isLiked" value="true" />
+									</c:if>
+								</c:forEach>
+
+								<c:choose>
+									<c:when test="${isLiked}">
+										<a
+											href="${pageContext.request.contextPath}/hotplace/unpick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/picked.png"
+											style="width: 30px;" alt="찜 해제">
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a
+											href="${pageContext.request.contextPath}/hotplace/pick.hp?hotplaceNumber=${hotplace.hotplaceNumber}&memberNumber=${memberNumber}&returnUrl=${pageContext.request.requestURL}&page=${currentPage}">
+											<img
+											src="${pageContext.request.contextPath}/assets/images/pick.png"
+											style="width: 30px;" alt="찜하기">
+										</a>
+									</c:otherwise>
+								</c:choose>
+							</c:if>
 						</div>
+
+
+
 						<div class="img-wrapper">
 							<img src="${pageContext.request.contextPath}/assets/images/1.png"
 								style="height: 100%; overflow: hidden; border: 1px solid black;">
@@ -74,7 +107,7 @@
 							</c:choose>
 						</div>
 						<div class="hotplace-content-right-button">
-							<button style="width: 50%; height: 50px;">자세히 보기</button>
+							<button type="button" style="width: 50%; height: 50px;" onclick="window.open('${hotplace.hotplaceLink}')">자세히 보기</button>
 						</div>
 					</div>
 				</div>
@@ -82,20 +115,27 @@
 		</c:forEach>
 	</div>
 
-	<div class="info-bg2">
-		<div class="bottom-list">
-			<c:if test="${currentPage > 1}">
-				<a class="prev" href="?page=${currentPage - 1}"></a>
-			</c:if>
+<c:set var="pageRange" value="5" />
+<c:set var="startPage" value="${currentPage - (pageRange / 2) > 1 ? currentPage - (pageRange / 2) : 1}" />
+<c:set var="endPage" value="${startPage + pageRange - 1 > totalPages ? totalPages : startPage + pageRange - 1}" />
+<c:if test="${endPage - startPage + 1 < pageRange}">
+    <c:set var="startPage" value="${endPage - pageRange + 1 > 1 ? endPage - pageRange + 1 : 1}" />
+</c:if>
 
-			<c:forEach var="i" begin="1" end="${totalPages}">
-				<a class="num ${currentPage == i ? 'on' : ''}" href="?page=${i}">${i}</a>
-			</c:forEach>
+<div class="info-bg2">
+    <div class="bottom-list">
+        <c:if test="${currentPage > 1}">
+            <a class="prev" href="?page=${currentPage - 1}&memberNumber=${memberNumber}"></a>
+        </c:if>
 
-			<c:if test="${currentPage < totalPages}">
-				<a class="next" href="?page=${currentPage + 1}"></a>
-			</c:if>
-		</div>
-	</div>
+        <c:forEach var="i" begin="${startPage}" end="${endPage}">
+            <a class="num ${currentPage == i ? 'on' : ''}" href="?page=${i}&memberNumber=${memberNumber}">${i}</a>
+        </c:forEach>
+
+        <c:if test="${currentPage < totalPages}">
+            <a class="next" href="?page=${currentPage + 1}&memberNumber=${memberNumber}"></a>
+        </c:if>
+    </div>
+</div>
 </body>
 </html>
