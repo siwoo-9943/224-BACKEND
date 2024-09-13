@@ -73,7 +73,6 @@ public class MypageFrontController extends HttpServlet {
 			case "/mypage.my":
 				System.out.println("profile");
 				new MypageOkController().MemExecute(request, response);
-				request.getRequestDispatcher("/app/mypage/my-profile.jsp").forward(request, response);
 				break;
 			case "/app/mypage/passcheck.my":
 				System.out.println("비밀번호 확인 페이지");
@@ -87,21 +86,31 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("업데이트 확인");
 				new MypageUpdateController().MemExecute(request, response);
 				break;
-			
-			case "/mypick.my":
+			case "/app/mypage/myquit.my":
+				System.out.println("탈퇴 확인");
+				new MyquitController().MemExecute(request, response);
+				break;
+			case "/app/mypage/mypick.my":
 	    	  System.out.println("찜목록 확인");
-	    	  response.sendRedirect(request.getContextPath() + "/app/mypage/my-pick.jsp");
+	    	  request.setAttribute("myCheckLike", request.getAttribute("myCheckLike"));
+	    	  new MypickController().MemExecute(request, response);
 	    	  break;
+	    	  
+			case "/app/mypage/mycomunity.my" :
+				System.out.println("내가 작성한 글 확인");
+				request.setAttribute("mywritepage", request.getAttribute("mywritepage"));
+				new MycomunityController().MemExecute(request, response);
+				break;
 	    	  
 	      }
 	    	  
-			if (result != null) {
-				if(result.isRedirect()) {
-					response.sendRedirect(result.getPath());
-				}else {
-					request.getRequestDispatcher(result.getPath()).forward(request, response);
-				}
-			}
+//			if (result != null) {
+//				if(result.isRedirect()) {
+//					response.sendRedirect(result.getPath());
+//				}else {
+//					request.getRequestDispatcher(result.getPath()).forward(request, response);
+//				}
+//			}
 
 		}
 
