@@ -45,7 +45,6 @@ public class MycomunityController implements MemExecute{
 		
 		request.setAttribute("mywritepage",mywritepage);
 		
-		request.getRequestDispatcher(request.getContextPath()+"/app/mypage/my-comunity.jsp").forward(request, response);
 		return result;
 	}
 
