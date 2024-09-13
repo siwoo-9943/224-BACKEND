@@ -74,7 +74,7 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("profile");
 				new MypageOkController().MemExecute(request, response);
 				break;
-			case "/app/mypage/passcheck.my":
+			case "/app/mypage/mypasscheck.my":
 				System.out.println("비밀번호 확인 페이지");
 				new MypasscheckOkController().MemExecute(request, response);
 				break;
@@ -82,7 +82,7 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("닉네임 중복확인 ok");
 				new MycheckNicknameOkController().MemExecute(request, response);
 				break;
-			case "/app/mypage/mypageupdate.my":
+			case "/app/mypage/myupdate.my":
 				System.out.println("업데이트 확인");
 				new MypageUpdateController().MemExecute(request, response);
 				break;

@@ -26,7 +26,7 @@ public class MypageUpdateController implements MemExecute {
 
 		// MemberDTO와 DAO 객체 생성
 		MypageDAO mypageDAO = new MypageDAO();
-
+			System.out.println("업데이트 다오 실행");
 		
 
 		String memberNumber = request.getParameter("memberNumber");
