@@ -74,7 +74,7 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("profile");
 				new MypageOkController().MemExecute(request, response);
 				break;
-			case "/app/mypage/passcheck.my":
+			case "/app/mypage/mypasscheck.my":
 				System.out.println("비밀번호 확인 페이지");
 				new MypasscheckOkController().MemExecute(request, response);
 				break;
@@ -82,7 +82,7 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("닉네임 중복확인 ok");
 				new MycheckNicknameOkController().MemExecute(request, response);
 				break;
-			case "/app/mypage/mypageupdate.my":
+			case "/app/mypage/myupdate.my":
 				System.out.println("업데이트 확인");
 				new MypageUpdateController().MemExecute(request, response);
 				break;
@@ -90,16 +90,17 @@ public class MypageFrontController extends HttpServlet {
 				System.out.println("탈퇴 확인");
 				new MyquitController().MemExecute(request, response);
 				break;
-			case "/app/mypage/mypick.my":
+			case "/app/mypage/my-pick.my":
 	    	  System.out.println("찜목록 확인");
 	    	  request.setAttribute("myCheckLike", request.getAttribute("myCheckLike"));
 	    	  new MypickController().MemExecute(request, response);
 	    	  break;
 	    	  
-			case "/app/mypage/mycomunity.my" :
+			case "/app/mypage/my-comunity.my" :
 				System.out.println("내가 작성한 글 확인");
 				request.setAttribute("mywritepage", request.getAttribute("mywritepage"));
 				new MycomunityController().MemExecute(request, response);
+				request.getRequestDispatcher(request.getContextPath()+"/app/mypage/my-comunity.jsp").forward(request, response);
 				break;
 	    	  
 	      }
