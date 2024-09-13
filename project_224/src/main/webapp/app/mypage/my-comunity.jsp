@@ -20,13 +20,13 @@
         <div class="my-category">
           <div class="my-category-menu">메뉴</div>
           <div class="my-line"></div>
-          <a href="${pageContext.request.contextPath}/app/mypage/mypasscheck.my">
+          <a href="${pageContext.request.contextPath}/app/mypage/my-passcheck.jsp">
           <div class="my-category-menu">개인정보수정</div></a>
-          <a href="${pageContext.request.contextPath}/app/mypage/mycomunity.my">
+          <a href="${pageContext.request.contextPath}/app/mypage/my-comunity.jsp">
           <div class="my-category-menu">내가 작성한 글</div></a>
-          <a href="${pageContext.request.contextPath}/app/mypage/mypick.my">
+          <a href="${pageContext.request.contextPath}/app/mypage/my-pick.jsp">
           <div class="my-category-menu">찜목록</div></a>
-          <a href="${pageContext.request.contextPath}/app/mypage/myquit.my">
+          <a href="${pageContext.request.contextPath}/app/mypage/my-quit.jsp">
           <div class="my-category-menu">회원탈퇴</div></a>
         </div>
       </div>

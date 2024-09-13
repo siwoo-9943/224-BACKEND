@@ -29,11 +29,12 @@ public class MyquitController implements MemExecute {
       
       MemberDTO member = (MemberDTO) session.getAttribute("member");
       String memberNumberStr = request.getParameter("memberNumber");
+      System.out.println(memberNumberStr);
       
-      // Null 또는 빈 문자열 확인
-       if (memberNumberStr == null || memberNumberStr.trim().isEmpty()) {
-           throw new IllegalArgumentException("memberNumber는 null 또는 빈 문자열일 수 없습니다.");
-       }
+//      // Null 또는 빈 문자열 확인
+//       if (memberNumberStr == null || memberNumberStr.trim().isEmpty()) {
+//           throw new IllegalArgumentException("memberNumber는 null 또는 빈 문자열일 수 없습니다.");
+//       }
 
       // MemberDTO와 DAO 객체 생성
       MypageDTO mypageDTO = new MypageDTO();

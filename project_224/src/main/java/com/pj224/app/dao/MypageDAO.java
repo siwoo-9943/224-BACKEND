@@ -112,7 +112,7 @@ public class MypageDAO {
 
 	}
 
-	// 회원 번호로 회원 정보 조회 이번에 수정한 거임
+	// 회원 번호로 회원 정보 조회 
 	public MypageDTO getMemberByNumber(String memberNumber) {
 		System.out.println("회원 번호로 회원 정보 조회");
 
@@ -129,10 +129,10 @@ public class MypageDAO {
 			return null; // 적절한 에러 처리
 		}
 
-		// 데이터베이스에서 사용자 정보를 조회,탈퇴
+		// 데이터베이스에서 사용자 정보를 조회
 		return sqlSession.selectOne("mypage.MypageUpdateOk", mypageDTO);
 	}
-
+	//탈퇴
 	public boolean delete(String memberNumberStr) {
 
 		System.out.println("회원탈퇴 조회");
@@ -141,8 +141,10 @@ public class MypageDAO {
 		try {
 			if (memberNumberStr != null && !memberNumberStr.isEmpty()) {
 				int memberNumber2 = Integer.parseInt(memberNumberStr);
-				mypageDTO.setMemberNumber(memberNumber2);
 				System.out.println(memberNumber2 + "??");
+				mypageDTO.setMemberNumber(memberNumber2);
+				System.out.println(mypageDTO);
+				
 			} else {
 				throw new IllegalArgumentException("memberNumber는 null 또는 빈 문자열일 수 없습니다.");
 			}
@@ -150,6 +152,7 @@ public class MypageDAO {
 			System.err.println("memberNumber 형변환 실패: " + e.getMessage());
 		}
 		int result2 = sqlSession.delete("mypage.memberDelete", mypageDTO);
+		System.out.println(result2);
 
 		return result2 <= 0;
 

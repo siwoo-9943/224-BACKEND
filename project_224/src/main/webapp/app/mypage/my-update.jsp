@@ -23,16 +23,16 @@
 					<div class="my-category-menu">메뉴</div>
 					<div class="my-line"></div>
 					<a
-						href="${pageContext.request.contextPath}/app/mypage/mypasscheck.my">
+						href="${pageContext.request.contextPath}/app/mypage/my-passcheck.jsp">
 						<div class="my-category-menu">개인정보수정</div>
 					</a> <a
-						href="${pageContext.request.contextPath}/app/mypage/mycomunity.my">
+						href="${pageContext.request.contextPath}/app/mypage/my-comunity.jsp">
 						<div class="my-category-menu">내가 작성한 글</div>
 					</a> <a
-						href="${pageContext.request.contextPath}/app/mypage/mypick.my">
+						href="${pageContext.request.contextPath}/app/mypage/my-pick.jsp">
 						<div class="my-category-menu">찜목록</div>
 					</a> <a
-						href="${pageContext.request.contextPath}/app/mypage/myquit.my">
+						href="${pageContext.request.contextPath}/app/mypage/my-quit.jsp">
 						<div class="my-category-menu">회원탈퇴</div>
 					</a>
 				</div>
@@ -41,7 +41,7 @@
 			<!-- 회원정보수정 -->
 			<div class="my-rightbox">
 				<form
-					action="${pageContext.request.contextPath}/app/mypage/mypageupdate.my"
+					action="${pageContext.request.contextPath}/app/mypage/myupdate.my"
 					method="post">
 					<div class="my-update">
 						<div class="my-update-title">개인정보수정</div>
@@ -90,17 +90,17 @@
 									<div class="my-update-value">휴대폰</div>
 									<input type="text" class="my-update-input"
 										value="${sessionScope.member.memberPhone}" name="memberPhone">
-									<button type="button" class="my-update-value-check2">휴대폰번호인증</button>
+									<button type="button" class="my-update-value-check2">휴대폰번호</button>
 								</div>
 
-								<div class="my-update-menu-check">
+								<!-- <div class="my-update-menu-check">
 									<div class="my-update-menu">
 										<div class="my-update-value"></div>
 										<input type="text" class="my-update-input"
 											placeholder="인증번호를 입력하세요" name="memberPhoneInput">
 										<button type="button" class="my-update-value-Recheck">인증확인</button>
 									</div>
-								</div>
+								</div> -->
 
 								<div class="my-update-menu">
 									<div class="my-update-value">성별</div>
