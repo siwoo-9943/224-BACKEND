@@ -139,7 +139,7 @@ a {
                <c:forEach var="item" items="${hplist1}">
                   <li id="main-hot-list">
                      <div id="main-hot-list-img"
-                        style="background-image: url(${pageContext.request.contextPath}/assets/images/main-1.jpg);">
+                        style="background-image: url(${pageContext.request.contextPath}/assets/images/img_ing.jpg); background-size:contain;">
 
                         <c:if test="${sessionScope.member.memberNumber != null}">
                            <c:set var="isLiked" value="false" />
@@ -160,7 +160,7 @@ a {
                                        value="${sessionScope.member.memberNumber}" />
                                     <button type="submit" class="Btn" id="main-picked">
                                        <img
-                                          src="${pageContext.request.contextPath}/assets/images/pick.png"
+                                          src="${pageContext.request.contextPath}/assets/images/picked.png"
                                           style="width: 30px" alt="찜한 상태" />
                                     </button>
                                  </form>
@@ -174,7 +174,7 @@ a {
                                        value="${sessionScope.member.memberNumber}" />
                                     <button type="submit" class="Btn" id="main-picked">
                                        <img
-                                          src="${pageContext.request.contextPath}/assets/images/picked.png"
+                                          src="${pageContext.request.contextPath}/assets/images/pick.png"
                                           style="width: 30px" alt="찜하지 않은 상태" />
                                     </button>
                                  </form>
@@ -204,7 +204,7 @@ a {
                <c:forEach var="item" items="${hplist2}">
                   <li id="main-hot-list">
                      <div id="main-hot-list-img"
-                        style="background-image: url(${pageContext.request.contextPath}/assets/images/main-3.jpg);">
+                        style="background-image: url(${pageContext.request.contextPath}/assets/images/img_ing.jpg); background-size:contain;">
 
                         <c:if test="${not empty sessionScope.member.memberNumber}">
                            <c:set var="isLiked" value="false" />
@@ -225,7 +225,7 @@ a {
                                        value="${sessionScope.member.memberNumber}" />
                                     <button type="submit" class="Btn" id="main-picked">
                                        <img
-                                          src="${pageContext.request.contextPath}/assets/images/pick.png"
+                                          src="${pageContext.request.contextPath}/assets/images/picked.png"
                                           style="width: 30px" alt="찜한 상태" />
                                     </button>
                                  </form>
@@ -239,7 +239,7 @@ a {
                                        value="${sessionScope.member.memberNumber}" />
                                     <button type="submit" class="Btn" id="main-picked">
                                        <img
-                                          src="${pageContext.request.contextPath}/assets/images/picked.png"
+                                          src="${pageContext.request.contextPath}/assets/images/pick.png"
                                           style="width: 30px" alt="찜하지 않은 상태" />
                                     </button>
                                  </form>

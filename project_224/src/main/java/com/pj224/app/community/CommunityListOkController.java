@@ -18,7 +18,7 @@ public class CommunityListOkController implements MemExecute {
         request.setCharacterEncoding("UTF-8");
         
         // 페이지 처리 관련 변수
-        int itemsPerPage = 10;  
+        int itemsPerPage = 7;  
         int currentPage = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));
         
         CommunityDAO communityDAO = new CommunityDAO();
