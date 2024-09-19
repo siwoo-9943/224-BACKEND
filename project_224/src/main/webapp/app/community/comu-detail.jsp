@@ -132,7 +132,7 @@
 															value="${comment.commentContent}">
 														<button class="comu-comment-rewrite-submit" type="button"
 															onclick="submitCommentEdit(${comment.commentNumber})">등록</button>
-														<button class="comu-comment-rewrite-cancel" type="button"
+														<button class="comu-comment-rewrite-submit" type="button"
 															onclick="closeEditForm(${comment.commentNumber})">취소</button>
 													</div>
 												</div>
