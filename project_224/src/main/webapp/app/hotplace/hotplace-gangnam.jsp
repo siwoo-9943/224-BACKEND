@@ -82,8 +82,8 @@
 
 
 						<div class="img-wrapper">
-							<img src="${pageContext.request.contextPath}/assets/images/1.png"
-								style="height: 100%; overflow: hidden; border: 1px solid black;">
+							<img src="${pageContext.request.contextPath}/assets/images/img_ing.jpg" alt="이미지 준비중"
+								style="width: 100%; height: 100%; overflow: hidden; border: 1px solid black;">
 						</div>
 					</div>
 					<div class="hotplace-content-right">
@@ -93,7 +93,7 @@
 								${hotplace.hotplaceAddress} <br> <br>
 							</h2>
 
-							<c:choose>
+<%-- 							<c:choose>
 								<c:when test="${hotplace.hotplaceRestNumber != 0}">
 									<p>음식 종류: ${hotplace.hotplaceRestCuisine}</p>
 									<p>메뉴: ${hotplace.hotplaceRestMenu}</p>
@@ -104,7 +104,7 @@
 								<c:otherwise>
 									<p>정보가 없습니다.</p>
 								</c:otherwise>
-							</c:choose>
+							</c:choose> --%>
 						</div>
 						<div class="hotplace-content-right-button">
 							<button type="button" style="width: 50%; height: 50px;" onclick="window.open('${hotplace.hotplaceLink}')">자세히 보기</button>
