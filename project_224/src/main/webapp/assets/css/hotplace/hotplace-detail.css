@@ -52,7 +52,6 @@ a {
 .img-wrapper{
     display: flex;
     height: 500px;
-    background-color: gray;
     align-items: center;
     justify-content: center;
 }

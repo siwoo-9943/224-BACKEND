@@ -17,8 +17,14 @@ public class CommunityListOkController implements MemExecute {
             throws IOException, ServerException {
         System.out.println("컨트롤러 들어옴");
         request.setCharacterEncoding("UTF-8");
+<<<<<<< HEAD
 
         int itemsPerPage = 10;
+=======
+        
+        // 페이지 처리 관련 변수
+        int itemsPerPage = 7;  
+>>>>>>> main
         int currentPage = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));
         String category = request.getParameter("category");
         if (category == null || category.isEmpty()) {
