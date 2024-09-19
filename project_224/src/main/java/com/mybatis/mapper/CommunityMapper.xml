@@ -69,6 +69,37 @@
 		WHERE RN > #{start}
 	</select>
 
+	<select id="selectAllPagedAndFiltered" parameterType="map"
+		resultType="CommunityDTO">
+        <![CDATA[
+        SELECT * FROM (
+            SELECT A.*, ROWNUM RN FROM (
+                SELECT
+                    B.BOARD_NUMBER, B.BOARD_CATE, B.BOARD_TITLE,
+                    B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, B.BOARD_CONTENT,
+                    M.MEMBER_NUMBER, M.MEMBER_NICKNAME,
+                    COUNT(DISTINCT C.COMMENT_NUMBER) AS COMMENT_COUNT,
+                    COUNT(DISTINCT R.MEMBER_NUMBER) AS RECOMMEND_COUNT
+                FROM
+                    TBL_BOARD B
+                LEFT JOIN TBL_MEMBER M ON B.MEMBER_NUMBER = M.MEMBER_NUMBER
+                LEFT JOIN TBL_COMMENT C ON B.BOARD_NUMBER = C.BOARD_NUMBER
+                LEFT JOIN TBL_RECOMMEND R ON B.BOARD_NUMBER = R.BOARD_NUMBER
+                WHERE 
+                    (#{category} = '전체' OR B.BOARD_CATE = #{category})
+                GROUP BY
+                    B.BOARD_NUMBER, B.BOARD_CATE, B.BOARD_TITLE, B.BOARD_CONTENT,
+                    B.BOARD_REGIST_DATE, B.BOARD_UPDATE_DATE, M.MEMBER_NUMBER,
+                    M.MEMBER_NICKNAME
+                ORDER BY B.BOARD_NUMBER DESC
+            ) A
+            WHERE ROWNUM <= #{end}
+        )
+        WHERE RN > #{start}
+        ]]>
+	</select>
+
+
 	<!-- 전체 게시글 수를 가져오는 쿼리 -->
 	<select id="getTotalCount" resultType="int">
 		SELECT COUNT(*) FROM
@@ -215,8 +246,8 @@
 		WHERE BOARD_NUMBER =
 		#{boardNumber} AND MEMBER_NUMBER = #{memberNumber}
 	</select>
-	
-	
+
+
 	<!-- 특정 게시글의 추천 수 조회 -->
 	<select id="getRecommendCount" parameterType="int"
 		resultType="int">
