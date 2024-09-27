@@ -57,6 +57,27 @@
 					</div>
 				</div>
 
+<<<<<<< HEAD
+                <ul id="communityList">
+                    <c:forEach var="community" items="${communityList}">
+                        <li class="baseList-item">
+                            <div class="baseList-space">
+                                <span class="baseList-sector">${community.boardCate}</span>
+                                <a href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${community.boardNumber}"
+                                   class="baseList-sector baseList-title">${community.boardTitle}</a>
+                                <c:if test="${not empty community.memberNickname}">
+                           <span class="baseList-sector">${community.memberNickname}</span>
+                        </c:if>
+                        <c:if test="${empty community.memberNickname}">
+                           <span class="baseList-sector">탈퇴회원</span>
+                        </c:if>
+                                <span class="baseList-sector">${community.boardRegistDate}</span>
+                                <span class="baseList-sector">${community.recommendCount}</span>
+                            </div>
+                        </li>
+                    </c:forEach>
+                </ul>
+=======
 				<ul id="communityList">
 					<c:forEach var="community" items="${communityList}">
 						<li class="baseList-item">
@@ -76,6 +97,7 @@
 						</li>
 					</c:forEach>
 				</ul>
+>>>>>>> main
 
 				<!-- 페이지네이션 -->
 				<div class="pagination-container">

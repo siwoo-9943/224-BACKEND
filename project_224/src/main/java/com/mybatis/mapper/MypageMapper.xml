@@ -77,13 +77,12 @@
 		AND l.member_number = #{memberNumber}
 	</select>
 
-	<!-- 내가 작성한 게시글 -->
-	<select id="mywrite" parameterType="mypageDTO"
-		resultType="mypageDTO">
-		SELECT TB.BOARD_CATE ,TB.BOARD_TITLE, TM.MEMBER_NICKNAME,TB.BOARD_REGIST_DATE
-		FROM TBL_BOARD TB JOIN TBL_MEMBER TM ON TB.MEMBER_NUMBER =TM.MEMBER_NUMBER
-		WHERE tb.MEMBER_NUMBER = #{memberNumber}
-	</select>
+<!-- 내가 작성한 게시글 -->
+   <select id="mywrite" parameterType="int" resultType="mypageDTO">
+      SELECT TB.BOARD_CATE ,TB.BOARD_TITLE, TM.MEMBER_NICKNAME,TB.BOARD_REGIST_DATE , TB.BOARD_NUMBER
+      FROM TBL_BOARD TB JOIN TBL_MEMBER TM ON TB.MEMBER_NUMBER =TM.MEMBER_NUMBER
+      WHERE TB.MEMBER_NUMBER = #{memberNumber}
+   </select>
 </mapper>
 
 
