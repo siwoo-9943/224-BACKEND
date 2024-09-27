@@ -246,8 +246,6 @@
 		WHERE BOARD_NUMBER =
 		#{boardNumber} AND MEMBER_NUMBER = #{memberNumber}
 	</select>
-
-
 	<!-- 특정 게시글의 추천 수 조회 -->
 	<select id="getRecommendCount" parameterType="int"
 		resultType="int">
