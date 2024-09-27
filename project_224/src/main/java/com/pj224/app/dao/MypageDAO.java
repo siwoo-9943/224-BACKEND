@@ -166,7 +166,8 @@ public class MypageDAO {
 
 //	//내가 작성한 글
 	public List<MypageDTO> mywritelist(int memberNumber) {
-		System.out.println("리스트 잘 들어왔니");
+		System.out.println("리스트 잘 들어왔니" + memberNumber);
+		System.out.println(sqlSession.selectList("mypage.mywrite", memberNumber));
 		return sqlSession.selectList("mypage.mywrite", memberNumber);
 	}
 

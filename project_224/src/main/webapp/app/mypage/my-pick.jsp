@@ -56,13 +56,11 @@ List<HotplaceDTO> mylikelist = (List<HotplaceDTO>) request.getAttribute("myCheck
 							<c:forEach var="item" items="${myCheckLike}">
 								<div class="my-pick-area">
 									<div class="my-pick-textArea">
-										<div class="my-pick-name">롯데월드</div>
+										<div class="my-pick-name"></div>
 										<img src="/assets/images/picked.png" width="30px" height="30px">
 									</div>
 									<div class="my-pick-pictureArea">
-										<a href="https://www.naver.com" target="_blank">
 											<p>${item.hotplaceStation}</p>
-										</a>
 									</div>
 								</div>
 							</c:forEach>

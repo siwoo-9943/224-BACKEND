@@ -50,7 +50,12 @@
                                 <span class="baseList-sector">${community.boardCate}</span>
                                 <a href="${pageContext.request.contextPath}/community/comu-detail.cm?boardNumber=${community.boardNumber}"
                                    class="baseList-sector baseList-title">${community.boardTitle}</a>
-                                <span class="baseList-sector">${community.memberNickname}</span>
+                                <c:if test="${not empty community.memberNickname}">
+                           <span class="baseList-sector">${community.memberNickname}</span>
+                        </c:if>
+                        <c:if test="${empty community.memberNickname}">
+                           <span class="baseList-sector">탈퇴회원</span>
+                        </c:if>
                                 <span class="baseList-sector">${community.boardRegistDate}</span>
                                 <span class="baseList-sector">${community.recommendCount}</span>
                             </div>

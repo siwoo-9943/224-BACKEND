@@ -51,7 +51,7 @@ public class MyquitController implements MemExecute {
       
       if(delete != true) {
          System.out.println("회원탈퇴 성공");
-         response.sendRedirect(request.getContextPath() + "/main.jsp");
+         response.sendRedirect(request.getContextPath() + "/main.mn");
       }else {
          System.out.println("회원탈퇴 실패");
          response.sendRedirect(request.getContextPath() + "/app/mypage/my-quit.jsp");

@@ -10,7 +10,7 @@
 </head>
 <%@ include file="/header.jsp"%>
 <body>
-	  <main>
+     <main>
     <!-- 목록 -->
     <div class="my-quitBox">
       <div class="my-leftbox">
@@ -38,7 +38,7 @@
 
       <!-- 프로필 -->
       <div class="my-rightbox">
-        <form action="${pageContext.request.contextPath}/app/mypage/myquit.my" method="post">
+        <form id="quitForm" action="${pageContext.request.contextPath}/app/mypage/myquit.my" method="post" onsubmit="return confirmQuit();">
           <div class="my-quit">
             <div class="my-quit-title">회원탈퇴안내</div>
             <div class="my-line"></div>
@@ -65,8 +65,8 @@
                   아래 입력창에 "동의합니다"라고 입력하세요.
                 </div>
               </div>
-              	<input type="hidden" name="memberNumber"
-						value="${sessionScope.member.memberNumber}">
+                 <input type="hidden" name="memberNumber"
+                  value="${sessionScope.member.memberNumber}">
             </div>
             <input type="text" id="userAgree" class="AgreeMsg" placeholder=" 동의합니다">
             <p class="my-quit-result"></p>
@@ -79,6 +79,21 @@
   </main>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="${pageContext.request.contextPath}/assets/js/mypage/my-quit.js"></script>
+  
+  <script>
+    function confirmQuit() {
+      const userAgree = document.getElementById('userAgree').value;
+      if (userAgree.trim() !== "동의합니다") {
+        alert("입력창에 '동의합니다'라고 입력해야 합니다.");
+        return false; // 제출을 방지합니다.
+      }
+      
+      // 탈퇴 완료 알림
+      alert("탈퇴가 완료되었습니다.");
+      // 폼 제출
+      return true; // 폼이 제출되도록 설정
+    }
+  </script>
 </body>
 <%@ include file="/footer.jsp"%>
 </html>

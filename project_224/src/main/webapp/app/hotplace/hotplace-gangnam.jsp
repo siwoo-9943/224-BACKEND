@@ -82,7 +82,7 @@
 
 
 						<div class="img-wrapper">
-							<img src="${pageContext.request.contextPath}/assets/images/img_ing.jpg" alt="이미지 준비중"
+							<img src="${pageContext.request.contextPath}/assets/images/img_${hotplace.hotplaceNumber}.png" alt="이미지 준비중"
 								style="width: 100%; height: 100%; overflow: hidden; border: 1px solid black;">
 						</div>
 					</div>

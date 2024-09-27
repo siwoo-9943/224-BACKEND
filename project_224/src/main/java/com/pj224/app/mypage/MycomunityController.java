@@ -29,21 +29,26 @@ public class MycomunityController implements MemExecute{
 		MypageDAO mypageDAO = new MypageDAO();
 		Result result = new Result();
 		
-		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
+		MemberDTO memberDTO = new MemberDTO();
 		
-		int membersessionNum = memberDTO.getMemberNumber();
-		System.out.println("membernumber 들어왔니");
-		System.out.println(membersessionNum);
+		MemberDTO member = (MemberDTO) session.getAttribute("member");
+		System.out.println(member + "확인=========");
+		int membersessionNum = member.getMemberNumber();
+//		MemberDTO member = (MemberDTO) session.getAttribute("membersessionNum");
+//		int membersessionNum = memberDTO.getMemberNumber();
+		System.out.println(membersessionNum + "membernumber 들어왔니");
 		
 		mypageDTO.setMemberNumber(membersessionNum);
 		System.out.println(mypageDTO);
 		
 		List<MypageDTO> mywritepage = mypageDAO.mywritelist(membersessionNum);
+		System.out.println(mywritepage + "확인=========");
+		
 		System.out.println("mywritelist 들어왔니");
 		System.out.println("Community 값 들어왔니");
 		System.out.println(mywritepage);
 		
-		request.setAttribute("mywritepage",mywritepage);
+		request.setAttribute("mywritepage", mywritepage);
 		
 		return result;
 	}

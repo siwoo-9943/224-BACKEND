@@ -23,16 +23,20 @@ public class MypickController implements MemExecute {
 			throws IOException, ServerException, ServletException {
 		System.out.println("까꿍");
 		HttpSession session = request.getSession(false);
+//		MemberDTO member = (MemberDTO) session.getAttribute("memberNumber");
 
+		System.out.println("세션 ID: " + session.getId());
+		System.out.println("세션에 저장된 memberDTO: " + session.getAttribute("member"));
+		
 		HotplaceDTO hotplaceDTO = new HotplaceDTO();
 		MypageDAO mypageDAO = new MypageDAO();
 		Result result = new Result();
 		// memberdto 가져오기
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
-
 		int membersessionNum = memberDTO.getMemberNumber();
+
 		System.out.println("membernumber 들어왔니");
-		System.out.println(membersessionNum);
+		System.out.println(membersessionNum + "=====확인=====");
 
 		hotplaceDTO.setHotplaceNumber(membersessionNum);
 		System.out.println(hotplaceDTO);
